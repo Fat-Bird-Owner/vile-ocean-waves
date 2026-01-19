@@ -22,7 +22,7 @@ shootEffect: none
 smokeEffect: none	
 receiveEffect: none
 shootSound: none	
-receiveSound: none
+receiveSound: blockRepair
 
 bullet:{
 collides: false
