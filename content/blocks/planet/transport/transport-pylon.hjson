@@ -8,7 +8,7 @@ translation: 0
 
 minDistribute: 1
 itemCapacity: 10
-reload: 6
+reload: 12
 rotateSpeed: 180
 
 bulletSpeed: 2
@@ -22,5 +22,9 @@ receiveSound: none
 
 bullet:{
 collides: false
+width: 5
+height: 5
+despawnEffect: none
+hitEffect: nine
 }
 
