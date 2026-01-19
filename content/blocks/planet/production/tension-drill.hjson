@@ -1,0 +1,46 @@
+type: Drill
+size: 4
+
+category: production
+requirements:[
+beryllium/15
+silicon/10
+]
+
+drillEffect:{
+effects:[
+{
+type: SeqEffect
+layer: 35
+effects: [
+{
+type: ParticleEffect
+lifetime: 30
+clip: 9999
+layer: 35
+particles: 1
+cone: 0
+length: 0
+interp: bounceOut
+sizeFrom: 8
+sizeTo: 4
+region: vow-tension-drill-top
+}
+{
+type: ParticleEffect
+lifetime: 210
+clip: 9999
+layer: 35
+particles: 1
+cone: 0
+length: 0
+interp: smooth
+lightColor: 00000000
+sizeFrom: 8
+sizeTo: 4
+region: vow-tension-drill-top
+}
+]
+}
+]
+}
