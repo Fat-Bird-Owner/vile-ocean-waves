@@ -24,7 +24,7 @@ randLength: false
 length: 0
 sizeFrom: 8
 sizeTo: 8
-region: vow-tension-drill-top
+region: vow-tension-drill-top-bottom
 }
 {
 type: SeqEffect
