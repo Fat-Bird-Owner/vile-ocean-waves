@@ -1,6 +1,6 @@
 type: Drill
 size: 2
-drillTime: 120.048
+drillTime: 400
 drillEffectRnd: 1
 drillEffectChance: 1
 
@@ -25,6 +25,7 @@ clip: 9999
 layer: 35
 particles: 1
 cone: 0
+randLength: false
 length: 0
 interp: bounceOut
 sizeFrom: 8
@@ -40,6 +41,7 @@ particles: 1
 cone: 0
 length: 0
 interp: smooth
+randLength: false
 lightColor: 00000000
 sizeFrom: 8
 sizeTo: 4
