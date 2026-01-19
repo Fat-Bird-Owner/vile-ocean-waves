@@ -3,6 +3,7 @@ name: Transport Pylon
 
 requirements:[
 beryllium/5
+silicon/2
 ]
 shake: 0
 range: 80
@@ -22,7 +23,7 @@ shootEffect: none
 smokeEffect: none	
 receiveEffect: none
 shootSound: none	
-receiveSound: blockRepair
+receiveSound: none
 
 bullet:{
 collides: false
@@ -37,11 +38,12 @@ parts:[
 {
 type: ShapePart
 sides: 4
-radius: 4
+radius: 2.5
 x: 0
 y: 3.5
-rotation: 0
+rotation: 45
 layer: 33
+color: ffd37fff
 }
 ]
 
