@@ -9,7 +9,7 @@ range: 80
 translation: 0
 
 minDistribute: 1
-itemCapacity: 1
+itemCapacity: 5
 reload: 12
 rotateSpeed: 1800
 
