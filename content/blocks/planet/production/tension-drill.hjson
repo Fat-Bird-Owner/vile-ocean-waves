@@ -1,7 +1,7 @@
 type: Drill
 size: 2
 drillTime: 400
-drillEffectRnd: 1
+drillEffectRnd: 0
 drillEffectChance: 1
 
 category: production
