@@ -23,6 +23,7 @@ shootEffect:{
 type: ParticleEffect
 cone: 0
 length: 0
+baseLength: 4
 lenFrom: 6
 lenTo: 6
 line: true
