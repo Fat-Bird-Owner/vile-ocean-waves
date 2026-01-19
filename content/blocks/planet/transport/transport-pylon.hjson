@@ -34,6 +34,20 @@ hitEffect: none
 frontColor: ffffff00
 backColor: ffffff00
 
+shootEffect:{
+type: ParticleEffect
+cone: 0
+lenFrom: 6
+lenTo: 6
+line: true
+randLength: false
+colorFrom: ffd37fff
+colorTo: ffd37f00
+lifetime: 120
+particles: 1
+strokeTo: 2
+}
+
 parts:[
 {
 type: ShapePart
