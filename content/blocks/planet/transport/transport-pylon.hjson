@@ -1,0 +1,25 @@
+type: MassDriver
+name: Transport Pylon
+
+requirements:[]
+shake: 0
+range: 80
+translation: 0
+
+minDistribute: 1
+itemCapacity: 10
+reload: 6
+
+bulletSpeed: 2
+lifetime: 40
+
+shootEffect: none	
+smokeEffect: none	
+receiveEffect: none
+shootSound: none	
+receiveSound: none
+
+bullet:{
+collides: false
+}
+
