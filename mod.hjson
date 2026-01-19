@@ -1,8 +1,8 @@
 // file name very used in logic like template-block.
-name: "template"
+name: "vow"
 
-displayName: "Mod Template"
-repo: "Fat-Bird-Owner/Mindustry-mod-template-hjson"
+displayName: "[acid[]]Vile Ocean Waves[[]]"
+repo: "Fat-Bird-Owner/vile-ocean-waves"
 subtitle: ""
 author: ""
 
@@ -14,4 +14,6 @@ minGameVersion: "154.3"
 dependencies: []
 hidden: false
 
+/*
 contentOrder:[]
+*/
