@@ -20,6 +20,9 @@ bulletSpeed: 3
 lifetime: 26.6667
 
 shootEffect:{
+type: MultiEffect
+effects:[
+{
 type: ParticleEffect
 cone: 0
 length: 0
@@ -33,6 +36,18 @@ colorTo: ffd37f00
 lifetime: 120
 particles: 1
 strokeTo: 2
+}
+{
+type: WaveEffect
+strokeTo: 2
+strokeFrom: 2
+lifetime: 120
+colorFrom: ffd37fff
+colorTo: ffd37f00
+sizeFrom: 16
+sizeTo: 16
+}
+]
 }
 
 smokeEffect: none	
