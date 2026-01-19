@@ -9,6 +9,7 @@ translation: 0
 minDistribute: 1
 itemCapacity: 10
 reload: 6
+rotateSpeed: 180
 
 bulletSpeed: 2
 lifetime: 40
