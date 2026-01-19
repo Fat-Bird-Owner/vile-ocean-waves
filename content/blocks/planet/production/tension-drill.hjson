@@ -1,5 +1,6 @@
 type: Drill
-size: 4
+size: 2
+drillTime: 120.048
 
 category: production
 requirements:[
@@ -8,6 +9,7 @@ silicon/10
 ]
 
 drillEffect:{
+type: MultiEffect
 effects:[
 {
 type: SeqEffect
@@ -40,6 +42,7 @@ sizeFrom: 8
 sizeTo: 4
 region: vow-tension-drill-top
 }
+shockwave
 ]
 }
 ]
