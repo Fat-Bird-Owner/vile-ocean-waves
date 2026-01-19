@@ -33,6 +33,7 @@ backColor: ffffff00
 
 parts:[
 {
+type: ShapePart
 sides: 4
 radius: 4
 x: 0
