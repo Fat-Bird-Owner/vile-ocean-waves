@@ -36,6 +36,7 @@ colorTo: ffd37f00
 lifetime: 120
 particles: 1
 strokeTo: 2
+layer: 33
 }
 {
 type: WaveEffect
@@ -44,14 +45,47 @@ strokeFrom: 2
 lifetime: 120
 colorFrom: ffd37fff
 colorTo: ffd37f00
-sizeFrom: 6.5
-sizeTo: 6.5
+sizeFrom: 5
+sizeTo: 5
+layer: 33
 }
 ]
 }
 
 smokeEffect: none	
-receiveEffect: none
+receiveEffect:{
+type: MultiEffect
+effects:[
+{
+type: ParticleEffect
+cone: 0
+length: 0
+baseLength: 4
+lenFrom: 6
+lenTo: 6
+line: true
+randLength: false
+colorFrom: ffd37fff
+colorTo: ffd37f00
+lifetime: 120
+particles: 1
+strokeTo: 2
+layer: 33
+}
+{
+type: WaveEffect
+strokeTo: 2
+strokeFrom: 2
+lifetime: 120
+colorFrom: ffd37fff
+colorTo: ffd37f00
+sizeFrom: 5
+sizeTo: 5
+layer: 33
+}
+]
+}
+
 shootSound: none	
 receiveSound: none
 
