@@ -1,6 +1,7 @@
 type: Drill
 size: 2
-drillTime: 1000
+drillTime: 400
+liquidBoostIntensity: 1
 drillEffectRnd: 0
 drillEffectChance: 1
 
@@ -55,8 +56,8 @@ length: 0
 interp: smooth
 randLength: false
 lightColor: 00000000
-sizeFrom: 8
-sizeTo: 4
+sizeFrom: 4
+sizeTo: 8
 region: vow-tension-drill-top
 }]}
 shockwave
