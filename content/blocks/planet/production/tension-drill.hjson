@@ -1,8 +1,11 @@
 type: Drill
 size: 2
 drillTime: 120.048
+drillEffectRnd: 1
+drillEffectChance: 1
 
 category: production
+updateEffect: none
 requirements:[
 beryllium/15
 silicon/10
@@ -41,9 +44,8 @@ lightColor: 00000000
 sizeFrom: 8
 sizeTo: 4
 region: vow-tension-drill-top
-}
+}]
 shockwave
-]
 }
 ]
 }
