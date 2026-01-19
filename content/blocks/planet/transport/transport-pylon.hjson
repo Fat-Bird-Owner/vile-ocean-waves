@@ -53,22 +53,7 @@ layer: 33
 }
 
 smokeEffect: none	
-receiveEffect:{
-type: MultiEffect
-effects:[
-{
-type: WaveEffect
-strokeTo: 2
-strokeFrom: 2
-lifetime: 120
-colorFrom: ffd37fff
-colorTo: ffd37f00
-sizeFrom: 2.5
-sizeTo: 2.5
-layer: 33
-}
-]
-}
+receiveEffect: none
 
 shootSound: none	
 receiveSound: none
