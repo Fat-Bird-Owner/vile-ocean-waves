@@ -22,6 +22,7 @@ lifetime: 26.6667
 shootEffect:{
 type: ParticleEffect
 cone: 0
+length: 0
 lenFrom: 6
 lenTo: 6
 line: true
