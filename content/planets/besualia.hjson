@@ -10,9 +10,9 @@ mesh: [
     radius: 1.189
     color1: 80452e
     color2: 703923
-    persistence: 3
+    persistence: 5.5
     octaves: 3
-	scale: 3
+	scale: 1.1
 }
 {
     //ground and acid
@@ -23,9 +23,9 @@ mesh: [
     radius: 1.189
     color1: 2e824e
     color2: 4a9c27
-    persistence: 3
+    persistence: 6
     octaves: 3
-	scale: 3
+	scale: 1.1
 }
 {
     //ground
