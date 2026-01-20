@@ -2,7 +2,7 @@ type: Drill
 size: 2
 tier: 2
 name: Tension Drill
-description: "Drills the
+description: "Drills"
 drillTime: 400
 liquidBoostIntensity: 1
 drillEffectRnd: 0
@@ -26,7 +26,6 @@ particles: 1
 cone: 0
 randLength: false
 length: 0
-interp: bounceOut
 sizeFrom: 8
 sizeTo: 8
 rotation: 180
