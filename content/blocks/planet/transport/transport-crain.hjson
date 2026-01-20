@@ -18,8 +18,8 @@ reload: 3
 rotateSpeed: 1800
 connectedPower: false
 
-bulletSpeed: 3
-lifetime: 26.6667
+bulletSpeed: 4
+lifetime: 20
 
 shootEffect:{
 type: MultiEffect
