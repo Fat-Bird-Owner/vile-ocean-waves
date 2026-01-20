@@ -20,13 +20,12 @@ mesh: [
     planet: besualia
     divisions: 5
     seed: 8
-    radius: 1.1455
+    radius: 1.14657
     color1: 2e824e
     color2: 4a9c27
     persistence: 6
     octaves: 3
 	scale: 1
-	mag: 1.00025
 }
 {
     //ground
