@@ -16,18 +16,6 @@ drillEffect:{
 type: MultiEffect
 effects:[
 {
-type: ParticleEffect
-lifetime: 60
-layer: 34.5
-particles: 1
-cone: 0
-randLength: false
-length: 0
-sizeFrom: 8
-sizeTo: 8
-region: vow-tension-drill-top-bottom
-}
-{
 type: SeqEffect
 layer: 35
 effects: [
@@ -42,7 +30,7 @@ randLength: false
 length: 0
 interp: bounceOut
 sizeFrom: 8
-sizeTo: 4
+sizeTo: 6
 region: vow-tension-drill-top
 }
 {
@@ -56,10 +44,10 @@ length: 0
 interp: smooth
 randLength: false
 lightColor: 00000000
-sizeFrom: 4
+sizeFrom: 6
 sizeTo: 8
 region: vow-tension-drill-top
 }]}
-shockwave
+pulverize
 ]
 }
