@@ -11,7 +11,7 @@ mesh: [
     color1: 2e824e
     color2: 4a9c27
     persistence: 3
-    octaves: 2
+    octaves: 3
 }
 {
     //ground
@@ -57,7 +57,7 @@ cloudMesh: [
    type: HexSkyMesh
    planet: besualia
    speed: 0.891
-   radius: 0.091
+   radius: 0.12
    divisions: 5
    color: 00ff8044
    octaves: 2
@@ -69,9 +69,9 @@ cloudMesh: [
 
 campaignRuleDefaults: {
 	showSpawns: true
-	sectorInvasion: true
-	legacyLaunchPads: true
-	fog: false
+	sectorInvasion: false
+	legacyLaunchPads: false
+	fog: true
 }
 
 generator: SerpuloPlanetGenerator
@@ -91,17 +91,17 @@ atmosphereRadIn: 0
 atmosphereRadOut: 0.25
 accessible: true
 allowCampaignRules: false
-updateLighting: false
+updateLighting: true
 sectorSeed: 0
 bloom: true
 visible: true
-atmosphereColor: 4da16f
+atmosphereColor: 8bd9bd
 showRtsAIRule: false
-iconColor: 9ad44a
+iconColor: 4a9c27
 hasAtmosphere: true
 allowWaveSimulation: true
 clearSectorOnLose: true
 prebuildBase: true
 defaultCore: core-shard
 parent: sun
-landCloudColor: 234f4455
+landCloudColor: 8bd9bd
