@@ -26,7 +26,7 @@ mesh: [
     persistence: 6
     octaves: 3
 	scale: 1
-	mag: 1.0125
+	mag: 1.00025
 }
 {
     //ground
