@@ -9,6 +9,7 @@ drillEffectRnd: 0
 drillEffectChance: 1
 
 category: production
+buildVisibilty: shown
 updateEffect: none
 requirements:[
 beryllium/15
