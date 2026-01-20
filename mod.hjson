@@ -24,6 +24,9 @@ transport-pylon
 overflow-transit
 transport-crain
 
+# power
+current-panel
+
 #payloads
 naval-bay
 
