@@ -9,7 +9,7 @@ armor: 5
 health: 135
 speed: 1
 omniMovement: false
-outlineColor: 656777FF
+outlineColor: 3d3e40
 
 weapons:[
 {
@@ -18,10 +18,11 @@ y: -3
 rotate: true
 rotateSpeed: 4.5
 name: journey-weapon
-reload: 50
+reload: 30
 
 bullet:{
 type: BasicBulletType
+shootSound: unitExplode1
 damage: 6.5
 speed: 4
 lifetime: 45
