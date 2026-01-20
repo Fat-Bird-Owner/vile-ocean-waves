@@ -1,0 +1,107 @@
+localizedName: Besualia
+alwaysUnlocked: true
+mesh: [
+{
+    //ground and acid
+    type: NoiseMesh
+    planet: titanos
+    divisions: 5
+    seed: 8
+    radius: 1.1875
+    color1: 2e824e
+    color2: 4a9c27
+    persistence: 3
+    octaves: 2
+}
+{
+    //ground
+    type: NoiseMesh
+    planet: titanos
+    divisions: 5
+    seed: 4
+    radius: 1.21
+    color1: 4886a3
+    color2: 5774ad
+    persistence: 6
+    octaves: 2
+	scale: 1.1
+}
+]
+
+cloudMesh: [
+ {
+   type: HexSkyMesh
+   planet: besualia
+   speed: 1.21
+   radius: 0.1
+   divisions: 4
+   color: 234f444f
+   octaves: 3
+   persistence: 0.3
+   scl: 1
+   thresh: 0.3
+  }
+  {
+   type: HexSkyMesh
+   planet: besualia
+   speed: 1.01
+   radius: 0.11
+   divisions: 4
+   color: 00ff8075
+   octaves: 2
+   persistence: 0.4
+   scl: 0.9
+   thresh: 0.4
+  }
+  {
+   type: HexSkyMesh
+   planet: besualia
+   speed: 0.891
+   radius: 0.091
+   divisions: 5
+   color: 00ff8044
+   octaves: 2
+   persistence: 0.5
+   scl: 1.1
+   thresh: 0.8
+  }
+]
+
+campaignRuleDefaults: {
+	showSpawns: true
+	sectorInvasion: true
+	legacyLaunchPads: true
+	fog: false
+}
+
+generator: SerpuloPlanetGenerator
+orbitRadius: 50
+sectorSize: 2
+allowLaunchSchematics: false
+allowLaunchToNumbered: false
+allowLaunchLoadout: true
+allowSectorInvasion: true
+enemyCoreSpawnReplace: true
+startSector: 86
+orbitSpacing: 2
+radius: 1.219
+minZoom: 0.25
+drawOrbit: true
+atmosphereRadIn: 0
+atmosphereRadOut: 0.25
+accessible: true
+allowCampaignRules: false
+updateLighting: false
+sectorSeed: 0
+bloom: true
+visible: true
+atmosphereColor: 4da16f
+showRtsAIRule: false
+iconColor: 9ad44a
+hasAtmosphere: true
+allowWaveSimulation: true
+clearSectorOnLose: true
+prebuildBase: true
+defaultCore: core-shard
+parent: sun
+landCloudColor: 234f4455
