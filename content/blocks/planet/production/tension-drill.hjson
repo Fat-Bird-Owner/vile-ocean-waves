@@ -8,12 +8,15 @@ liquidBoostIntensity: 1
 drillEffectRnd: 0
 drillEffectChance: 1
 
+research: core-clover
+researchCostMultiplier: 0.075
+
 category: production
 buildVisibilty: shown
 updateEffect: none
 requirements:[
 beryllium/15
-silicon/10
+iron/10
 ]
 
 drillEffect:{
