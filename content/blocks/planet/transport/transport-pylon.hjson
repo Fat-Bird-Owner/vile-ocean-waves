@@ -2,8 +2,11 @@ type: MassDriver
 name: Transport Pylon
 description: A transport line for items to go through,\n perfect for uneven ground transport.
 
+research: core-clover
+researchCostMultiplier: 0.05
+
 requirements:[
-beryllium/5
+iron/5
 silicon/2
 ]
 shake: 0
