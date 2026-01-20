@@ -16,8 +16,15 @@ hidden: false
 
 
 contentOrder:[
+# production
 tension-drill
+
+# Distribution
 transport-pylon
+overflow-transite
 transport-crain
+
+# defense
+silicon-barrier
 ]
 
