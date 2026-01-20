@@ -4,10 +4,10 @@ mesh: [
 {
     //ground and acid
     type: NoiseMesh
-    planet: titanos
+    planet: besualia
     divisions: 5
     seed: 8
-    radius: 1.186
+    radius: 1.146
     color1: 80452e
     color2: 703923
     persistence:6
@@ -17,10 +17,10 @@ mesh: [
 {
     //ground and acid
     type: NoiseMesh
-    planet: titanos
+    planet: besualia
     divisions: 5
     seed: 8
-    radius: 1.186
+    radius: 1.1465
     color1: 2e824e
     color2: 4a9c27
     persistence: 6
@@ -30,7 +30,7 @@ mesh: [
 {
     //ground
     type: NoiseMesh
-    planet: titanos
+    planet: besualia
     divisions: 5
     seed: 4
     radius: 1.15
