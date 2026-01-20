@@ -20,7 +20,7 @@ mesh: [
     planet: titanos
     divisions: 5
     seed: 8
-    radius: 1.1895
+    radius: 1.186
     color1: 2e824e
     color2: 4a9c27
     persistence: 6
