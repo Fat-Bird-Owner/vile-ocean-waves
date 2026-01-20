@@ -29,7 +29,7 @@ randLength: false
 length: 0
 sizeFrom: 8
 sizeTo: 8
-rotation: 180
+offset: 180
 region: vow-tension-drill-top
 }
 {
