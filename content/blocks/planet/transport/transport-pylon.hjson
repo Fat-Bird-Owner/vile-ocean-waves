@@ -1,5 +1,6 @@
 type: MassDriver
 name: Transport Pylon
+description: A transport line for items to go through,\n perfect for uneven ground transport.
 
 requirements:[
 beryllium/5
