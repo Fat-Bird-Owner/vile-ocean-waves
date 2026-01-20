@@ -16,6 +16,12 @@ hidden: false
 
 
 contentOrder:[
+# items
+iron
+
+# environment
+iron-ore
+
 # production
 tension-drill
 
