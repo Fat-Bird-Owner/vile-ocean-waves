@@ -39,6 +39,7 @@ mesh: [
     persistence: 6
     octaves: 2
 	scale: 1.125
+	mag: 1.0025
 }
 ]
 
