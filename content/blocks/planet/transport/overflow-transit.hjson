@@ -1,0 +1,7 @@
+type: OverflowGate
+name: Overflow Transit
+
+requirements:[
+silicon/3
+beryllium/2
+]
