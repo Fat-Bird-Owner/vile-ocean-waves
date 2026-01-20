@@ -24,7 +24,13 @@ transport-pylon
 overflow-transit
 transport-crain
 
+#payloads
+naval-bay
+
 # defense
 silicon-barrier
+
+# planets
+besualia
 ]
 
