@@ -20,6 +20,17 @@ drillEffect:{
 type: MultiEffect
 effects:[
 {
+type: SoundEffect
+
+minPitch:	1
+maxPitch:	1
+minVolume:	1
+maxVolume: 1
+
+effect: none
+sound: shieldHit
+}
+{
 type: ParticleEffect
 lifetime: 60
 layer: 34.9
