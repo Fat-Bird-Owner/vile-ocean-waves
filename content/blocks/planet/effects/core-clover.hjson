@@ -1,0 +1,20 @@
+type: CoreBlock
+name: Core: Clover
+description: "Basic clover division core, Used for many purposes."
+size: 2
+
+requirements:[
+iron/450
+beryllium/225
+]
+  
+landZoomInterp: smooth
+itemCapacity: 1200
+unitType: oversear
+
+research: {
+  planet: besualia
+  root: true
+  name: "[green]Clover Division[]"
+  requiresUnlock: false
+}
