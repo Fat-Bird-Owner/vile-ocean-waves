@@ -15,6 +15,7 @@ itemCapacity: 1200
 research: {
   planet: besualia
   root: true
-  name: "[green]Clover Division[]"
+  name: "[acid]Clover Division[]"
   requiresUnlock: false
 }
+alwaysUnlocked: true
