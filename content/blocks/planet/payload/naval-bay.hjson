@@ -1,0 +1,30 @@
+type: UnitFactory
+name: Naval Bay
+description: "Produces naval units for assault purposes."
+size: 3
+
+requirements:[
+silicon/150
+beryllium/200
+]
+category: units
+consumes:{
+
+liquids:[
+water/0.01667
+]
+ 
+}
+
+plans:[
+{
+unit: journey
+time: 1500
+
+requirements:[
+silicon/35
+beryllium/25
+]
+
+}
+]
