@@ -24,11 +24,11 @@ type: SoundEffect
 
 minPitch:	1
 maxPitch:	1
-minVolume:	1
-maxVolume: 1
+minVolume:	0.15
+maxVolume: 0.45
 
 effect: none
-sound: shieldHit
+sound: blockBreak2
 }
 {
 type: ParticleEffect
