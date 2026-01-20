@@ -1,5 +1,6 @@
 type: MassDriver
 name: Transport Crain
+size: 2
 
 requirements:[
 beryllium/25
