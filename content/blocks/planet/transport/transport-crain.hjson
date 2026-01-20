@@ -1,0 +1,84 @@
+type: MassDriver
+name: Transport Crain
+
+requirements:[
+beryllium/25
+silicon/10
+copper/5
+]
+shake: 0
+range: 160
+translation: 0
+hasPower: false
+conductivePower: false
+minDistribute: 2
+itemCapacity: 2
+reload: 3
+rotateSpeed: 1800
+connectedPower: false
+
+bulletSpeed: 3
+lifetime: 26.6667
+
+shootEffect:{
+type: MultiEffect
+effects:[
+{
+type: ParticleEffect
+cone: 0
+length: 0
+baseLength: 8
+lenFrom: 6
+lenTo: 6
+line: true
+randLength: false
+colorFrom: ffd37fff
+colorTo: ffd37f00
+lifetime: 120
+particles: 1
+strokeTo: 2
+layer: 33
+}
+{
+type: WaveEffect
+strokeTo: 2
+strokeFrom: 2
+lifetime: 120
+colorFrom: ffd37fff
+colorTo: ffd37f00
+sizeFrom: 13
+sizeTo: 13
+layer: 33
+}
+]
+}
+
+smokeEffect: none	
+receiveEffect: none
+
+shootSound: none	
+receiveSound: none
+
+bullet:{
+collides: false
+width: 5
+height: 5
+despawnEffect: none
+hitEffect: none
+frontColor: ffffff00
+backColor: ffffff00
+
+parts:[
+{
+type: ShapePart
+sides: 4
+radius: 3.5
+x: 0
+y: 3.5
+rotation: 45
+layer: 33
+color: ffd37fff
+}
+]
+
+}
