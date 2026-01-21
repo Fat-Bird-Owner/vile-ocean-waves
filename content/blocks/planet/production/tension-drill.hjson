@@ -14,6 +14,7 @@ researchCostMultiplier: 0.075
 category: production
 
 updateEffect: none
+buildVisibility: shown
 requirements:[
 beryllium/15
 iron/10
