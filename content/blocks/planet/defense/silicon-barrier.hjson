@@ -1,10 +1,10 @@
 type: Wall
-name: Silicon Barrier
+name: Iron Barrier
 scaledHealth: 500
 
 requirements:[
 beryllium/4
-silicon/6
+iron/6
 ]
 buildTime: 20
 category: defense
