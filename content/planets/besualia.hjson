@@ -42,7 +42,7 @@ mesh: [
 	scale: 1.125
 }
 ]
-
+/*
 cloudMesh: [
  {
    type: HexSkyMesh
@@ -80,7 +80,7 @@ cloudMesh: [
    scl: 1.1
    thresh: 0.8
   }
-]
+]*/
 
 campaignRuleDefaults: {
 	showSpawns: true
