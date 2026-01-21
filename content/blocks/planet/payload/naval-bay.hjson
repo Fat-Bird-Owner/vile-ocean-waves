@@ -8,7 +8,7 @@ researchCostMultiplier: 0.065
 
 requirements:[
 iron/150
-beryllium/200
+aluminum/200
 ]
 category: units
 consumes:{
@@ -27,7 +27,7 @@ time: 1500
 
 requirements:[
 iron/35
-beryllium/25
+aluminum/25
 ]
 
 }
