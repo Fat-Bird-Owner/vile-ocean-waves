@@ -10,7 +10,7 @@ mesh: [
     radius: 1.145
     color1: 80452e
     color2: 703923
-    persistence: 15
+    persistence: 10
     octaves: 3
 	scale: 1.1
 }
@@ -23,7 +23,7 @@ mesh: [
     radius: 1.135
     color1: 2e824e
     color2: 4a9c27
-    persistence: 15
+    persistence: 10
     octaves: 3
 	scale: 1.1
 	mag: 0.595
