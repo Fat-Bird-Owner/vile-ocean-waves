@@ -8,8 +8,8 @@ mesh: [
     divisions: 5
     seed: 8
     radius: 1.145
-    color: 6fb854
-	#color: 703923
+    color1: 6fb854
+	color2: 703923
     persistence: 6
     octaves: 3
 	scale: 1.1
