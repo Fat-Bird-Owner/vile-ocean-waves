@@ -2,14 +2,14 @@ type: Drill
 size: 2
 tier: 3
 name: Tension Drill
-description: "Drills ores.
+description: "Drills ores."
 drillTime: 400
 liquidBoostIntensity: 1
 drillEffectRnd: 0
 drillEffectChance: 1
 
 research: core-clover
-researchCostMultiplier: 0.075
+researchCostMultiplier: 0.125
 
 category: production
 
