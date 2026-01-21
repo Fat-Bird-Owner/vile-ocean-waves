@@ -2,6 +2,7 @@ type: GenericCrafter
 name: Electra Mixer
 size: 2
 
+category: crafting
 requirements:[
 beryllium/35
 iron/25
@@ -14,12 +15,23 @@ water/0.01667
 power: 0.75
 }
 
+outputLiquid: electra/0.16667
+
 drawers:{
 type: DrawMulti
 drawers:[
 {
 type: DrawRegion
 suffix: "-bottom"
+}
+{
+type: DrawLiquidTile
+drawLiquid: electra
+}
+{
+type: DrawCrucibleFlame
+flameColor: b0fcff
+midColor: c7eef0
 }
 {
 type: DrawDefault
