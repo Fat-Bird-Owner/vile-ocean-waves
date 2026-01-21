@@ -3,7 +3,7 @@ name: Transport Crain
 size: 2
 
 requirements:[
-beryllium/25
+aluminum/25
 iron/10
 copper/5
 ]
