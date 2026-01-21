@@ -1,9 +1,11 @@
 type: flying
+name: Overseer
 flying: true
 speed: 1.65
 
 mineSpeed: 7.5
 mineTier: 3
+buildSpeed: 0.75
 
 healColor: 414141
 outlineColor: 4b4b4b
