@@ -1,8 +1,8 @@
 type: MassDriver
-name: Power Pylon
+name: Speed Pylon
 description: A transport line for items to go through,\n perfect for uneven ground transport.
 
-research: tension-drill
+research: transport-pylon
 researchCostMultiplier: 0.05
 
 consumes:{
