@@ -1,2 +1,5 @@
 type: floor
 variants: 0
+
+isLiquid: true
+liquidDrop: water
