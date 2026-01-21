@@ -11,7 +11,7 @@ mesh: [
     color1: 80452e
     color2: 703923
     persistence:6
-    octaves: 3.5
+    octaves: 5
 	scale: 1
 }
 {
@@ -24,9 +24,9 @@ mesh: [
     color1: 2e824e
     color2: 4a9c27
     persistence: 6
-    octaves: 3.5
+    octaves: 5
 	scale: 1
-	mag: 0.575
+	mag: 0.595
 }
 {
     //ground
@@ -34,7 +34,7 @@ mesh: [
     planet: besualia
     divisions: 5
     seed: 4
-    radius: 1.14
+    radius: 1.1465
     color1: 4886a3
     color2: 5774ad
     persistence: 6
