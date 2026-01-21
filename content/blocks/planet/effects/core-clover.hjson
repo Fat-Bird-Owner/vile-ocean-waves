@@ -8,8 +8,8 @@ iron/450
 beryllium/225
 ]
   
-landZoomInterp: smooth
-landZoomTo: 5
+landZoomInterp: sine
+landZoomTo: 4
 itemCapacity: 1200
 unitType: overseer
 
