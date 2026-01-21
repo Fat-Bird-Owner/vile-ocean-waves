@@ -9,6 +9,7 @@ beryllium/225
 ]
   
 landZoomInterp: smooth
+landZoomTo: 10
 itemCapacity: 1200
 unitType: overseer
 
