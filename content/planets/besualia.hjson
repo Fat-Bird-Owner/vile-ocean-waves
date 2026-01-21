@@ -7,7 +7,7 @@ mesh: [
     planet: besualia
     divisions: 5
     seed: 8
-    radius: 1.1375
+    radius: 1.137
     color1: 80452e
     color2: 703923
     persistence:6
