@@ -35,8 +35,8 @@ mesh: [
     divisions: 5
     seed: 4
     radius: 1.135
-    color1: 4886a3
-    color2: 5774ad
+    #color1: 4886a3
+    color: 5774ad
     persistence: 6
     octaves: 2
 	scale: 1.125
