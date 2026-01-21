@@ -2,9 +2,27 @@ type: GenericCrafter
 name: Electra Mixer
 size: 2
 
+requirements:[
+beryllium/35
+iron/25
+]
+
 comsumes:{
 liquids:[
 water/0.01667
 ]
 power: 0.75
+}
+
+drawers:{
+type: DrawMulti
+drawers:[
+{
+type: DrawRegion
+suffix: "-bottom"
+}
+{
+type: DrawDefault
+}
+]
 }
