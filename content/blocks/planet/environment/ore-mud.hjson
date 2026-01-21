@@ -3,3 +3,4 @@ variants: 0
 
 isLiquid: true
 liquidDrop: water
+cacheLayer: mud
