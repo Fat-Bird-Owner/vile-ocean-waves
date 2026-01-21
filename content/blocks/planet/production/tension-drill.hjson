@@ -12,7 +12,7 @@ research: core-clover
 researchCostMultiplier: 0.075
 
 category: production
-buildVisibilty: shown
+
 updateEffect: none
 requirements:[
 beryllium/15
