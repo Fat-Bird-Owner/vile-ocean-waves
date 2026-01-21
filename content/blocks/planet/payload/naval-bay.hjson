@@ -26,7 +26,7 @@ unit: journey
 time: 1500
 
 requirements:[
-silicon/35
+iron/35
 beryllium/25
 ]
 
