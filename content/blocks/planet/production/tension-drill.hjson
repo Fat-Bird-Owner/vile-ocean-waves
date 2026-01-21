@@ -16,8 +16,8 @@ category: production
 updateEffect: none
 buildVisibility: shown
 requirements:[
-beryllium/15
-iron/10
+iron/15
+aluminum/10
 ]
 
 drillEffect:{
