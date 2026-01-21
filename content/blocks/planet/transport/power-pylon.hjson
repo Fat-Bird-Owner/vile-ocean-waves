@@ -1,0 +1,91 @@
+type: MassDriver
+name: Power Pylon
+description: A transport line for items to go through,\n perfect for uneven ground transport.
+
+research: tension-drill
+researchCostMultiplier: 0.05
+
+consumes:{
+power: 0.1
+}
+  
+requirements:[
+iron/5
+silicon/2
+]
+shake: 0
+range: 80
+translation: 0
+hasPower: false
+conductivePower: false
+minDistribute: 1
+itemCapacity: 1
+reload: 1.5
+rotateSpeed: 1800
+connectedPower: false
+
+bulletSpeed: 3
+lifetime: 26.6667
+
+shootEffect:{
+type: MultiEffect
+effects:[
+{
+type: ParticleEffect
+cone: 0
+length: 0
+baseLength: 4
+lenFrom: 6
+lenTo: 6
+line: true
+randLength: false
+colorFrom: ffd37fff
+colorTo: ffd37f00
+lifetime: 120
+particles: 1
+strokeTo: 2
+layer: 33
+}
+{
+type: WaveEffect
+strokeTo: 2
+strokeFrom: 2
+lifetime: 120
+colorFrom: ffd37fff
+colorTo: ffd37f00
+sizeFrom: 5
+sizeTo: 5
+layer: 33
+}
+]
+}
+
+smokeEffect: none	
+receiveEffect: none
+
+shootSound: none	
+receiveSound: none
+
+bullet:{
+collides: false
+width: 5
+height: 5
+despawnEffect: none
+hitEffect: none
+frontColor: ffffff00
+backColor: ffffff00
+
+parts:[
+{
+type: ShapePart
+sides: 4
+radius: 2.5
+x: 0
+y: 3.5
+rotation: 45
+layer: 33
+color: ffd37fff
+}
+]
+
+}
