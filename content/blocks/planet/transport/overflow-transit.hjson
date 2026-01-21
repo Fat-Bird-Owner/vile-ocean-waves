@@ -5,6 +5,6 @@ research: transport-pylon
 researchCostMultiplier: 0.1
 
 requirements:[
-silicon/3
-beryllium/2
+aluminum/3
+iron/2
 ]
