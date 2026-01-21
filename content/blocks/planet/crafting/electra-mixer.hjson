@@ -9,8 +9,8 @@ iron/25
 ]
 
 comsumes:{
-liquids:[
-water/0.01667
+liquid:[
+water/0.16667
 ]
 power: 0.75
 }
