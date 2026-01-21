@@ -4,8 +4,8 @@ size: 2
 category: power
 
 requirements:[
-beryllium/15
-silicon/25
+aluminum/15
+iron/25
 ]
 
 powerProduction: 2.5
