@@ -6,7 +6,8 @@ mineSpeed: 7.5
 mineTier: 3
 
 healColor: 414141
-  
+outlineColor: 4b4b4b
+
 omniMovement: true
 rotateSpeed: 8.5
 
