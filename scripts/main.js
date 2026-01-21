@@ -1,8 +1,7 @@
 Events.on(ContentInitEvent, e => { 
 // lol
-Planets.tantros.visible = true;
-Planets.tantros.accessible = true;
-Planets.tantros.alwaysUnlocked = true;
+Planets.gier.visible = true;
+Planets.gier.accessible = true;
 
 var green = Team.green;
 
