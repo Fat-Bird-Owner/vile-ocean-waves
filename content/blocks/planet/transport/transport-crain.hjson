@@ -4,7 +4,7 @@ size: 2
 
 requirements:[
 beryllium/25
-silicon/10
+iron/10
 copper/5
 ]
 shake: 0
