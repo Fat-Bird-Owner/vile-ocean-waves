@@ -1,8 +1,8 @@
 type: Drill
 size: 2
-tier: 2
+tier: 3
 name: Tension Drill
-description: "Drills"
+description: "Drills ores.
 drillTime: 400
 liquidBoostIntensity: 1
 drillEffectRnd: 0
@@ -36,7 +36,7 @@ sound: blockBreak2
 {
 type: ParticleEffect
 lifetime: 60
-layer: 34.9
+layer: 32.05
 particles: 1
 cone: 0
 randLength: false
@@ -54,7 +54,7 @@ effects: [
 type: ParticleEffect
 lifetime: 30
 clip: 9999
-layer: 35
+layer: 32.075
 particles: 1
 cone: 0
 randLength: false
@@ -68,7 +68,7 @@ region: vow-tension-drill-top
 type: ParticleEffect
 lifetime: 30
 clip: 9999
-layer: 35
+layer: 32.075
 particles: 1
 cone: 0
 length: 0
