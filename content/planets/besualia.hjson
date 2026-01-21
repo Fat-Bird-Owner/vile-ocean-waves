@@ -34,7 +34,7 @@ mesh: [
     planet: besualia
     divisions: 5
     seed: 4
-    radius: 1.1465
+    radius: 1.135
     color1: 4886a3
     color2: 5774ad
     persistence: 6
@@ -62,7 +62,7 @@ cloudMesh: [
    speed: 1.01
    radius: 0.11
    divisions: 4
-   color: 8bd9bd75
+   color: 8bd9bd
    octaves: 2
    persistence: 0.4
    scl: 0.9
@@ -74,7 +74,7 @@ cloudMesh: [
    speed: 0.891
    radius: 0.12
    divisions: 5
-   color: 4a9c2744
+   color: 4a9c27
    octaves: 2
    persistence: 0.5
    scl: 1.1
