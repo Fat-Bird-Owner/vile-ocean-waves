@@ -1,0 +1,10 @@
+type: GenericCrafter
+name: Electra Mixer
+size: 2
+
+comsumes:{
+liquids:[
+water/0.01667
+]
+power: 0.75
+}
