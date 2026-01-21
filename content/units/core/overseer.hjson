@@ -13,7 +13,7 @@ rotateSpeed: 8.5
 
 health: 65
 armor: 3.5
-hitSize: 44
+hitSize: 15
 
 engineOffset: 7
   
