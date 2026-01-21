@@ -8,8 +8,8 @@ mesh: [
     divisions: 5
     seed: 8
     radius: 1.145
-    color1: 80452e
-    color2: 703923
+    color: 80452e
+	#color: 703923
     persistence: 6
     octaves: 3
 	scale: 1.1
@@ -21,8 +21,8 @@ mesh: [
     divisions: 5
     seed: 8
     radius: 1.135
-    color1: 2e824e
-    color2: 4a9c27
+    color: d4b277
+    #color2: 4a9c27
     persistence: 6
     octaves: 3
 	scale: 1.1
