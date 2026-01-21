@@ -6,7 +6,7 @@ Strong when in groups.
 "
 
 armor: 5
-health: 135
+health: 165
 speed: 1
 omniMovement: false
 outlineColor: 3d3e40
@@ -26,8 +26,9 @@ shootSound: unitExplode1
 damage: 6.5
 speed: 4
 lifetime: 45
-trailWidth: 1
+trailWidth: 1.5
 trailLength: 40
+width: 7.5
 height: 5
 
 frontColor: ffffff
