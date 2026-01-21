@@ -5,5 +5,5 @@ Planets.tantros.accessible = true;
 Planets.tantros.alwaysUnlocked = true;
 
 var green = Team.green;
-green.name = "Bob";
+
 });
