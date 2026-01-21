@@ -10,7 +10,7 @@ mesh: [
     radius: 1.145
     color1: 80452e
     color2: 703923
-    persistence:6
+    persistence: 15
     octaves: 3
 	scale: 1.1
 }
@@ -23,7 +23,7 @@ mesh: [
     radius: 1.135
     color1: 2e824e
     color2: 4a9c27
-    persistence: 6
+    persistence: 15
     octaves: 3
 	scale: 1.1
 	mag: 0.595
@@ -62,7 +62,7 @@ cloudMesh: [
    speed: 1.01
    radius: 0.11
    divisions: 4
-   color: 8bd9bd
+   color: 8bd9bd75
    octaves: 2
    persistence: 0.4
    scl: 0.9
@@ -74,7 +74,7 @@ cloudMesh: [
    speed: 0.891
    radius: 0.12
    divisions: 5
-   color: 4a9c27
+   color: 4a9c2755
    octaves: 2
    persistence: 0.5
    scl: 1.1
