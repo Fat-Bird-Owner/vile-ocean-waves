@@ -2,6 +2,9 @@ type: Wall
 name: Iron Barrier
 scaledHealth: 500
 
+research: core-clover
+researchCostMultiplier: 0.015
+
 requirements:[
 beryllium/4
 iron/6
