@@ -9,7 +9,7 @@ iron/25
 ]
 
 consumes:{
-liquida:[
+liquids:[
 water/0.16667
 ]
 power: 0.75
