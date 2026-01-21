@@ -3,19 +3,23 @@ name: Naval Bay
 description: "Produces naval units for assault purposes."
 size: 3
 
+research: core-clover
+researchCostMultiplier: 0.065
+
 requirements:[
-silicon/150
+iron/150
 beryllium/200
 ]
 category: units
 consumes:{
 
 liquids:[
-water/0.01667
+electra/0.01667
 ]
  
 }
 
+configurable: false
 plans:[
 {
 unit: journey
