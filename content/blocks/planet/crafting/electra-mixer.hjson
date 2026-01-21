@@ -8,8 +8,8 @@ beryllium/35
 iron/25
 ]
 
-comsumes:{
-liquid:[
+consumes:{
+liquida:[
 water/0.16667
 ]
 power: 0.75
