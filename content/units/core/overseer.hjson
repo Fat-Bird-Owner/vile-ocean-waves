@@ -1,0 +1,20 @@
+type: flying
+flying: true
+speed: 0.85
+
+mineSpeed: 7.5
+mineTier: 3
+
+healColor: 414141
+  
+omniMovement: true
+rotateSpeed: 8.5
+
+health: 65
+armor: 3.5
+hitSize: 44
+
+engineOffset: 7
+  
+name: Overseer
+description: "Weak flying unit capable of mining ores and scouting."
