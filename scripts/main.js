@@ -5,6 +5,6 @@ Planets.tantros.accessible = true;
 Planets.tantros.alwaysUnlocked = true;
 
 var green = Team.get(4);
-green.name = "Basuals"
+green.name = "Basuals";
   
 });
