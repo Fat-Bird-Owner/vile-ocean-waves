@@ -10,7 +10,7 @@ beryllium/225
   
 landZoomInterp: smooth
 itemCapacity: 1200
-# unitType: oversear
+unitType: overseer
 
 research: {
   planet: besualia
