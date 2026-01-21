@@ -1,0 +1,13 @@
+type: Liquid
+effect: shocked
+color: b0fcff
+name: Electra
+
+particleEffect:{
+type: ParticleEffect
+layer: 33
+sizeFrom: 2
+sizeTo: 2
+colorFrom: b0fcff
+colorTo: b0fcff
+}
