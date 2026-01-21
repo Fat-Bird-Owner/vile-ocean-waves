@@ -17,7 +17,7 @@ power: 0.75
 
 outputLiquid: electra/0.16667
 
-drawers:{
+drawer:{
 type: DrawMulti
 drawers:[
 {
