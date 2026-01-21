@@ -30,6 +30,9 @@ transport-pylon
 overflow-transit
 transport-crain
 
+# crafting
+electra-mixer
+
 # power
 current-panel
 
@@ -41,5 +44,9 @@ silicon-barrier
 
 # planets
 besualia
+
+# units
+overseer
+journey
 ]
 
