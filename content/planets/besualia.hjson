@@ -11,7 +11,7 @@ mesh: [
     color1: 80452e
     color2: 703923
     persistence: 6
-    octaves: 2
+    octaves: 3
 	scale: 1.1
 }
 {
@@ -24,7 +24,7 @@ mesh: [
     color1: 2e824e
     color2: 4a9c27
     persistence: 6
-    octaves: 2
+    octaves: 3
 	scale: 1.1
 	mag: 0.595
 }
