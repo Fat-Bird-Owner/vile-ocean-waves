@@ -1,0 +1,5 @@
+type: OreDrop
+itemDrop: aluminum
+
+variants: 3
+name: Aluminum Ore
