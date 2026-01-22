@@ -37,6 +37,7 @@ electra-mixer
 
 # power
 current-panel
+electra-cell
 
 #payloads
 naval-bay
