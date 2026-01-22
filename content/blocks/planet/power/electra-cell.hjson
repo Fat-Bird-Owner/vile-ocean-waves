@@ -9,7 +9,9 @@ copper/15
 ]
 
 consumes:{
+liquid:[
 electra/0.16667
+]
 }
 
 liquidCapacity: 2500
