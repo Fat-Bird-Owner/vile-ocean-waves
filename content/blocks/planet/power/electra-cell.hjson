@@ -14,3 +14,20 @@ electra/0.16667
 
 liquidCapacity: 2500
 outputLiquid: electra/0.16667
+
+drawer:{
+type: DrawMulti
+drawers:[
+{
+type: DrawRegion
+suffix: "-bottom"
+}
+{
+type: DrawLiquidTile
+drawLiquid: electra
+}
+{
+type: DrawDefault
+}
+]
+}
