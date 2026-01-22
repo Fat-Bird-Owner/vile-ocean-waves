@@ -9,7 +9,7 @@ copper/15
 ]
 
 consumes:{
-liquid:[
+liquids:[
 electra/0.16667
 ]
 }
