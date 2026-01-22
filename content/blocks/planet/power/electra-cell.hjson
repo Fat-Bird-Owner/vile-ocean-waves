@@ -1,0 +1,16 @@
+type: GenericCrafter
+name: Electra Cell
+category: power
+
+requirements:[
+iron/25
+aluminum/15
+copper/15
+]
+
+consumes:{
+electra/0.16667
+}
+
+liquidCapacity: 2500
+outputLiquid: electra/0.16667
