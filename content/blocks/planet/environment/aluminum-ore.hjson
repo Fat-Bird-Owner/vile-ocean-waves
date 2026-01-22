@@ -1,4 +1,4 @@
-type: OreDrop
+type: OreBlock
 itemDrop: aluminum
 
 variants: 3
