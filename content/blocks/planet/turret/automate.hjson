@@ -36,6 +36,7 @@ lifetime: 12.5
 trailColor: 7f5f5f55
 frontColor: 7f5f5f
 backColor: 6f4f4f
+velocityScaleRandMin: 0
 
 width: 7.5
 trailWidth: 1.5
