@@ -9,7 +9,7 @@ requirements:[
 iron/35
 aluminum/25
 ]
-
+outlineColor: 5f5f5f
 parts:[
 {
 type: FlarePart
