@@ -1,0 +1,11 @@
+type: BeamNode
+name: Reflector Node
+
+requirements:[
+iron/10
+aluminium/5
+]
+category: power
+
+research: current-panel
+researchCostMultiplier: 0.1
