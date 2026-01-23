@@ -17,12 +17,12 @@ type: DrawTurret
 parts:[
 {
 type: FlarePart
-radiusTo: 6
+radiusTo: 4
 radius: 0
 color1: 8f5f5fff
 spinSpeed: 5
-y: 3.5
-progress: charge
+y: -3.5
+progress: warmup
 
 }
 ]
