@@ -6,8 +6,8 @@ research: core-clover
 researchCostMultiplier: 0.015
 
 requirements:[
-beryllium/4
+aluminum/4
 iron/6
 ]
-buildTime: 20
+buildtime: 20
 category: defense
