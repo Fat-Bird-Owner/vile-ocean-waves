@@ -29,6 +29,8 @@ controllable: true
 aiControllable: true
 autoTarget: false
 shootCone: 10
+beamWidth: 2
+
 mirror: false
 x: 0
 
