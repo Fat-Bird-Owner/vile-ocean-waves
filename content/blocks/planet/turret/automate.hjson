@@ -47,6 +47,7 @@ frontColor: 7f5f5f
 backColor: 6f4f4f
 velocityScaleRandMin: 0.25
 despawnHit: true
+scaleLife: true
 hitEffect:{
 type: ParticleEffects
 cone: 45
