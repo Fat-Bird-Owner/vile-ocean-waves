@@ -13,7 +13,7 @@ consumes:{
 liquids:[
 water/1.66667
 ]
-power: 1.25
+power: 16.66667
 }
 
 outputLiquid: electra/0.16667
