@@ -18,6 +18,26 @@ armor: 3.5
 hitSize: 15
 
 engineOffset: 7
-  
+
+weapons:[
+{
+type: RepairBeamWeapon
+rotateSpeed: 0
+targetBuildings: true
+targetUnits: false
+controllable: true
+aiControllable: true
+autoTarget: false
+
+recentDamageMultiplier: 0
+repairSpeed: 0.416667
+
+bullet:{
+maxRange: 80
+}
+
+}
+]
+
 name: Overseer
 description: "Weak flying unit capable of mining ores and scouting."
