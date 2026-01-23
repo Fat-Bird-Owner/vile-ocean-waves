@@ -12,6 +12,8 @@ aluminum/25
 ]
 outlineColor: 4f4f4f
 
+drawer:{
+type: DrawTurret
 parts:[
 {
 type: FlarePart
@@ -21,6 +23,7 @@ color1: 8f5f5f
 spinSpeed: 5
 }
 ]
+}
 
 shoot:{
 shots: 15
@@ -35,6 +38,7 @@ iron:{
 type: BasicBulletType
 speed: 10
 lifetime: 12.5
+
 trailColor: 7f5f5f55
 frontColor: 7f5f5f
 backColor: 6f4f4f
@@ -45,8 +49,7 @@ trailWidth: 1.5
 trailLength: 100
 damage: 15
 impact: true
-knockBack: 0.65
-scaleLife: true
+knockBack: 1.25
 }
 
 }
