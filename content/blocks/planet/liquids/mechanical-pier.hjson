@@ -5,6 +5,7 @@ requirements:[
 iron/15
 aluminum/10
 ]
+category: liquid
 
 consumes:{
 power: 0.01667
