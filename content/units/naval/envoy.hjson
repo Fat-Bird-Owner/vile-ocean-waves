@@ -1,0 +1,95 @@
+type: naval
+name: Journey
+description: "
+medium durability and armor, Fires shells at rapid speeds.
+Strong when in groups.
+"
+
+armor: 12.5
+health: 320
+speed: 0.85
+hitSize: 16
+omniMovement: false
+outlineColor: 3d3e40
+
+research: journey
+researchCostMultiplier: 0.65
+
+weapons:[
+{
+x: 8.5
+y: 3
+reload: 5
+alternate: false
+inaccuracy: 2.5
+
+bullet:{
+type: BasicBulletType
+shootSound: unitExplode1
+hitSound: explosionDull
+despawnHit: true
+hitEffect: explosion
+collideFloor: true
+  
+splashDamage: 12.5
+splashDamageRadius: 16
+speed: 4
+lifetime: 45
+
+trailWidth: 1.5
+trailLength: 8
+width: 7.5
+height: 15
+underWater: true
+
+frontColor: addcf0
+backColor: addcf0
+trailColor: addcf099
+
+}
+
+}
+{
+x: 0
+y: 0
+rotate: true
+rotateSpeed: 6
+mirror: false
+name: envoy-weapon
+reload: 60
+inaccuracy: 7.5
+
+shoot:{
+shots: 3
+shotDelay: 8
+}
+
+bullet:{
+type: BasicBulletType
+shootSound: unitExplode1
+hitSound: explosionDull
+despawnHit: true
+hitEffect: explosion
+
+splashDamage: 12.5
+splashDamageRadius: 16
+homingPower: 0.01
+speed: 4
+lifetime: 90
+
+trailWidth: 2.5
+trailLength: 8
+width: 12.5
+height: 25
+
+frontColor: ffffff
+backColor: ffffff
+trailColor: addcf099
+
+weaveScale: 2.5
+weaveMag: 1.5
+
+}
+
+}
+]
