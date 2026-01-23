@@ -6,6 +6,7 @@ iron/10
 aluminum/5
 ]
 category: power
+laserColor2: 68a4ed
 
 research: current-panel
 researchCostMultiplier: 0.1
