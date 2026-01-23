@@ -28,6 +28,9 @@ targetUnits: false
 controllable: true
 aiControllable: true
 autoTarget: false
+shootCone: 10
+mirror: false
+x: 0
 
 recentDamageMultiplier: 0
 repairSpeed: 0.416667
