@@ -26,17 +26,21 @@ reload: 30
 bullet:{
 type: BasicBulletType
 shootSound: unitExplode1
-damage: 6.5
-speed: 4
-lifetime: 45
+damage: 22.5
+speed: 2
+lifetime: 90
+
 trailWidth: 1.5
 trailLength: 40
 width: 7.5
-height: 5
+height: 15
 
 frontColor: ffffff
 backColor: ffffff
-trailColor: addcf055
+trailColor: addcf0
+
+weaveScale: 2
+weaveMag: 2.25
 
 }
 
