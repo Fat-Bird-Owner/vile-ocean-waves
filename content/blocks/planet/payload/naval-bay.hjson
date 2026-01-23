@@ -14,7 +14,7 @@ category: units
 consumes:{
 
 liquids:[
-electra/0.01667
+electra/0.125
 ]
  
 }
