@@ -26,6 +26,9 @@ reload: 30
 bullet:{
 type: BasicBulletType
 shootSound: unitExplode1
+hitSound: explosionDull
+hitEffect: explosion
+
 damage: 12.5
 speed: 4
 lifetime: 45
@@ -37,9 +40,9 @@ height: 15
 
 frontColor: ffffff
 backColor: ffffff
-trailColor: addcf0
+trailColor: addcf099
 
-weaveScale: 2
+weaveScale: 2.5
 weaveMag: 1
 
 }
