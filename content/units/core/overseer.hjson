@@ -18,6 +18,23 @@ armor: 3.5
 hitSize: 15
 
 engineOffset: 7
+engines:[
+{
+x: 0
+y: 7
+rotation: 0
+}
+{
+x: 3
+y: 4.5
+rotation: 45
+}
+{
+x: -3
+y: 4.5
+rotation: -45
+}
+]
 
 weapons:[
 {
