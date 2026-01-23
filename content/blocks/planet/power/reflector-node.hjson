@@ -3,7 +3,7 @@ name: Reflector Node
 
 requirements:[
 iron/10
-aluminium/5
+aluminum/5
 ]
 category: power
 
