@@ -5,15 +5,15 @@ liquidCapacity: 100
 
 category: crafting
 requirements:[
-beryllium/35
+aluminum/35
 iron/25
 ]
 
 consumes:{
 liquids:[
-water/0.16667
+water/1.66667
 ]
-power: 0.75
+power: 1.25
 }
 
 outputLiquid: electra/0.16667
