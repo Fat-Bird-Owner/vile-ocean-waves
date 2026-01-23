@@ -16,9 +16,12 @@ rotateSpeed: 8.5
 health: 65
 armor: 3.5
 hitSize: 15
-
-engineOffset: 7
 engines:[
+{
+x: 3
+y: 4.5
+rotation: 45
+}
 {
 x: 0
 y: 7
