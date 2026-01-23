@@ -1,0 +1,11 @@
+type: Pump
+size: 1
+
+requirements:[
+iron/15
+aluminum/10
+]
+
+consumes:{
+power: 0.01667
+}
