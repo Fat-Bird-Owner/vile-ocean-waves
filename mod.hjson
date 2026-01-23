@@ -32,6 +32,9 @@ overflow-transit
 transport-crain
 speed-pylon
 
+# turret
+automate
+
 # crafting
 electra-mixer
 
