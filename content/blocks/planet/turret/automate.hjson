@@ -56,6 +56,7 @@ colorFrom: 7f5f5f
 colorTo: 7f5f5fff
 lenFrom: 4
 lenTo: 8
+lifetime: 30
 }
 
 width: 7.5
