@@ -5,7 +5,7 @@ speed: 1.65
 
 mineSpeed: 7.5
 mineTier: 3
-buildSpeed: 0.75
+buildSpeed: 1
 
 healColor: 414141
 outlineColor: 4b4b4b
@@ -29,13 +29,13 @@ controllable: true
 aiControllable: true
 autoTarget: false
 shootCone: 10
-beamWidth: 2
+beamWidth: 0.5
 
 mirror: false
 x: 0
 
 recentDamageMultiplier: 0
-repairSpeed: 0.416667
+repairSpeed: 0.916667
 
 bullet:{
 maxRange: 80
