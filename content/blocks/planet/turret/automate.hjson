@@ -62,8 +62,8 @@ lifetime: 15
 width: 7.5
 trailWidth: 1.5
 trailLength: 100
-splashDamage: 3.5
-splashDamageRadius: 11.5
+splashDamage: 8.5
+splashDamageRadius: 6.5
 scaledSplashDamage: true
 
 impact: true
