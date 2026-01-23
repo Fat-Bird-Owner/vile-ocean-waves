@@ -8,6 +8,7 @@ Strong when in groups.
 armor: 5
 health: 175
 speed: 1
+hitSize: 14
 omniMovement: false
 outlineColor: 3d3e40
 
