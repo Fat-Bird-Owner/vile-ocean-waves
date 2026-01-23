@@ -16,23 +16,7 @@ rotateSpeed: 8.5
 health: 65
 armor: 3.5
 hitSize: 15
-engines:[
-{
-x: 0
-y: -10
-rotation: 0
-}
-{
-x: 5
-y: 7.5
-rotation: 45
-}
-{
-x: -5
-y: 7.5
-rotation: -45
-}
-]
+engineOffset: 7
 
 weapons:[
 {
