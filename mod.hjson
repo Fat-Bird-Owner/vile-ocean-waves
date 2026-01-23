@@ -20,8 +20,12 @@ contentOrder:[
 iron
 aluminum
 
+# liquids
+electra
+
 # environment
 iron-ore
+aluminum
 
 # production
 tension-drill
