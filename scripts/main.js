@@ -5,7 +5,7 @@ Planets.gier.visible = true;
 Planets.gier.accessible = true;
 
 var green = Team.get(4);
-
+// green.color
 });
 
 
