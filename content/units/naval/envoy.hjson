@@ -80,7 +80,7 @@ lifetime: 90
 trailWidth: 2.5
 trailLength: 8
 width: 12.5
-height: 25
+height: 15
 
 frontColor: ffffff
 backColor: ffffff
