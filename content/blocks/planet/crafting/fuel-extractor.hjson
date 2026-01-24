@@ -34,7 +34,7 @@ type: DrawLiquidTile
 drawLiquid: oil
 }
 {
-type: DrawSpinBlur
+type: DrawBlurSpin
 suffix: "-rotator"
 }
 {
