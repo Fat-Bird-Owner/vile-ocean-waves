@@ -4,6 +4,6 @@ alwaysReplace: true
 buildTime: 25
 layer: 0.1
 
-customShadow: true
+hasShadow: false
 cacheLayer: normal
 variants: 2
