@@ -3,5 +3,6 @@ instantDeconstruct: false
 alwaysReplace: true
 buildTime: 25
 
+customShadow: true
 cacheLayer: normal
 variants: 2
