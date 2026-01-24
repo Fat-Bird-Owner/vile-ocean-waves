@@ -1,7 +1,7 @@
 type: Prop
 instantDeconstruct: false
 alwaysReplace: true
-buildTime: 15
+buildTime: 25
 
 cacheLayer: normal
 variants: 2
