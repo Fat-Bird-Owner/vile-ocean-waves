@@ -1,6 +1,7 @@
 type: Prop
 instantDeconstruct: false
+alwaysReplace: true
 buildTime: 15
 
-cacheLayer: walls
+cacheLayer: normal
 variants: 2
