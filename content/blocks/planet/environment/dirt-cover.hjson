@@ -3,3 +3,4 @@ instantDeconstruct: false
 buildTime: 15
 
 cacheLayer: walls
+variants: 2
