@@ -16,6 +16,10 @@ hidden: false
 
 
 contentOrder:[
+# status
+armored
+light
+
 # items
 iron
 aluminum
