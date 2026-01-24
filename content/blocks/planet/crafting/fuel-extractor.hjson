@@ -27,7 +27,7 @@ type: DrawMulti
 drawers:[
 {
 type: DrawRegion
-suffix: -bottom
+suffix: "-bottom"
 }
 {
 type: DrawLiquidTile
@@ -35,6 +35,7 @@ drawLiquid: oil
 }
 {
 type: DrawSpinBlur
+suffix: "-rotator"
 }
 {
 type: DrawDefault
