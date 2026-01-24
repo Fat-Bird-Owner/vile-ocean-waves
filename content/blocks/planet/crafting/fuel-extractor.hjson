@@ -1,0 +1,40 @@
+type: AttributeCrafter
+name: Fuel Extractor
+description: "Extracts oil from the ground, Requires power, water and electra."
+size: 2
+
+category: crafting
+requirements:[
+aluminum/45
+iron/60
+]
+
+consumes:{
+power: 1
+liquids:[
+electra/0.1667
+water/0.1667
+]
+}
+
+outputLiquid: oil/0.16667
+
+drawer:{
+type: DrawMulti
+drawers:[
+{
+type: DrawRegion
+suffix: "-bottom
+}
+{
+type: DrawLiquidTile
+drawLiquid: oil
+}
+{
+type: DrawSpinBlur
+}
+{
+type: DrawDefault
+}
+]
+}
