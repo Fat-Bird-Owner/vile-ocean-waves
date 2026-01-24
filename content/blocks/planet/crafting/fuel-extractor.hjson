@@ -9,6 +9,9 @@ aluminum/45
 iron/60
 ]
 
+research: electra-mixer
+researchCostMultiplier: 0.35
+
 consumes:{
 power: 1
 liquids:[
