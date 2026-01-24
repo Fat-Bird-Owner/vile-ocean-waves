@@ -10,7 +10,7 @@ buildSpeed: 1
 healColor: 414141
 outlineColor: 4b4b4b
 
-omniMovement: false
+omniMovement: true
 rotateSpeed: 8.5
 
 health: 65
