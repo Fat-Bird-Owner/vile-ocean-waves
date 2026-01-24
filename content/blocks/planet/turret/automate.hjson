@@ -1,10 +1,12 @@
 type: ItemTurret
 name: Automate
 
+shootSound: shootDiffuse
 category: turret
 size: 2
 reload: 60
 range: 125
+rotateSpeed: 4.5
 
 requirements:[
 iron/35
@@ -47,6 +49,7 @@ frontColor: 7f5f5f
 backColor: 6f4f4f
 velocityScaleRandMin: 0.25
 despawnHit: true
+hitEffect: blockPlace1
 
 despawnEffect:{
 type: ParticleEffects
