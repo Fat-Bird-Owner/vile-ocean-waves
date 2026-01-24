@@ -1,0 +1,12 @@
+healthMultiplier: 1.2
+damageMultiplier: 0.95
+dragMultiplier: 1.15
+speedMultiplier: 0.85
+
+permanent: true
+
+affinities:{
+blasted
+}
+
+description: "Units are more durable, But slower."
