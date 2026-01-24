@@ -1,0 +1,5 @@
+healthMultiplier: 0.85
+speedMultiplier: 1.25
+
+description: "Units are fast but in turn are weaker"
+localizedName: Light
