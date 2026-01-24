@@ -2,10 +2,11 @@ type: naval
 name: Journey
 description: "
 medium durability and armor, Fires shells at rapid speeds.
-Strong when in groups.
+Strong in numbers, Quick and reliable damage.
+Though is softer and easier to kill.
 "
 
-armor: 5
+armor: 3.75
 health: 175
 speed: 1
 hitSize: 14
