@@ -5,9 +5,8 @@ speedMultiplier: 0.85
 
 permanent: true
 
-affinities:{
-blasted
-}
+affinities:[blasted]
 
 description: "Units are more durable, But slower."
+
 localizedName: armored
