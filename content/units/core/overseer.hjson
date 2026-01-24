@@ -1,7 +1,7 @@
 type: flying
 name: Overseer
 flying: true
-speed: 1.65
+speed: 2.25
 
 mineSpeed: 7.5
 mineTier: 3
