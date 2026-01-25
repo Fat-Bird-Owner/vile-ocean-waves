@@ -5,6 +5,8 @@ speedMultiplier: 0.75
 dragMultiplier: 1.25
 statusDuration: 3
 
+variants: 0
+
 breakable: true
 destructible: true
 drawTeamOverlay: false
@@ -23,6 +25,7 @@ category: units
 status: armored
 buildTime: 30
 buildVisibility: shown
+instandBuild: false
 requirements:[
 iron/8
 aluminum/6
