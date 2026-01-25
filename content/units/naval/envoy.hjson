@@ -2,7 +2,7 @@ type: naval
 name: Envoy
 description: "
 High durability and armor, Fires shells homing shells that lifesteals.
-Though more expensive and slower, Should be used as a tank.
+Though more expensive, slower and does less damage to buildings, Should be used as a tank.
 "
 
 armor: 12.5
@@ -39,8 +39,9 @@ shootSound: unitExplode1
 hitSound: explosionDull
 despawnHit: true
 hitEffect: explosion
+buildingDamageMultiplier: 0.75
 
-splashDamage: 10
+splashDamage: 5
 splashDamageRadius: 16
 homingPower: 0.025
 speed: 4
@@ -58,6 +59,7 @@ color: addcf099
 damage: 5
 pierceArmor: true
 lifesteal: 1
+buildingDamageMultiplier: 0.65
 }
 
 frontColor: ffffff
