@@ -1,0 +1,13 @@
+type: UnitCargoLoader
+unitType: point-bullet
+name: Volt
+
+unitBuildTime: 0.1
+polyColor: ffffff00
+
+requirements:[
+iron/50
+aluminum/35
+metaglass/25 
+]
+category: turret
