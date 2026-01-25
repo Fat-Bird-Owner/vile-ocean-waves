@@ -1,12 +1,13 @@
 type: Prop
 instantDeconstruct: false
 alwaysReplace: false
-buildTime: 15
+buildTime: 35
 layer: 0.1
 drawTeamOverlay: false
 
 hasShadow: false
 cacheLayer: normal
+hoverable: false
 variants: 2
 destructible: true
 health: 45
