@@ -1,0 +1,10 @@
+type: DuctJunction
+
+requirements:[
+iron/6
+aluminum/4
+]
+
+squareSprite: false
+transparentColor: 88888855
+research: transport-pylon
