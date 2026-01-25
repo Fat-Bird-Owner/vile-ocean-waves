@@ -1,6 +1,8 @@
 type: Floor
 name: Trench
 
+description: "Placeable Tile, Greatly decrease damage taken by whatever is on it also applies to the enemy."
+
 speedMultiplier: 0.75
 dragMultiplier: 1.25
 statusDuration: 5
