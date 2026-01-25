@@ -1,6 +1,7 @@
 type: UnitCargoLoader
 unitType: point-bullet
 name: Volt
+health: 450
 
 size: 2
 unitBuildTime: 180
