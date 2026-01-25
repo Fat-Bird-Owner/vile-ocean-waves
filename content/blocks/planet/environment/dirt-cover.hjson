@@ -7,3 +7,6 @@ layer: 0.1
 hasShadow: false
 cacheLayer: normal
 variants: 2
+destructible: true
+health: 45
+underBullets: true
