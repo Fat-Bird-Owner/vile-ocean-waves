@@ -1,0 +1,21 @@
+type: flying
+name: Eruption
+flying: true
+circleTarget: true
+
+health: 105
+speed: 2.5
+
+outlineColor: 414141
+engines:[
+{
+y: -3
+x: 0.875
+radius: 1.25
+}
+{
+y: -3
+x: -0.875
+radius: 1.25
+}
+]
