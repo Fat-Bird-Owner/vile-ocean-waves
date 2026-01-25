@@ -19,7 +19,7 @@ electra/0.125
  
 }
 
-configurable: false
+configurable: true
 plans:[
 {
 unit: journey
