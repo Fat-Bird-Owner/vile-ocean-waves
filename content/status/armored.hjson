@@ -3,7 +3,7 @@ damageMultiplier: 0.95
 dragMultiplier: 1.15
 speedMultiplier: 0.85
 
-permanent: true
+# permanent: true
 
 affinities:[blasted]
 
