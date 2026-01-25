@@ -11,7 +11,7 @@ category: effect
 teamAlpha: 0
 shots: 1
 drawSoftShadow: false
-cacheLayer: water
+cacheLayer: walls
 
 bullet:{
 type: ExplosionBulletType
