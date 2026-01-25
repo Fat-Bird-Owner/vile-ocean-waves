@@ -1,8 +1,9 @@
 type: Prop
 instantDeconstruct: false
-alwaysReplace: true
+alwaysReplace: false
 buildTime: 25
 layer: 0.1
+drawTeamOverlay: false
 
 hasShadow: false
 cacheLayer: normal
