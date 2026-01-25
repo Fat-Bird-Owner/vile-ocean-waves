@@ -7,6 +7,7 @@ rotateSpeed: 4.5
 
 weapons:[
 {
+name: volt
 reload: 15
 type: PointDefenseBulletWeapon
 x: 0
