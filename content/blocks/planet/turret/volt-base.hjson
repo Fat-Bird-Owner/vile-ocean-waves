@@ -2,8 +2,16 @@ type: UnitCargoLoader
 unitType: point-bullet
 name: Volt
 
-unitBuildTime: 0.1
+size: 2
+unitBuildTime: 180
 polyColor: ffffff00
+
+consumes:{
+power: 1.75
+liquids:[
+electra/0.16667
+]
+}
 
 requirements:[
 iron/50
