@@ -1,0 +1,29 @@
+type: PowerTurret
+name: Unearth Pounder
+size: 2
+range: 80
+
+requirements:[
+aluminum/35
+iron/25
+]
+category: effect
+  
+consumes:{
+power: 3.5
+}
+rotates: false
+shootCone: 180
+rotateSpeed: 0
+
+shootType:{
+type: EmptyBulletType
+splashDamage: 7.5
+splashDamageRadius: 80
+hitEffect:{
+type: WaveEffect
+sizeTo: 80
+}
+despawnHit: true
+
+}
