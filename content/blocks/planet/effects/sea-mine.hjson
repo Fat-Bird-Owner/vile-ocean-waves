@@ -8,14 +8,16 @@ iron/15
 aluminum/25
 ]
 category: effect
-  
+teamAlpha: 0
+shots: 1
+
 bullet:{
 type: ExplosionBulletType
 splashDamage: 6.5
 pierceArmor: false
 tendrils: 0
 length: 0
-splashDamageRadius: 12
+splashDamageRadius: 36
 scaledSplashDamage: true
 hitEffect: flakExplosion
 despawnHit: true
