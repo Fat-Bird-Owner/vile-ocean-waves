@@ -24,6 +24,9 @@ light
 iron
 aluminum
 
+# internal units
+point-bullet
+
 # liquids
 electra
 
@@ -42,6 +45,7 @@ speed-pylon
 
 # turret
 automate
+volt-base
 
 # crafting
 electra-mixer
