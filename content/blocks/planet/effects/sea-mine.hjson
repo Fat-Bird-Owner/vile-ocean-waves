@@ -11,7 +11,8 @@ category: effect
   
 bullet:{
 type: ExplosionBulletType
-splashDamage: 65
+splashDamage: 25
+pierceArmor: false
 tendrils: 0
 length: 0
 splashDamageRadius: 24
