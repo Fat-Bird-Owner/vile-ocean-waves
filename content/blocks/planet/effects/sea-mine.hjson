@@ -1,0 +1,20 @@
+type: ShockMine
+health: 95
+name: Sea Mine
+research: automate
+
+requirements:[
+iron/15
+aluminum/25
+]
+category: effect
+  
+bullet:{
+type: ExplosionBulletType
+splashDamage: 95
+splashDamageRadius: 24
+hitEffect: flakExplosion
+despawnHit: true
+impact: true
+knockBack: 17.5
+}
