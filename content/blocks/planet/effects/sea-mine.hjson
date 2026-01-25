@@ -11,8 +11,11 @@ category: effect
   
 bullet:{
 type: ExplosionBulletType
-splashDamage: 95
+splashDamage: 65
+tendrils: 0
+length: 0
 splashDamageRadius: 24
+scaledSplashDamage: true
 hitEffect: flakExplosion
 despawnHit: true
 impact: true
