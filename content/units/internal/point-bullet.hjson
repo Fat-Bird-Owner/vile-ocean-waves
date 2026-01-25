@@ -4,12 +4,14 @@ hittable: false
 targetable: false
 hoverable: false
 range: 175
-rotateSpeed: 4.5
+rotateSpeed: 0
+drawCell: false
+drawBody: false
 
 weapons:[
 {
 name: volt
-reload: 15
+reload: 7.5
 type: PointDefenseBulletWeapon
 x: 0
 y: 0
@@ -22,6 +24,7 @@ lifetime: 30
 width: 7.5
 height: 15
 trailWidth: 1.5
+trailLength: 10
 
 hitSize: 8
 frontColor: ffffff
