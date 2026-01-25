@@ -1,9 +1,17 @@
-type: Floor
+type: OverlayFloor
 name: Trench
 
 speedMultiplier: 0.75
 dragMultiplier: 1.25
 statusDuration: 3
+
+breakable: true
+destructible: true
+drawTeamOverlay: false
+solid: false
+
+needsSurface: true
+isLiquid: true
 
 drawEdgeIn: false
 drawEdgeOut: false
