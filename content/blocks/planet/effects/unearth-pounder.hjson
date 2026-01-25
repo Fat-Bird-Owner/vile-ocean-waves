@@ -12,7 +12,7 @@ category: effect
 consumes:{
 power: 3.5
 }
-rotates: false
+rotate: false
 shootCone: 180
 rotateSpeed: 0
 
@@ -20,6 +20,9 @@ shootType:{
 type: EmptyBulletType
 splashDamage: 7.5
 splashDamageRadius: 80
+hitUnder: true
+instantDisappear: true
+
 hitEffect:{
 type: WaveEffect
 sizeTo: 80
