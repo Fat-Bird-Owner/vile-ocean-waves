@@ -6,7 +6,7 @@ category: turret
 size: 2
 reload: 60
 range: 125
-rotateSpeed: 4.5
+rotateSpeed: 2.5
 
 requirements:[
 iron/35
@@ -36,7 +36,8 @@ firstShotDelay: 35
 shotDelay: 1.15
 }
 inaccuracy: 15
-maxAmmo: 4
+maxAmmo: 6
+ammoPerShot: 2
 
 ammoTypes:{
 iron:{
