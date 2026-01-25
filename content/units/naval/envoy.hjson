@@ -7,7 +7,7 @@ Though more expensive, slower and does less damage to buildings, Should be used 
 
 armor: 12.5
 health: 335
-speed: 0.75
+speed: 0.65
 hitSize: 18
 omniMovement: false
 outlineColor: 3d3e40
