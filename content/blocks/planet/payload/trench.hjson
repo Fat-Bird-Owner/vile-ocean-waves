@@ -1,0 +1,17 @@
+type: Floor
+name: Trench
+
+speedMultiplier: 0.75
+dragMultiplier: 1.25
+statusDuration: 3
+
+drawEdgeIn: false
+drawEdgeOut: false
+  
+category: units
+status: armored
+buildVisibility: shown
+requirements:[
+iron/8
+aluminum/6
+]
