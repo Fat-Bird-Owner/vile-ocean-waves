@@ -4,7 +4,7 @@ name: Trench
 speedMultiplier: 0.75
 dragMultiplier: 1.25
 statusDuration: 5
-
+damageTaken: 1
 variants: 0
 
 breakable: true
