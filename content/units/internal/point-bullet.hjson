@@ -2,7 +2,8 @@ type: tether
 flying: false
 hittable: false
 targetable: false
-range: 150
+hoverable: false
+range: 175
 rotateSpeed: 4.5
 
 weapons:[
@@ -18,6 +19,14 @@ bullet:{
 type: InterceptorBulletType
 speed: 5
 lifetime: 30
+width: 7.5
+height: 15
+trailWidth: 1.5
+
+hitSize: 8
+frontColor: ffffff
+backColor: ffffff
+trailColor: 3495eb99
 }
   
 }
