@@ -11,14 +11,15 @@ category: effect
   
 bullet:{
 type: ExplosionBulletType
-splashDamage: 25
+splashDamage: 6.5
 pierceArmor: false
 tendrils: 0
 length: 0
-splashDamageRadius: 24
+splashDamageRadius: 12
 scaledSplashDamage: true
 hitEffect: flakExplosion
 despawnHit: true
 impact: true
 knockBack: 17.5
+status: slow
 }
