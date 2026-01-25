@@ -15,7 +15,7 @@ power: 3.5
 rotate: false
 shootCone: 180
 reload: 60
-alwaysShooting: false
+alwayShooting: false
 rotateSpeed: 0
 
 shootType:{
