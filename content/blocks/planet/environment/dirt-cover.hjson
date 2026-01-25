@@ -1,7 +1,7 @@
 type: Prop
 instantDeconstruct: false
 alwaysReplace: false
-buildTime: 25
+buildTime: 15
 layer: 0.1
 drawTeamOverlay: false
 
