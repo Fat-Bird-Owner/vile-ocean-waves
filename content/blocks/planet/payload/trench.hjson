@@ -9,15 +9,19 @@ breakable: true
 destructible: true
 drawTeamOverlay: false
 solid: false
+update: true
 
 needsSurface: true
 isLiquid: true
 
+drawSoftShadow: false
+cacheLayer: normal
 drawEdgeIn: false
 drawEdgeOut: false
   
 category: units
 status: armored
+buildTime: 30
 buildVisibility: shown
 requirements:[
 iron/8
