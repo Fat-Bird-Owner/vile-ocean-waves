@@ -32,7 +32,11 @@ electra
 
 # environment
 iron-ore
-aluminum
+aluminum-ore
+dirt-cover
+moss-stone
+forest-stone
+forest-boulder
 
 # production
 tension-drill
@@ -49,6 +53,7 @@ volt-base
 
 # crafting
 electra-mixer
+fuel-extractor
 
 # power
 current-panel
@@ -69,5 +74,6 @@ besualia
 # units
 overseer
 journey
+envoy
 ]
 
