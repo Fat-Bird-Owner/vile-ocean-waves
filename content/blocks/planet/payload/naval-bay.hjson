@@ -31,4 +31,17 @@ aluminum/25
 ]
 
 }
+// spacing
+{
+unit: envoy
+time: 3900
+
+requirements:[
+iron/105
+aluminum/50
+metaglass/35
+]
+
+}
+// spacing
 ]
