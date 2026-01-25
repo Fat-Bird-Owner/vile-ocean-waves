@@ -3,7 +3,7 @@ name: Trench
 
 speedMultiplier: 0.75
 dragMultiplier: 1.25
-statusDuration: 3
+statusDuration: 5
 
 variants: 0
 
