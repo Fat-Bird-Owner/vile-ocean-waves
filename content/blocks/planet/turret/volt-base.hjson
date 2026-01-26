@@ -2,7 +2,7 @@ type: UnitCargoLoader
 unitType: point-bullet
 name: Volt
 health: 450
-description: "Intercepts enemy bullets, Requires electra and power to be built."
+description: "Intercepts enemy bullets, Requires electra and power to be built. Has a limit based on core cap."
 size: 2
 unitBuildTime: 180
 polyColor: ffffff00
