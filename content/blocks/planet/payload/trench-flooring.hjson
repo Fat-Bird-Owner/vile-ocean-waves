@@ -1,7 +1,10 @@
-type: Wall
+type: UnitCargoLoader
 name: Trench
 category: units
+unitType: armor-point
+unitBuildTime: 0.1
 
+polyColor: ffffff00
 solid: false
 drawSoftShadow: false
 
