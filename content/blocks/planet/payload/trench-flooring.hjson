@@ -1,6 +1,6 @@
 type: Wall
 name: Trench
-category: payload
+category: units
 
 solid: false
 drawSoftShadow: false
