@@ -1,0 +1,14 @@
+healthMultiplier: 0.5
+permanent: true
+name: Shredded
+description: "The unit has decently taken massive hull damage, Durability is greatly decreased."
+
+effect:{
+type: ParticleEffect
+length: 0
+sizeFrom: 2
+sizeTo: 0
+colorFrom: fc7303
+colorTo: fc7303
+lifetime: 35
+}
