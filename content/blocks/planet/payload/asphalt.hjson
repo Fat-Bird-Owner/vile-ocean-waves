@@ -1,0 +1,15 @@
+type: UnitCargoLoader
+name: Asphalt
+category: units
+unitType: speed-point
+unitBuildTime: 0.1
+
+polyColor: ffffff00
+solid: false
+drawSoftShadow: false
+underBullets: true
+
+requirements:[
+iron/4
+aluminum/10
+]
