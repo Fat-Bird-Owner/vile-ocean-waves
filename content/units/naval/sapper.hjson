@@ -1,6 +1,7 @@
 type: naval
 hitSize: 10
 health: 95
+description: "Support class naval unit able to sap nearby mines and has a healing beam weapon."
 armor: 6.5
 speed: 0.85
 omniMovement: false
