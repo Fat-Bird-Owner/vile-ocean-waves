@@ -10,6 +10,7 @@ speed: 0
 range: 175
 rotateSpeed: 0
 drawCell: false
+outlineColor: 515151
 drawBody: false
 
 weapons:[
