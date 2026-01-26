@@ -6,13 +6,14 @@ armor: 6.5
 speed: 0.85
 omniMovement: false
 rotateSpeed: 3.5
+outlineColor: 515151
 
 immunities:[shredded]
 
 weapons:[
 {
 type: RepairBeamWeapon
-name: sapper-weapon
+name: sapper-healing
 x: 0
 y: 1.5
 repairSpeed: 2.5
