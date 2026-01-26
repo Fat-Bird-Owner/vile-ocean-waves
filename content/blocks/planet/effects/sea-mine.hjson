@@ -26,5 +26,5 @@ hitEffect: flakExplosion
 despawnHit: true
 impact: true
 knockBack: 17.5
-status: slow
+status: shredded
 }
