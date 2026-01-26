@@ -3,6 +3,10 @@ flying: false
 hittable: false
 targetable: false
 hoverable: false
+playerControllable: false
+logicControllable: false
+drawMiniMap: false
+speed: 0
 range: 175
 rotateSpeed: 0
 drawCell: false
@@ -13,13 +17,14 @@ weapons:[
 name: volt
 reload: 7.5
 type: PointDefenseBulletWeapon
+shootSound: shootSpectre
 x: 0
 y: 0
 mirror: false
 
 bullet:{
 type: InterceptorBulletType
-speed: 5
+speed: 6.5
 lifetime: 30
 width: 7.5
 height: 15
@@ -29,7 +34,7 @@ trailLength: 10
 hitSize: 8
 frontColor: ffffff
 backColor: ffffff
-trailColor: 3495eb99
+trailColor: a6ccf5
 }
   
 }
