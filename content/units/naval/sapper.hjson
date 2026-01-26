@@ -15,7 +15,8 @@ weapons:[
 type: RepairBeamWeapon
 name: sapper-healing
 x: 0
-y: 1.5
+y: 0
+miror: false
 repairSpeed: 2.5
 laserColor: 5d9fcf
 
@@ -35,9 +36,10 @@ mirror: false
 
 bullet:{
 type: EmptyBulletType
-instandDisappear: true
+instantDisappear: true
 splashDamage: 18
 splashDamageRadius: 10
+shootEffect: none
 despawnHit: true
 hitEffect: none
 hitSound: none
