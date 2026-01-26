@@ -12,7 +12,7 @@ mesh: [
 	color2: 703923
     persistence: 6
     octaves: 3
-	scale: 1.5
+	scale: 0.5
 }
 {
     //ground and acid
@@ -25,7 +25,7 @@ mesh: [
     #color2: 4a9c27
     persistence: 6
     octaves: 3
-	scale: 1.5
+	scale: 0.5
 	mag: 0.595
 }
 {
