@@ -1,0 +1,10 @@
+type: Wall
+name: Trench
+category: payload
+
+solid: false
+
+requirements:[
+iron/6
+aluminum/4
+]
