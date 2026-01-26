@@ -30,6 +30,17 @@ width: 7.5
 height: 15
 trailWidth: 1.5
 trailLength: 10
+scaleLife: false
+
+parts:[
+{
+type: ShapePart
+hollow: true
+color: a6ccf5
+radius: 4
+stroke: 3
+}
+]
 
 hitSize: 8
 frontColor: ffffff
