@@ -67,6 +67,8 @@ naval-bay
 
 # defense
 silicon-barrier
+trench
+trench-flooring
 
 # planets
 besualia
