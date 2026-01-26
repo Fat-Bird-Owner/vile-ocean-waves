@@ -1,0 +1,23 @@
+type: naval
+hitSize: 10
+speed: 0.85
+omniMovement: false
+rotateSpeed: 3.5
+
+weapons:[
+{
+reload: 2.5
+shootSound: none
+shootEffect: none
+smokeEffect: none
+
+bullet:{
+type: EmptyBulletType
+instandDisappear: true
+splashDamage: 18
+splashDamageRadius: 15
+despawnHit: true
+}
+  
+}
+]
