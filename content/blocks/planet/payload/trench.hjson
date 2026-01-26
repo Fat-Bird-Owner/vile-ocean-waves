@@ -22,7 +22,8 @@ drawSoftShadow: false
 cacheLayer: normal
 drawEdgeIn: false
 drawEdgeOut: false
-  
+
+buildVisibility: sandboxOnly
 category: units
 status: armored
 buildTime: 30
