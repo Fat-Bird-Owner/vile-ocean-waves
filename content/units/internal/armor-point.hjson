@@ -1,5 +1,6 @@
 type: tether
 physics: false
+hoverable: false
 drag: 1000
 flying: false
 
