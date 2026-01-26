@@ -3,6 +3,7 @@ name: Trench
 category: payload
 
 solid: false
+drawSoftShadow: false
 
 requirements:[
 iron/6
