@@ -6,7 +6,12 @@ flying: false
 
 drawBody: false
 drawCell: false
+drawSoftShadow: false
 
+isEnemy: false
+useUnitCap: false
+createWreck: false
+allowedInPayloads: false
 killable: false
 hittable: false
 
