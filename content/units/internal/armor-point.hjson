@@ -1,0 +1,21 @@
+type: tether
+physics: false
+drag: 1000
+flying: false
+
+drawBody: false
+drawCell: false
+
+killable: false
+hittable: false
+
+abilities:[
+{
+type: StatusFieldAbility
+activeEffect: none
+effect: armored
+duration: 10
+range: 4
+reload: 8.5
+}
+]
