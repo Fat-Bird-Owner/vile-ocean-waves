@@ -25,52 +25,32 @@ rotate: true
 rotateSpeed: 6
 mirror: false
 name: envoy-weapon
-reload: 60
-inaccuracy: 7.5
+reload: 300
+inaccuracy: 0
 
 shoot:{
-shots: 3
-shotDelay: 8
+firstShotDelay: 60
 }
+
+continuous: true
+alwaysContinuous: true
 
 bullet:{
-type: BasicBulletType
-shootSound: unitExplode1
-hitSound: explosionDull
-despawnHit: true
-hitEffect: explosion
-buildingDamageMultiplier: 0.75
+type: ContinuousLaserBulletType
+damage: 1.25
+pierceCap: 0
+colors:[addcf099,addcf088,addcf066,addcf044,addcf022]
+length: 80
+width: 12
 
-splashDamage: 5
-splashDamageRadius: 16
-homingPower: 0.025
-speed: 4
-lifetime: 90
-
-trailWidth: 2.5
-trailLength: 8
-width: 12.5
-height: 15
-
-fragRandomSpread: 0
+fragBullets: 1
 fragBullet:{
-type: SapBulletType
-color: addcf099
-damage: 5
-pierceArmor: true
-lifesteal: 1
-buildingDamageMultiplier: 0.65
+type: FireBulletType
 }
 
-frontColor: ffffff
-backColor: ffffff
-trailColor: addcf099
-lifesteal: 0.25
-
-weaveScale: 3
-weaveMag: 1.25
-
 }
+
+
 
 }
 ]
