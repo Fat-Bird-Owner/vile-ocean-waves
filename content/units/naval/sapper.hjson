@@ -8,8 +8,19 @@ speed: 0.85
 omniMovement: false
 rotateSpeed: 3.5
 outlineColor: 515151
-
+healColor: 626262
 immunities:[shredded]
+
+abilities:[
+{
+type: RepairFieldAbility
+range: 0
+reload: 60
+healPercent: 3.5
+activeEffect: none
+sound: none
+}
+]
 
 weapons:[
 {
@@ -32,7 +43,7 @@ shootSound: none
 shootEffect: none
 smokeEffect: none
 x: 0
-alwayShooting: true
+alwaysShooting: true
 y: 5
 mirror: false
 
