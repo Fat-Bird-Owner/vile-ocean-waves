@@ -1,0 +1,34 @@
+type: GenericCrafter
+name: Transtate Centrifudge
+size: 2
+
+requirements:[
+iron/125
+aluminum/85
+]
+
+consumes:{
+power: 2.5
+liquids:[
+oil/0.16667
+]}
+
+outputItem: coal/5
+category: crafting
+
+drawer:{
+type: MultiEffect
+drawers:[
+{
+type: DrawDefault
+}
+{
+type: DrawParticles
+particleLife: 180
+color: 515151
+reverse: true
+particles: 7
+alpha: 0
+}
+]
+}
