@@ -1,0 +1,48 @@
+type: naval
+name: "Gunship-Genesis"
+description: "
+basualian tech, unarmored, high durability gunship.
+"
+
+armor: 0
+health: 200
+speed: 0.65
+hitSize: 14
+omniMovement: false
+outlineColor: 515151
+
+weapons:[
+{
+x: 0
+y: 5
+mirror: false
+rotate: true
+rotateSpeed:6
+name: gs-genesis-weapon
+reload: 30
+
+bullet:{
+type: BasicBulletType
+shootSound: unitExplode1
+hitSound: explosionDull
+despawnHit: true
+hitEffect: explosion
+
+splashDamage: 10
+splashDamageRadius: 16
+speed: 4
+lifetime: 45
+
+trailWidth: 1.5
+trailLength: 8
+width: 7.5
+height: 15
+
+frontColor: ffffff
+backColor: ffffff
+trailColor: 565656
+
+}
+
+}
+]
