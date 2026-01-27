@@ -23,19 +23,25 @@ y: -3
 rotate: true
 rotateSpeed: 4.5
 name: journey-weapon
-reload: 30
+reload: 60
+
+shoot:{
+shots: 3
+shotDelay: 10
+}
 
 bullet:{
 type: BasicBulletType
 shootSound: unitExplode1
-hitSound: explosionDull
+hitSound: explosion
 despawnHit: true
 hitEffect: explosion
+hitShake: 3.5
 
-splashDamage: 12.5
+splashDamage: 7.5
 splashDamageRadius: 16
-speed: 4
-lifetime: 45
+speed: 6
+lifetime: 30
 
 trailWidth: 1.5
 trailLength: 8
@@ -45,9 +51,6 @@ height: 15
 frontColor: ffffff
 backColor: ffffff
 trailColor: addcf099
-
-weaveScale: 2.5
-weaveMag: 2
 
 }
 
