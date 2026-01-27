@@ -32,8 +32,8 @@ shotDelay: 10
 
 bullet:{
 type: BasicBulletType
-shootSound: unitExplode1
-hitSound: explosion
+shootSound: shootScepter
+hitSound: explosionDull
 despawnHit: true
 hitEffect: explosion
 hitShake: 3.5
@@ -43,9 +43,9 @@ splashDamageRadius: 16
 speed: 6
 lifetime: 30
 
-trailWidth: 1.5
+trailWidth: 0.5
 trailLength: 8
-width: 7.5
+width: 2.5
 height: 15
 
 frontColor: ffffff
