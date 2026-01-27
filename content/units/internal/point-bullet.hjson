@@ -34,6 +34,7 @@ trailLength: 10
 scaleLife: false
 damage: 8.5
 
+/*
 parts:[
 {
 type: ShapePart
@@ -44,6 +45,7 @@ stroke: 0.75
 sides: 30
 }
 ]
+*/
 
 hitSize: 8
 frontColor: ffffff
