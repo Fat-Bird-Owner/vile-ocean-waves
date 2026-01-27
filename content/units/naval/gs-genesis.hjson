@@ -17,9 +17,10 @@ x: 0
 y: 5
 mirror: false
 rotate: true
-rotateSpeed:6
-name: gs-genesis-weapon
+rotateSpeed: 6
+name: gs-genesis-gun
 reload: 30
+shootSound: shootScepter
 
 bullet:{
 type: BasicBulletType
@@ -31,7 +32,8 @@ hitEffect: explosion
 splashDamage: 10
 splashDamageRadius: 16
 speed: 4
-lifetime: 45
+lifetime: 60
+hitShake: 2.5
 
 trailWidth: 1.5
 trailLength: 8
