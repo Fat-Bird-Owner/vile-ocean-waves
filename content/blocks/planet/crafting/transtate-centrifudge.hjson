@@ -16,6 +16,8 @@ oil/0.16667
 outputItem: coal/5
 category: crafting
 
+ambientSoundVolume: 0.15
+ambientSound: loopSpray
 drawer:{
 type: DrawMulti
 drawers:[
@@ -27,8 +29,8 @@ type: DrawParticles
 particleLife: 180
 color: 515151
 reverse: true
-particles: 7
-alpha: 1
+particles: 15
+alpha: 0.75
 }
 ]
 }
