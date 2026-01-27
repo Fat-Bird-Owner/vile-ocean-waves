@@ -28,7 +28,7 @@ particleLife: 180
 color: 515151
 reverse: true
 particles: 7
-alpha: 0
+alpha: 1
 }
 ]
 }
