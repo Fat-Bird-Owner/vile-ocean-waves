@@ -17,7 +17,7 @@ outputItem: coal/5
 category: crafting
 
 drawer:{
-type: MultiEffect
+type: DrawMulti
 drawers:[
 {
 type: DrawDefault
