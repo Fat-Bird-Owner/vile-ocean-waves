@@ -86,5 +86,12 @@ scaledSplashDamage: true
 impact: true
 knockBack: 1.25
 }
+aluminum:{
+type: LightningBulletType
+lightningColor: 7f3f3f
+lightningCone: 5
+lightningLength: 7.5
+damage: 4.5
+}
 
 }
