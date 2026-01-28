@@ -24,6 +24,7 @@ drawers:[
 {
 type: DrawRegion
 suffix: "-bottom"
+padding: 1.5
 }
 {
 type: DrawLiquidTile
