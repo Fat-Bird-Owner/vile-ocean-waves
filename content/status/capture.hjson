@@ -1,2 +1,4 @@
 reloadMultiplier: 0.8
 healthMultiplier: 0.95
+name: Capture
+show: true
