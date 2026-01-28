@@ -54,6 +54,7 @@ colorFrom: 616161
 colorTo: 616161
 sizeFrom: 4
 sizeTo: 0
+layer: 30
 }
 
 }
@@ -71,6 +72,7 @@ colorFrom: 616161
 colorTo: 616161
 sizeFrom: 4
 sizeTo: 0
+layer: 30
 }
 
 }
@@ -88,6 +90,7 @@ colorFrom: 616161
 colorTo: 616161
 sizeFrom: 4
 sizeTo: 0
+layer: 30
 }
 
 }
