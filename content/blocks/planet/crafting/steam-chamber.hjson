@@ -15,7 +15,7 @@ type: DrawMulti
 drawers:[
 {
 type: DrawRegion
-suffix: "-suffix"
+suffix: "-bottom"
 }
 {
 type: DrawSoftParticles
