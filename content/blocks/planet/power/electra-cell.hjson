@@ -24,11 +24,11 @@ drawers:[
 {
 type: DrawRegion
 suffix: "-bottom"
-padding: 1.5
 }
 {
 type: DrawLiquidTile
 drawLiquid: electra
+padding: 1.5
 }
 {
 type: DrawDefault
