@@ -46,10 +46,11 @@ type: MoveEffectAbility
 x: 0
 y: -7
 minVelocity: 0.08
-interval: 6
+interval: 2.5
 color: 515151
 effect:{
 type: ParticleEffect
+particles: 1
 colorFrom: 616161
 colorTo: 616161
 sizeFrom: 4
@@ -65,9 +66,10 @@ x: 4
 y: -4.5
 minVelocity: 0.08
 color: 515151
-interval: 6
+interval: 2.5
 effect:{
 type: ParticleEffect
+particles: 1
 colorFrom: 616161
 colorTo: 616161
 sizeFrom: 4
@@ -83,9 +85,10 @@ x: -4
 y: -4.5
 minVelocity: 0.08
 color: 515151
-interval: 6
+interval: 2.5
 effect:{
 type: ParticleEffect
+particles: 1
 colorFrom: 616161
 colorTo: 616161
 sizeFrom: 4
