@@ -23,20 +23,20 @@ engines:[
 {
 x: 0
 y: -7
-radius: 2
+radius: 2.5
 rotation: 90
 }
 {
 x: -4.5
 y: -4.5
-radius: 1.5
-rotation: 135
+radius: 2.25
+rotation: 45
 }
 {
 x: 4.5
 y: -4.5
-radius: 1.5
-rotation: 45
+radius: 2.25
+rotation: 135
 }
 ]
 
