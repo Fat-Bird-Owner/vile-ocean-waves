@@ -46,6 +46,7 @@ type: MoveEffectAbility
 x: 0
 y: -7
 minVelocity: 0.08
+interval: 6
 color: 515151
 effect:{
 type: ParticleEffect
@@ -53,7 +54,6 @@ colorFrom: 616161
 colorTo: 616161
 sizeFrom: 4
 sizeTo: 0
-sizeInterp: slope
 }
 
 }
@@ -64,13 +64,13 @@ x: 4
 y: -4.5
 minVelocity: 0.08
 color: 515151
+interval: 6
 effect:{
 type: ParticleEffect
 colorFrom: 616161
 colorTo: 616161
 sizeFrom: 4
 sizeTo: 0
-sizeInterp: slope
 }
 
 }
@@ -81,13 +81,13 @@ x: -4
 y: -4.5
 minVelocity: 0.08
 color: 515151
+interval: 6
 effect:{
 type: ParticleEffect
 colorFrom: 616161
 colorTo: 616161
 sizeFrom: 4
 sizeTo: 0
-sizeInterp: slope
 }
 
 }
