@@ -90,7 +90,7 @@ aluminum:{
 type: LightningBulletType
 lightningColor: 7f3f3f
 lightningCone: 5
-lightningLength: 7.5
+lightningLength: 60
 damage: 4.5
 layer: 35
 }
