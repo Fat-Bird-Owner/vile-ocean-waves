@@ -92,6 +92,7 @@ lightningColor: 7f3f3f
 lightningCone: 5
 lightningLength: 7.5
 damage: 4.5
+layer: 35
 }
 
 }
