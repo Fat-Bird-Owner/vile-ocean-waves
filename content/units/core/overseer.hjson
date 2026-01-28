@@ -28,15 +28,62 @@ rotation: 90
 }
 {
 x: -4.5
-y: -4.5
-radius: 2.25
+y: -4
+radius: 2
 rotation: 45
 }
 {
-x: 4.5
+x: 4
 y: -4.5
-radius: 2.25
+radius: 2
 rotation: 135
+}
+]
+
+abilities:[
+{
+type: MoveEffectAbility
+x: 0
+y: -7
+minVelocity: 0
+effect:{
+type: ParticleEffect
+colorFrom: 616161
+colorTo: 616161
+sizeFrom: 4
+sizeTo: 0
+}
+
+}
+// 
+{
+type: MoveEffectAbility
+x: 4
+y: -4.5
+minVelocity: 0
+effect:{
+type: ParticleEffect
+colorFrom: 616161
+colorTo: 616161
+sizeFrom: 4
+sizeTo: 0
+}
+
+}
+//
+{
+type: MoveEffectAbility
+x: -4
+y: -4.5
+minVelocity: 0
+effect:{
+type: ParticleEffect
+colorFrom: 616161
+colorTo: 616161
+sizeFrom: 4
+sizeTo: 0
+}
+
 }
 ]
 
