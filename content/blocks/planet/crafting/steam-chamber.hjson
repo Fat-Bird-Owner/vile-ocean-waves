@@ -1,0 +1,37 @@
+type: ConsumeGenerator
+name: Steam Generator
+size: 2
+
+consumes:{
+liquids:[
+water/0.01667
+]
+}
+
+powerProduction: 2.5
+
+drawer:{
+type: DrawMulti
+drawers:[
+{
+type: DrawRegion
+suffix: "-suffix"
+}
+{
+type: DrawSoftParticles
+color: 919191
+color2: 91919100
+particles: 12
+}
+{
+type: DrawDefault
+}
+]
+}
+  
+requirements:[
+iron/65
+aluminum/45
+]
+
+showPlanets: []
