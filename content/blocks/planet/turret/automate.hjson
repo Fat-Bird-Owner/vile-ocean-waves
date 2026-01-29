@@ -1,7 +1,7 @@
 type: ItemTurret
 name: Automate
 
-shootSound: shootDiffuse
+shootSound: none
 category: turret
 size: 2
 reload: 60
@@ -44,6 +44,31 @@ iron:{
 type: BasicBulletType
 speed: 10
 lifetime: 12.5
+
+shootSmoke:{
+type: MultiEffect
+effects:[
+shootSmoke
+{
+type: SoundEffect
+sound: shootDuo	
+minPitch: 1
+maxPitch: 1
+minVolume: 1
+maxVolume: 1
+effect: none
+}
+{
+type: SoundEffect
+sound: shootPayload	
+minPitch: 1
+maxPitch: 1
+minVolume: 1
+maxVolume: 1
+effect: none
+}
+]
+}
 
 trailColor: 7f5f5f55
 frontColor: 7f5f5f
