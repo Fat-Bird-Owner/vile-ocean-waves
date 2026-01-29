@@ -30,25 +30,9 @@ progress: warmup
 ]
 }
 
-shoot:{
-shots: 15
-firstShotDelay: 35
-shotDelay: 1.15
-}
-inaccuracy: 15
-maxAmmo: 6
-ammoPerShot: 2
-
-ammoTypes:{
-iron:{
-type: BasicBulletType
-speed: 10
-lifetime: 12.5
-
-shootSmoke:{
+ejectEffect:{
 type: MultiEffect
 effects:[
-shootSmoke
 {
 type: SoundEffect
 sound: shootDuo	
@@ -69,6 +53,21 @@ effect: none
 }
 ]
 }
+
+shoot:{
+shots: 15
+firstShotDelay: 35
+shotDelay: 1.15
+}
+inaccuracy: 15
+maxAmmo: 6
+ammoPerShot: 2
+
+ammoTypes:{
+iron:{
+type: BasicBulletType
+speed: 10
+lifetime: 12.5
 
 trailColor: 7f5f5f55
 frontColor: 7f5f5f
