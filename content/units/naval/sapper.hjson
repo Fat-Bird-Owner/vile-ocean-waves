@@ -1,0 +1,28 @@
+type: naval
+hitSize: 10
+name: Sapper
+health: 95
+description: "Support class naval unit able to sap nearby mines and has a healing beam weapon."
+armor: 3.5
+speed: 0.85
+omniMovement: false
+rotateSpeed: 3
+outlineColor: 515151
+healColor: 626262
+immunities:[shredded]
+
+abilities:[
+{
+type: EnergyFieldAbility
+range: 0
+reload: 60
+healPercent: 3.5
+range: 40
+damage: 15
+hitUnits: false
+useAmmo: false
+sectors: 25
+color: 78b3eb77
+effectRadius: 0
+}
+]
