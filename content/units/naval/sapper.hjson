@@ -24,9 +24,10 @@ damage: 15
 hitUnits: false
 useAmmo: false
 sectors: 15
-color: 78b3eb88
+color: 78b3eb55
 effectRadius: 0
 maxTargets: 4
 sectorRad: 0.10
+blinkSize: 0
 }
 ]
