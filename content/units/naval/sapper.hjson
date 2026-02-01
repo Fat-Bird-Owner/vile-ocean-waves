@@ -10,6 +10,27 @@ rotateSpeed: 3
 outlineColor: 515151
 healColor: 626262
 immunities:[shredded]
+canBoost: true
+boostMultiplier: 0.3
+
+flyingLayer: 65
+engines:[
+{
+x: 0
+y: -6
+rotation: 90
+}
+{
+x: -5
+y: 0
+rotation: -90
+}
+{
+x: 5
+y: 0
+rotation: 0
+}
+]
 
 abilities:[
 {
