@@ -1,10 +1,13 @@
-type: GenericCrafter
+type: ConsumeGenerator
 size: 2
 health: 1500
-  
+
+consumes:{}
+
 requirements:[]
 category: effect
-  
+powerProduction: 0
+
 drawer:{
 type: DrawMulti
 drawers:[
