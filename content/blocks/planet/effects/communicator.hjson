@@ -1,0 +1,18 @@
+type: GenericCrafter
+size: 2
+health: 1500
+  
+requirements:[]
+category: effect
+  
+drawer:{
+type: DrawMulti
+drawers:[
+{
+type: DrawDefault
+}
+{
+type: DrawPulseShape
+}
+]
+}
