@@ -1,5 +1,6 @@
 name: Progress
 barColor: 3CA370FF
 color: 3CA370
+coolant: false
 
 hidden: true
