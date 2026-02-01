@@ -18,6 +18,7 @@ x: 0
 y: 0.625
 range: 0
 reload: 60
+blinkScl: 0
 healPercent: 3.5
 range: 40
 damage: 15
