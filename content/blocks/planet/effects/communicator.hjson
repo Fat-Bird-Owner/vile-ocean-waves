@@ -1,6 +1,7 @@
 type: ConsumeGenerator
 size: 2
 health: 1500
+name: Communicator
 
 consumes:{}
 
