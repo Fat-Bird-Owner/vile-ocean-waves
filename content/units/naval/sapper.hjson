@@ -46,8 +46,9 @@ reload: 60
 blinkScl: 0
 healPercent: 3.5
 range: 40
+targetAir: false
 damage: 15
-hitUnits: false
+hitUnits: true
 useAmmo: false
 sectors: 36
 color: 78b3eb77
