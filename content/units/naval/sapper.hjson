@@ -14,6 +14,8 @@ immunities:[shredded]
 abilities:[
 {
 type: EnergyFieldAbility
+x: 0
+y: 0.625
 range: 0
 reload: 60
 healPercent: 3.5
