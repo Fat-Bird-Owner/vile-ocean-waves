@@ -36,7 +36,24 @@ radius: 2
 }
 ]
 
+weapons:[{
+reload: 1
+alwaysShooting: true
+
+bullet:{
+type: EmptyBulletType
+InstantDisappear: true
+}
+
+}]
+
 abilities:[
+{
+type: ArmorPlateAbility
+drawPlate: false
+drawShine: true
+healthMultiplier: 0.8
+}
 {
 type: EnergyFieldAbility
 x: 0
