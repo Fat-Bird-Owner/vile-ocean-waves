@@ -10,7 +10,7 @@ rotateSpeed: 3
 outlineColor: 515151
 healColor: 626262
 immunities:[shredded]
-canBoost: true
+canBoost: false
 boostMultiplier: 0.3
 
 engineSize: 0
