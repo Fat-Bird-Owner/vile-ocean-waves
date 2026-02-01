@@ -13,20 +13,21 @@ immunities:[shredded]
 canBoost: true
 boostMultiplier: 0.3
 
+engineSize: 0
 flyingLayer: 65
 engines:[
 {
 x: 0
-y: -6
+y: -8
 rotation: 90
 }
 {
-x: -5
+x: -8
 y: 0
 rotation: -90
 }
 {
-x: 5
+x: 8
 y: 0
 rotation: 0
 }
