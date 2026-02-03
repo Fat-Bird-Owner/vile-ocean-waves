@@ -1,0 +1,23 @@
+type: WallCrafter
+
+drillTime: 120
+
+category: production
+requirements:[
+iron/25
+aluminum/15
+]
+
+consumes:{
+power: 0.25
+liquids:[
+liquid:{
+water/0.0166
+}
+boost: true
+optional: true
+]
+}
+
+attribute: wood
+outputItem: wood
