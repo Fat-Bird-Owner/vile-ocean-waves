@@ -12,7 +12,7 @@ consumes:{
 power: 0.25
 liquids:{
 liquids:[
-water/0.0166
+water/0.01667
 ]
 boost: true
 optional: true
@@ -20,4 +20,4 @@ optional: true
 }
 
 attribute: wood
-outputItem: wood
+output: wood
