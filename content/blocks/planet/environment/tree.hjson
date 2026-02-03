@@ -6,3 +6,7 @@ instantDeconstruct: false
 buildTime: 180
 
 layer: 46
+
+attributes:{
+wood: 1
+}
