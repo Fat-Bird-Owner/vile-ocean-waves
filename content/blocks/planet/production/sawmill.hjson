@@ -1,5 +1,5 @@
 type: WallCrafter
-
+name: Sawmill
 drillTime: 120
 
 category: production
