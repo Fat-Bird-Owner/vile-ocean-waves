@@ -6,6 +6,7 @@ instantDeconstruct: false
 instantBuild: false
 buildTime: 180
 solid: true
+breakable: false
 
 layer: 46
 
