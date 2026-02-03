@@ -11,6 +11,7 @@ rotateSpeed: 2.5
 requirements:[
 iron/35
 aluminum/25
+wood/20
 ]
 outlineColor: 4f4f4f
 
