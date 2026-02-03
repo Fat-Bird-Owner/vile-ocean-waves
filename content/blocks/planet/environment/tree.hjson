@@ -1,9 +1,11 @@
 type: Prop
 variants: 0
 
-forceDark: true
+forceDark: false
 instantDeconstruct: false
+instantBuild: false
 buildTime: 180
+solid: true
 
 layer: 46
 
