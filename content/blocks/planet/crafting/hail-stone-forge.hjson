@@ -1,0 +1,18 @@
+type: GenericCrafting
+size: 3
+name: Hail Stone Forge
+
+health: 850
+
+consumes:{
+items:[iron/5,aluminum/10]
+liquids:[electra/0.16667]
+}
+
+outputItem: hail-stone/5
+craftingTime: 80
+
+requirements:[iron/105,aluminum/85,wood/45]
+category: crafting
+
+shownPlanets:[besualia]
