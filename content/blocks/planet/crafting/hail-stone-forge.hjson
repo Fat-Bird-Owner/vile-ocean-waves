@@ -15,6 +15,9 @@ craftingTime: 80
 requirements:[iron/105,aluminum/85,wood/45]
 category: crafting
 
+research: electra-mixer
+researchCostMultiplier: 0.45
+
 shownPlanets:[besualia]
 drawer:{
 type: DrawMulti
@@ -24,7 +27,7 @@ type: DrawDefault
 }
 {
 type: DrawGlowRegion
-color: 6f6f00
+color: 6f2f00
 }
 ]
 }
