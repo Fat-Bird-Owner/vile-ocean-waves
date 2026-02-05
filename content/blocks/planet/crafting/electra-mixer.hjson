@@ -1,6 +1,6 @@
 type: GenericCrafter
 name: Electra Mixer
-size: 2
+size: 3
 liquidCapacity: 100
 
 category: crafting
