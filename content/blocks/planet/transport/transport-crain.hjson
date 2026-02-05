@@ -4,8 +4,9 @@ size: 2
 
 requirements:[
 aluminum/25
-iron/10
-copper/5
+iron/20
+wood/15
+hail-stone/10
 ]
 shake: 0
 range: 160
