@@ -17,6 +17,7 @@ electra/0.16667
 requirements:[
 iron/50
 aluminum/35
-metaglass/25 
+hail-stone/25 
+wood/40
 ]
 category: turret
