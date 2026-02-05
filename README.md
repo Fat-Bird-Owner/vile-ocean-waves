@@ -1,2 +1,1 @@
-# Mindustry-mod-template-hjson
-copyable
+Meh
