@@ -28,6 +28,7 @@ suffix: "-bottom"
 {
 type: DrawLiquidTile
 drawLiquid: electra
+padding: 1.25
 }
 {
 type: DrawCrucibleFlame
