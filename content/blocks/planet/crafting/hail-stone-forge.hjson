@@ -16,3 +16,15 @@ requirements:[iron/105,aluminum/85,wood/45]
 category: crafting
 
 shownPlanets:[besualia]
+drawer:{
+type: DrawMulti
+drawers:[
+{
+type: DrawDefault
+}
+{
+type: DrawGlowRegion
+color: 6f6f00
+}
+]
+}
