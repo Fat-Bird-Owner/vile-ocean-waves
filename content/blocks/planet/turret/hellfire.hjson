@@ -1,0 +1,23 @@
+type: ItemTurret
+size: 3
+reload: 55
+rotateSpeed: 4.5
+
+category: turret
+requirements:[
+iron/105
+alumin/85
+wood/65
+hail-stone/35
+]
+  
+ammoTypes:{
+hail-stone:{
+type: ShrapnelBulletType
+colorTo: C67A96FF
+serrations: 3
+damage: 65
+impact: true
+knockBack: 5.5
+}
+}
