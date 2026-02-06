@@ -14,7 +14,7 @@ hail-stone/35
 ammoTypes:{
 hail-stone:{
 type: ShrapnelBulletType
-colorTo: C67A96FF
+toColor: C67A96FF
 serrations: 3
 damage: 65
 impact: true
