@@ -6,7 +6,10 @@ description: "
 armor: 4.5
 health: 195
 speed: 0.85
-hitSize: 14
+hitSize: 12.5
+
+immunities:[hail-fire]
+
 omniMovement: false
 outlineColor: 3d3e40
 
@@ -35,18 +38,18 @@ despawnHit: true
 hitEffect: explosion
 hitShake: 3.5
 
-splashDamage: 7.5
-damage: 5.5
+splashDamage: 10
+damage: 12.5
 splashDamageRadius: 16
 speed: 3
-lifetime: 60
-
+lifetime: 90
+homingPower: 0.05
 trailWidth: 1.5
 trailLength: 8
 width: 7.5
 height: 10
 
-weaveScale: 2.5
+weaveScale: 0.5
 weaveMag: 1.5
   
 frontColor: 9c3554
