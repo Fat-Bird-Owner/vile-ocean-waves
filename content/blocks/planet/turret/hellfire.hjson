@@ -1,6 +1,6 @@
 type: ItemTurret
 size: 3
-reload: 35
+reload: 25
 rotateSpeed: 4.5
 
 category: turret
@@ -16,8 +16,22 @@ hail-stone:{
 type: ShrapnelBulletType
 toColor: C67A96FF
 serrations: 3
+maxDamageFraction: 0.15
 damage: 65
 impact: true
 knockBack: 5.5
+
+smokeEffect:{
+type: ParticleEffect
+line: true
+lenFrom: 4
+lenTo: 8
+lifetime: 60
+strpkeFrom: 2
+strokeTo: 0
+colorTo: C67A96FF
+colorFrom: C67A96FF
+}
+
 }
 }
