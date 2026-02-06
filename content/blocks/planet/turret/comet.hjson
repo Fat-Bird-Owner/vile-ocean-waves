@@ -23,18 +23,32 @@ ammoTypes:{
 hail-stone:{
 speed: 4
 lifetime: 60
-type: FlakBulletType
+type: BasicBulletType
 frontColor: d63c60
 backColor: d63c60
 hitEffect: blastExplosion
 despawnHit: true
-explodeRange: 16
-explodeDelay: 6
 splashDamage: 15
 splashDamageRadius: 20
 status: hail-fire
-hitShake: 4.5
+hitShake: 1.5
+layer: 56
 }
+
+aluminum:{
+speed: 4
+lifetime: 60
+layer: 56
+type: BasicBulletType
+frontColor: 7f7f7f
+backColor: 7f7f7f
+hitEffect: blastExplosion
+despawnHit: true
+splashDamage: 8.5
+splashDamageRadius: 20
+hitShake: 1.5
+}
+
 }
 
   
