@@ -1,0 +1,15 @@
+effect:{
+type: ParticleEffect
+colorFrom: f54269
+colorTo: a83d54
+length: 0
+sizeFrom 2.5
+sizeTo: 0l
+layer: 110
+}
+color: a83d54
+healthMultiplier: 0.85
+intervalDamageTime: 20
+intervalDamage: 15
+
+name: Hail Fire
