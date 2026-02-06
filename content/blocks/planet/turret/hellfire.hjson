@@ -2,6 +2,8 @@ type: ItemTurret
 size: 3
 reload: 25
 rotateSpeed: 4.5
+health: 725
+name: Hellfire
 
 shootSound: shootFuse
 category: turret
