@@ -21,6 +21,8 @@ inaccuracy: 7.5
 
 ammoTypes:{
 hail-stone:{
+width: 10
+height: 14
 speed: 4
 lifetime: 60
 type: BasicBulletType
@@ -36,6 +38,8 @@ layer: 56
 }
 
 aluminum:{
+width: 10
+height: 14
 speed: 4
 lifetime: 60
 layer: 56
