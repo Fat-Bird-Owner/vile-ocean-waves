@@ -5,7 +5,7 @@ size: 3
 
 consumes:{
 liquids:[electra/0.16667]
-items:[aluminum/16,raddium/8]
+items:[aluminum/16,radium/8]
 }
 
 requirements:[
@@ -14,7 +14,7 @@ aluminum/185
 wood/145
 hail-stone/125
 exocris/95
-raddium/45
+radium/45
 ]
 
 craftingTime: 300
