@@ -3,6 +3,7 @@ name: Comet
 size: 2
 health: 550
 range: 160
+reload: 36
 
 requirements: [
 iron/75
