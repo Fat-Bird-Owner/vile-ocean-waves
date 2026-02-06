@@ -2,7 +2,7 @@ type: ItemTurret
 name: Comet
 size: 2
 health: 550
-range: 160
+range: 240
 reload: 36
 
 requirements: [
@@ -21,7 +21,7 @@ inaccuracy: 7.5
 
 ammoTypes:{
 hail-stone:{
-speed: 2
+speed: 4
 lifetime: 60
 type: FlakBulletType
 frontColor: d63c60
