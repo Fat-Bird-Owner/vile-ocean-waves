@@ -6,7 +6,7 @@ rotateSpeed: 4.5
 category: turret
 requirements:[
 iron/105
-alumin/85
+aluminum/85
 wood/65
 hail-stone/35
 ]
