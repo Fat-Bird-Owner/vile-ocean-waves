@@ -1,0 +1,37 @@
+type: GenericCrafter
+name: Astraium Smelting Furnace
+category: crafting
+size: 3
+
+consumes:{
+liquids:[electra/0.16667]
+items:[aluminum/16,raddium/8]
+}
+
+requirements:[
+iron/225
+aluminum/185
+wood/145
+hail-stone/125
+exocris/95
+raddium/45
+]
+
+craftingTime: 300
+outputItem: astrabium/4
+
+drawer:{
+type: DrawMulti
+drawers:[
+{
+type: DrawRegion
+suffix: "-botton"
+}
+{
+type: DrawCrucibleFlame
+}
+{
+type: DrawDefault
+}
+]
+}
