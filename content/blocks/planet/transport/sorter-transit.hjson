@@ -1,0 +1,6 @@
+type: Sorter
+name: Sorter Transit
+
+requirements:[iron/3,aluminum/2]
+
+research: overflow-transit
