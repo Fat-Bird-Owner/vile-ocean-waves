@@ -1,0 +1,41 @@
+type: ItemTurret
+name: Ignition
+size: 2
+
+maxAmmo: 10
+range: 300
+
+requirements:[]
+category: turret
+  
+shoot:{
+type: ShootSpread
+spread: 2.1
+shots: 3
+shotDelay: 4.5
+}
+  
+ammoTypes:{
+hail-stone:{
+type: MissileBulletType
+speed: 5
+lifetime: 600
+despawnHit: true
+hitEffect: blastExplosion
+impact: true
+damage: 15
+splashDamage: 10
+knockBack: 6.5
+hitShake: 4.5
+status: hail-fire
+
+frontColor: C67A96FF
+backColor: A45A89FF
+trailColor: 643A57FF
+trailWidth: 1
+trailLength: 10
+  
+homingPower: 0.035
+hitSound: explosionDull
+}
+}
