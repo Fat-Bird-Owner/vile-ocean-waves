@@ -20,6 +20,7 @@ maxDamageFraction: 0.15
 damage: 65
 impact: true
 knockBack: 5.5
+shootEffect: none
 
 smokeEffect:{
 type: ParticleEffect
