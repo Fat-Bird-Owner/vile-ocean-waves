@@ -3,6 +3,7 @@ size: 3
 reload: 25
 rotateSpeed: 4.5
 
+shootSound: shootFuse
 category: turret
 requirements:[
 iron/105
@@ -33,7 +34,8 @@ strpkeFrom: 2
 strokeTo: 0
 colorTo: C67A96FF
 colorFrom: C67A96FF
-cone: 30
+cone: 45
+particles: 15
 }
 
 }
