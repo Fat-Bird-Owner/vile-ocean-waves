@@ -1,6 +1,6 @@
 type: ItemTurret
 size: 3
-reload: 55
+reload: 35
 rotateSpeed: 4.5
 
 category: turret
