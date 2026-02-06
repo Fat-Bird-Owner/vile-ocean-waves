@@ -3,7 +3,7 @@ type: ParticleEffect
 colorFrom: f54269
 colorTo: a83d54
 length: 0
-sizeFrom 2.5
+sizeFrom: 2.5
 sizeTo: 0
 layer: 110
 }
