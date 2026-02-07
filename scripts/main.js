@@ -5,6 +5,13 @@ Planets.gier.visible = true;
 Planets.gier.accessible = true;
 
 // green.color = Color.valueOf("ffd37f");
+Object.keys(Blocks).forEach(function (b) {
+if(Blocks[b] != null) {
+Blocks[b].destructible = true, Blocks[b].buildVisibility = BuildVisibility.shown;
+}});
+
+//quietUnlock
+    
 });
 
 
