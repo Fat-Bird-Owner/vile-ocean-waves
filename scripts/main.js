@@ -12,6 +12,6 @@ Events.on(SchematicCreateEvent, event => {
     Vars.ui.hudfrag.showToast("Schematic Saved.");
 })
 
-Events.on(SectorLaunchEvent, event => {
+Events.on(SectorLaunchLoadoutEvent, event => {
     event.sector.captureWave = 1;
 })
