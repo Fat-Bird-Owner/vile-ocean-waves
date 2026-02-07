@@ -19,7 +19,7 @@ Events.on(SaveLoadEvent, event => {
 
 Object.keys(Blocks).forEach(function (b) {
 if(Blocks[b] != null) {
-Blocks[b].destructible = true, Blocks[b].buildVisibility = BuildVisibility.shown;
+Blocks[b].quietUnlock();
 }});
 
 })
