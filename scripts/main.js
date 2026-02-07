@@ -1,3 +1,4 @@
+require("unlock");
 
 Events.on(ContentInitEvent, e => { 
 // lol
