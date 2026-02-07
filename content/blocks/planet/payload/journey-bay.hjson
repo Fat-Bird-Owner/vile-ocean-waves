@@ -3,6 +3,9 @@ size: 2
 name: Journey Bay
 reload: 5
 itemCapacity: 35
+rotates: false
+rotateSpeed: 0
+
 consumes:{
 liquids:[
 electra/0.16667
@@ -37,7 +40,6 @@ y: 0
 moveRot: 45
 interp: sine
 }
-/*
 {
 layerOffset: 0.1
 progress: charge
@@ -50,6 +52,5 @@ name: "journey"
 color: 00000000
 colorTo: ffffffff
 }
-*/
 ]
 }
