@@ -12,10 +12,6 @@ Events.on(SchematicCreateEvent, event => {
     Vars.ui.hudfrag.showToast("Schematic Saved.");
 })
 
-Events.on(Trigger.importMod, event => {
-    Vars.ui.hudfrag.showToast("Successfully imported.");
-})
-
-Events.on(Trigger.teamCoreDamage, event => {
-Vars.ui.hudfrag.showToast("[red]Core damaged.");
+Events.on(SectorLaunchEvent, event => {
+    event.sector.captureWave = 1;
 })
