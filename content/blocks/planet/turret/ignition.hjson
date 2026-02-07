@@ -1,6 +1,7 @@
 type: ItemTurret
 name: Ignition
 size: 2
+reload: 55
 
 maxAmmo: 10
 range: 300
@@ -10,9 +11,9 @@ category: turret
   
 shoot:{
 type: ShootSpread
-spread: 2.1
+spread: 2.5
 shots: 3
-shotDelay: 4.5
+shotDelay: 6.5
 }
   
 ammoTypes:{
@@ -32,6 +33,7 @@ status: hail-fire
 frontColor: C67A96FF
 backColor: A45A89FF
 trailColor: 643A57FF
+trailEffect: none
 trailWidth: 1
 trailLength: 10
   
