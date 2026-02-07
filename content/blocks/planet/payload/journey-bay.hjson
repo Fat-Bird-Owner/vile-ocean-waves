@@ -5,6 +5,8 @@ reload: 5
 itemCapacity: 35
 rotates: false
 rotateSpeed: 0
+shootCone: 180
+alwaysShooting: true
 
 consumes:{
 liquids:[
