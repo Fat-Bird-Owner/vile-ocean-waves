@@ -7,7 +7,6 @@ Planets.gier.accessible = true;
 // green.color = Color.valueOf("ffd37f");
 
 //quietUnlock
-Blocks.disassembler:quietUnlock();
 });
 
 
