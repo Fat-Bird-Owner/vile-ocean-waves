@@ -4,6 +4,7 @@ reload: 25
 rotateSpeed: 4.5
 health: 725
 name: Hellfire
+maxAmmo: 3
 
 shootSound: shootFuse
 category: turret
