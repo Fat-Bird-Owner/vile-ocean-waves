@@ -1,0 +1,45 @@
+type: PowerTurret
+size: 2
+name: Journey Bay
+reload: 5
+
+consumes:{
+liquids:[
+electra/0.16667
+]
+items:[iron/35,aluminum/25,wood/15]
+}
+
+shoot:{
+firstShotDelay: 1500
+}
+outlineRadius: 0
+  
+drawer:{
+type: DrawTurret
+parts:[
+{
+suffix: "-bottom"
+layerOffset: -0.12
+}
+{
+suffix: "-rotator"
+layerOffset: -0.1
+progress: charge
+x: 0
+y: 0
+moveRot: 45
+interp: sine
+}
+{
+layerOffset: 0.1
+progress: charge
+rotation: 90
+moveRot: -90
+interp: sine
+x: 0
+y: 0
+name: "journey"
+}
+]
+}
