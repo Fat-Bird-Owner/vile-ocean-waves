@@ -12,5 +12,5 @@ Events.on(SchematicCreateEvent, event => {
 
 Events.on(WorldLoadEvent, event => {
     var green = Team.get(4);
-    green.setPalette = Color.valueOf("4d4e58");
+    green.setPalette(Color.valueOf("4d4e58"));
 })
