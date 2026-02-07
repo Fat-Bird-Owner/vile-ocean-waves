@@ -5,6 +5,7 @@ health: 550
 range: 240
 reload: 36
 shootSound: unitCreateBig
+maxAmmo: 5
 
 requirements: [
 iron/75
