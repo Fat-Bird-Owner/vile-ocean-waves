@@ -13,5 +13,5 @@ Events.on(SchematicCreateEvent, event => {
 })
 
 Events.on(SectorLaunchLoadoutEvent, event => {
-   Vars.ui.hudfrag.showToast(event.sector.captureWave);
+   Vars.ui.hudfrag.showToast(event.sector.threat);
 })
