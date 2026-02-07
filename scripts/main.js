@@ -20,6 +20,6 @@ Events.on(PlayEvent, event => {
 Object.keys(Blocks).forEach(function (b) {
 if(Blocks[b] != null) {
 Blocks[b].quietUnlock();
-}});
+}})
 
 })
