@@ -15,7 +15,7 @@ Events.on(SchematicCreateEvent, event => {
     Vars.ui.hudfrag.showToast("Schematic Saved.");
 })
 
-Events.on(SaveLoadEvent, event => {
+Events.on(PlayEvent, event => {
 
 Object.keys(Blocks).forEach(function (b) {
 if(Blocks[b] != null) {
