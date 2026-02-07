@@ -5,10 +5,6 @@ Planets.gier.visible = true;
 Planets.gier.accessible = true;
 
 // green.color = Color.valueOf("ffd37f");
-Object.keys(Blocks).forEach(function (b) {
-if(Blocks[b] != null) {
-Blocks[b].destructible = true, Blocks[b].buildVisibility = BuildVisibility.shown;
-}});
 
 //quietUnlock
     
@@ -19,6 +15,11 @@ Events.on(SchematicCreateEvent, event => {
     Vars.ui.hudfrag.showToast("Schematic Saved.");
 })
 
-Events.on(SectorLaunchLoadoutEvent, event => {
-   event.sector.setName("test");
+Events.on(SaveLoadEvent, event => {
+
+Object.keys(Blocks).forEach(function (b) {
+if(Blocks[b] != null) {
+Blocks[b].destructible = true, Blocks[b].buildVisibility = BuildVisibility.shown;
+}});
+
 })
