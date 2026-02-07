@@ -32,6 +32,12 @@ type: DrawTurret
 basePrefix: "-bottom"
 parts:[
 {
+suffix: "-bottom"
+layerOffset: -0.11
+x: 0
+y: 0
+}
+{
 suffix: "-rotator"
 layerOffset: -0.1
 progress: charge
@@ -40,6 +46,7 @@ y: 0
 moveRot: 45
 interp: sine
 }
+/*
 {
 layerOffset: 0.1
 progress: charge
@@ -52,5 +59,6 @@ name: "journey"
 color: 00000000
 colorTo: ffffffff
 }
+/*
 ]
 }
