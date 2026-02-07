@@ -26,11 +26,8 @@ despawnUnit: journey
 
 drawer:{
 type: DrawTurret
+basePrefix: "-bottom"
 parts:[
-{
-suffix: "-bottom"
-layerOffset: -0.12
-}
 {
 suffix: "-rotator"
 layerOffset: -0.1
@@ -49,6 +46,8 @@ interp: sine
 x: 0
 y: 0
 name: "journey"
+color: 00000000
+colorTo: ffffffff
 }
 ]
 }
