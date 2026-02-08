@@ -14,13 +14,11 @@ Events.on(SchematicCreateEvent, event => {
 Events.on(WorldLoadEvent, event => {
     Team.get(4).setPalette(Color.valueOf("a1d463"));
     Team.get(4).emoji = "[#a1d463][]";
-})
-
-Events.on(SectorLaunchEvent, event => {
 
 const myDialog = new BaseDialog("Dialog Title");    
 myDialog.addCloseButton();
 myDialog.cont.add("Goodbye.");
 myDialog.show();
 
+    
 })
