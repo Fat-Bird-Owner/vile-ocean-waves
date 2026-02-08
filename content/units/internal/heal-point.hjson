@@ -1,0 +1,13 @@
+type: missile
+lifetime: 600
+name: Heal Point
+speed: 0
+drag: 3.75
+hitSize: 6
+
+weapons:[
+{
+type: RepairBeamWeapon
+repairSpeed: 0.85
+}
+]
