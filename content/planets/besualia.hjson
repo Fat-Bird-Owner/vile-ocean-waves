@@ -52,7 +52,7 @@ campaignRuleDefaults: {
 	showSpawns: true
 	sectorInvasion: false
 	legacyLaunchPads: false
-	fog: true
+	fog: false
 }
 
 generator: TantrosPlanetGenerator
