@@ -11,6 +11,10 @@ Events.on(SchematicCreateEvent, event => {
     Vars.ui.hudfrag.showToast("Schematic Saved.");
 })
 
+Events.on(SectorCaptureEvent, event => {
+state.rules.disableWorldProcessors = false;
+})
+
 Events.on(WorldLoadEvent, event => {
     Team.get(4).setPalette(Color.valueOf("77c44b"));
     Team.get(4).emoji = "[#77c44b][]";  
