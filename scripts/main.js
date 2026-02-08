@@ -13,7 +13,7 @@ Events.on(SchematicCreateEvent, event => {
 
 Events.on(SectorCaptureEvent, event => {
 
-    if (event.sector.preset.planet.name != "vow-besualia") return
+    if (event.sector.preset.planet.name != "vow-besualia") return;
     
     Timer.schedule(() => {
     Vars.state.rules.disableWorldProcessors = false;
