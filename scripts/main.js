@@ -14,11 +14,14 @@ Events.on(SchematicCreateEvent, event => {
 
 Events.on(BuildDamageEvent, event => {
 
-    Vars.ui.hudfrag.showToast(event.build.name);
-    Timer.schedule(() => {}, 2);
-    
-    if (event.build.name != "surge-wall") return;
+    Vars.ui.hudfrag.showToast(event.build.block.name);
+    Timer.schedule(() => {
+        
+    if (event.build.block.name != "surge-wall") return;
     event.build.kill();
+    
+    }, 2);
+
 })
 
 Events.on(SectorCaptureEvent, event => {
