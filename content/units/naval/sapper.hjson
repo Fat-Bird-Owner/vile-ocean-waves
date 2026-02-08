@@ -38,6 +38,11 @@ radius: 2
 
 abilities:[
 {
+type: UnitSpawnAbility
+unit: heal-point
+spawnTime: 1800
+}
+{
 type: EnergyFieldAbility
 x: 0
 y: 0.625
