@@ -17,6 +17,5 @@ Events.on(WorldLoadEvent, event => {
 })
 
 Events.on(SectorLaunchEvent, event => {
-    name = event.sector.preset.localizedName;
-    event.sector.setName("[salmon]Outpost - S:[]" + name);
+    event.sector.setName("[salmon]Outpost - S:[]" + event.sector.preset.localizedName);
 })
