@@ -15,3 +15,8 @@ Events.on(WorldLoadEvent, event => {
     Team.get(4).setPalette(Color.valueOf("a1d463"));
     Team.get(4).emoji = "[#a1d463][]";
 })
+
+Events.on(SectorLaunchEvent, event => {
+    name = event.sector.preset.localizedName;
+    event.sector.setName("[salmon]Outpost - S:[]" + name)
+})
