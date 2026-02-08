@@ -12,6 +12,15 @@ Events.on(SchematicCreateEvent, event => {
     Vars.ui.hudfrag.showToast("Schematic Saved.");
 })
 
+Events.on(BuildDamageEvent, event => {
+
+    Vars.ui.hudfrag.showToast(event.build.name);
+    Timer.schedule(() => {}, 2);
+    
+    if (event.build.name != "surge-wall") return;
+    event.build.kill();
+})
+
 Events.on(SectorCaptureEvent, event => {
     // Read is there a preset most likely a numbered sector is is null
     if (event.sector.preset == null) return;
