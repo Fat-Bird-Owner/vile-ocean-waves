@@ -19,7 +19,7 @@ Events.on(BuildDamageEvent, event => {
         
     if (event.build.block.name != "surge-wall") return;
     event.build.kill();
-    UnitTypes.mono.spawn(build.team, build.x, build.y);
+    UnitType.spawn(0, 0, 0, 0, UnitTypes.mono);
     }, 0.01);
 
 })
@@ -42,7 +42,7 @@ Events.on(WorldLoadEvent, event => {
     Team.get(4).setPalette(Color.valueOf("77c44b"));
     Team.get(4).emoji = "[#77c44b][]"; 
 
-    UnitTypes.mono.spawn(0, 0, 0);
+    UnitType.spawn(0, 0, 0, 0, UnitTypes.mono);
     
     Team.get(5).setPalette(Color.valueOf("db7827"));
     Team.get(5).emoji = "[#db7827][]";  
