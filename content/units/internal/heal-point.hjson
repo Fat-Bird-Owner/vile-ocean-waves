@@ -4,14 +4,16 @@ name: Heal Point
 speed: 0
 drag: 3.75
 hitSize: 6
-outlineColor: 5f5f6b
+outlineColor: 3f3f4f
+rotateSpeed: 0
 
 weapons:[
 {
 type: RepairBeamWeapon
 repairSpeed: 0.85
 targetBuildings: false
-targetUnits: false
+targetUnits: true
+beamWidth: 0.75
 
 bullet:{
 maxRange: 40
