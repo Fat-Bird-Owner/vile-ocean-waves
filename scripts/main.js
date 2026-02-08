@@ -17,7 +17,7 @@ Events.on(WorldLoadEvent, event => {
 
 const myDialog = new BaseDialog("Dialog Title");    
 myDialog.addCloseButton();
-myDialog.cont.add("Goodbye.");
+//myDialog.cont.add("Goodbye.");
 myDialog.show();
 
     
