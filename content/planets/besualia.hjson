@@ -55,7 +55,7 @@ campaignRuleDefaults: {
 	fog: true
 }
 
-generator: SerpuloPlanetGenerator
+generator: TantrosPlanetGenerator
 orbitRadius: 50
 sectorSize: 2
 allowLaunchSchematics: false
