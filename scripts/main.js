@@ -17,5 +17,10 @@ Events.on(WorldLoadEvent, event => {
 })
 
 Events.on(SectorLaunchEvent, event => {
-    event.sector.setName("[salmon]Outpost - S:[]" + event.sector.preset.localizedName);
+
+const myDialog = new BaseDialog("Dialog Title");    
+myDialog.addCloseButton();
+myDialog.cont.add("Goodbye.");
+myDialog.show();
+
 })
