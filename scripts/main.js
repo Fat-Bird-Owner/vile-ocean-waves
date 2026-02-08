@@ -11,6 +11,6 @@ Events.on(SchematicCreateEvent, event => {
 })
 
 Events.on(WorldLoadEvent, event => {
-    Team.get(4).setPalette(Color.valueOf("4d4e58"));
-    Team.get(4).emoji = "";
+    Team.get(4).setPalette(Color.valueOf("a1d463"));
+    Team.get(4).emoji = "[#a1d463][]";
 })
