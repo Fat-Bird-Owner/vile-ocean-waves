@@ -19,6 +19,11 @@ Events.on(WorldLoadEvent, event => {
     Team.get(4).setPalette(Color.valueOf("77c44b"));
     Team.get(4).emoji = "[#77c44b][]"; 
 
+    Timer.schedule(() => {
+    Vars.state.rules.disableWorldProcessors = false;
+    Vars.ui.hudfrag.showToast("Pathetic.");
+    }, 0.2);
+    
     Team.get(5).setPalette(Color.valueOf("db7827"));
     Team.get(5).emoji = "[#db7827][]";  
 
