@@ -14,13 +14,13 @@ Events.on(SchematicCreateEvent, event => {
 
 Events.on(BuildDamageEvent, event => {
 
-    Vars.ui.hudfrag.showToast(event.build.block.name);
+    //Vars.ui.hudfrag.showToast(event.build.block.name);
     Timer.schedule(() => {
         
     if (event.build.block.name != "surge-wall") return;
     event.build.kill();
-    
-    }, 2);
+    UnitTypes.mono.spawn(build.team, build.x, build.y);
+    }, 0.01);
 
 })
 
