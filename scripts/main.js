@@ -13,7 +13,7 @@ Events.on(SchematicCreateEvent, event => {
 
 Events.on(SectorCaptureEvent, event => {
     
-    Vars.ui.hudfrag.showToast(event.sector.preset.planet.name);
+    Vars.ui.hudfrag.showToast(event.sector.preset.name);
     if (event.sector.preset.planet.name != "vow-besualia") return;
     
     Timer.schedule(() => {
