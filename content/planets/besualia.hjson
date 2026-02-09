@@ -10,6 +10,8 @@ mesh: [
 	radius: 1.2
 	coct: 2
 	octaves: 10
+	seed: 3
+	persistence: 10
 }
 ]
 /*
