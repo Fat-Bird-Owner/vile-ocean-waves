@@ -5,16 +5,13 @@ Planets.gier.accessible = true;
 //quietUnlock
 });
 
-Events.run(Trigger.postDraw, () => {
-
+Events.run(Trigger.draw, () => {
 
     Vars.world.tiles.each(tile => {
 
         if(tile.build == null) return; // ← important
 
         if(tile.block() == Blocks.battery){
-            let add = 0.2; // add 20% charge
-            tile.build.power.status = Math.min(1, build.power.status + add);
         }
 
     });
