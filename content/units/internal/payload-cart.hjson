@@ -5,3 +5,4 @@ hittable: false
 targetable: false
 name: Payload Cart
 outlineColor: 3f3f4f
+drawCell: false
