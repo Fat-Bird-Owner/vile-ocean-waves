@@ -50,18 +50,14 @@ Events.on(WorldLoadEvent, event => {
     Team.get(5).setPalette(Color.valueOf("db7827"));
     Team.get(5).emoji = "[#db7827][]";  
 
-       Vars.world.tiles.eachTile(tile => {
+    Vars.world.tiles.each(tile => {
 
-        let build = tile.build;
-        if(!build) return;
+        if(tile.build == null) return; // ← important
 
-        if(build.block == Blocks.battery){
-
-            if(build.power){
-                build.power.graph.addPower(2);
-            }
-
+        if(tile.block() == Blocks.battery){
+            tile.build.power.graph.addPower(2);
         }
 
     });
+    
 })
