@@ -1,0 +1,7 @@
+type: tank
+speed: 0.5
+range: 35
+hittable: false
+targetable: false
+name: Payload Cart
+outlineColor: 3f3f4f
