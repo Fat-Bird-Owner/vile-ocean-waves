@@ -2,7 +2,7 @@ Events.on(ContentInitEvent, e => {
 // lol
 Planets.gier.visible = true;
 Planets.gier.accessible = true;
-
+Planets.vow-besualia.meshLoader = () -> new HexMesh(this, 5);
 //quietUnlock
 });
 
