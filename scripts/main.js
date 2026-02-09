@@ -32,7 +32,7 @@ Events.on(SectorCaptureEvent, event => {
     // wait for when after the rule is disabled
     Timer.schedule(() => {
     Vars.state.rules.disableWorldProcessors = false;
-    Vars.ui.hudfrag.showToast("Pathetic.");
+    //Vars.ui.hudfrag.showToast("Pathetic.");
     }, 0.2);
 
 })
