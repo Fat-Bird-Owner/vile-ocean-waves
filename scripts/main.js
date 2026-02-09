@@ -5,6 +5,16 @@ Planets.gier.accessible = true;
 //quietUnlock
 });
 
+Events.run(Trigger.update, () => {
+
+ Vars.world.tiles.each(tile -> {
+    if(tile.block() == Blocks.battery){
+        tile.build.power.graph.addPower(2);
+    }
+});
+
+});
+
 // catch the signal for when schematic is made.
 Events.on(SchematicCreateEvent, event => {
     // You now this
