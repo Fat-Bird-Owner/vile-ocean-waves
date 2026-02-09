@@ -13,8 +13,8 @@ mesh: [
 	octaves: 10
 	seed: 3
 	persistence: 10
-	planet: besualia
 	*/
+	planet: besualia
 }
 ]
 /*
