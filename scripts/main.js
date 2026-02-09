@@ -7,11 +7,20 @@ Planets.gier.accessible = true;
 
 Events.run(Trigger.update, () => {
 
- Vars.world.tiles.each(tile -> {
-    if(tile.block() == Blocks.battery){
-        tile.build.power.graph.addPower(2);
-    }
-});
+    Vars.world.tiles.eachTile(tile => {
+
+        let build = tile.build;
+        if(!build) return;
+
+        if(build.block == Blocks.battery){
+
+            if(build.power){
+                build.power.graph.addPower(2);
+            }
+
+        }
+
+    });
 
 });
 
