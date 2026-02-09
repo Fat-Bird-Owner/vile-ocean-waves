@@ -7,7 +7,6 @@ Planets.gier.accessible = true;
 
 // catch the signal for when schematic is made.
 Events.on(SchematicCreateEvent, event => {
-    // You now this
     Vars.ui.hudfrag.showToast("Schematic Saved.");
 })
 
