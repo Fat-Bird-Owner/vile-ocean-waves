@@ -5,19 +5,6 @@ Planets.gier.accessible = true;
 //quietUnlock
 });
 
-Events.run(Trigger.draw, () => {
-
-    Vars.world.tiles.each(tile => {
-
-        if(tile.build == null) return; // ← important
-
-        if(tile.block() == Blocks.battery){
-        }
-
-    });
-    
-});
-
 // catch the signal for when schematic is made.
 Events.on(SchematicCreateEvent, event => {
     // You now this
