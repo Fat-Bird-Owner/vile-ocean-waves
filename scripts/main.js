@@ -1,1 +1,1 @@
-require("edits");
+require("blocks");
