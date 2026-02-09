@@ -4,7 +4,7 @@ mesh: [
 {
     //ground and acid
     type: NoiseMesh
-	division: 25
+	division: 202
 	color1: 428c56
 	color2: 2e5447
 	radius: 1.2
