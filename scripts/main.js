@@ -7,6 +7,17 @@ Planets.gier.accessible = true;
 
 Events.run(Trigger.update, () => {
 
+
+    Vars.world.tiles.each(tile => {
+
+        if(tile.build == null) return; // ← important
+
+        if(tile.block() == Blocks.battery){
+            tile.build.power.graph.addPower(2);
+        }
+
+    });
+    
 });
 
 // catch the signal for when schematic is made.
@@ -49,15 +60,5 @@ Events.on(WorldLoadEvent, event => {
     
     Team.get(5).setPalette(Color.valueOf("db7827"));
     Team.get(5).emoji = "[#db7827][]";  
-
-    Vars.world.tiles.each(tile => {
-
-        if(tile.build == null) return; // ← important
-
-        if(tile.block() == Blocks.battery){
-            tile.build.power.graph.addPower(2);
-        }
-
-    });
     
 })
