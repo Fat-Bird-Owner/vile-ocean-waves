@@ -17,6 +17,7 @@ Events.on(BuildDamageEvent, event => {
     Timer.schedule(() => {
         
     if (event.build.block.name != "surge-wall") return;
+    
     event.build.kill();
     }, 0.01);
 
@@ -40,6 +41,8 @@ Events.on(SectorCaptureEvent, event => {
 Events.on(WorldLoadEvent, event => {
     Team.get(4).setPalette(Color.valueOf("77c44b"));
     Team.get(4).emoji = "[#77c44b][]"; 
+
+    UnitTypes.mono.spawn(Team.shard,25,25);
     
     Team.get(5).setPalette(Color.valueOf("db7827"));
     Team.get(5).emoji = "[#db7827][]";  
