@@ -3,8 +3,9 @@ alwaysUnlocked: true
 mesh: [
 {
     //ground and acid
-    type: NoiseMesh
-	division: 202
+    type: HexMesh
+	division: 4
+	/*
 	color1: 428c56
 	color2: 2e5447
 	radius: 1.2
@@ -13,6 +14,7 @@ mesh: [
 	seed: 3
 	persistence: 10
 	planet: besualia
+	*/
 }
 ]
 /*
