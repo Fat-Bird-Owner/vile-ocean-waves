@@ -3,8 +3,10 @@ alwaysUnlocked: true
 mesh: [
 {
     //ground and acid
-    type: HexMesh
+    type: NoiseMesh
 	division: 5
+	color1: 428c56
+	color2: 2e5447
 }
 ]
 /*
