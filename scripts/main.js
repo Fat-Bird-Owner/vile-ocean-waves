@@ -26,6 +26,7 @@ Events.on(SectorCaptureEvent, event => {
     // Read is there a preset most likely a numbered sector is is null
     if (event.sector.preset == null) return;
     // if it is a preset find the planet's name
+    Vars.ui.hudfrag.showUnlock(event.sector.preset);
     if (event.sector.preset.planet.name != "vow-besualia") return;
 
     // wait for when after the rule is disabled
