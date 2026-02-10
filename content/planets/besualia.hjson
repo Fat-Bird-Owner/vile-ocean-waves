@@ -64,7 +64,7 @@ campaignRuleDefaults: {
 	fog: false
 }
 
-generator: TantrosPlanetGenerator
+generator: PlanetGenerator
 orbitRadius: 50
 sectorSize: 2
 allowLaunchSchematics: false
