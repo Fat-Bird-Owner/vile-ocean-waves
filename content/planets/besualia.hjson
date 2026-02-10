@@ -17,7 +17,7 @@ mesh: [
 	planet: besualia
 }
 ]
-/*
+
 cloudMesh: [
  {
    type: HexSkyMesh
@@ -55,7 +55,7 @@ cloudMesh: [
    scl: 1.1
    thresh: 0.8
   }
-]*/
+]
 
 campaignRuleDefaults: {
 	showSpawns: true
