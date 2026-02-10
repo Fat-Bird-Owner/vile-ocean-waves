@@ -64,7 +64,7 @@ campaignRuleDefaults: {
 	fog: false
 }
 
-generator: PlanetGenerator
+generator: SerpuloPlanetGenerator
 orbitRadius: 50
 sectorSize: 2
 allowLaunchSchematics: false
