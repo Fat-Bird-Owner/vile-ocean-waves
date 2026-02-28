@@ -98,5 +98,5 @@ Check the Contributors in the Discord server <br> if you wish to know more.
 [Logo]: github/logo.png
 [Banner]: github/banner.jpg
 [Discord]: https://discord.gg/fde2vqaS6p
-[Commits]: https://github.com/Catana791/asthosus/commits/main
+[Commits]: https://github.com/Fat-Bird-Owner/vile-ocean-waves/commits/main/
 [Issues]: https://github.com/Catana791/asthosus/issues
