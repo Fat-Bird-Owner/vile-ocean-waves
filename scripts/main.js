@@ -1,6 +1,6 @@
 Events.on(ClientLoadEvent, e => { 
 
-Vars.ui.showInfoText("[red]Warning![]","[]Gier's world generation is bound to be terrible);
+Vars.ui.showInfoText("[red]Warning![]","[]Gier's world generation is bound to be terrible");
 
 });
 
