@@ -1,8 +1,8 @@
 Events.on(ContentInitEvent, e => { 
-// lol
-Planets.gier.visible = true;
-Planets.gier.accessible = true;
-//quietUnlock
+
+var block = Vars.content.getByName(Block, "");
+
+    
 });
 
 // catch the signal for when schematic is made.
