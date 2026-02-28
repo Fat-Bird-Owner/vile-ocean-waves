@@ -10,7 +10,7 @@ Events.on(SectorLaunchEvent, event => {
     // if it is a preset find the planet's name
     if (event.sector.preset.planet.name != "gier") return;
 
-    Vars.ui.showInfoFade("Map Generated",2);
+    #Vars.ui.showInfoFade("Map Generated",2);
 
 })
 
