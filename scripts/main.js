@@ -1,6 +1,6 @@
 Events.on(ClientLoadEvent, e => { 
 
-Vars.ui.showStartupInfo("Test");
+Vars.ui.showInfoText("[red]Warning![]","[]Gier's world generation is bound to be terrible);
 
 });
 
