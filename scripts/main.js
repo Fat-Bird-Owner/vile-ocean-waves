@@ -1,7 +1,7 @@
 Events.on(ContentInitEvent, e => { 
 
 var block = Vars.content.getByName(Block, "core-clover");
-var node = new TechTree.TechNode(block, Items.copper, ItemStack.empty;);
+var node = new TechTree.TechNode(block, Items.copper, ItemStack.empty);
 
 });
 
