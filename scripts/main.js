@@ -9,9 +9,9 @@ Events.on(GeneratorPressureExplodeEvent, e => {
 
     if (e.build == null) return;
     
-    var bx = e.build.tileX();
-    var by = e.build.tileY();
-    Vars.ui.showInfoToast("explode",2);
+    //var bx = e.build.tileX();
+    //var by = e.build.tileY();
+    Vars.ui.showInfoToast(e.build,2);
 })
 
 Events.on(BuildDamageEvent, event => {
