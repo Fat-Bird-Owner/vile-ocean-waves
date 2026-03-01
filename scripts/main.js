@@ -9,7 +9,20 @@ Vars.ui.showInfoText("[red]Warning![]","[]Gier's world generation is bound to be
 Events.on(GeneratorPressureExplodeEvent, event => {
   // display toast on top of screen when the unit was a player
   if(event.build != null){
-    Vars.ui.hudfrag.showToast("brug");
+  if (event.build.block != Blocks.neoplasiaReactor) return;
+
+    Vars.ui.showInfoToast(event.build.tileX(),2);
+
+    var x = event.build.tileX();
+    var y = event.build.tileY();
+       
+    if (event.build.tile == null) return;
+
+    Timer.schedule(() => {
+    event.build.tile.setBlock(Blocks.coreShard,Team.get(6),1);
+    }, 0.2);
+
+
   }
 })
 
