@@ -5,8 +5,12 @@ Vars.ui.showInfoText("[red]Warning![]","[]Gier's world generation is bound to be
 })
 
 // catch the signal for when schematic is made.
+// listen for the event where a unit is destroyed
 Events.on(GeneratorPressureExplodeEvent, event => {
-Vars.ui.showInfoToast(event.build.tileX());
+  // display toast on top of screen when the unit was a player
+  if(event.build != null){
+    Vars.ui.hudfrag.showToast("Pathetic.");
+  }
 })
 
 Events.on(BuildDamageEvent, event => {
