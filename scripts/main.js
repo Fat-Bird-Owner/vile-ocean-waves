@@ -6,8 +6,8 @@ Vars.ui.showInfoText("[red]Warning![]","[]Gier's world generation is bound to be
 
 // catch the signal for when schematic is made.
 Events.on(GeneratorPressureExplodeEvent, e => {
-    #var bx = e.build.x;
-    #var by = e.build.y;
+    //var bx = e.build.x;
+    //var by = e.build.y;
     Vars.ui.showInfoToast("explode",2);
 })
 
