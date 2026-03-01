@@ -1,0 +1,21 @@
+generateEffectRange: 0.1
+effectChance: 0.225
+generateEffect:{
+type: RadialEffect
+lengthOffset: 11.5
+rotationOffset: 45
+layer: 111
+effect:{
+type: ParticleEffect
+particles: 3
+cone: 40
+sizeFrom: 3
+sizeTo: 6
+lifetime: 90
+colorFrom: 5f5f5f55
+colorTo: 9f9f9f00
+layer: 111
+interp: sineOut
+length: 28
+}
+}
