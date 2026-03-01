@@ -2,16 +2,6 @@ Events.on(ClientLoadEvent, e => {
 
 Vars.ui.showInfoText("[red]Warning![]","[]Gier's world generation is bound to be terrible");
 
-});
-
-Events.on(SectorLaunchEvent, event => {
-    // Read is there a preset most likely a numbered sector is is null
-    if (event.sector.preset == null) return;
-    // if it is a preset find the planet's name
-    if (event.sector.preset.planet.name != "gier") return;
-
-    #Vars.ui.showInfoFade("Map Generated",2);
-
 })
 
 // catch the signal for when schematic is made.
