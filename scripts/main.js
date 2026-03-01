@@ -15,8 +15,10 @@ Events.on(SectorLaunchEvent, event => {
 })
 
 // catch the signal for when schematic is made.
-Events.on(SchematicCreateEvent, event => {
-    Vars.ui.hudfrag.showToast("Schematic Saved.");
+Events.on(GeneratorPressureExplodeEvent, e => {
+    var bx = e.build.x;
+    var by = e.build.y;
+    Vars.ui.showErrorMessage("x: " + bx + " ,y: " + by);
 })
 
 Events.on(BuildDamageEvent, event => {
