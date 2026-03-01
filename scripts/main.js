@@ -18,7 +18,7 @@ Events.on(SectorLaunchEvent, event => {
 Events.on(GeneratorPressureExplodeEvent, e => {
     var bx = e.build.x;
     var by = e.build.y;
-    Vars.ui.showErrorMessage("x: " + bx + " ,y: " + by);
+    Vars.ui.showInfoToast("explode",2);
 })
 
 Events.on(BuildDamageEvent, event => {
