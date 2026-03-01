@@ -9,7 +9,7 @@ Vars.ui.showInfoText("[red]Warning![]","[]Gier's world generation is bound to be
 Events.on(GeneratorPressureExplodeEvent, event => {
   // display toast on top of screen when the unit was a player
   if(event.build != null){
-    Vars.ui.hudfrag.showToast("Pathetic.");
+    Vars.ui.hudfrag.showToast(event.build.tileX());
   }
 })
 
