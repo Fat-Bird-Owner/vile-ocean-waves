@@ -4,12 +4,25 @@ Vars.ui.showInfoText("[red]Warning![]","[]Gier's world generation is bound to be
 
 })
 
-Events.on(PlayerChatEvent, event => {
+Events.on(TapEvent, event => {
 
-if (event.message != null){
+if (event.tile != null){
 
-var string = event.message;
-Vars.ui.showInfoToast(string,1.5);
+var sound = Sounds.click;
+
+if (!sound){
+Vars.ui.showInfoToast("bruh",2);
+return;
+}
+
+var build = event.tile.build;
+var block = event.tile.block();
+
+if (block != Blocks.combustionGenerator) return;
+
+build.handleStack(Items.coal,1,null);
+Fx.dooropenlarge.at(build.x,build.y);
+sound.at(build.x,build.y);
 
 }
 
@@ -40,19 +53,6 @@ var target = Vars.content.getByName(ContentType.block, "neoplasiaReactor");
     }, 0.1);
 
   }
-})
-
-Events.on(BuildDamageEvent, event => {
-
-    //Vars.ui.hudfrag.showToast(event.build.block.name);
-    Timer.schedule(() => {
-        
-    if (event.build.block.name != "surge-wall") return;
-    
-    event.build.kill();
-    UnitTypes.mono.spawn(event.build.team,event.build.x,event.build.y);
-    }, 0.01);
-
 })
 
 Events.on(SectorCaptureEvent, event => {
