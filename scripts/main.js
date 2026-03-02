@@ -4,6 +4,14 @@ Vars.ui.showInfoText("[red]Warning![]","[]Gier's world generation is bound to be
 
 })
 
+Events.on(PlayerChatEvent, event => {
+
+var string = event.message;
+
+Vars.ui.showInfoToast(string,1.5);
+  
+})
+
 // catch the signal for when schematic is made.
 // listen for the event where a unit is destroyed
 Events.on(GeneratorPressureExplodeEvent, event => {
