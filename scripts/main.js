@@ -7,26 +7,26 @@ Vars.ui.showInfoText("[red]Warning![]","[]Gier's world generation is bound to be
 // catch the signal for when schematic is made.
 // listen for the event where a unit is destroyed
 Events.on(GeneratorPressureExplodeEvent, event => {
-  // display toast on top of screen when the unit was a player
-  if(event.build != null){
-  if (event.build.block != Blocks.neoplasiaReactor) return;
+
+// Find entity otherwise return if is then if the block type isnt the target's also return
+
+var target = Vars.content.getByName(ContentType.block, "neoplasiaReactor");
+  
+  if(event.build != null){  
+  if (event.build.block != target) return;
 
     Vars.ui.showInfoToast(event.build.tileX(),2);
 
     var x = event.build.tileX();
     var y = event.build.tileY();
-       
+    var block = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");  
+
     if (event.build.tile == null) return;
-
-    var block = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
-
     if (block == null) return;
     
-    Timer.schedule(() => {
-      
+    Timer.schedule(() => {  
     event.build.tile.setBlock(block,Team.get(4),1);
-    }, 0.2);
-
+    }, 0.1);
 
   }
 })
