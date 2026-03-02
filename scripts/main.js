@@ -19,6 +19,8 @@ Events.on(GeneratorPressureExplodeEvent, event => {
     if (event.build.tile == null) return;
 
     var block = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
+
+    if (block == null) return;
     
     Timer.schedule(() => {
       
