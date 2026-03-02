@@ -6,10 +6,13 @@ Vars.ui.showInfoText("[red]Warning![]","[]Gier's world generation is bound to be
 
 Events.on(PlayerChatEvent, event => {
 
-var string = event.message;
+if (event.message != null){
 
+var string = event.message;
 Vars.ui.showInfoToast(string,1.5);
-  
+
+}
+
 })
 
 // catch the signal for when schematic is made.
