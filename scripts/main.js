@@ -4,25 +4,6 @@ Vars.ui.showInfoText("[red]Warning![]","[]Gier's world generation is bound to be
 
 })
 
-Events.on(TapEvent, event => {
-
-var tile = event.tile;
-
-Vars.ui.showInfoToast("Detect clicks",0.65);
-  
-// If there a block
-if (tile.block() == null) return;
-if (tile.block().name == "combustion-generator"){
-
-var build = tile.build;
-build.handleItem(Items.coal,1);
-
-Vars.ui.showInfoToast("Works fr",0.65);
-  
-}
-  
-})
-
 // catch the signal for when schematic is made.
 // listen for the event where a unit is destroyed
 Events.on(GeneratorPressureExplodeEvent, event => {
@@ -37,8 +18,11 @@ Events.on(GeneratorPressureExplodeEvent, event => {
        
     if (event.build.tile == null) return;
 
+    var block = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
+    
     Timer.schedule(() => {
-    event.build.tile.setBlock(Blocks.coreShard,Team.get(6),1);
+      
+    event.build.tile.setBlock(block,Team.get(4),1);
     }, 0.2);
 
 
