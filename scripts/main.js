@@ -1,23 +1,26 @@
 Events.on(TapEvent, event => {
+    try {
+        const tile = event.tile;
+        if (!tile || !tile.build) return;
 
-if (event.tile != null){
+        const block = tile.block();
+        if (block != Blocks.combustionGenerator) return;
 
-var sound = Sounds.click;
+        const build = tile.build;
 
-if (!sound){
-Vars.ui.showInfoToast("bruh",2);
-return;
-}
+        if (Items.coal && build.handleStack) {
+            build.handleStack(Items.coal, 1, null);
+        }
 
-var build = event.tile.build;
-var block = event.tile.block();
+        if (Fx.dooropenlarge) {
+            Fx.dooropenlarge.at(build.x, build.y);
+        }
 
-if (block != Blocks.combustionGenerator) return;
-
-build.handleStack(Items.coal,1,null);
-Fx.dooropenlarge.at(build.x,build.y);
-sound.at(build.x,build.y);
-
-}
-
-})
+        if (Sounds.click) {
+            Sounds.click.at(build.x, build.y);
+        }
+    } catch (e) {
+        // fails silently on iOS instead of crashing
+        Vars.ui.showInfoToast("iOS safe error: " + e,1);
+    }
+});
