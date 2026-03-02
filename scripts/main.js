@@ -5,7 +5,7 @@ Events.on(TapEvent, event => {
         
         if(Vars.state.updateId == lastUpdate) return;
 
-        lastUpdate = Vars.state.updateId
+        lastUpdate = Vars.state.updateId;
         
         const tile = event.tile;
         if (!tile || !tile.build) return;
