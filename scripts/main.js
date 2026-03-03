@@ -10,7 +10,7 @@ Events.on(TapEvent, event => {
         const tile = event.tile;
         if (!tile || !tile.build) return;
 
-        const target = Blocks.combustionGenerator;
+        const target = Vars.content.getByName(ContentType.block, "gr-button");
         
         const block = tile.block();
         if (block != target) return;
@@ -23,8 +23,8 @@ Events.on(TapEvent, event => {
             build.power.graph.transferPower(pow);
         }
 
-        if (Fx.dooropenlarge) {
-            Fx.dooropenlarge.at(build.x, build.y);
+        if (block.generateEffect) {
+            block.generateEffect.at(build.x, build.y);
         }
 
         if (Sounds.click) {
