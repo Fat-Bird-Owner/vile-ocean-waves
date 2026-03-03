@@ -12,9 +12,7 @@ const dmg = source.damage;
 
 if (dmg) {
 
-const dmghalf = dmg/2;      
-const armre = build.maxHealth - dmghalf;   
-build.setProp(LAccess.maxHealth,armre);
+build.setProp(LAccess.team,0);
 
         if (Fx.generate && Fx) {
             Fx.generate.at(build.x, build.y);
