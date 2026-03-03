@@ -1,7 +1,6 @@
 var lastUpdate = 0
 
 // Power button class
-var lastUpdate = 0
 
 Events.on(TapEvent, event => {
     try {
