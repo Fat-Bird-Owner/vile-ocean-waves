@@ -12,7 +12,7 @@ const dmg = source.damage;
 
 if (dmg) {
 
-build.setProp(LAccess.team,0);
+build.setProp(LAccess.enabled,0);
 
         if (Fx.generate && Fx) {
             Fx.generate.at(build.x, build.y);
