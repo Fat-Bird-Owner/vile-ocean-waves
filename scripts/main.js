@@ -4,7 +4,6 @@ Events.on(TapEvent, event => {
     try {
         
         if(Vars.state.updateId == lastUpdate) return;
-        if(event.tile.build.team != event.player.team) return;
 
         lastUpdate = Vars.state.updateId;
         
@@ -18,6 +17,7 @@ Events.on(TapEvent, event => {
 
         const build = tile.build;
 
+        if(build.team != event.player.team) return;
         if (build.power && build.power.graph) {
             const pow = target.powerProduction * 60;
 
