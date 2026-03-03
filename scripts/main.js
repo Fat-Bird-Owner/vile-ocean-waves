@@ -13,7 +13,7 @@ Events.on(TapEvent, event => {
         const tile = event.tile;
         if (!tile || !tile.build) return;
 
-        const target = Vars.content.getByName(ContentType.block, "silicon");
+        const target = Vars.content.getByName(ContentType.block, "siliconSmelter");
         const effect = Fx.dooropenlarge
 
         const block = tile.block();
