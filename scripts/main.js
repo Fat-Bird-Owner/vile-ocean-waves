@@ -15,7 +15,7 @@ Events.on(TapEvent, event => {
 
         const build = tile.build;
 
-        if (build.power && build.power.grapha) {
+        if (build.power && build.power.graph) {
             build.power.graph.transferPower(15);
         }
 
@@ -28,6 +28,6 @@ Events.on(TapEvent, event => {
         }
     } catch (e) {
         // fails silently on iOS instead of crashing
-        Vars.ui.showInfoToast("iOS safe error: " + e,1);
+        Vars.ui.showInfoToast("error: " + e,1);
     }
 });
