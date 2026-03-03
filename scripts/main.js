@@ -10,7 +10,7 @@ if (!build || !source) return;
 
 const dmg = source.damage;
 
-if (dmg && build.setProp()) {
+if (dmg) {
 
 const armre = build.block.armor - dmg;   
 build.setProp(LAccess.armor,armre);
