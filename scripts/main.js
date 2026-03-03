@@ -15,8 +15,8 @@ Events.on(TapEvent, event => {
 
         const build = tile.build;
 
-        if (Items.coal && build.handleStack) {
-            build.handleStack(Items.coal, 1, null);
+        if (build.power && build.power.grapha) {
+            build.power.graph.transferPower(15);
         }
 
         if (Fx.dooropenlarge) {
