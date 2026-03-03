@@ -1,5 +1,27 @@
 var lastUpdate = 0
 
+Events.on(BuildDamageEvent, event => {
+try {
+
+const source = event.source;
+const build = event.build;
+
+if (!build || !source) return;
+
+const dmg = source.damage;
+
+if (dmg && build.setProp()) {
+
+const armre = build.block.armor - dmg;   
+build.setProp(LAccess.armor,armre);
+}
+    
+} catch(e) {
+Vars.ui.showInfoToast("error: " + e,1);
+}
+
+})
+
 ////////
 Events.on(TapEvent, event => {
     try {
