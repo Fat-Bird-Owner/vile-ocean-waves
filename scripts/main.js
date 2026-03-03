@@ -10,13 +10,17 @@ Events.on(TapEvent, event => {
         const tile = event.tile;
         if (!tile || !tile.build) return;
 
+        const target = Blocks.combustionGenerator;
+        
         const block = tile.block();
-        if (block != Blocks.combustionGenerator) return;
+        if (block != target) return;
 
         const build = tile.build;
 
         if (build.power && build.power.graph) {
-            build.power.graph.transferPower(15);
+            const pow = target.powerProduction * 60;
+
+            build.power.graph.transferPower(pow);
         }
 
         if (Fx.dooropenlarge) {
