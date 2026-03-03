@@ -10,22 +10,19 @@ Events.on(TapEvent, event => {
         const tile = event.tile;
         if (!tile || !tile.build) return;
 
-        const target = Vars.content.getByName(ContentType.block, "gr-button");
-        const effect = Vars.content.getByName(ContentType.block, "gr-button-tap").generateEffect;
+        const target = Vars.content.getByName(ContentType.block, "copper-wall");
 
         const block = tile.block();
         if (block != target) return;
 
         const build = tile.build;
 
-            Vars.ui.showInfoToast(build.team + " " + event.player.team(),1);
+        Vars.ui.showInfoToast(build.team + " " + event.player.team(),1);
         
         if (build.team != event.player.team()) return;
-        if (build.power && build.power.graph) {
-            const pow = target.powerProduction * 60;
 
-            build.power.graph.transferPower(pow);
-        }
+        Vars.ui.showInfoToast("[tan]Wave: " + Vars.ui.state.wave, 1.5);
+        Vars.state.wavetime = 0;
 
         if (effect) {
             effect.at(build.x, build.y);
