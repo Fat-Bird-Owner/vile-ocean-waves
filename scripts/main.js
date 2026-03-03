@@ -21,7 +21,7 @@ Events.on(TapEvent, event => {
         
         if (build.team != event.player.team()) return;
 
-        Vars.ui.showInfoToast("[tan]Wave: " + Vars.ui.state.wave, 1.5);
+        Vars.ui.showInfoToast("[tan]Wave: " + Vars.state.wave, 1.5);
         Vars.state.wavetime = 0;
 
         if (effect) {
