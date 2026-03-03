@@ -13,8 +13,8 @@ Events.on(TapEvent, event => {
         const tile = event.tile;
         if (!tile || !tile.build) return;
 
-        const target = Vars.content.getByName(ContentType.block, "gr-button");
-        const effect = Vars.content.getByName(ContentType.block, "gr-button-tap").generateEffect;
+        const target = Vars.content.getByName(ContentType.block, "silicon");
+        const effect = Fx.dooropenlarge
 
         const block = tile.block();
         if (block != target) return;
@@ -24,10 +24,19 @@ Events.on(TapEvent, event => {
         //Vars.ui.showInfoToast(build.team + " " + event.player.team(),1);
         
         if (build.team != event.player.team()) return;
-        if (build.power && build.power.status) {
-            const pow = target.powerProduction * 60;
+        if (build.items) {
 
-            build.power.status = 1;
+        const sand = build.items.get(Items.sand);
+        const coal = build.items.get(Items.coal);
+
+        if (coal >= 1 && sand >= 2){
+
+        build.handleStack(Items.silicon,1,null);
+        build.removeStack(Items.sand,2,null);
+        build.removeStack(Items.coal,1,null);
+            
+        }
+            
         }
 
         if (effect) {
