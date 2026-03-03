@@ -12,7 +12,8 @@ const dmg = source.damage;
 
 if (dmg) {
 
-const armre = build.maxHealth - dmg;   
+const dmghalf = dmg/2;      
+const armre = build.maxHealth - dmghalf;   
 build.setProp(LAccess.maxHealth,armre);
 
         if (Fx.generate && Fx) {
