@@ -11,7 +11,8 @@ Events.on(TapEvent, event => {
         if (!tile || !tile.build) return;
 
         const target = Vars.content.getByName(ContentType.block, "gr-button");
-        
+        const effect = Vars.content.getByName(ContentType.block, "gr-button-tap").generateEffect;
+
         const block = tile.block();
         if (block != target) return;
 
@@ -26,8 +27,8 @@ Events.on(TapEvent, event => {
             build.power.graph.transferPower(pow);
         }
 
-        if (block.generateEffect) {
-            block.generateEffect.at(build.x, build.y);
+        if (effect) {
+            effect.at(build.x, build.y);
         }
 
         if (Sounds.click) {
