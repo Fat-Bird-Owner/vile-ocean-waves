@@ -31,8 +31,8 @@ Events.on(TapEvent, event => {
         if (coal >= 1 && sand >= 2){
 
         build.handleStack(Items.silicon,1,null);
-        build.removeStack(Items.sand,2,null);
-        build.removeStack(Items.coal,1,null);
+        build.removeStack(Items.sand,2);
+        build.removeStack(Items.coal,1);
             
         }
             
