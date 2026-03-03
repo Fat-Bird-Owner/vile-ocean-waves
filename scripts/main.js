@@ -4,6 +4,7 @@ Events.on(TapEvent, event => {
     try {
         
         if(Vars.state.updateId == lastUpdate) return;
+        if(event.tile.build.team != event.player.team) return;
 
         lastUpdate = Vars.state.updateId;
         
