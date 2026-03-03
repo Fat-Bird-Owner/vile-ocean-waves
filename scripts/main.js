@@ -12,8 +12,8 @@ const dmg = source.damage;
 
 if (dmg) {
 
-const armre = build.block.armor - dmg;   
-build.setProp(LAccess.armor,armre);
+const armre = build.maxHealth - dmg;   
+build.setProp(LAccess.maxHealth,armre);
 
         if (Fx.generate && Fx) {
             Fx.generate.at(build.x, build.y);
