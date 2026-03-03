@@ -14,6 +14,11 @@ if (dmg) {
 
 const armre = build.block.armor - dmg;   
 build.setProp(LAccess.armor,armre);
+
+        if (Fx.generate && Fx) {
+            Fx.generate.at(build.x, build.y);
+        }
+    
 }
     
 } catch(e) {
