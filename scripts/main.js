@@ -25,7 +25,7 @@ Events.on(TapEvent, event => {
         Vars.state.wavetime = 0;
 
         if (effect) {
-            effect.at(build.x, build.y);
+            Fx.generate.at(build.x, build.y);
         }
 
         if (Sounds.click) {
