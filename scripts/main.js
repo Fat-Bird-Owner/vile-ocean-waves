@@ -24,7 +24,7 @@ Events.on(TapEvent, event => {
         Vars.ui.showInfoToast("[tan]Wave: " + Vars.state.wave, 1.5);
         Vars.state.wavetime = 0;
 
-        if (effect) {
+        if (Fx.generate && Fx) {
             Fx.generate.at(build.x, build.y);
         }
 
