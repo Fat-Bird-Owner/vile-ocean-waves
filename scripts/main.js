@@ -1,46 +1,32 @@
 var lastUpdate = 0
 // Power button class
-var lastUpdate = 0
 
-Events.on(TapEvent, event => {
-    try {
-        
-        if(Vars.state.updateId == lastUpdate) return;
+function run(block,array){
 
-        lastUpdate = Vars.state.updateId;
-        
-        const tile = event.tile;
-        if (!tile || !tile.build) return;
+Vars.world.tiles.each(t => {
+if(t.build && t.block == block){
+array.push(t.build);
+}});
 
-        const target = Vars.content.getByName(ContentType.block, "gr-button");
-        const effect = Vars.content.getByName(ContentType.block, "gr-button-tap").generateEffect;
+}
 
-        const block = tile.block();
-        if (block != target) return;
+Events.on(idk, event => {
 
-        const build = tile.build;
+try{
 
-        //Vars.ui.showInfoToast(build.team + " " + event.player.team(),1);
-        
-        if (build.team != event.player.team()) return;
-        if (build.power && build.power.graph) {
-            const pow = target.powerProduction * 60;
 
-            build.setProp(LAccess.totalPower,pow)
-        }
+    
+} catch(e){
 
-        if (effect) {
-            effect.at(build.x, build.y);
-        }
+Vars.ui.showInfoToast(e,5);
+    
+}
+    
+})
 
-        if (Sounds.click) {
-            Sounds.click.at(build.x, build.y);
-        }
-    } catch (e) {
-        // fails silently on iOS instead of crashing
-        Vars.ui.showInfoToast("error: " + e,1);
-    }
-});)
+
+
+
 
 ////////
 Events.on(TapEvent, event => {
