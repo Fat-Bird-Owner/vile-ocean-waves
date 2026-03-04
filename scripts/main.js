@@ -1,29 +1,6 @@
 var lastUpdate = 0
 // Power button class
 
-function run(block,array){
-
-Vars.world.tiles.each(t => {
-if(t.build && t.block == block){
-array.push(t.build);
-}});
-
-}
-
-Events.on(idk, event => {
-
-try{
-
-
-    
-} catch(e){
-
-Vars.ui.showInfoToast(e,5);
-    
-}
-    
-})
-
 
 
 
