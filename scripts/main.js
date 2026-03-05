@@ -7,15 +7,15 @@ var string = event.message;
 const playerUnit = event.player.unit;
 var input = string.split(" ");
 
-if (input[0] === "!spawn"){
+if (input[1] === "!spawnU"){
 
-const unit = Vars.content.getByName(ContentType.unit, input[1]);
+const unit = Vars.content.getByName(ContentType.unit, input[2]);
 
 if (unit) {
 unit.spawn(player.team,player.x,player.y,player.rotation);
 
 } else {
-Vars.ui.showInfoToast("[red]" + input[1] + " Not found",2);
+Vars.ui.showInfoToast("[red]" + input[2] + " Not found",2);
 }
 
 ///
