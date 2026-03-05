@@ -18,7 +18,7 @@ if (!build.power || !build.power.graph) return;
 
 const damage = source.damage;
 const minus = damage * -1.75;
-const length = damage / 8;
+const length = damage / 2;
     
 build.power.graph.transferPower(minus);
 Fx.generate.at(build.x,build.y);
