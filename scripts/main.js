@@ -1,4 +1,4 @@
-var lastBuild;
+var lastBuild = "";
 
 Events.on(TapEvent, event => {
 try {
@@ -21,7 +21,7 @@ build.kill();
 /// end   
 } catch (e)
 Vars.ui.showInfoToast(e,3);
-}})
+}});
 
 
 
