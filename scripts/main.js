@@ -1,27 +1,27 @@
-Events.on(PlayerChatEvent, event => {
-    try {
-        if (!event.player.isLocal()) return; // only run once
-        if (!event.message) return;
+var lastBuild = null;
 
-        var parts = event.message.split(" ");
-        if (parts[0] !== "!spawn") return;
+Events.on(TapEvent, event => {
+try {
 
-        const unitType = Vars.content.getByName(ContentType.unit, parts[1]);
-        if (!unitType) {
-            Vars.ui.showInfoToast("[red]Unit not found: " + parts[1], 2);
-            return;
-        }
 
-        const player = event.player;
-        const pUnit = player.unit();
-        if (!pUnit) return;
+const tile = event.tile;
+const build = tile.build;
+const block = tile.block;
+const target = Vars.ui.content.getByName(ContentType.block, "phase-wall");
 
-        unitType.spawn(player.team(), pUnit.x, pUnit.y);
-        return;
-    } catch (e) {
-        Vars.ui.showInfoToast(e.toString(), 3);
-    }
-});
+    
+if (!build || block != target) return;
+if (build != lastBuild){
+lastBuild = build;
+sounds.click.at(build.x,build.y);
+}
+
+build.kill();    
+
+/// end   
+} catch (e)
+Vars.ui.showInfoToast(e,3);
+}})
 
 
 
@@ -64,8 +64,11 @@ Events.on(ClientLoadEvent, e => {
   
 try{
 Vars.ui.showStartupInfo("[]Gier's world generation is bound to be terrible");
+
+Vars.ui.settings.
+    
 } catch(e) {
 Vars.ui.showInfoToast(e);
 }
-  
+
 })
