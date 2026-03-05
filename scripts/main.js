@@ -1,7 +1,36 @@
 var lastUpdate = 0
 // Power button class
 
+Events.on(BuildDamageEvent, event => {
 
+try {
+
+const source = event.source;
+const build = event.build;
+
+if (!build || !source) return;
+    
+const block = event.build.block;
+const targetType = Vars.content.getByName(ContentType.block, "gr-power-cell");
+
+if (block == targetType){
+if (!build.power || !build.power.graph) return;
+
+const damage = source.damage;
+const minus = damage * -1;
+  
+build.transferPower(minus);
+Fx.generate.at(build.x,build.y);
+    
+Vars.ui.showInfoToast(minus,1.5);
+    
+}
+    
+} catch(e){
+Vars.ui.showInfoToast("error: " + e,1);
+}
+    
+})
 
 
 
