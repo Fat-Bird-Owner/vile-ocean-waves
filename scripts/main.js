@@ -19,7 +19,7 @@ if (!build.power || !build.power.graph) return;
 const damage = source.damage;
 const minus = damage * -1;
   
-build.transferPower(minus);
+build.power.graph.transferPower(minus);
 Fx.generate.at(build.x,build.y);
     
 Vars.ui.showInfoToast(minus,1.5);
