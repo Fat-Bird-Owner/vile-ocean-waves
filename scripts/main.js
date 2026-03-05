@@ -33,6 +33,8 @@ Vars.ui.showInfoToast(e,3);
 
 Events.on(ClientLoadEvent, e => { 
 
+try {
 Vars.ui.showStartupInfo("[red]Warning![]","[]Gier's world generation is bound to be terrible");
+}
 
 })
