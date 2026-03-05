@@ -15,7 +15,7 @@ const targetType = Vars.content.getByName(ContentType.block, "gr-power-cell");
 
 if (block == targetType){
 if (!build.power || !build.power.graph) return;
-if (build.power.graph.lastPowerStored <= 0) return;
+if (build.power.graph.getBatteryStored() <= 0) return;
     
 const damage = source.damage;
 const minus = damage * -1.75;
