@@ -1,31 +1,3 @@
-var lastBuild = "";
-
-Events.on(TapEvent, event => {
-try {
-
-
-const tile = event.tile;
-const build = tile.build;
-const block = tile.block;
-const target = Vars.content.getByName(ContentType.block, "phase-wall");
-
-    
-if (!build || block != target) return;
-if (build != lastBuild){
-lastBuild = build;
-Sounds.click.at(build.x,build.y);
-}
-
-build.kill();    
-
-/// end   
-} catch (e){
-Vars.ui.showInfoToast(e,3);
-}});
-
-
-
-
 
 
 Events.on(GeneratorPressureExplodeEvent, event => {
