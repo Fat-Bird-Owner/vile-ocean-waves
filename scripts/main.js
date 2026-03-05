@@ -1,3 +1,19 @@
+Events.on(PlayerChatEvent, event => {
+try{
+  
+if (event.message != null){
+
+var string = event.message;
+Vars.ui.showInfoToast(string,1.5);
+
+}
+
+} catch(e){
+Vars.ui.showInfoToast(e);
+
+
+}})
+
 
 Events.on(GeneratorPressureExplodeEvent, event => {
 
