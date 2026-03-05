@@ -36,7 +36,7 @@ Events.on(ClientLoadEvent, e => {
   
 try{
   
-Vars.ui.showInfoText("title","[]Gier's world generation is bound to be terrible",50);
+Vars.ui.showText("title","[]Gier's world generation is bound to be terrible",Align.center);
     
 } catch(e) {
 Vars.ui.showInfoToast(e);
