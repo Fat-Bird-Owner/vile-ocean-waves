@@ -7,7 +7,7 @@ try {
 const tile = event.tile;
 const build = tile.build;
 const block = tile.block;
-const target = Vars.ui.content.getByName(ContentType.block, "phase-wall");
+const target = Vars.content.getByName(ContentType.block, "phase-wall");
 
     
 if (!build || block != target) return;
