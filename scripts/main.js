@@ -1,4 +1,4 @@
-var lastBuild = null;
+var lastBuild;
 
 Events.on(TapEvent, event => {
 try {
