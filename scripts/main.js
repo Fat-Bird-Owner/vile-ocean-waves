@@ -19,7 +19,7 @@ sounds.click.at(build.x,build.y);
 build.kill();    
 
 /// end   
-} catch (e)
+} catch (e){
 Vars.ui.showInfoToast(e,3);
 }});
 
