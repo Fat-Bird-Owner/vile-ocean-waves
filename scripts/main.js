@@ -4,7 +4,7 @@ try{
 if (event.message != null){
 
 var string = event.message;
-const playerUnit = event.player.unit;
+const playerUnit = event.player.unit();
 var input = string.split(" ");
 
 if (input[0] === "!spawn"){
