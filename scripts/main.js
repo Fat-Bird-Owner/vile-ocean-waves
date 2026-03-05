@@ -22,7 +22,7 @@ var target = Vars.content.getByName(ContentType.block, "neoplasiaReactor");
 
   }
   
-} catch(e)
+} catch(e){
 Vars.ui.showInfoToast(e,3);
 }
   
