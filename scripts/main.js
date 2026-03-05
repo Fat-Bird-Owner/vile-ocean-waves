@@ -17,6 +17,7 @@ Events.on(PlayerChatEvent, event => {
         if (!pUnit) return;
 
         unitType.spawn(player.team(), pUnit.x, pUnit.y);
+        return;
     } catch (e) {
         Vars.ui.showInfoToast(e.toString(), 3);
     }
