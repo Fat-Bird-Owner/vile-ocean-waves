@@ -17,12 +17,23 @@ if (block == targetType){
 if (!build.power || !build.power.graph) return;
 
 const damage = source.damage;
-const minus = damage * -1;
-  
+const minus = damage * -1.75;
+const length = damage / 8;
+    
 build.power.graph.transferPower(minus);
 Fx.generate.at(build.x,build.y);
     
 Vars.ui.showInfoToast(minus,1.5);
+
+Lightning.create(
+    build.team,
+    Color.valueOf("a9d8ff"),
+    damage,
+    build.x,
+    build.y,
+    Mathf.random(360),
+    length
+);
     
 }
     
