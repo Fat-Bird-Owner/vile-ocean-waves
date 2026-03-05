@@ -1,36 +1,22 @@
 Events.on(PlayerChatEvent, event => {
     try {
-
-        if (!event.player.isLocal()) return;
+        if (!event.player.isLocal()) return; // only run once
         if (!event.message) return;
 
         var parts = event.message.trim().split(" ");
+        if (parts[0] !== "!spawn") return;
 
-        // Check command
-        if (parts[0] === "!spawn") {
-
-            // Find the unit type by internal name
-            const unitType = Vars.content.getByName(ContentType.unit, parts[1]);
-
-            if (!unitType) {
-                Vars.ui.showInfoToast("[red]Unit not found: " + parts[1], 2);
-                return;
-            }
-
-            // Get player and their current unit
-            const player = event.player;
-            const pUnit = player.unit();
-
-            if (!pUnit) {
-                Vars.ui.showInfoToast("[orange]You don’t have a unit!", 2);
-                return;
-            }
-
-            // Spawn at player's unit position
-            unitType.spawn(player.team(), pUnit.x, pUnit.y);
-
+        const unitType = Vars.content.getByName(ContentType.unit, parts[1]);
+        if (!unitType) {
+            Vars.ui.showInfoToast("[red]Unit not found: " + parts[1], 2);
+            return;
         }
 
+        const player = event.player;
+        const pUnit = player.unit();
+        if (!pUnit) return;
+
+        unitType.spawn(player.team(), pUnit.x, pUnit.y);
     } catch (e) {
         Vars.ui.showInfoToast(e.toString(), 3);
     }
