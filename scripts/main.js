@@ -1,48 +1,47 @@
-var lastUpdate = 0
 // Power button class
+var lastUpdate = 0
 
-Events.on(BuildDamageEvent, event => {
+Events.on(TapEvent, event => {
+    try {
+        
+        if(Vars.state.updateId == lastUpdate) return;
 
-try {
+        lastUpdate = Vars.state.updateId;
+        
+        const tile = event.tile;
+        if (!tile || !tile.build) return;
 
-const source = event.source;
-const build = event.build;
+        const target = Vars.content.getByName(ContentType.block, "gr-button");
+        const effect = Vars.content.getByName(ContentType.block, "gr-button-tap").generateEffect;
 
-if (!build || !source) return;
-    
-const block = event.build.block;
-const targetType = Vars.content.getByName(ContentType.block, "gr-power-cell");
+        const block = tile.block();
+        if (block != target) return;
 
-if (block == targetType){
-if (!build.power || !build.power.graph) return;
-if (build.power.graph.getBatteryStored() <= 0) return;
-    
-const damage = source.damage;
-const minus = damage * -1.75;
-const length = damage * 0.75;
-    
-build.power.graph.transferPower(minus);
-Fx.generate.at(build.x,build.y);
-    
-Vars.ui.showInfoToast(minus,1.5);
+        const build = tile.build;
 
-Lightning.create(
-    build.team,
-    build.team.color,
-    damage,
-    build.x,
-    build.y,
-    Mathf.random(360),
-    length
-);
-    
-}
-    
-} catch(e){
-Vars.ui.showInfoToast("error: " + e,1);
-}
-    
-})
+        //Vars.ui.showInfoToast(build.team + " " + event.player.team(),1);
+        
+        if (build.team != event.player.team()) return;
+        if (build.power && build.power.graph) {
+            const pow = target.powerProduction * 60;
+            const graph = build.power.graph;
+            
+            graph.transferPower(pow);
+            graph.update();
+        }
+
+        if (effect) {
+            effect.at(build.x, build.y);
+        }
+
+        if (Sounds.click) {
+            Sounds.click.at(build.x, build.y);
+        }
+    } catch (e) {
+        // fails silently on iOS instead of crashing
+        Vars.ui.showInfoToast("error: " + e,1);
+    }
+});
 
 
 
