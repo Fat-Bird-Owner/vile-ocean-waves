@@ -14,7 +14,7 @@ const unit = Vars.content.getByName(ContentType.unit, input[1]);
 if (unit) {
 unit.spawn(player.team,player.x,player.y,player.rotation);
 
-}else{
+} else {
 Vars.ui.showInfoToast("[red]" + input[1] + " Not found",2);
 }
 
