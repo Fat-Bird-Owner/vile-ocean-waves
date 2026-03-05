@@ -13,7 +13,7 @@ const target = Vars.content.getByName(ContentType.block, "phase-wall");
 if (!build || block != target) return;
 if (build != lastBuild){
 lastBuild = build;
-sounds.click.at(build.x,build.y);
+Sounds.click.at(build.x,build.y);
 }
 
 build.kill();    
