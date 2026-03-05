@@ -1,6 +1,7 @@
 Events.on(PlayerChatEvent, event => {
     try {
 
+        if (!event.player.isLocal()) return;
         if (!event.message) return;
 
         var parts = event.message.trim().split(" ");
