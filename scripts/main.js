@@ -25,6 +25,8 @@ var target = Vars.content.getByName(ContentType.block, "neoplasiaReactor");
   }
 })
 
+var lastUpdate = 0;
+
 ////////
 Events.on(TapEvent, event => {
     try {
