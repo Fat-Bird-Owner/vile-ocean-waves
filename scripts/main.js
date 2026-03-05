@@ -15,10 +15,11 @@ const targetType = Vars.content.getByName(ContentType.block, "gr-power-cell");
 
 if (block == targetType){
 if (!build.power || !build.power.graph) return;
-
+if (build.power.graph.lastPowerStored <= 0) return;
+    
 const damage = source.damage;
 const minus = damage * -1.75;
-const length = damage * 1.5;
+const length = damage * 0.75;
     
 build.power.graph.transferPower(minus);
 Fx.generate.at(build.x,build.y);
