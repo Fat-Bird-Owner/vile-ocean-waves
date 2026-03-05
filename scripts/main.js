@@ -1,14 +1,14 @@
 
 Events.on(GeneratorPressureExplodeEvent, event => {
 
+try {
+
 // Find entity otherwise return if is then if the block type isnt the target's also return
 
 var target = Vars.content.getByName(ContentType.block, "neoplasiaReactor");
   
   if(event.build != null){  
   if (event.build.block != target) return;
-
-    Vars.ui.showInfoToast(event.build.tileX(),2);
 
     var x = event.build.tileX();
     var y = event.build.tileY();
@@ -24,4 +24,9 @@ var target = Vars.content.getByName(ContentType.block, "neoplasiaReactor");
     }, 0.1);
 
   }
+  
+} catch(e)
+Vars.ui.showInfoToast(e,3);
+}
+  
 })
