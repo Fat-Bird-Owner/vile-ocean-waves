@@ -36,11 +36,7 @@ Events.on(ClientLoadEvent, e => {
   
 try{
   
-Vars.ui.showText("You got mail",
-"Hello, thanks for downloading this mod.
-The mod's current build isnt fully developed yet.
-"
-,Align.center);
+Vars.ui.showText("You got mail","This mod isnt fully developed yet",Align.center);
     
 } catch(e) {
 Vars.ui.showInfoToast(e);
