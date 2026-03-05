@@ -9,7 +9,7 @@ var input = string.split(" ");
 
 if (input[1] === "!spawn"){
 
-const unit = Vars.content.getByName(ContentTypes.unit, input[2]);
+const unit = Vars.content.getByName(ContentType.unit, input[2]);
 
 if (!unit) return;
 unit.spawn(player.team,player.x,player.y,player.rotation);
