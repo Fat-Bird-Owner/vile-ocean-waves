@@ -27,7 +27,7 @@ Events.on(TapEvent, event => {
             const graph = build.power.graph;
             
             graph.transferPower(pow);
-            graph.update();
+            graph.distributePower(0,30,true);
         }
 
         if (effect) {
