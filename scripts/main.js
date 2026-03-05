@@ -1,5 +1,27 @@
 
 
+Events.on(SectorLaunchEvent, event => {
+try {
+
+const sector = event.sector;
+const info = sector.info;
+  
+  if (sector && info){
+  const attempts = info.attempts;
+  Vars.ui.announce("Attempt " + attempts,3)  
+  }
+
+  
+} catch(e){
+Vars.ui.showInfoToast(e,3);
+}
+  
+})
+
+
+
+
+
 Events.on(GeneratorPressureExplodeEvent, event => {
 
 try {
