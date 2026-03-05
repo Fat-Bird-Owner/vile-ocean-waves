@@ -8,7 +8,7 @@ const info = sector.info;
   
   if (sector && info){
   const attempts = info.attempts;
-  Vars.ui.showInfoPopup("Attempt " + attempts,4.5,Align.center,Align.center,Align.center,Align.center,Align.center)  
+  Vars.ui.showInfoToast("Attempt " + attempts,4.5)  
   }
 
   
