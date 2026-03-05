@@ -4,15 +4,33 @@ try{
 if (event.message != null){
 
 var string = event.message;
-Vars.ui.showInfoToast(string,1.5);
+const playerUnit = event.player.unit;
+var input =  string.split(" ");
 
+if (input[1] === "!spawn"){
+
+const unit = Vars.content.getByName(ContentTypes.unit, input[2]);
+
+if (!unit) return;
+unit.spawn(player.team,player.x,player.y,player.rotation);
+
+}else{
+Vars.ui.showInfoToast(input[2] + " Not found",2);
+}
+
+///
 }
 
 } catch(e){
 Vars.ui.showInfoToast(e);
+}
+
+///
+})
 
 
-}})
+
+
 
 
 Events.on(GeneratorPressureExplodeEvent, event => {
