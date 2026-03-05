@@ -3,7 +3,7 @@ Events.on(PlayerChatEvent, event => {
         if (!event.player.isLocal()) return; // only run once
         if (!event.message) return;
 
-        var parts = event.message.trim().split(" ");
+        var parts = event.message.split(" ");
         if (parts[0] !== "!spawn") return;
 
         const unitType = Vars.content.getByName(ContentType.unit, parts[1]);
