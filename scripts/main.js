@@ -27,7 +27,7 @@ Vars.ui.showInfoToast(minus,1.5);
 
 Lightning.create(
     build.team,
-    Color.valueOf("a9d8ff"),
+    build.team.color,
     damage,
     build.x,
     build.y,
