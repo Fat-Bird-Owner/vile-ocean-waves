@@ -13,7 +13,7 @@ const info = sector.info;
     Vars.ui.showInfoFade("Attempt [accent]" + attempts,4.5); 
     }, 2.667);
 
-  const block = Vars.content.getByName(ContentType.block, "gr-core-facility");
+  const block = Vars.content.getByName(ContentType.status, "gr-gier");
   var parent = TechTree.all.find(u => u.content == block);
 
 parent.each(n => {
