@@ -8,7 +8,11 @@ const info = sector.info;
   
   if (sector && info){
   const attempts = info.attempts;
-  Vars.ui.showInfoFade("Attempt " + attempts,4.5); 
+
+    Timer.schedule(() => {  
+    Vars.ui.showInfoFade("Attempt " + attempts,4.5); 
+    }, 0.15);
+    
   }
 
   
