@@ -1,6 +1,6 @@
-function radarBuild(tile){
+async function radarBuild(tile){
 try{
-if (tile && tile.build && !tile.build.dead) {
+if (!tile || !tile.build || tile.build.dead) return;
 const build = tile.build;
 const x = build.x;
 const y = build.y;
@@ -15,13 +15,14 @@ build.y,
 Mathf.random(360),
 20
 );
-await new Promise(r => setTimeout(r, 1000));
-radarBuild(tile);
 
-}
-return;
+Timer.schedule(() => {
+    radarBuild(tile);
+}, 1);
+
+
 } catch(e) {
-Vars.ui.showInfoToast(e,5);
+showText("Not work",e,Align.center);
 }}
 
 
@@ -35,8 +36,11 @@ const build = tile.build;
 radarBuild(tile);
   
 } catch (e) {
-Vars.ui.showInfoToast(e,6.5);
-}})
+Vars.ui.showText("Not work",e,Align.center);
+}});
+
+
+
 
 
 Events.on(SectorLaunchEvent, event => {
@@ -57,7 +61,7 @@ const info = sector.info;
   
 } catch(e){
     Timer.schedule(() => {  
-Vars.ui.showInfoFade(e,3);
+Vars.ui.showText("e",e,Align.center);
     },1.5);
 }
   
