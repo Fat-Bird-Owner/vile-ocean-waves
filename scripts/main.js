@@ -1,6 +1,6 @@
 try{
 
-async function radarBuild(tile){
+function radarBuild(tile){
 try{
 if (!tile || !tile.build || tile.build.dead) return;
 const build = tile.build;
