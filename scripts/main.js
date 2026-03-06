@@ -33,8 +33,12 @@ Vars.ui.showInfoToast(e,5);
 
 // when placed
 Events.on(BlockBuildEndEvent, e => {
+try{
 if(!e.breaking){
     radarBuild(e.tile);
+}
+} catch(e) {
+Vars.ui.showInfoToast(e,5);
 }
 });
 
