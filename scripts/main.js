@@ -8,12 +8,12 @@ const info = sector.info;
   
   if (sector && info){
   const attempts = info.attempts;
-  Vars.ui.showInfoToast("Attempt " + attempts,4.5); 
+  Vars.ui.showInfoFade("Attempt " + attempts,4.5); 
   }
 
   
 } catch(e){
-Vars.ui.showInfoToast(e,3);
+Vars.ui.showInfoFade(e,3);
 }
   
 })
