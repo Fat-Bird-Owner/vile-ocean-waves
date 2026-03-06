@@ -1,6 +1,6 @@
 
 
-Events.on(SectorLaunchLoadoutEvent, event => {
+Events.on(SectorLaunchEvent, event => {
 try {
 
 const sector = event.sector;
