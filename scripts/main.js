@@ -1,4 +1,12 @@
+function radarBuild(tile){
+if (tile && tile.build && !tile.build.dead) {
+const build = tile.build;
+const x = build.x;
+const y = build.y;
 
+
+
+}}
 
 
 Events.on(BlockBuildEndEvent, event => { 
