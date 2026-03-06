@@ -1,4 +1,15 @@
 
+Events.on(BlockBuildEndEvent, event => { 
+try {
+if (event.breaking == true) return;
+const tile = event.tile
+
+
+
+} catch (e) {
+Vars.ui.showInfoToast(e,6.5);
+}})
+
 
 Events.on(SectorLaunchEvent, event => {
 try {
