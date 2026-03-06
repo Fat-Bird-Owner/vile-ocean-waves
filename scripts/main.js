@@ -2,8 +2,8 @@
 Events.on(BlockBuildEndEvent, event => { 
 try {
 if (event.breaking == true) return;
-const tile = event.tile
-
+const tile = event.tile;
+const build = tile.build;
 
 
 } catch (e) {
