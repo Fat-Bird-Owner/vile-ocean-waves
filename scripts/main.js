@@ -19,7 +19,7 @@ const info = sector.info;
 parent.each(n => {
     if (n != parent){
     n.content.clearUnlock();
-    n.reset();
+    n.finishedRequirements = ItemStack.empty;
     }
 
 
