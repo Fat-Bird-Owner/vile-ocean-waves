@@ -18,7 +18,7 @@ const info = sector.info;
 
 parent.each(n => {
     n.content.clearUnlock();
-    n.setupRequirements(n.content.requirements);
+    n.reset();
 });
     
 }
