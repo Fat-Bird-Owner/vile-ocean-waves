@@ -17,7 +17,12 @@ const info = sector.info;
   var parent = TechTree.all.find(u => u.content == block);
 
 parent.each(n => {
+    if (n != parent){
     n.content.clearUnlock();
+    n.reset();
+    }
+
+
 });
     
 }
