@@ -29,7 +29,17 @@ Vars.ui.showInfoToast(e,5);
 }
 }
 
+Events.on(WorldLoadEndEvent, e => {
 
+Vars.world.tiles.each(tile => {
+    if(tile.build && tile.block() == Blocks.yourBlock){
+        radarBuild(tile);
+    }
+});
+
+});
+
+    
 
 // when placed
 Events.on(BlockBuildEndEvent, e => {
