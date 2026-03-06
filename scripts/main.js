@@ -31,17 +31,23 @@ Vars.ui.showInfoToast(e,5);
 
 
 
-Events.on(BlockBuildEndEvent, event => { 
-try {
-if (event.breaking == true) return;
-const tile = event.tile;
-const build = tile.build;
+// when placed
+Events.on(BlockBuildEndEvent, e => {
+if(!e.breaking){
+    radarBuild(e.tile);
+}
+});
 
-radarBuild(tile);
-  
-} catch (e) {
-Vars.ui.showText("Not work",e,Align.center);
-}});
+// when loading a save
+Events.on(WorldLoadEvent, e => {
+
+Vars.world.tiles.each(tile => {
+    if(tile.build && tile.block() == Blocks.copperWall){
+        radarBuild(tile);
+    }
+});
+
+});
 
 
 
