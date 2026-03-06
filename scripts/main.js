@@ -64,8 +64,12 @@ Events.on(ClientLoadEvent, e => {
   
 try{
 
+  
+const asthosus = Vars.mods.locateMod("gr").meta;
+const display = Core.bundle.get("mod.gr.display");
+  
 MapResizeDialog.maxSize = 2500;
-Vars.ui.showText("You got mail","This mod isnt fully developed yet",Align.center);
+Vars.ui.showText("You got mail",display,Align.center);
     
 } catch(e) {
 Vars.ui.showText("Not work",e,Align.center);
