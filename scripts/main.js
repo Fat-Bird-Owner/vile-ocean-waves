@@ -1,3 +1,5 @@
+try{
+
 async function radarBuild(tile){
 try{
 if (!tile || !tile.build || tile.build.dead) return;
@@ -119,3 +121,8 @@ Vars.ui.showText("Not work",e,Align.center);
 }
 
 })
+
+
+} catch(e){
+Vars.ui.showText("Not work",e,Align.center);
+}
