@@ -57,11 +57,12 @@ Vars.ui.showInfoToast(e,3);
 Events.on(ClientLoadEvent, e => { 
   
 try{
-  
+
+MapResizeDialog.maxSize = 2500;
 Vars.ui.showText("You got mail","This mod isnt fully developed yet",Align.center);
     
 } catch(e) {
-Vars.ui.showInfoToast(e);
+Vars.ui.showText("Not work",e,Align.center);
 }
 
 })
