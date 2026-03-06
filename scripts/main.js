@@ -2,11 +2,15 @@ try{
 
 function radarBuild(tile){
 try{
-if (!tile || tile.build == null || tile.build.dead) return;
-const build = tile.build;
-const x = build.x;
-const y = build.y;
 
+if(tile == null || tile.build == null) return;
+const build = tile.build;
+
+// pause check
+if(Vars.state.isPaused()){
+    Timer.schedule(() => radarBuild(tile), 0.25);
+    return;
+}
 
 Lightning.create(
 build.team,
@@ -18,14 +22,12 @@ Mathf.random(360),
 20
 );
 
-Timer.schedule(() => {
-    radarBuild(tile);
-}, 1);
+Timer.schedule(() => radarBuild(tile), 1);
 
-
-} catch(e) {
-showText("Not work",e,Align.center);
-}}
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+}
+}
 
 
 
