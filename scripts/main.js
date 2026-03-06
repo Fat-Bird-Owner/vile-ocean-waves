@@ -15,14 +15,6 @@ const info = sector.info;
 
   const block = Vars.content.getByName(ContentType.status, "gr-gier");
   var parent = TechTree.all.find(u => u.content == block);
-
-parent.each(n => {
-    if(n.content && n.content.requirements && n.content.requirements.length > 0){
-        n.content.clearUnlock();
-        n.setupRequirements(n.content.requirements);
-    }
-});
-    
 }
 
   
