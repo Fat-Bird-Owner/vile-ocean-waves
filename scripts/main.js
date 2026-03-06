@@ -64,8 +64,6 @@ Events.on(ClientLoadEvent, e => {
   
 try{
 
-  
-const asthosus = Vars.mods.locateMod("gr").meta;
 const display = Core.bundle.get("mod.gr.display");
 const title = Core.bundle.get("mod.gr.mail");
 
