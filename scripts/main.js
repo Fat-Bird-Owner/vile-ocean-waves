@@ -43,7 +43,7 @@ Vars.ui.showInfoToast(e,5);
 });
 
 // when loading a save
-Events.on(WorldLoadEvent, e => {
+Events.on(SaveLoadEvent, e => {
 
 Timer.schedule(() => {
 
