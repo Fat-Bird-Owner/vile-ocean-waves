@@ -11,7 +11,7 @@ const info = sector.info;
 
     Timer.schedule(() => {  
     Vars.ui.showInfoFade("Attempt " + attempts,4.5); 
-    }, 0.15);
+    }, 2.667);
     
   }
 
