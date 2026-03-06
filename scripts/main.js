@@ -2,7 +2,7 @@ try{
 
 function radarBuild(tile){
 try{
-if (!tile || !tile.build || tile.build.dead) return;
+if (!tile || tile.build == null || tile.build.dead) return;
 const build = tile.build;
 const x = build.x;
 const y = build.y;
