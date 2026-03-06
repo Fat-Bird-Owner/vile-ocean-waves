@@ -66,7 +66,8 @@ try{
 
 const display = Core.bundle.get("mod.gr.display");
 const title = Core.bundle.get("mod.gr.mail");
-
+var Diff = new Difficulty(1,1,0.25);
+  
 MapResizeDialog.maxSize = 2500;
 Vars.ui.showText(title,display,Align.center);
     
