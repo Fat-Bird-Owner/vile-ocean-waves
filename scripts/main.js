@@ -45,11 +45,15 @@ Vars.ui.showInfoToast(e,5);
 // when loading a save
 Events.on(WorldLoadEvent, e => {
 
+Timer.schedule(() => {
+
 Vars.world.tiles.each(tile => {
     if(tile.build && tile.block() == Blocks.copperWall){
         radarBuild(tile);
     }
 });
+    
+},0.05);
 
 });
 
