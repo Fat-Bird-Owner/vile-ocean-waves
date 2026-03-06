@@ -1,4 +1,5 @@
 function radarBuild(tile){
+try{
 if (tile && tile.build && !tile.build.dead) {
 const build = tile.build;
 const x = build.x;
@@ -19,7 +20,9 @@ radarBuild(tile);
 
 }
 return;
-}
+} catch(e) {
+Vars.ui.showInfoToast(e,5);
+}}
 
 
 
