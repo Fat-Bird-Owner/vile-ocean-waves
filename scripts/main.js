@@ -10,7 +10,7 @@ const info = sector.info;
   const attempts = info.attempts;
 
     Timer.schedule(() => {  
-    Vars.ui.showInfoFade("Attempt " + attempts,4.5); 
+    Vars.ui.showInfoFade("Attempt [accent]" + attempts,4.5); 
     }, 2.667);
     
   }
