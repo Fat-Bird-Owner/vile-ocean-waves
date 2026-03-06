@@ -9,12 +9,10 @@ const info = sector.info;
   if (sector && info){
   const attempts = info.attempts;
 
-    Timer.schedule(() => {  
-    Vars.ui.showInfoFade("Attempt [accent]" + attempts,4.5); 
-    }, 2.667);
+  Timer.schedule(() => {  
+  Vars.ui.showInfoFade("Attempt [accent]" + attempts,4.5); 
+  }, 2.667);
 
-  const block = Vars.content.getByName(ContentType.status, "gr-gier");
-  var parent = TechTree.all.find(u => u.content == block);
 }
 
   
