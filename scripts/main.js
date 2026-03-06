@@ -5,8 +5,22 @@ const x = build.x;
 const y = build.y;
 
 
+Lightning.create(
+build.team,
+build.team.color,
+20,
+build.x,
+build.y,
+Mathf.random(360),
+20
+);
+await new Promise(r => setTimeout(r, 1000));
+radarBuild(tile);
 
-}}
+}
+return;
+}
+
 
 
 Events.on(BlockBuildEndEvent, event => { 
@@ -15,6 +29,8 @@ if (event.breaking == true) return;
 const tile = event.tile;
 const build = tile.build;
 
+radarBuild(tile);
+  
 } catch (e) {
 Vars.ui.showInfoToast(e,6.5);
 }})
@@ -43,6 +59,7 @@ Vars.ui.showInfoFade(e,3);
 }
   
 });
+
 
 
 
