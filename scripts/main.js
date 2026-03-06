@@ -24,7 +24,9 @@ n.content.clearUnlock();
 
   
 } catch(e){
+    Timer.schedule(() => {  
 Vars.ui.showInfoFade(e,3);
+    },1.5);
 }
   
 });
