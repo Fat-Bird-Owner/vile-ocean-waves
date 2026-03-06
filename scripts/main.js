@@ -12,15 +12,22 @@ const info = sector.info;
     Timer.schedule(() => {  
     Vars.ui.showInfoFade("Attempt [accent]" + attempts,4.5); 
     }, 2.667);
+
+  const block = Vars.content.getByName(ContentType.block, "gr-core-facility");
+  var parent = TechTree.all.find(u => u.content == block);
+
+parent.each(n => {
+n.content.clearUnlock();
+});
     
-  }
+}
 
   
 } catch(e){
 Vars.ui.showInfoFade(e,3);
 }
   
-})
+});
 
 
 
