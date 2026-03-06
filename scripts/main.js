@@ -17,11 +17,8 @@ const info = sector.info;
   var parent = TechTree.all.find(u => u.content == block);
 
 parent.each(n => {
-var content = n.content;
-var requirements = content.requirements;
-
-content.clearUnlock();
-n.setupRequirements(requirements ^ 1.1 * 20 * 0.35);
+    n.content.clearUnlock();
+    n.setupRequirements(n.content.requirements);
 });
     
 }
