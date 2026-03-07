@@ -36,7 +36,7 @@ const source = event.source;
 const target = Vars.content.getByName(ContentType.block, "gr-ton-crusher");
 
 if (!build || !source) return;
-if (build.block != target && build.enabled == true) return;
+if (build.block != target && build.enabled == false) return;
 
 const damageExtra = (source.damage / 10) * 5;
 build.damage(damageExtra);
