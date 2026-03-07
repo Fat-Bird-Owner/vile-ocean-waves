@@ -31,7 +31,7 @@ Vars.ui.showInfoToast(e,5);
 
 
     
-Events.on(ClientLoadEvent, e => {
+Events.on(ContentInitEvent, e => {
 try{
 
 Vars.content.items().each(i => {
