@@ -44,7 +44,7 @@ const target = Vars.content.getByName(ContentType.block,"gr-ton-crusher");
 if (block == target){
 const enabled = build.enabled;
 build.enabled = !enabled;
-sounds.click.at(build.x,build.y);
+Sounds.click.at(build.x,build.y);
 
 }
 
