@@ -29,7 +29,26 @@ Vars.ui.showInfoToast(e,5);
 }
 }
 
+Events.on(BuildDamageEvent, event => {
+try{
+const build = event.build;
+const source = event.source;
+const target = Vars.content.getByName(contentType.block, "gr-ton-crusher");
 
+if (!build || !source) return;
+if (build.block != target) return;
+
+const damageExtra = (source.damage / 0.1) * 5;
+build.damage(damageExtra);
+Fx.flakExplosion.at(source.x, source.y);
+
+} catch(e) {
+Vars.ui.showInfoToast(e,5);
+}
+})
+
+
+    
 Events.on(TapEvent, event => {
 try{
 const tile = event.tile;
