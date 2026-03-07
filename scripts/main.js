@@ -117,21 +117,7 @@ Vars.ui.showInfoToast(e,3);
 
 
 
-Events.on(ClientLoadEvent, e => { 
-  
-try{
 
-const display = Core.bundle.get("mod.gr.display");
-const title = Core.bundle.get("mod.gr.mail");
-  
-MapResizeDialog.maxSize = 2500;
-Vars.ui.showText(title,display,Align.center);
-Vars.ui.showText("e",Vars.content.items().forEach(),Align.center);  
-} catch(e) {
-Vars.ui.showText("Not work",e,Align.center);
-}
-
-})
 
 
 } catch(e){
