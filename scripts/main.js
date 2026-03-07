@@ -31,19 +31,22 @@ Vars.ui.showInfoToast(e,5);
 
 
     
-Events.on(ContentInitEvent, event => {
+Events.on(ClientLoadEvent, e => {
 try{
 
 Vars.content.items().each(i => {
-const name = i.localizedName;
-const postName = "[#" + i.color + "]" + name;
-i.localizedName = postName;
+    if(!i) return;
+
+    const name = i.localizedName;
+    const postName = "[#" + i.color.toString() + "]" + name;
+
+    i.localizedName = postName;
 });
-    
-} catch(e) {
-Vars.ui.showText("e",e,Align.center);
+
+} catch(err){
+    Vars.ui.showInfoToast(err, 5);
 }
-})
+});
 
 
     
