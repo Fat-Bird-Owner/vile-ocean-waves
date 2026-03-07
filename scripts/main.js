@@ -37,8 +37,10 @@ const player = event.player;
 
 if (tile.build == null) return;
 const block = tile.block();
+const build = tile.build;
 const target = Vars.content.getByName(ContentType.block,"gr-ton-crusher");
 
+    
 if (block == target){
 const enabled = build.enabled;
 build.enabled = !enabled;
