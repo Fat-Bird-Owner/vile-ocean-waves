@@ -30,13 +30,20 @@ Vars.ui.showInfoToast(e,5);
 }
 
 Events.on(WorldLoadEndEvent, e => {
-
-Vars.world.tiles.each(tile => {
-    if(tile.build && tile.block() == Blocks.yourBlock){
-        radarBuild(tile);
+try {
+Vars.indexer.eachBlock(
+    null,
+    0,
+    0,
+    999999,
+    b => b.block == Blocks.duo,
+    b => {
+        radarBuild(b.tile);
     }
-});
-
+);
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+}
 });
 
     
