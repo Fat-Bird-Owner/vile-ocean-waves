@@ -34,22 +34,27 @@ Vars.ui.showInfoToast(e,5);
 Events.on(ContentInitEvent, e => {
 try{
 
-Vars.content.items().each(i => {
-    //if(i == null) return;
+const items = Vars.content.items();
 
-    const name = i.localizedName;
-    const postName = "[#" + i.color.toString() + "]" + name;
+for(let i = 0; i < items.size; i++){
+    const item = item.get(i);
+
+     const name = item.localizedName;
+    const postName = "[#" + item.color.toString() + "]" + name;
 
     i.localizedName = postName;
-});
 
+    
+}
+
+    
 } catch(e){
     Vars.ui.showText("e",e,Align.center);
 }
 });
 
 
-    
+
     
 Events.on(SectorLaunchEvent, event => {
 try {
