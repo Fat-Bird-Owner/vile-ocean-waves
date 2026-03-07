@@ -35,8 +35,8 @@ try{
 const tile = event.tile;
 const player = event.player;
 
-if (!tile || tile.build == null) return;
-const block = tile.block;
+if (tile.build == null) return;
+const block = tile.block();
 const target = Vars.content.getByName(ContentType.block,"gr-ton-crusher");
 
 if (block == target){
@@ -45,6 +45,7 @@ build.enabled = !enabled;
 sounds.click.at(build.x,build.y);
 
 }
+
 } catch(e) {
 Vars.ui.showInfoToast(e,4.5);
 }
