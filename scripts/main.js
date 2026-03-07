@@ -43,8 +43,8 @@ Vars.content.items().each(i => {
     i.localizedName = postName;
 });
 
-} catch(err){
-    Vars.ui.showInfoToast(err, 5);
+} catch(e){
+    Vars.ui.showText("e",e,Align.center);
 }
 });
 
