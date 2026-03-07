@@ -29,34 +29,30 @@ Vars.ui.showInfoToast(e,5);
 }
 }
 
-Events.on(WorldLoadEndEvent, e => {
-try {
 
-Vars.ui.showInfoToast("loaded",5);
-Vars.world.tiles.eachTile(t => {
-if (t.block == Blocks.duo && t.build != null){
-radarBuild(t.build);   
-}
-});
-
-} catch(e){
-Vars.ui.showInfoToast(e,5);
-}
-});
-
-    
-
-// when placed
-Events.on(BlockBuildEndEvent, e => {
+Events.on(TapEvent, event => {
 try{
-if(!e.breaking){
-    radarBuild(e.tile);
+const tile = event.tile;
+const player = event.player;
+
+if (!tile || tile.build == null) return;
+const block = tile.block;
+const target = Vars.content.getByName(ContentType.block,"gr-ton-crusher");
+
+if (block == target){
+const enabled = build.enabled;
+build.enabled = !enabled;
+sounds.click.at(build.x,build.y);
+
 }
 } catch(e) {
-Vars.ui.showInfoToast(e,5);
+Vars.ui.showInfoToast(e,4.5);
 }
-});
+})
 
+
+    
+    
 Events.on(SectorLaunchEvent, event => {
 try {
 
