@@ -33,7 +33,7 @@ Events.on(WorldLoadEndEvent, e => {
 try {
 
 Vars.ui.showInfoToast("loaded",5);
-Tiles.eachTile(t => {
+Vars.world.tiles.eachTile(t => {
 if (t.block == Blocks.duo && t.build != null){
 radarBuild(t.build);   
 }
