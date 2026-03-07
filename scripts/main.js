@@ -29,46 +29,19 @@ Vars.ui.showInfoToast(e,5);
 }
 }
 
-Events.on(BuildDamageEvent, event => {
-try{
-const build = event.build;
-const source = event.source;
-const target = Vars.content.getByName(ContentType.block, "gr-ton-crusher");
-
-if (!build || !source) return;
-if (build.block != target || build.enabled == false || build.status() != BlockStatus.active) return;
-
-const damageExtra = source.damage * 2.75;
-build.damage(damageExtra);
-Fx.flakExplosion.at(source.x, source.y);
-
-} catch(e) {
-Vars.ui.showInfoToast(e,5);
-}
-})
-
 
     
-Events.on(TapEvent, event => {
+Events.on(ContentInitEvent, event => {
 try{
-const tile = event.tile;
-const player = event.player;
 
-if (tile.build == null) return;
-const block = tile.block();
-const build = tile.build;
-const target = Vars.content.getByName(ContentType.block,"gr-ton-crusher");
-
+Vars.content.items().each(i => {
+const name = i.localizedName;
+const postName = "[#" + i.color + "]" + name;
+i.localizedName = postName;
+});
     
-if (block == target){
-const enabled = build.enabled;
-build.enabled = !enabled;
-Sounds.click.at(build.x,build.y);
-
-}
-
 } catch(e) {
-Vars.ui.showInfoToast(e,4.5);
+Vars.ui.showText("e",e,Align.center);
 }
 })
 
