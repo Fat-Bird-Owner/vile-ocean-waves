@@ -31,16 +31,14 @@ Vars.ui.showInfoToast(e,5);
 
 Events.on(WorldLoadEndEvent, e => {
 try {
-Vars.indexer.eachBlock(
-    null,
-    0,
-    0,
-    999999,
-    b => b.block == Blocks.duo,
-    b => {
-        radarBuild(b.tile);
-    }
-);
+
+Vars.ui.showInfoToast("loaded",5);
+Tiles.eachTile(t => {
+if (t.block == Blocks.duo && t.build != null){
+radarBuild(t.build);   
+}
+});
+
 } catch(e){
 Vars.ui.showInfoToast(e,5);
 }
