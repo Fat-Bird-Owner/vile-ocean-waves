@@ -35,7 +35,7 @@ Events.on(ContentInitEvent, e => {
 try{
 
 Vars.content.items().each(i => {
-    if(!i) return;
+    //if(i == null) return;
 
     const name = i.localizedName;
     const postName = "[#" + i.color.toString() + "]" + name;
