@@ -38,7 +38,7 @@ const target = Vars.content.getByName(ContentType.block, "gr-ton-crusher");
 if (!build || !source) return;
 if (build.block != target && build.enabled == true) return;
 
-const damageExtra = (source.damage / 0.1) * 5;
+const damageExtra = (source.damage / 10) * 5;
 build.damage(damageExtra);
 Fx.flakExplosion.at(source.x, source.y);
 
