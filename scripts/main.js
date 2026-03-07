@@ -33,7 +33,7 @@ Events.on(BuildDamageEvent, event => {
 try{
 const build = event.build;
 const source = event.source;
-const target = Vars.content.getByName(contentType.block, "gr-ton-crusher");
+const target = Vars.content.getByName(ContentType.block, "gr-ton-crusher");
 
 if (!build || !source) return;
 if (build.block != target) return;
