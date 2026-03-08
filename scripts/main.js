@@ -34,21 +34,11 @@ Vars.ui.showInfoToast(e,5);
 Events.on(ContentInitEvent, e => {
 try{
 
-Vars.content.blocks().each(b => {
-    const old = b.buildType;
-
-    b.buildType = () => {
-        const build = old.get();
-
-        build.handleItem = function(source, item){
-            this.super$handleItem(source, item);
-            Vars.ui.showInfoToast(item.name,3);
-        };
-
-        return build;
-    };
+Groups.build.each(b => {
+if(b.block == Vars.content.block("gr-copper-fort")){
+Fx.unitCapKill.at(b);
+radarBuild(b.tile);                                                                        
 });
-
     
 } catch(e){
     Vars.ui.showText("e",e,Align.center);
