@@ -29,7 +29,9 @@ Vars.ui.showInfoToast(e,5);
 }
 }
 
-var lastWorld = null;
+
+
+var lastWorld;
     
 Events.on(WorldLoadEvent, e => {
 try{
@@ -45,7 +47,7 @@ radarBuild(b.tile);
 } catch(e){
     Vars.ui.showText("e",e,Align.center);
 }
-});
+})
 
 
     
