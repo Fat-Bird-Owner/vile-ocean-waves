@@ -1,49 +1,15 @@
 try{
 
-function radarBuild(tile){
-try{
-
-if(tile == null || tile.build == null) return;
-const build = tile.build;
-
-// pause check
-if(Vars.state.isPaused()){
-    Timer.schedule(() => radarBuild(tile), 0.25);
-    return;
-}
-
-Lightning.create(
-build.team,
-build.team.color,
-20,
-build.x,
-build.y,
-Mathf.random(360),
-20
-);
-
-Timer.schedule(() => radarBuild(tile), 1);
-
-} catch(e){
-Vars.ui.showInfoToast(e,5);
-}
-}
-
-
-
-var lastWorld;
     
 Events.on(WorldLoadEvent, e => {
 try{
 
-if (lastWorld == Vars.world) return;
 
-Groups.build.each(b => {
-if(b.block == Vars.content.block("gr-copper-fort")){
-Fx.unitCapKill.at(b);
-radarBuild(b.tile);                                                                        
-}
-    
+Groups.build.each(b, => {
+if (b.block != Vars.content.block("gr-copper-fort")) return;
+b.kill();
+});
+  
 } catch(e){
     Vars.ui.showText("e",e,Align.center);
 }
