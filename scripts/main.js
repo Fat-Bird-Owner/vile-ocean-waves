@@ -34,18 +34,20 @@ Vars.ui.showInfoToast(e,5);
 Events.on(ContentInitEvent, e => {
 try{
 
-const items = Vars.content.items();
+Vars.content.blocks().each(b => {
+    const old = b.buildType;
 
-for(let i = 0; i < items.size; i++){
-    const item = item.get(i);
+    b.buildType = () => {
+        const build = old.get();
 
-     const name = item.localizedName;
-    const postName = "[#" + item.color.toString() + "]" + name;
+        build.handleItem = function(source, item){
+            this.super$handleItem(source, item);
+            Vars.ui.showInfoToast(item.name,3);
+        };
 
-    i.localizedName = postName;
-
-    
-}
+        return build;
+    };
+});
 
     
 } catch(e){
