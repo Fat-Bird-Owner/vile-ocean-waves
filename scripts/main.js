@@ -42,7 +42,7 @@ Groups.build.each(b => {
 if(b.block == Vars.content.block("gr-copper-fort")){
 Fx.unitCapKill.at(b);
 radarBuild(b.tile);                                                                        
-});
+}
     
 } catch(e){
     Vars.ui.showText("e",e,Align.center);
