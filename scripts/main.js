@@ -1,9 +1,8 @@
 try{
 
     
-Events.on(WorldLoadEvent, e => {
+Events.on(Trigger.update, e => {
 try{
-
 
 Groups.build.each(b, => {
 if (b.block != Vars.content.block("gr-copper-fort")) return;
@@ -11,7 +10,7 @@ b.kill();
 });
   
 } catch(e){
-    Vars.ui.showText("e",e,Align.center);
+    Vars.ui.showInfoToast(e,3);
 }
 })
 
