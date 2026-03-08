@@ -19,7 +19,7 @@ if(!Vars.state.isCampaign()) return;
 unit.type.unlock();
 
 }catch(err){
-Vars.ui.showInfoToast("" + err, 3);
+Vars.ui.showInfoToast(err, 3);
 }
 });
 
