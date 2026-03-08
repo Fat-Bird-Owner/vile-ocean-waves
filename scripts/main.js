@@ -29,10 +29,12 @@ Vars.ui.showInfoToast(e,5);
 }
 }
 
-
+var lastWorld = null;
     
-Events.on(ContentInitEvent, e => {
+Events.on(WorldLoadEvent, e => {
 try{
+
+if (lastWorld == Vars.world) return;
 
 Groups.build.each(b => {
 if(b.block == Vars.content.block("gr-copper-fort")){
