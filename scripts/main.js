@@ -4,8 +4,9 @@ try{
 
 const unit = e.unit;
 const damage = e.bullet.damage;
+const target = Vars.content.getByName(ContentType.unit, "gr-barracade");
 
-if (damage <= 15 || unit.type.name != "gr-barracade") return;
+if (damage <= 15 || unit.type != target) return;
 
 Vars.ui.showInfoToast("hit",1);
     
