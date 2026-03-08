@@ -1,6 +1,4 @@
-try{
 
-    
 Events.on(UnitDamageEvent, e => {
 try{
 
@@ -85,6 +83,4 @@ Vars.ui.showInfoToast(e,3);
 
 
 */
-} catch(e){
-Vars.ui.showText("Not work",e,Align.center);
-}
+
