@@ -7,7 +7,7 @@ Vars.ui.showInfoToast("hit",1);
 const unit = e.unit;
 const damage = e.bullet.damage;
 
-if (unit.type != target || damage <= 15 || unit.type.name != "gr-barracade") return;
+if (damage <= 15 || unit.type.name != "gr-barracade") return;
 
 unit.apply(StatusEffects.invincible,15);
 Fx.unitShieldBreak.at(unit.x,unit.y);
