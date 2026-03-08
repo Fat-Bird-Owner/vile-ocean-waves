@@ -5,7 +5,7 @@ try{
 Vars.ui.showInfoToast("hit",1);
 
 const unit = e.unit;
-const damage = source.damage;
+const damage = bullet.damage;
 
 if (unit.type != target || damage <= 15 || unit.type.name != "gr-barracade") return;
 
