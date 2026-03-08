@@ -10,8 +10,8 @@ if (damage <= 15 || unit.type != target) return;
 
 Vars.ui.showInfoToast("hit",1);
     
-unit.apply(StatusEffects.invincible,15);
-Fx.unitShieldBreak.at(unit.x,unit.y);
+unit.apply(StatusEffects.invincible,7.5);
+Fx.teleport.at(unit.x,unit.y);
 
 
 } catch(e){
