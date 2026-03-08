@@ -2,6 +2,8 @@
 Events.on(UnitDamageEvent, e => {
 try{
 
+Vars.ui.showInfoToast("hit",1);
+    
 const target = Vars.content.getByName(ContentType.unit,"gr-barracade");
 const unit = e.unit;
 const damage = source.damage;
