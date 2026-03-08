@@ -1,9 +1,17 @@
 
 Events.on(UnitSpawnEvent, e => {
 try{
+
 const unit = e.unit;
-if (unit.type != Vars.content.unit("gr-drive") || unit.type != Vars.content.unit("gr-barracade")) return;
-if (Vars.state.isCampaign() == false) return;
+
+function getUnit(unit){
+unitFound = Vars.content.getByName(ContentType.unit, unit);
+return unitFound;
+}
+const targets = [getUnit("gr-drive"), getUnit("gr-barracade")];
+  
+if (unit.type != targets[0] || unit.type != targets[1]) return;
+if (!Vars.state.isCampaign()) return;
   
 unit.type.unlock();
   
