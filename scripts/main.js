@@ -2,7 +2,7 @@
 Events.on(UnitDamageEvent, e => {
 try{
 
-const target = Vars.content.getByName(ContentType.unit,"barracade");
+const target = Vars.content.getByName(ContentType.unit,"gr-barracade");
 const unit = e.unit;
 const damage = source.damage;
 
