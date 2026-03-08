@@ -1,14 +1,19 @@
 try{
 
     
-Events.on(Trigger.update, e => {
+Events.on(UnitDamageEvent, e => {
 try{
 
-Groups.build.each(b => {
-if (b.block.name != "gr-copper-fort") return;
-b.kill();
-});
-  
+const target = Vars.content.getByName(ContentType.unit,"barracade");
+const unit = e.unit;
+const damage = source.damage;
+
+if (unit.type != target || damage <= 15) return;
+
+unit.apply(Vars.content.status("invincible",15);
+Fx.unitShieldBreak.at(unit.x,unit.y);
+
+
 } catch(e){
     Vars.ui.showInfoToast(e,3);
 }
