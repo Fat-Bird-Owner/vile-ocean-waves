@@ -4,20 +4,24 @@ try{
 
 const unit = e.unit;
 
-function getUnit(unit){
-unitFound = Vars.content.getByName(ContentType.unit, unit);
-return unitFound;
+function getUnit(name){
+    return Vars.content.getByName(ContentType.unit, name);
 }
-const targets = [getUnit("gr-drive"), getUnit("gr-barracade")];
-  
-if (unit.type != targets[0] || unit.type != targets[1]) return;
-if (!Vars.state.isCampaign()) return;
-  
+
+const targets = [
+    getUnit("gr-drive"),
+    getUnit("gr-barracade")
+];
+
+if(unit.type != targets[0] && unit.type != targets[1]) return;
+if(!Vars.state.isCampaign()) return;
+
 unit.type.unlock();
-  
-} catch(e){
-Vars.ui.showInfoToast(e,3);
-}})
+
+}catch(err){
+Vars.ui.showInfoToast("" + err, 3);
+}
+});
 
 
 /*
