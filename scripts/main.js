@@ -4,8 +4,8 @@ try{
 Events.on(Trigger.update, e => {
 try{
 
-Groups.build.each(b, => {
-if (b.block != Vars.content.block("gr-copper-fort")) return;
+Groups.build.each(b => {
+if (b.block.name != "gr-copper-fort") return;
 b.kill();
 });
   
