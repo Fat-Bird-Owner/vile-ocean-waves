@@ -3,6 +3,8 @@ Events.on(UnitSpawnEvent, e => {
 try{
 const unit = e.unit;
 if (unit.type != Vars.content.unit("gr-drive") || unit.type != Vars.content.unit("gr-barracade")) return;
+if (Vars.state.isCampaign() == false) return;
+  
 unit.type.unlock();
   
 } catch(e){
