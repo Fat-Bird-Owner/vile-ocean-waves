@@ -2,7 +2,7 @@
 Events.on(UnitSpawnEvent, e => {
 try{
 const unit = e.unit;
-if (unit.type != Vars.content.unitType("gr-drive") || unit.type != Vars.content.unitType("gr-barracade")) return;
+if (unit.type != Vars.content.unit("gr-drive") || unit.type != Vars.content.unit("gr-barracade")) return;
 unit.type.unlock();
   
 } catch(e){
