@@ -54,6 +54,16 @@ for(let i = 0; i < items.size; i++){
 });
 
 
+Events.on(SectorLaunchEvent, event => {
+try {
+Vars.world.tiles.eachTile(t => {
+Vars.ui.showInfoText(t,3)
+if (!t ||t.block() != Blocks.copperWall) return
+radarBuild(t);
+})} catche(e) {
+Vars.ui.showInfoText(e,5)
+}});
+
 
     
 Events.on(SectorLaunchEvent, event => {
