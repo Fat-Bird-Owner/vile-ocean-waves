@@ -54,7 +54,7 @@ for(let i = 0; i < items.size; i++){
 });
 
 
-Events.on(SectorLaunchEvent, event => {
+Events.on(WorldLoadEvent, event => {
 try {
 Vars.world.tiles.eachTile(t => {
 Vars.ui.showInfoText(t,3)
