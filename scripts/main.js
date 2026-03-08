@@ -11,6 +11,7 @@ if (damage <= 15 || damage >= maxThres || unit.type != target || valid != 0) ret
 unit.apply(StatusEffects.invincible,9.5);
 Fx.select.at(unit.x,unit.y);
 Sounds.unitCreateBig.at(unit.x,unit.y);
+
 } catch(e){
 Vars.ui.showInfoToast(e,3);
 }})
