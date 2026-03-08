@@ -3,14 +3,13 @@ Events.on(UnitDamageEvent, e => {
 try{
 
 Vars.ui.showInfoToast("hit",1);
-    
-const target = Vars.content.getByName(ContentType.unit,"gr-barracade");
+
 const unit = e.unit;
 const damage = source.damage;
 
-if (unit.type != target || damage <= 15) return;
+if (unit.type != target || damage <= 15 || unit.type.name != "gr-barracade") return;
 
-unit.apply(Vars.content.status("invincible",15);
+unit.apply(StatusEffects.invincible,15);
 Fx.unitShieldBreak.at(unit.x,unit.y);
 
 
