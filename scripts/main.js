@@ -10,7 +10,7 @@ try{
 
 const unit = e.unit;
 
-if(!getValid(unit.type,"gr-drive") && !getValid(unit.type,"gr-barracade")) return;
+if(getValid(unit.type,"gr-drive") == false && getValid(unit.type,"gr-barracade") == false) return;
 if(!Vars.state.isCampaign()) return;
 unit.type.quietUnlock();
 
