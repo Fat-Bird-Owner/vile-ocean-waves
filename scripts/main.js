@@ -10,18 +10,17 @@ try{
 
 const unit = e.unit;
 
-if(!getValid(unit.type,"gr-drive") || !getValid(unit.type,"gr-barracade")) return;
+if(!getValid(unit.type,"gr-drive") && !getValid(unit.type,"gr-barracade")) return;
 if(!Vars.state.isCampaign()) return;
 unit.type.quietUnlock();
 
 const name = unit.type.localizedName;
 const message = "Enemy encyclopedia updated";
-Vars.ui.hudFrag.showToast(unit.type.previewRegion, message);
+Vars.ui.hudfrag.showToast(unit.type.previewRegion, message);
   
 }catch(err){
 Vars.ui.showInfoToast(err, 3);
-}
-});
+}});
 
 
 Events.on(SectorLaunchEvent, event => {
