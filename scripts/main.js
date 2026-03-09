@@ -4,18 +4,11 @@ try{
 
 const unit = e.unit;
 
-function getUnit(name){
-    return Vars.content.getByName(ContentType.unit, name);
-}
 
-const targets = [
-    getUnit("gr-drive"),
-    getUnit("gr-barracade")
-];
+const target = Vars.content.getByName(ContentType.unit, "gr-drive");
 
-if(unit.type != targets[0] && unit.type != targets[1]) return;
+if(unit.type != target) return;
 if(!Vars.state.isCampaign()) return;
-
 unit.type.unlock();
 
 }catch(err){
