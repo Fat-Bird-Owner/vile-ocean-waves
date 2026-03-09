@@ -1,4 +1,4 @@
-function GetValid(type,name){
+function getValid(type,name){
 const target = Vars.content.getByName(ContentType.unit, name);
 if (target == null || target != type) return false;
 return true;
@@ -10,7 +10,7 @@ try{
 
 const unit = e.unit;
 
-if(!GetValid(unit.type,"gr-drive") || !GetValid(unit.type,"gr-barracade")) return;
+if(!getValid(unit.type,"gr-drive") || !getValid(unit.type,"gr-barracade")) return;
 if(!Vars.state.isCampaign()) return;
 unit.type.quietUnlock();
 
