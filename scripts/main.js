@@ -1,39 +1,15 @@
-function getValid(type,name){
-const target = Vars.content.getByName(ContentType.unit, name);
-if (target == null || target != type) return false;
-return true;
-}
 
 
-Events.on(UnitSpawnEvent, e => {
+Events.on(ContentInitEvent, e => {
 try{
 
-const unit = e.unit;
+Core.settings.put("console", true);
+Core.settings.save();
 
-if(getValid(unit.type,"gr-drive") == false && getValid(unit.type,"gr-barracade") == false) return;
-if(!Vars.state.isCampaign()) return;
-unit.type.quietUnlock();
-
-const name = unit.type.localizedName;
-const message = "Enemy encyclopedia updated";
-Vars.ui.hudfrag.showToast(unit.type.previewRegion, message);
-  
 }catch(err){
 Vars.ui.showInfoToast(err, 3);
 }});
-
-
-Events.on(SectorLaunchEvent, event => {
-try {
-
-Vars.content.unit("gr-barracade").clearUnlock();
-Vars.content.unit("gr-drive").clearUnlock();
- 
-} catch(e){
-Timer.schedule(() => {  
-Vars.ui.showText("e",e,Align.center);
-},1.5);
-} });
+  
 
 /*
 Events.on(SectorLaunchEvent, event => {
