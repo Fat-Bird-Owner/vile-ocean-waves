@@ -3,8 +3,8 @@ try {
 const block = Vars.content.block("conduit");
 
 // load region 0
-const top0 = Core.atlas.find(block.name + "-top-0");
-const bot0 = Core.atlas.find(block.name + "-bottom-0");
+const top0 = Core.atlas.find("conduit" + "-top-0");
+const bot0 = Core.atlas.find("conduit" + "-bottom-0");
 
 // overwrite all frames
 for(let i = 0; i < 4; i++){
