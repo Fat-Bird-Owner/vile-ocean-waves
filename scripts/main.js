@@ -3,8 +3,24 @@
 Events.on(ContentInitEvent, e => {
 try{
 
-Core.settings.put("console", true);
-Core.settings.save();
+const block = Vars.content.block("gr-core-facility");
+
+const old = block.buildType;
+
+block.buildType = () => {
+    const build = old.get();
+
+    const oldAccept = build.acceptItem;
+
+    build.acceptItem = function(source, item){
+        // your code
+        Vars.ui.showInfoToast("item received", 1);
+
+        return oldAccept.call(this, source, item);
+    };
+
+    return build;
+};
 
 }catch(err){
 Vars.ui.showInfoToast(err, 3);
