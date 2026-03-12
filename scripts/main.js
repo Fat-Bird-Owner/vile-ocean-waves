@@ -1,7 +1,7 @@
 Events.on(ClientLoadEvent, e => {
 try {
 
-const block = Vars.content.block("gr-pipelie");
+const block = Vars.content.block("gr-pipeline");
 
 const top0 = Core.atlas.find("gr-pipeline-top-0");
 const bot0 = Core.atlas.find("gr-pipeline-bottom-0");
