@@ -7,10 +7,10 @@ const top0 = Core.atlas.find("gr-pipeline-top-0");
 const bot0 = Core.atlas.find("gr-pipeline-bottom-0");
 
 // create arrays if needed
-if(!block.topRegions) block.topRegions = new Array(6);
-if(!block.botRegions) block.botRegions = new Array(6);
+if(!block.topRegions) block.topRegions = new Array(5);
+if(!block.botRegions) block.botRegions = new Array(5);
 
-for(let i = 0; i < 6; i++){
+for(let i = 0; i < 5; i++){
     block.topRegions[i] = top0;
     block.botRegions[i] = bot0;
 }
