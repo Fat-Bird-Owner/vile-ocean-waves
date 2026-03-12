@@ -1,22 +1,22 @@
-Events.on(ContentInitEvent, e => {
+Events.on(ClientLoadEvent, e => {
 try {
+
 const block = Vars.content.block("conduit");
 
-// load region 0
-const top0 = Core.atlas.find("conduit" + "-top-0");
-const bot0 = Core.atlas.find("conduit" + "-bottom-0");
+const top0 = Core.atlas.find("conduit-top-0");
+const bot0 = Core.atlas.find("conduit-bottom-0");
 
-// overwrite all frames
-for(let i = 0; i < 5; i++){
+// create arrays if needed
+if(!block.topRegions) block.topRegions = new Array(6);
+if(!block.botRegions) block.botRegions = new Array(6);
+
+for(let i = 0; i < 6; i++){
     block.topRegions[i] = top0;
-}
-
-for(let i = 0; i < 5; i++){
     block.botRegions[i] = bot0;
 }
 
-} catch(e) {
-Vars.ui.showText("e",e,Align.center);
+}catch(err){
+Vars.ui.showInfoToast(err,3);
 }
 });
   
