@@ -1,30 +1,21 @@
+Events.on(ClientLoadEvent, e => {
 
+const block = Vars.content.block("conduit");
 
-Events.on(ContentInitEvent, e => {
-try{
+// load region 0
+const top0 = Core.atlas.find(block.name + "-top-0");
+const bot0 = Core.atlas.find(block.name + "-bottom-0");
 
-const block = Vars.content.block("gr-core-facility");
+// overwrite all frames
+for(let i = 0; i < 6; i++){
+    block.topRegions[i] = top0;
+}
 
-const old = block.buildType;
+for(let i = 0; i < 6; i++){
+    block.botRegions[i] = bot0;
+}
 
-block.buildType = () => {
-    const build = old.get();
-
-    const oldAccept = build.acceptItem;
-
-    build.acceptItem = function(source, item){
-        // your code
-        Vars.ui.showInfoToast("item received", 1);
-
-        return oldAccept.call(this, source, item);
-    };
-
-    return build;
-};
-
-}catch(err){
-Vars.ui.showInfoToast(err, 3);
-}});
+});
   
 
 /*
