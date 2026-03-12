@@ -6,14 +6,9 @@ const block = Vars.content.block("conduit");
 const top0 = Core.atlas.find("conduit" + "-top-0");
 const bot0 = Core.atlas.find("conduit" + "-bottom-0");
 
-// overwrite all frames
-for(let i = 0; i < 4; i++){
-    block.topRegions[i] = top0;
-}
+block.topRegions = [top0,top0,top0,top0,top0];
+block.botRegions = [bot0,bot0,bot0,bot0,bot0];
 
-for(let i = 0; i < 4; i++){
-    block.botRegions[i] = bot0;
-}
 } catch(e) {
 Vars.ui.showText("e",e,Align.center);
 }
