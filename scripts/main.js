@@ -14,7 +14,7 @@ for(let i = 0; i < 4; i++){
 for(let i = 0; i < 4; i++){
     block.botRegions[i] = bot0;
 }
-} catche(e) {
+} catch(e) {
 Vars.ui.showText("e",e,Align.center);
 }
 });
