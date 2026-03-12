@@ -1,5 +1,5 @@
-Events.on(ClientLoadEvent, e => {
-
+Events.on(ContentInitEvent, e => {
+try {
 const block = Vars.content.block("conduit");
 
 // load region 0
@@ -7,14 +7,16 @@ const top0 = Core.atlas.find(block.name + "-top-0");
 const bot0 = Core.atlas.find(block.name + "-bottom-0");
 
 // overwrite all frames
-for(let i = 0; i < 5; i++){
+for(let i = 0; i < 4; i++){
     block.topRegions[i] = top0;
 }
 
-for(let i = 0; i < 5; i++){
+for(let i = 0; i < 4; i++){
     block.botRegions[i] = bot0;
 }
-
+} catche(e) {
+Vars.ui.showText("e",e,Align.center);
+}
 });
   
 
