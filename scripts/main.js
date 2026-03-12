@@ -7,11 +7,11 @@ const top0 = Core.atlas.find("conduit" + "-top-0");
 const bot0 = Core.atlas.find("conduit" + "-bottom-0");
 
 // overwrite all frames
-for(let i = 0; i < block.topRegions.length; i++){
+for(let i = 0; i < 5; i++){
     block.topRegions[i] = top0;
 }
 
-for(let i = 0; i < block.botRegions.length; i++){
+for(let i = 0; i < 5; i++){
     block.botRegions[i] = bot0;
 }
 
