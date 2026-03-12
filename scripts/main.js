@@ -1,10 +1,10 @@
 Events.on(ClientLoadEvent, e => {
 try {
 
-const block = Vars.content.block("conduit");
+const block = Vars.content.block("gr-pipelie");
 
-const top0 = Core.atlas.find("conduit-top-0");
-const bot0 = Core.atlas.find("conduit-bottom-0");
+const top0 = Core.atlas.find("gr-pipeline-top-0");
+const bot0 = Core.atlas.find("gr-pipeline-bottom-0");
 
 // create arrays if needed
 if(!block.topRegions) block.topRegions = new Array(6);
