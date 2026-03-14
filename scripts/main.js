@@ -7,9 +7,9 @@ const target = Vars.content.getByName(ContentType.block,"copper-wall");
 Groups.build.each(u => {
 if (u.block == target){
 u.kill();
-}
+}});
 
-});
+
 
 } catche(e) {
 Vars.ui.showInfoToast(e,5);
