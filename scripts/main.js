@@ -13,9 +13,11 @@ Vars.state.rules.spawns.each(group => {
 });
 
 
-
-
+Timer.schedule(() => {  
 Vars.ui.showInfoToast("[red]Goodluck.[]",5);    
+}, 2.667);
+
+
 } catch(e){
 Vars.ui.showInfoToast(e,5);
 }
