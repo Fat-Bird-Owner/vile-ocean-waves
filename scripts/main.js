@@ -1,20 +1,28 @@
-Events.on(ClientLoadEvent, e => {
+try{
+
+function Loop(){
+if (Vars.world == null) return;
+   
+const indexer = Vars.indexer;
+Vars.indexer.allBuildings(0, 0, 999999, b => {
+    const blockType = b.block;
+    if (blockType != Blocks.copperWall) return;
+
+    b.damage(1);
+
+});
+
+Timer.schedule({
+Loop()
+}, 0.25);
+    
+}    
+ 
+Events.on(WorldLoadEvent, e => {
 try {
 
-const block = Vars.content.block("gr-pipeline");
-
-const top0 = Core.atlas.find("gr-pipeline-top-0");
-const bot0 = Core.atlas.find("gr-pipeline-bottom-0");
-
-// create arrays if needed
-if(!block.topRegions) block.topRegions = new Array(5);
-if(!block.botRegions) block.botRegions = new Array(5);
-
-for(let i = 0; i < 5; i++){
-    block.topRegions[i] = top0;
-    block.botRegions[i] = bot0;
-}
-
+loop()
+    
 }catch(err){
 Vars.ui.showInfoToast(err,3);
 }
@@ -87,3 +95,6 @@ Vars.ui.showInfoToast(e,3);
 
 */
 
+} catch(e){
+Vars.ui.showText("e",e,Align.center);
+}
