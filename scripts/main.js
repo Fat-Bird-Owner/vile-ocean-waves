@@ -2,12 +2,12 @@ try{
 
 function loopFunc(){
 Vars.ui.showInfoFade("work 1",0.15);
-if (Vars.world == null) return;
+if (!Vars.world) return;
 
 Vars.ui.showInfoFade("work",0.15);
    
 const indexer = Vars.indexer;
-Vars.indexer.allBuildings(0, 0, 999999, b => {
+indexer.allBuildings(0, 0, 999999, b => {
 
     if(!b || !b.block) return;
 
@@ -17,6 +17,7 @@ Vars.indexer.allBuildings(0, 0, 999999, b => {
     }
 
 });
+
 
 Timer.schedule(() => {
     loopFunc();
