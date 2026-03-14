@@ -1,6 +1,6 @@
 try{
 
-function Loop(){
+function loopFunc(){
 if (Vars.world == null) return;
 
 Vars.ui.showInfoFade("work",0.15);
@@ -15,7 +15,7 @@ Vars.indexer.allBuildings(0, 0, 999999, b => {
 });
 
 Timer.schedule({
-Loop()
+loopFunc()
 }, 0.25);
     
 }    
@@ -24,7 +24,7 @@ Loop()
 Events.on(WorldLoadEvent, e => {
 try {
 
-Loop()
+loopFunc()
     
 }catch(err){
 Vars.ui.showInfoToast(err,3);
