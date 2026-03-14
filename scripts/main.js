@@ -1,4 +1,4 @@
-Events.on(WorldLoadEndEvent, e => {
+Events.on(Trigger.update, e => {
 try {
 
 function idk(build){
@@ -7,7 +7,7 @@ build.damage(100);
 }
     
 Groups.build.each(b => {
-idk(b);
+b.damage(1);
 });
 
 } catch(e){
