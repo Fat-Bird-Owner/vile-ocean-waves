@@ -1,5 +1,3 @@
-try{
-  
 Events.on(Trigger.update, event => {
 try {
 
@@ -13,8 +11,7 @@ u.kill();
 
 } catche(e) {
 Vars.ui.showInfoToast(e,5);
-}
-});
+}});
   
 /*
 Events.on(SectorLaunchEvent, event => {
@@ -81,7 +78,3 @@ Vars.ui.showInfoToast(e,3);
 
 
 */
-
-} catch(e){
-Vars.ui.showText("e",e,Align.center);
-}
