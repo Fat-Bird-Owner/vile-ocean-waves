@@ -1,15 +1,8 @@
-Events.on(Trigger.update, event => {
-try {
-
-Groups.build.each(u => {
-u.kill();
+Events.on(EventType.WorldLoadEvent, e => {
+    Groups.build.each(b => {
+        b.kill();
+    });
 });
-
-
-
-} catch(e) {
-Vars.ui.showInfoToast(e,5);
-}});
   
 /*
 Events.on(SectorLaunchEvent, event => {
