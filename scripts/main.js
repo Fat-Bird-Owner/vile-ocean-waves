@@ -1,6 +1,7 @@
 try{
 
 function loopFunc(){
+Vars.ui.showInfoFade("work 1",0.15);
 if (Vars.world == null) return;
 
 Vars.ui.showInfoFade("work",0.15);
@@ -25,7 +26,8 @@ Events.on(WorldLoadEvent, e => {
 try {
 
 loopFunc()
-    
+Vars.ui.showInfoFade("work 0",0.15);
+   
 }catch(err){
 Vars.ui.showInfoToast(err,3);
 }
