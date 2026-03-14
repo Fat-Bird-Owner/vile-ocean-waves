@@ -3,7 +3,13 @@ try{
 Events.on(WorldLoadEvent, event => {
 try {
 
-Groups.build.each(b => {if(b.block == Blocks.siliconSmelter){Fx.unitCapKill.at(b)};
+const target = Vars.content.getByName(ContentType.block,"copper-wall");
+Groups.build.each(u => {
+if (u.block == target){
+u.kill();
+}
+
+});
 
 } catche(e) {
 Vars.ui.showInfoToast(e,5);
