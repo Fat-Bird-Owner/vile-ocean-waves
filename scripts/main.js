@@ -1,6 +1,6 @@
 try{
   
-Events.on(WorldLoadEvent, event => {
+Events.on(Trigger.update, event => {
 try {
 
 const target = Vars.content.getByName(ContentType.block,"copper-wall");
