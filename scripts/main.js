@@ -7,7 +7,7 @@ u.kill();
 
 
 
-} catche(e) {
+} catch(e) {
 Vars.ui.showInfoToast(e,5);
 }});
   
