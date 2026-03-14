@@ -1,34 +1,6 @@
 try{
 
-function loopFunc(){
-Vars.ui.showInfoFade("work 1",0.15);
-if (!Vars.world) return;
-
-Vars.ui.showInfoFade("work",0.15);
-   
-const indexer = Vars.indexer;
-indexer.allBuildings(0, 0, 999999, b => {
-Vars.ui.showInfoFade(b.name,0.15);
-});
-
-
-Timer.schedule(() => {
-    loopFunc();
-}, 0.25);
-    
-}    
-
-   
-Events.on(WorldLoadEvent, e => {
-try {
-
-loopFunc()
-Vars.ui.showInfoFade("work 0",0.15);
-   
-}catch(err){
-Vars.ui.showInfoToast(err,3);
-}
-});
+require("test");
   
 
 /*
