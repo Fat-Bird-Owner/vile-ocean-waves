@@ -1,15 +1,21 @@
-Events.on(Trigger.update, e => {
+Events.on(SectorLaunchEvent, e => {
 try {
+if (Vars.state.getPlanet() != Planets.gier) return;
+const rule = Vars.state.rules;
+Vars.waves = Waves.generate(5);
 
-function idk(build){
-if (Vars.state.isGame() != true) return;
-build.damage(100);
-}
-    
-Groups.build.each(b => {
-b.damage(1);
+const basic = Vars.content.getByName(ContentType.unit, "gr-drive");
+
+Vars.state.rules.spawns.each(group => {
+    if(group.type == UnitTypes.flare && group.begin < 20){
+        group.type = basic;
+    }
 });
 
+
+
+
+Vars.ui.showInfoToast("[red]Goodluck.[]",5);    
 } catch(e){
 Vars.ui.showInfoToast(e,5);
 }
