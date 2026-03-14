@@ -2,7 +2,9 @@ Events.on(SectorLaunchEvent, e => {
 try {
 if (Vars.state.getPlanet() != Planets.gier) return;
 const rule = Vars.state.rules;
-Vars.waves = Waves.generate(5);
+
+Vars.state.rules.spawns.clear();
+Vars.state.rules.spawns.addAll(Waves.generate(5));
 
 const basic = Vars.content.getByName(ContentType.unit, "gr-drive");
 
