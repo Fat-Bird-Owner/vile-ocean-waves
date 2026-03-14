@@ -9,12 +9,14 @@ Vars.ui.showInfoFade("work",0.15);
 const indexer = Vars.indexer;
 Vars.indexer.allBuildings(0, 0, 999999, b => {
 
-    if (b && b.block.name == "copper-wall"){
+    if(!b || !b.block) return;
 
-    const blockType = b.block;
-    b.damage(1);
-      Vars.ui.showInfoFade("[red]work[]",0.15);
-    }});
+    if(b.block.name == "copper-wall"){
+        b.damage(1);
+        Vars.ui.showInfoFade("[red]work[]",0.15);
+    }
+
+});
 
 Timer.schedule(() => {
     loopFunc();
