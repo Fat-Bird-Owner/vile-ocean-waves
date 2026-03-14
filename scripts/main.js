@@ -1,7 +1,18 @@
 Events.on(EventType.WorldLoadEvent, e => {
-    Groups.build.each(b => {
-        b.kill();
-    });
+try {
+
+function idk(build){
+if (Vars.state.isGame() != true) return;
+build.damage(100);
+}
+    
+Groups.build.each(b => {
+idk(b);
+});
+
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+}
 });
   
 /*
