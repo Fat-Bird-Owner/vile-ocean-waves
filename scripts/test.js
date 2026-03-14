@@ -34,5 +34,5 @@ const screamConveyor = extendJS(Conveyor, "scream-conveyor", {
 
 
 }catch(e){
-    Vars.ui.showInfoToast(e, 10);
+    Vars.ui.showText("e",e,Align.center);
 }
