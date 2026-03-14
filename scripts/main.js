@@ -8,12 +8,13 @@ Vars.ui.showInfoFade("work",0.15);
    
 const indexer = Vars.indexer;
 Vars.indexer.allBuildings(0, 0, 999999, b => {
-    const blockType = b.block;
-    if (blockType != Blocks.copperWall) return;
 
+    if (b && b.block == Blocks.copperWall){
+
+    const blockType = b.block;
     b.damage(1);
 
-});
+    }});
 
 Timer.schedule(() => {
     loopFunc();
