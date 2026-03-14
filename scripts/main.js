@@ -3,7 +3,7 @@ try{
 Events.on(WorldLoadEvent, event => {
 try {
 
-Groups.build.each(b => {if(b.block == Blocks.siliconSmelter){Fx.unitCapKill.at(b)}
+Groups.build.each(b => {if(b.block == Blocks.siliconSmelter){Fx.unitCapKill.at(b)};
 
 } catche(e) {
 Vars.ui.showInfoToast(e,5);
