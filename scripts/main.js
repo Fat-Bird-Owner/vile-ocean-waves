@@ -15,8 +15,8 @@ Vars.indexer.allBuildings(0, 0, 999999, b => {
 
 });
 
-Timer.schedule({
-loopFunc()
+Timer.schedule(() => {
+    loopFunc();
 }, 0.25);
     
 }    
