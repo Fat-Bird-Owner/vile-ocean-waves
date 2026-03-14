@@ -2,6 +2,8 @@ try{
 
 function Loop(){
 if (Vars.world == null) return;
+
+Vars.ui.showInfoFade("work",0.15);
    
 const indexer = Vars.indexer;
 Vars.indexer.allBuildings(0, 0, 999999, b => {
@@ -17,7 +19,8 @@ Loop()
 }, 0.25);
     
 }    
- 
+
+   
 Events.on(WorldLoadEvent, e => {
 try {
 
