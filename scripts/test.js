@@ -1,14 +1,21 @@
 try{
+
 const myTurret = new ItemTurret("my-turret");
 myTurret.ammoTypes = Blocks.duo.ammoTypes;
-    
-const oldShoot = myTurret.buildType.shoot;
 
-myTurret.buildType.shoot = function(tile){
-    oldShoot.call(this, tile);
-    Vars.ui.showInfoToast("extra behavior",2);
+myTurret.buildType = () => {
+    const b = new JavaAdapter(ItemTurret.ItemTurretBuild, {
+
+        shoot(type){
+            this.super$shoot(type);
+            Vars.ui.showInfoToast("extra behavior", 2);
+        }
+
+    }, myTurret);
+
+    return b;
 };
 
-} catch(e){
-Vars.ui.showInfoToast(e,10);
+}catch(e){
+    Vars.ui.showInfoToast(e, 10);
 }
