@@ -1,6 +1,7 @@
 try{
-const myTurret = new ItemTurret("my-turret");
-
+const myTurret = new PowerTurret("my-turret");
+myTurret.shootType == Blocks.arc.shootType;
+    
 const oldShoot = myTurret.shoot;
 
 myTurret.shoot = function(tile){
