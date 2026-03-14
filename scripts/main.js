@@ -1,11 +1,9 @@
 Events.on(Trigger.update, event => {
 try {
 
-const target = Vars.content.getByName(ContentType.block,"copper-wall");
 Groups.build.each(u => {
-if (u.block == target){
 u.kill();
-}});
+});
 
 
 
