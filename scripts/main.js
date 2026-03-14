@@ -24,7 +24,7 @@ Loop()
 Events.on(WorldLoadEvent, e => {
 try {
 
-loop()
+Loop()
     
 }catch(err){
 Vars.ui.showInfoToast(err,3);
