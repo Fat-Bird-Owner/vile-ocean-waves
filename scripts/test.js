@@ -6,7 +6,7 @@ const oldShoot = myTurret.shoot;
 
 myTurret.shoot = function(tile){
     oldShoot.call(this, tile);
-    Vars.ui.showInfoRoasr("extra behavior",2);
+    Vars.ui.showInfoToast("extra behavior",2);
 };
 
 } catch(e){
