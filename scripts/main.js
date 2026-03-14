@@ -1,4 +1,4 @@
-Events.on(EventType.WorldLoadEvent, e => {
+Events.on(WorldLoadEndEvent, e => {
 try {
 
 function idk(build){
