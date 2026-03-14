@@ -1,6 +1,4 @@
 try{
-
-require("test");
   
 Events.on(WorldLoadEvent, event => {
 try {
