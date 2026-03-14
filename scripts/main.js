@@ -8,14 +8,7 @@ Vars.ui.showInfoFade("work",0.15);
    
 const indexer = Vars.indexer;
 indexer.allBuildings(0, 0, 999999, b => {
-
-    if(!b || !b.block) return;
-
-    if(b.block.name == "copper-wall"){
-        b.damage(1);
-        Vars.ui.showInfoFade("[red]work[]",0.15);
-    }
-
+Vars.ui.showInfoFade(b.name,0.15);
 });
 
 
