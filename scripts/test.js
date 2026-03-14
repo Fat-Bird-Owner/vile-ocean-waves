@@ -1,4 +1,4 @@
-const myTurret = new ItemTurret("my-turret");
+const myTurret = new PowerTurret("my-turret");
 
 const oldShoot = myTurret.shoot;
 
