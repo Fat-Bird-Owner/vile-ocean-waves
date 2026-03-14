@@ -1,6 +1,6 @@
 try{
-const myTurret = new PowerTurret("my-turret");
-myTurret.shootType == Blocks.arc.shootType;
+const myTurret = new ItemTurret("my-turret");
+myTurret.ammoTypes == Blocks.duo.ammoTypes;
     
 const oldShoot = myTurret.shoot;
 
