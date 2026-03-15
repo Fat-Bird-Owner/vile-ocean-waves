@@ -8,7 +8,7 @@ kela.techTree.addPlanet(kela);
 
 kela.defaultEnv = Planets.tantros.defaultEnv;
 
-kela.generator = new PlanetGenerator();
+kela.generator = new TantrosPlanetGenerator();
 kela.meshLoader = () => new HexMesh(kela, 6);
 
 kela.grid = Planets.serpulo.grid;
