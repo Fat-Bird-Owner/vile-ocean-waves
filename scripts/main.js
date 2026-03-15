@@ -1,8 +1,10 @@
 Events.on(ContentInitEvent, e => {
 try {
-
+  
 const kela = Vars.content.getByName(ContentType.planet, "gr-kela");
+
 kela.techTree = Planets.gier.techTree;
+kela.techTree.addPlanet(kela);
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
