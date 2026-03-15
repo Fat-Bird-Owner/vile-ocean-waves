@@ -27,7 +27,10 @@ const valid = unit.getDuration(status);
 if (unit.health >= maxThres || valid != 0) return;
 if (unit.type != targetAsh) return;
 
+const enrage = loadSound("rage");
+  
 unit.apply(status);
+enrage.at(unit.x, unit.y);
 
 } catch(e){
 Vars.ui.showInfoToast(e,3);
