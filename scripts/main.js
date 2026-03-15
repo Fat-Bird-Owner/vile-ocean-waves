@@ -8,7 +8,7 @@ kela.techTree.addPlanet(kela);
 
 kela.defaultEnv = Planets.tantros.defaultEnv;
 
-kela.generator = new ErekirPlanetGenerator();
+kela.generator = new PlanetGenerator();
 kela.meshLoader = () => new HexMesh(kela, 6);
 
 kela.grid = Planets.serpulo.grid;
