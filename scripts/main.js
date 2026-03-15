@@ -27,7 +27,7 @@ const valid = unit.getDuration(status);
 if (unit.health >= maxThres || valid != 0) return;
 if (unit.type != targetAsh) return;
 
-const enrage = loadSound("rage");
+const enrage = Vars.tree.loadSound("sounds/gr-rage");
   
 unit.apply(status);
 enrage.at(unit.x, unit.y);
