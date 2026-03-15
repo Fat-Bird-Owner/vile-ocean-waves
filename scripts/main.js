@@ -12,6 +12,7 @@ kela.meshLoader = () -> new HexMesh(kela, 6);
 kela.radius = 1;
 kela.hasAtmosphere = true;
 
+kela.cloudMeshLoader = Planets.serpulo.cloudMeshLoader;
 kela.alwaysUnlocked = true;
 kela.reloadMesh();
 
