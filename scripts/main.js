@@ -6,6 +6,7 @@ const kela = Vars.content.getByName(ContentType.planet, "gr-kela");
 kela.techTree = Planets.gier.techTree;
 kela.techTree.addPlanet(kela);
 kela.defaultEnv = Planets.tantros.defaultEnv;
+kela.mesh = Planets.tantros.mesh;
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
