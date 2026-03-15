@@ -8,8 +8,12 @@ kela.techTree.addPlanet(kela);
 kela.defaultEnv = Planets.tantros.defaultEnv;
 kela.generator = new SerpuloPlanetGenerator();
 kela.meshLoader = () -> new HexMesh(kela, 6);
+
+kela.radius = 1;
+kela.hasAtmosphere = true;
+
 kela.alwaysUnlocked = true;
-  
+
 } catch(e){
 Vars.ui.showInfoToast(e,5);
 }
