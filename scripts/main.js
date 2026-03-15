@@ -1,19 +1,21 @@
 Events.on(ContentInitEvent, e => {
 try {
-  
+
 const kela = Vars.content.getByName(ContentType.planet, "gr-kela");
 
 kela.techTree = Planets.gier.techTree;
 kela.techTree.addPlanet(kela);
+
 kela.defaultEnv = Planets.tantros.defaultEnv;
+
 kela.generator = new SerpuloPlanetGenerator();
-kela.meshLoader = () -> new HexMesh(kela, 6);
+kela.meshLoader = () => new HexMesh(kela, 6);
 
 kela.radius = 1;
 kela.hasAtmosphere = true;
-
-kela.cloudMeshLoader = Planets.serpulo.cloudMeshLoader;
 kela.alwaysUnlocked = true;
+
+// regenerate the mesh
 kela.reloadMesh();
 
 } catch(e){
