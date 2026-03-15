@@ -9,9 +9,10 @@ kela.techTree.addPlanet(kela);
 kela.defaultEnv = Planets.tantros.defaultEnv;
 
 kela.generator = new SerpuloPlanetGenerator();
-kela.generateSector = true;
+kela.meshLoader = () => new HexMesh(kela, 6);
 
-kela.grid = PlanetGrid.create(6);
+kela.grid = Planets.serpulo.grid;
+kela.sectorSeed = 1;
 
 // regenerate the mesh
 kela.reloadMesh();
