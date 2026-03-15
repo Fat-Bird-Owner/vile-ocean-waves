@@ -9,11 +9,20 @@ kela.techTree.addPlanet(kela);
 kela.defaultEnv = Planets.tantros.defaultEnv;
 
 kela.generator = new SerpuloPlanetGenerator();
-kela.meshLoader = () => new HexMesh(kela, 6);
+kela.generator = new SerpuloPlanetGenerator();
 
-kela.radius = 1;
-kela.hasAtmosphere = true;
-kela.alwaysUnlocked = true;
+kela.meshLoader = () => new SunMesh(
+    kela, 6, 5, 0.3, 1.7, 1.2, 1.0, 1.1,
+    Color.valueOf("0a1d2e"),
+    Color.valueOf("1c3a2c"),
+    Color.valueOf("5c7a4a"),
+    Color.valueOf("b0c46c")
+);
+
+kela.atmosphereColor = Color.valueOf("4be3ff");
+kela.iconColor = Color.valueOf("7fffd4");
+
+kela.reloadMesh();
 
 // regenerate the mesh
 kela.reloadMesh();
