@@ -13,6 +13,7 @@ kela.radius = 1;
 kela.hasAtmosphere = true;
 
 kela.alwaysUnlocked = true;
+kela.reloadMesh();
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
