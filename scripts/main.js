@@ -10,7 +10,7 @@ kela.defaultEnv = Planets.tantros.defaultEnv;
 
 kela.generator = new TantrosPlanetGenerator();
 kela.meshLoader = () => new HexMesh(kela, 6);
-
+kela.alwaysUnlocked = true;
 // regenerate the mesh
 kela.reloadMesh();
 
