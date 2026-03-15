@@ -9,19 +9,7 @@ kela.techTree.addPlanet(kela);
 kela.defaultEnv = Planets.tantros.defaultEnv;
 
 kela.generator = new ErekirPlanetGenerator();
-
-kela.meshLoader = () => new SunMesh(
-    kela, 6, 5, 0.3, 1.7, 1.2, 1.0, 1.1,
-    Color.valueOf("0a1d2e"),
-    Color.valueOf("1c3a2c"),
-    Color.valueOf("5c7a4a"),
-    Color.valueOf("b0c46c")
-);
-
-kela.atmosphereColor = Color.valueOf("4be3ff");
-kela.iconColor = Color.valueOf("7fffd4");
-
-kela.reloadMesh();
+kela.grid = PlanetGrid.create(6);
 
 // regenerate the mesh
 kela.reloadMesh();
