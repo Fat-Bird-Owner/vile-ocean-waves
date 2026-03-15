@@ -9,10 +9,7 @@ kela.techTree.addPlanet(kela);
 kela.defaultEnv = Planets.tantros.defaultEnv;
 
 kela.generator = new TantrosPlanetGenerator();
-kela.meshLoader = () => new HexMesh(kela, 4);
-
-kela.grid = Planets.erekir.grid;
-kela.sectorSeed = 1;
+kela.meshLoader = () => new HexMesh(kela, 6);
 
 // regenerate the mesh
 kela.reloadMesh();
