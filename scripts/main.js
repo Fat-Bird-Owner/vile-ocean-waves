@@ -6,7 +6,7 @@ const kela = Vars.content.getByName(ContentType.planet, "gr-kela");
 kela.techTree = Planets.gier.techTree;
 kela.techTree.addPlanet(kela);
 kela.defaultEnv = Planets.tantros.defaultEnv;
-kels.generator = new SerpuloPlanetGenerator();
+kela.generator = new SerpuloPlanetGenerator();
 kela.meshLoader = () -> new HexMesh(kela, 6);
 kela.alwaysUnlocked = true;
   
