@@ -1,28 +1,8 @@
-Events.on(EventType.SectorLaunchEvent, e => {
+Events.on(ContentInitEvent, e => {
 try {
 
-if (Vars.state.getPlanet() != Planets.gier) return;
-
-const rule = Vars.state.rules;
-
-// generate waves
-rule.spawns = Waves.generate(5);
-
-const basic = Vars.content.getByName(ContentType.unit, "gr-drive");
-if(basic == null){
-    Vars.ui.showInfoToast("unit missing",5);
-    return;
-}
-
-rule.spawns.each(group => {
-    if(group.type == UnitTypes.flare && group.begin < 20){
-        group.type = basic;
-    }
-});
-
-Timer.schedule(() => {  
-    Vars.ui.showInfoToast("[red]Goodluck.[]",5);    
-}, 2.667);
+const kela = Vars.content.getByName(ContentType.planet, "gr-kela");
+kela.techTree = Planets.gier.techTree;
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
