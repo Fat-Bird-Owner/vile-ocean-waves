@@ -33,7 +33,17 @@ Vars.ui.showInfoToast(e,5);
 });
 
 
+Events.on(SectorLaunchEvent, event => {
+try {
 
+const target = Vars.content.getByName(ContentType.status,"gr-dedrone");
+target.clearUnlock();
+
+} catch(e){
+Timer.schedule(() => {  
+Vars.ui.showText("e",e,Align.center);
+},1.5);
+}});
 
 
 /*
