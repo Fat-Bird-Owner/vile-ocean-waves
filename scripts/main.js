@@ -4,7 +4,7 @@ const content = e.content;
   const gier = Planets.gier;
     const wave = Vars.state.wave;
     
-var target = Vars.content.getByName(ContentType.status, "gr-dedrone");
+const target = Vars.content.getByName(ContentType.status, "gr-dedrone");
   if (content == target && wave == 1){
     if (Vars.state.isGame() != true && Vars.state.getPlanet() == gier) return;
 
@@ -20,8 +20,8 @@ var target = Vars.content.getByName(ContentType.status, "gr-dedrone");
   }
 // Dedrone Endregion
 
-target = Vars.content.getByName(ContentType.status, "gr-reinforced");
-  if (content == target && wave == 1){
+const target2 = Vars.content.getByName(ContentType.status, "gr-reinforced");
+  if (content == target2 && wave == 1){
     if (Vars.state.isGame() != true && Vars.state.getPlanet() == gier) return;
 
   Vars.ui.hudfrag.showToast("[red]Reinforced Enabled");
@@ -38,11 +38,11 @@ Vars.ui.showInfoToast(e,5);
 Events.on(SectorLaunchEvent, event => {
 try {
 
-var target = Vars.content.getByName(ContentType.status,"gr-dedrone");
+const target = Vars.content.getByName(ContentType.status,"gr-dedrone");
 target.clearUnlock();
 
-target = Vars.content.getByName(ContentType.status,"gr-reinforced");
-target.clearUnlock();
+const target2 = Vars.content.getByName(ContentType.status,"gr-reinforced");
+target2.clearUnlock();
 
 } catch(e){
 Timer.schedule(() => {  
