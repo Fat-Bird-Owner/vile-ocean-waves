@@ -17,10 +17,10 @@ Vars.ui.hudfrag.showToast(tex,"Drones Disabled.");
 
 const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
 const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
-
+  
 const banned = Vars.state.rules.bannedBlocks;
-banned.add(facility);
-banned.add(dropzone);
+if(facility) banned.add(facility);
+if(dropzone) banned.add(dropzone);
 
 }
 
