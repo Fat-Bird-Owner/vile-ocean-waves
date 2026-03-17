@@ -12,6 +12,8 @@ content.clearUnlock();
 return;
 }
 
+});
+  
 //const tex = Core.atlas.find(v);
 
 if (v === "gr-dedrone"){
