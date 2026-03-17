@@ -4,7 +4,7 @@ const content = e.content;
   const gier = Planets.gier;
     const wave = Vars.state.wave;
     
-const target = Vars.content.getByName(ContentType.status, "gr-dedrone");
+var target = Vars.content.getByName(ContentType.status, "gr-dedrone");
   if (content == target && wave == 1){
     if (Vars.state.isGame() != true && Vars.state.getPlanet() == gier) return;
 
@@ -20,7 +20,7 @@ const target = Vars.content.getByName(ContentType.status, "gr-dedrone");
   }
 // Dedrone Endregion
 
-const target = Vars.content.getByName(ContentType.status, "gr-reinforced");
+target = Vars.content.getByName(ContentType.status, "gr-reinforced");
   if (content == target && wave == 1){
     if (Vars.state.isGame() != true && Vars.state.getPlanet() == gier) return;
 
