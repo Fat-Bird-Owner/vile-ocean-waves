@@ -5,14 +5,14 @@ try {
 
 const content = e.content;
 
-modifiers.forEach(v => {
+modifiers.forEach(function(v){
 const target = Vars.content.getByName(ContentType.status,v);
 if (!target || content != target) content.clearUnlock() return;
 
-const tex = Core.atlas.find(v);
+//const tex = Core.atlas.find(v);
 
-if (v === "gier-dedrone"){
-Vars.ui.showToast(tex,"Drones Disabled.");
+if (v === "gr-dedrone"){
+Vars.ui.hudfrag.showToast(tex,"Drones Disabled.");
 
 const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
 const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
