@@ -20,10 +20,20 @@ const target = Vars.content.getByName(ContentType.status, "gr-dedrone");
   }
 // Dedrone Endregion
 
+const target = Vars.content.getByName(ContentType.status, "gr-reinforced");
+  if (content == target && wave == 1){
+    if (Vars.state.isGame() != true && Vars.state.getPlanet() == gier) return;
+
+  Vars.ui.hudfrag.showToast("[red]Reinforced Enabled");
+
+  Vars.state.rules.teams.get(5).unitHealthMultiplier = 1.45;
+    
+  }
+
 } catch(e){
 Vars.ui.showInfoToast(e,5);
 }});
-
+// Reinforced endregion
 
 Events.on(SectorLaunchEvent, event => {
 try {
