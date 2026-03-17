@@ -17,6 +17,9 @@ const facility = Vars.content.getByName(ContentType.block,"junction");
 const dropzone = Vars.content.getByName(ContentType.block,"unit-cargo-unload-point");
 
 const banned = Vars.state.rules.bannedBlocks;
+
+if (!Vars.state.isGame()) return;
+if (!Vars.state.rules || !Vars.state.rules.bannedBlocks) return;
 banned.add(facility);
 banned.add(dropzone);
 
