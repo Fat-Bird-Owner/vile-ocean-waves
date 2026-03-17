@@ -3,7 +3,8 @@ try {
 const content = e.content;
 
 const target = Vars.content.getByName(ContentType.block, "gr-dedrone");
-if (content == target && Vars.state.rules.bannedBlocks){
+if (content == target){
+if (Vars.state.isGame() != true) return;
 
 Vars.ui.hudfrag.showToast("[red]Dedrone Enabled");
 
