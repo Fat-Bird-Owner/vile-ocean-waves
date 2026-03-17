@@ -17,10 +17,6 @@ banned.add(dropzone);
 
 }
 
-
-
-});
-
 } catch(e){
 Vars.ui.showInfoToast(e,5);
 }});
