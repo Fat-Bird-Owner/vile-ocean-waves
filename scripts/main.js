@@ -9,8 +9,6 @@ modifiers.forEach(function(v){
 const target = Vars.content.getByName(ContentType.status,v);
 if (!target || content != target) return;
 content.clearUnlock()
-
-});
   
 //const tex = Core.atlas.find(v);
 
