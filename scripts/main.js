@@ -1,4 +1,4 @@
-const modifiers = ["gr-dedrone"];
+const modifiers = ["conveyor"];
 
 Events.on(ResearchEvent, e => {
 try {
@@ -6,21 +6,19 @@ try {
 const content = e.content;
 
 modifiers.forEach(function(v){
-const target = Vars.content.getByName(ContentType.status,v);
+const target = Vars.content.getByName(ContentType.block,v);
 if (!target || content != target) return;
 content.clearUnlock()
-  
-//const tex = Core.atlas.find(v);
 
-if (v == "gr-dedrone"){
+if (v == "conveyor"){
 Vars.ui.hudfrag.showToast("Drones Disabled.");
 
-const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
-const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
-  
+const facility = Vars.content.getByName(ContentType.block,"junction");
+const dropzone = Vars.content.getByName(ContentType.block,"unit-cargo-unload-point");
+
 const banned = Vars.state.rules.bannedBlocks;
-if(facility) banned.add(facility);
-if(dropzone) banned.add(dropzone);
+banned.add(facility);
+banned.add(dropzone);
 
 }
 
@@ -37,7 +35,7 @@ Vars.ui.showInfoToast(e,5);
 Events.on(SectorLaunchEvent, event => {
 try {
 
-const target = Vars.content.getByName(ContentType.status,"gr-dedrone");
+const target = Vars.content.getByName(ContentType.block,"conveyor");
 target.clearUnlock();
 
 } catch(e){
