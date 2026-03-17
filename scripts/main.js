@@ -1,18 +1,31 @@
-Events.on(ContentInitEvent, e => {
+const modifiers = ["gr-dedrone"]
+
+Events.on(ResearchEvent, e => {
 try {
 
-const kela = Vars.content.getByName(ContentType.planet, "gr-kela");
+const content = e.content;
 
-kela.techTree = Planets.gier.techTree;
-kela.techTree.addPlanet(kela);
+modifiers.forEach(v => {
+const target = Vars.content.getByName(ContentType.status,v);
+if (!target || content != target) content.clearUnlock() return;
 
-kela.defaultEnv = Planets.tantros.defaultEnv;
+const tex = Core.atlas.find(v);
 
-kela.generator = new TantrosPlanetGenerator();
-kela.meshLoader = () => new HexMesh(kela, 6);
-kela.alwaysUnlocked = true;
-// regenerate the mesh
-kela.reloadMesh();
+if (v === "gier-dedrone"){
+Vars.ui.showToast(tex,"Drones Disabled.");
+
+const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
+const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
+
+const banned = Vars.state.rules.bannedBlocks;
+banned.add(facility);
+banned.add(dropzone);
+
+}
+
+
+
+});
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
