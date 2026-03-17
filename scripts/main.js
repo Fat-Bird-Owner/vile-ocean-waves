@@ -1,44 +1,7 @@
-const modifiers = ["conveyor"];
-
-Events.on(ResearchEvent, e => {
-try {
-
-const content = e.content;
-
-modifiers.forEach(function(v){
-const target = Vars.content.getByName(ContentType.block,v);
-if (!target || content != target) return;
-content.clearUnlock()
-
-if (v == "conveyor"){
-Vars.ui.hudfrag.showToast("Drones Disabled.");
-
-const facility = Vars.content.getByName(ContentType.block,"junction");
-const dropzone = Vars.content.getByName(ContentType.block,"unit-cargo-unload-point");
-
-const banned = Vars.state.rules.bannedBlocks;
-
-if (!Vars.state.isGame()) return;
-if (!Vars.state.rules || !Vars.state.rules.bannedBlocks) return;
-banned.add(facility);
-banned.add(dropzone);
-
-}
-
-
-
-});
-
-} catch(e){
-Vars.ui.showInfoToast(e,5);
-}
-});
-
-
 Events.on(SectorLaunchEvent, event => {
 try {
 
-const target = Vars.content.getByName(ContentType.block,"conveyor");
+const target = Vars.content.getByName(ContentType.block,"dedrone");
 target.clearUnlock();
 
 } catch(e){
