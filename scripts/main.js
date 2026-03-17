@@ -2,9 +2,10 @@ Events.on(ResearchEvent, e => {
 try {
 const content = e.content;
   const gier = Planets.gier;
-
+    const wave = Vars.state.wave;
+    
 const target = Vars.content.getByName(ContentType.status, "gr-dedrone");
-  if (content == target){
+  if (content == target && wave == 1){
     if (Vars.state.isGame() != true && Vars.state.getPlanet() == gier) return;
 
   Vars.ui.hudfrag.showToast("[red]Dedrone Enabled");
