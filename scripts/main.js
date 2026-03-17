@@ -7,7 +7,10 @@ const content = e.content;
 
 modifiers.forEach(function(v){
 const target = Vars.content.getByName(ContentType.status,v);
-if (!target || content != target) content.clearUnlock() return;
+if (!target || content != target){
+content.clearUnlock();
+return;
+}
 
 //const tex = Core.atlas.find(v);
 
