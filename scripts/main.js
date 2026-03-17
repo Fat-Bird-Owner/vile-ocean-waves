@@ -1,7 +1,7 @@
 Events.on(SectorLaunchEvent, event => {
 try {
 
-const target = Vars.content.getByName(ContentType.block,"dedrone");
+const target = Vars.content.getByName(ContentType.block,"gr-dedrone");
 target.clearUnlock();
 
 } catch(e){
