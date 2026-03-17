@@ -2,8 +2,8 @@ Events.on(ResearchEvent, e => {
 try {
 const content = e.content;
 
-const target = Vars.content.getByName(ContentTyoe.block, "gr-dedrone");
-if (content == target && Vars.state.rules.bannedBlocks){
+const target = Vars.content.getByName(ContentType.block, "gr-dedrone");
+if (content == target && Vars.state.rules.bannedBlocks != null){
 
 Vars.ui.hudfrag.showToast("[red]Dedrone Enabled");
 
