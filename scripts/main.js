@@ -40,6 +40,8 @@ try {
 
 const target = Vars.content.getByName(ContentType.status,"gr-dedrone");
 target.clearUnlock();
+const target = Vars.content.getByName(ContentType.status,"gr-reinforced");
+target.clearUnlock();
 
 } catch(e){
 Timer.schedule(() => {  
