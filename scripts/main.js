@@ -38,9 +38,10 @@ Vars.ui.showInfoToast(e,5);
 Events.on(SectorLaunchEvent, event => {
 try {
 
-const target = Vars.content.getByName(ContentType.status,"gr-dedrone");
+var target = Vars.content.getByName(ContentType.status,"gr-dedrone");
 target.clearUnlock();
-const target = Vars.content.getByName(ContentType.status,"gr-reinforced");
+
+target = Vars.content.getByName(ContentType.status,"gr-reinforced");
 target.clearUnlock();
 
 } catch(e){
