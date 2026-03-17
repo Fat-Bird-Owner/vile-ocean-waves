@@ -1,4 +1,4 @@
-const modifiers = ["gr-dedrone"]
+const modifiers = ["gr-dedrone"];
 
 Events.on(ResearchEvent, e => {
 try {
