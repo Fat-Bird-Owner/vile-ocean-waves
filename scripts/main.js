@@ -1,3 +1,30 @@
+Events.on(ResearchEvent, e => {
+try {
+const content = e.content;
+
+const target = Vars.content.getByName(ContentTyoe.block, "gr-dedrone");
+if (content == target && Vars.state.rules.bannedBlocks){
+
+Vars.ui.hudfrag.showToast("[red]Dedrone Enabled");
+
+const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
+const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
+const banned = Vars.state.rules.bannedBlocks;
+
+banned.add(facility);
+banned.add(dropzone);
+
+}
+
+
+
+});
+
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+}});
+
+
 Events.on(SectorLaunchEvent, event => {
 try {
 
