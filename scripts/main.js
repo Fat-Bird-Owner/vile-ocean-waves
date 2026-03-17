@@ -3,7 +3,7 @@ try {
 const content = e.content;
   const gier = Planets.gier;
 
-const target = Vars.content.getByName(ContentType.block, "gr-dedrone");
+const target = Vars.content.getByName(ContentType.status, "gr-dedrone");
   if (content == target){
     if (Vars.state.isGame() != true && Vars.state.getPlanet() == gier) return;
 
@@ -27,7 +27,7 @@ Vars.ui.showInfoToast(e,5);
 Events.on(SectorLaunchEvent, event => {
 try {
 
-const target = Vars.content.getByName(ContentType.block,"gr-dedrone");
+const target = Vars.content.getByName(ContentType.status,"gr-dedrone");
 target.clearUnlock();
 
 } catch(e){
