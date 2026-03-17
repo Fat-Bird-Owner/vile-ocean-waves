@@ -3,19 +3,20 @@ try {
 const content = e.content;
 
 const target = Vars.content.getByName(ContentType.block, "gr-dedrone");
-if (content == target){
-if (Vars.state.isGame() != true) return;
+  if (content == target){
+    if (Vars.state.isGame() != true) return;
 
-Vars.ui.hudfrag.showToast("[red]Dedrone Enabled");
+  Vars.ui.hudfrag.showToast("[red]Dedrone Enabled");
 
-const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
-const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
-const banned = Vars.state.rules.bannedBlocks;
+  const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
+    const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
+      const banned = Vars.state.rules.bannedBlocks;
 
-banned.add(facility);
-banned.add(dropzone);
+  banned.add(facility);
+    banned.add(dropzone);
 
-}
+  }
+// Dedrone Endregion
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
