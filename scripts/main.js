@@ -10,7 +10,7 @@ const target = Vars.content.getByName(ContentType.status,v);
 if (!target || content != target) return;
 content.clearUnlock()
   
-//const tex = Core.atlas.find(v);
+const tex = Core.atlas.find(v);
 
 if (v === "gr-dedrone"){
 Vars.ui.hudfrag.showToast(tex,"Drones Disabled.");
