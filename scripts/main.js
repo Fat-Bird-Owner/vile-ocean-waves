@@ -1,6 +1,3 @@
-try{
-
-
 Events.on(ResearchEvent, e => {
     try {
         const content = e.content;
@@ -40,7 +37,7 @@ Events.on(SectorLaunchEvent, event => {
 try {
 
 Vars.content.getByName(ContentType.status,"gr-dedrone").clearUnlock();
-Vars.content.getByName(ContentType.status,"gr-reinforced").clearUnlock();
+//Vars.content.getByName(ContentType.status,"gr-reinforced").clearUnlock();
 
 } catch(e){
 Timer.schedule(() => {  
@@ -114,8 +111,3 @@ Vars.ui.showInfoToast(e,3);
 
 
 */
-} catch(e){
-Timer.schedule(() => {  
-Vars.ui.showText("e",e,Align.center);
-},1.5);
-}
