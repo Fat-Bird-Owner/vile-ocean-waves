@@ -6,7 +6,7 @@ const content = e.content;
     
 const target = Vars.content.getByName(ContentType.status, "gr-dedrone");
   if (content == target && wave == 1){
-    if (Vars.state.isGame() != true && Vars.state.getPlanet() == gier) return;
+    if (Vars.state.isGame() != true || Vars.state.getPlanet() == gier) return;
 
   Vars.ui.hudfrag.showToast("[red]Dedrone Enabled");
 
@@ -22,11 +22,11 @@ const target = Vars.content.getByName(ContentType.status, "gr-dedrone");
 
 const target2 = Vars.content.getByName(ContentType.status, "gr-reinforced");
   if (content == target2 && wave == 1){
-    if (Vars.state.isGame() != true && Vars.state.getPlanet() == gier) return;
+    if (Vars.state.isGame() != true || Vars.state.getPlanet() == gier) return;
 
   Vars.ui.hudfrag.showToast("[red]Reinforced Enabled");
 
-  Vars.state.rules.teams.get(5).unitHealthMultiplier = 1.45;
+  Team.get(5).unitHealthMultiplier = 1.45;
     
   }
 
