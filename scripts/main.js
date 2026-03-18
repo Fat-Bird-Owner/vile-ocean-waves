@@ -32,7 +32,7 @@ Events.on(ResearchEvent, e => {
         Vars.ui.showInfoToast(err, 5);
     }
 });
-// Reinforced endregion
+
 
 Events.on(SectorLaunchEvent, event => {
 try {
