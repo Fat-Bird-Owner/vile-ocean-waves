@@ -1,31 +1,4 @@
-Events.on(EventType.ContentInitEvent, e => {
-let log = (tag,str) => Log.infoTag(tag,str);
 
-Vars.ui.settings.addCategory("mod", Icon.admin, t => {
-    t.checkPref("Bruh", true, bool => {
-        if(bool == true){
-            log("mod","qwhar?");
-        }else{
-            log("mod","noooo2");
-        }
-    });
-    t.checkPref("Bruh2", false, bool => {
-        if(bool == true){
-            log("mod","test");
-        }else{
-            log("mod","no");
-        }
-    });
-});
-
-} catch(e){
-Timer.schedule(() => {  
-Vars.ui.showText("e",e,Align.center);
-},1.5);
-}});
-
-
-/*
 Events.on(ResearchEvent, e => {
     try {
         const content = e.content;
@@ -50,7 +23,7 @@ Events.on(ResearchEvent, e => {
         if (content == target2) {
             Vars.ui.hudfrag.showToast("[red]Reinforced Enabled");
 
-            Vars.state.rules.teams.get(5).unitHealthMultiplier = 1.45;
+            Team.get(5).unitHealthMultiplier = 1.45;
         }
 
     } catch(err){
@@ -62,11 +35,8 @@ Events.on(ResearchEvent, e => {
 Events.on(SectorLaunchEvent, event => {
 try {
 
-const target = Vars.content.getByName(ContentType.status,"gr-dedrone");
-target.clearUnlock();
-
-const target2 = Vars.content.getByName(ContentType.status,"gr-reinforced");
-target2.clearUnlock();
+Vars.content.getByName(ContentType.status,"gr-dedrone").clearUnlock();
+Vars.content.getByName(ContentType.status,"gr-reinforced").clearUnlock();
 
 } catch(e){
 Timer.schedule(() => {  
@@ -75,7 +45,7 @@ Vars.ui.showText("e",e,Align.center);
 }});
 
 
-
+/*
 Events.on(SectorLaunchEvent, event => {
 try {
 
