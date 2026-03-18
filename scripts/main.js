@@ -1,3 +1,5 @@
+try{
+
 
 Events.on(ResearchEvent, e => {
     try {
@@ -27,7 +29,7 @@ Events.on(ResearchEvent, e => {
         }
 
     } catch(err){
-        Vars.ui.showInfoToast(err + "", 5);
+        Vars.ui.showInfoToast(err, 5);
     }
 });
 // Reinforced endregion
@@ -110,3 +112,8 @@ Vars.ui.showInfoToast(e,3);
 
 
 */
+} catch(e){
+Timer.schedule(() => {  
+Vars.ui.showText("e",e,Align.center);
+},1.5);
+}
