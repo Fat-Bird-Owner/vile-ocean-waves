@@ -1,4 +1,4 @@
-Events.on(ContentInitEvent, e => {
+Events.on(EventType.ContentInitEvent, e => {
 let log = (tag,str) => Log.infoTag(tag,str);
 
 Vars.ui.settings.addCategory("mod", Icon.admin, t => {
@@ -23,6 +23,8 @@ Timer.schedule(() => {
 Vars.ui.showText("e",e,Align.center);
 },1.5);
 }});
+
+
 /*
 Events.on(ResearchEvent, e => {
     try {
