@@ -35,7 +35,8 @@ Events.on(ResearchEvent, e => {
 
 Events.on(SectorLaunchEvent, event => {
 try {
-
+Vars.ui.showInfoToast("planet: " + Vars.state.getPlanet(), 3);
+    
 Vars.content.getByName(ContentType.status,"gr-dedrone").clearUnlock();
 //Vars.content.getByName(ContentType.status,"gr-reinforced").clearUnlock();
 
