@@ -1,3 +1,4 @@
+Events.on(ContentInitEvent, e => {
 let log = (tag,str) => Log.infoTag(tag,str);
 
 Vars.ui.settings.addCategory("mod", Icon.admin, t => {
@@ -17,6 +18,11 @@ Vars.ui.settings.addCategory("mod", Icon.admin, t => {
     });
 });
 
+} catch(e){
+Timer.schedule(() => {  
+Vars.ui.showText("e",e,Align.center);
+},1.5);
+}});
 /*
 Events.on(ResearchEvent, e => {
     try {
