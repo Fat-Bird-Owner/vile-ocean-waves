@@ -4,6 +4,8 @@ try{
 Events.on(ResearchEvent, e => {
     try {
         const content = e.content;
+        Vars.ui.showInfoToast("Researched: " + content.name, 3);
+
         const gier = Planets.gier;
 
         if (!Vars.state.isGame() || Vars.state.getPlanet() != gier) return;
