@@ -8,9 +8,9 @@ Events.on(ResearchEvent, e => {
 
         if (!Vars.state.isGame() || Vars.state.getPlanet() != gier) return;
 
-        const target = Vars.content.getByName(ContentType.status, "gr-dedrone");
+        //const target = Vars.content.getByName(ContentType.status, "gr-dedrone");
 
-        if (content == target) {
+        if (content.name == "gr-dedrone") {
             Vars.ui.hudfrag.showToast("[red]Dedrone Enabled");
 
             const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
@@ -20,9 +20,9 @@ Events.on(ResearchEvent, e => {
             Vars.state.rules.bannedBlocks.add(dropzone);
         }
 
-        const target2 = Vars.content.getByName(ContentType.status, "gr-reinforced");
+        //const target2 = Vars.content.getByName(ContentType.status, "gr-reinforced");
 
-        if (content == target2) {
+        if (content.name == "gr-reinforced") {
             Vars.ui.hudfrag.showToast("[red]Reinforced Enabled");
 
             Team.get(5).unitHealthMultiplier = 1.45;
