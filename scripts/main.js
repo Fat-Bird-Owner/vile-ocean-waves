@@ -1,3 +1,23 @@
+let log = (tag,str) => Log.infoTag(tag,str);
+
+Vars.ui.settings.addCategory("mod", Icon.admin, t => {
+    t.checkPref("Bruh", true, bool => {
+        if(bool == true){
+            log("mod","qwhar?");
+        }else{
+            log("mod","noooo2");
+        }
+    });
+    t.checkPref("Bruh2", false, bool => {
+        if(bool == true){
+            log("mod","test");
+        }else{
+            log("mod","no");
+        }
+    });
+});
+
+/*
 Events.on(ResearchEvent, e => {
     try {
         const content = e.content;
@@ -47,7 +67,7 @@ Vars.ui.showText("e",e,Align.center);
 }});
 
 
-/*
+
 Events.on(SectorLaunchEvent, event => {
 try {
 
