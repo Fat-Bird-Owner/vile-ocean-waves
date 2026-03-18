@@ -1,38 +1,34 @@
 Events.on(ResearchEvent, e => {
-try {
-const content = e.content;
-  const gier = Planets.gier;
-    const wave = Vars.state.wave;
-    
-const target = Vars.content.getByName(ContentType.status, "gr-dedrone");
-  if (content == target && wave == 1){
-    if (Vars.state.isGame() != true || Vars.state.getPlanet() == gier) return;
+    try {
+        const content = e.content;
+        const gier = Planets.gier;
 
-  Vars.ui.hudfrag.showToast("[red]Dedrone Enabled");
+        if (!Vars.state.isGame() || Vars.state.getPlanet() != gier) return;
 
-  const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
-    const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
-      const banned = Vars.state.rules.bannedBlocks;
+        const target = Vars.content.getByName(ContentType.status, "gr-dedrone");
 
-  banned.add(facility);
-    banned.add(dropzone);
+        if (content == target) {
+            Vars.ui.hudfrag.showToast("[red]Dedrone Enabled");
 
-  }
-// Dedrone Endregion
+            const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
+            const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
 
-const target2 = Vars.content.getByName(ContentType.status, "gr-reinforced");
-  if (content == target2 && wave == 1){
-    if (Vars.state.isGame() != true || Vars.state.getPlanet() == gier) return;
+            Vars.state.rules.bannedBlocks.add(facility);
+            Vars.state.rules.bannedBlocks.add(dropzone);
+        }
 
-  Vars.ui.hudfrag.showToast("[red]Reinforced Enabled");
+        const target2 = Vars.content.getByName(ContentType.status, "gr-reinforced");
 
-  Team.get(5).unitHealthMultiplier = 1.45;
-    
-  }
+        if (content == target2) {
+            Vars.ui.hudfrag.showToast("[red]Reinforced Enabled");
 
-} catch(e){
-Vars.ui.showInfoToast(e,5);
-}});
+            Vars.state.rules.teams.get(5).unitHealthMultiplier = 1.45;
+        }
+
+    } catch(err){
+        Vars.ui.showInfoToast(err + "", 5);
+    }
+});
 // Reinforced endregion
 
 Events.on(SectorLaunchEvent, event => {
