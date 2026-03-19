@@ -20,6 +20,29 @@ Vars.ui.showInfoToast(e,5);
 
 
 
+Events.on(UnitCreateEvent, e => {
+try{
+const spawner = e.spawner;
+const unit = e.unit;
+
+if (spawner.block != Blocks.unitCargoLoader) return;
+
+Vars.ui.showInfoToast("works",5);
+    
+if (spawner.items.has(Items.titanium,45) && spawner.items.has(Items.thorium,65))
+unit.kill();
+UnitTypes.mega.at(spawner.x,spawner.y);
+
+spawner.removeStack(Items.titanium,45);
+spawner.removeStack(Items.thorium,65);
+}
+
+
+} catche(e){
+Vars.ui.showInfoToast(e,5);
+}});
+
+
 
 /*
 Events.on(ResearchEvent, e => {
