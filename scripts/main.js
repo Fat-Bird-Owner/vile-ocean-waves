@@ -25,17 +25,24 @@ try{
 const spawner = e.spawner;
 const unit = e.unit;
 
+Vars.ui.showInfoToast("[red]works",5);
+    
 if (spawner == null || spawner.block != Blocks.unitCargoLoader) return;
 
-Vars.ui.showInfoToast("works",5);
-    
-if (spawner.items.has(Items.titanium,45) && spawner.items.has(Items.thorium,65)){
-    unit.kill();
-    UnitTypes.mega.spawn(spawner.team, spawner.x, spawner.y);
+Vars.ui.showInfoToast("[green]works",5);
 
-    spawner.removeStack(Items.titanium,45);
-    spawner.removeStack(Items.thorium,65);
-}
+// wait for it to actually work
+Timer.schedule(() => {
+    if (!spawner.isValid()) return;
+
+    if (spawner.items.has(Items.titanium,45) && spawner.items.has(Items.thorium,65)) {
+        unit.kill();
+        UnitTypes.mega.spawn(spawner.team, spawner.x, spawner.y);
+
+        spawner.removeStack(Items.titanium,45);
+        spawner.removeStack(Items.thorium,65);
+    }
+}, 0);
 
 
 } catch(e){
