@@ -25,11 +25,11 @@ try{
 const spawner = e.spawner;
 const unit = e.unit;
 
-if (spawner.block != Blocks.unitCargoLoader) return;
+if (spawner == null || spawner.block != Blocks.unitCargoLoader) return;
 
 Vars.ui.showInfoToast("works",5);
     
-if (spawner.items.has(Items.titanium,45) && spawner.items.has(Items.thorium,65)) {
+if (spawner.items.has(Items.titanium,45) && spawner.items.has(Items.thorium,65)){
     unit.kill();
     UnitTypes.mega.spawn(spawner.team, spawner.x, spawner.y);
 
@@ -38,7 +38,7 @@ if (spawner.items.has(Items.titanium,45) && spawner.items.has(Items.thorium,65))
 }
 
 
-} catche(e){
+} catch(e){
 Vars.ui.showInfoToast(e,5);
 }});
 
