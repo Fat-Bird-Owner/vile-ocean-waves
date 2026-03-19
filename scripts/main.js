@@ -1,3 +1,26 @@
+var lastBuild = null;
+
+Events.on(TapEvent, e => {
+try {
+
+const tile = e.tile;
+const build = tile.build;
+if (build == null) return;
+if (lastBuild == build){
+build.kill();
+Fx.blockPlace.at(build.x,build.y);
+}
+lastBuild = build;
+    
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+}});
+
+
+
+
+
+/*
 Events.on(ResearchEvent, e => {
     try {
         const content = e.content;
@@ -47,7 +70,7 @@ Vars.ui.showText("e",e,Align.center);
 }});
 
 
-/*
+
 Events.on(SectorLaunchEvent, event => {
 try {
 
