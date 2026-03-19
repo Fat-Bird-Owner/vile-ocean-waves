@@ -8,7 +8,7 @@ const build = tile.build;
 if (build == null) return;
 if (lastBuild == build){
 build.kill();
-Fx.blockPlace.at(build.x,build.y);
+Fx.placeBlock.at(build.x,build.y);
 }
 lastBuild = build;
     
