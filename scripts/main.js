@@ -10,7 +10,7 @@ if (lastBuild == build){
 build.kill();
 }
 
-Fx.breakBlock.at(build.x,build.y);
+Fx.mineBig.at(build.x,build.y);
 lastBuild = build;
     
 } catch(e){
