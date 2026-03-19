@@ -8,8 +8,9 @@ const build = tile.build;
 if (build == null) return;
 if (lastBuild == build){
 build.kill();
-Fx.placeBlock.at(build.x,build.y);
 }
+
+Fx.breakBlock.at(build.x,build.y);
 lastBuild = build;
     
 } catch(e){
