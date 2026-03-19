@@ -29,12 +29,12 @@ if (spawner.block != Blocks.unitCargoLoader) return;
 
 Vars.ui.showInfoToast("works",5);
     
-if (spawner.items.has(Items.titanium,45) && spawner.items.has(Items.thorium,65))
-unit.kill();
-UnitTypes.mega.at(spawner.x,spawner.y);
+if (spawner.items.has(Items.titanium,45) && spawner.items.has(Items.thorium,65)) {
+    unit.kill();
+    UnitTypes.mega.spawn(spawner.team, spawner.x, spawner.y);
 
-spawner.removeStack(Items.titanium,45);
-spawner.removeStack(Items.thorium,65);
+    spawner.removeStack(Items.titanium,45);
+    spawner.removeStack(Items.thorium,65);
 }
 
 
