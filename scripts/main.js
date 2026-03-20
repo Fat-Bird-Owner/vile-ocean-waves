@@ -29,7 +29,7 @@ Vars.ui.showInfoToast(e,5);
 Events.on(ResearchEvent, e => {
     try {
         const content = e.content;
-        Vars.ui.showInfoToast("Researched: " + content.name, 3);
+        //Vars.ui.showInfoToast("Researched: " + content.name, 3);
 
         const gier = Planets.gier;
 
@@ -39,11 +39,11 @@ Events.on(ResearchEvent, e => {
         const reinforced = Vars.content.getByName(ContentType.status, "gr-reinforced");
         
         if (content == drone) {
-            Vars.ui.hudfrag.showToast("[red]Dedrone Enabled");
-
             const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
             const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
 
+            Vars.ui.hudfrag.showToast(facility.uiIcon,"[red]Dedrone Enabled");
+            
             Vars.state.rules.bannedBlocks.add(facility);
             Vars.state.rules.bannedBlocks.add(dropzone);
         }
