@@ -64,8 +64,13 @@ Events.on(SectorLaunchEvent, event => {
 try {
 Vars.ui.showInfoToast("planet: " + Vars.state.getPlanet(), 3);
     
-Vars.content.getByName(ContentType.status,"gr-dedrone").clearUnlock();
-Vars.content.getByName(ContentType.status,"gr-reinforced").clearUnlock();
+const dedrone = Vars.content.getByName(ContentType.status,"gr-dedrone")
+dedrone.clearUnlock();
+dedrone.reset();
+
+const reinforced = Vars.content.getByName(ContentType.status,"gr-reinforced")
+reinforced.clearUnlock();
+reinforced.reset();
 
 } catch(e){
 Timer.schedule(() => {  
