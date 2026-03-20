@@ -86,7 +86,7 @@ Events.on(SectorLaunchEvent, event => {
 try {
 Vars.ui.showInfoToast("planet: " + Vars.state.getPlanet(), 3);
     
-disabledAll();
+disableAll();
     
 } catch(e){
 Timer.schedule(() => {  
