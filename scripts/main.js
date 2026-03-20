@@ -23,20 +23,6 @@ Lightning.create(
 Vars.ui.showInfoToast(e,5);
 }});
 
-
-function disableAll(){
-
-const dedrone = Vars.content.getByName(ContentType.status,"gr-dedrone")
-if (dedrone) dedrone.clearUnlock();
-
-const reinforced = Vars.content.getByName(ContentType.status,"gr-reinforced")
-if (reinforced) reinforced.clearUnlock();
-
-const delisted = Vars.content.getByName(ContentType.status,"gr-delisted")
-if (delisted) delisted.clearUnlock();
-    
-}
-
 Events.on(ResearchEvent, e => {
     try {
         const content = e.content;
@@ -73,7 +59,14 @@ Events.on(ResearchEvent, e => {
             Vars.state.rules.bannedBlocks.add(outpost);
         }
 
-        disableAll();
+const dedrone = Vars.content.getByName(ContentType.status,"gr-dedrone")
+dedrone.clearUnlock();
+
+const reinforced = Vars.content.getByName(ContentType.status,"gr-reinforced")
+reinforced.clearUnlock();
+
+const delisted = Vars.content.getByName(ContentType.status,"gr-delisted")
+delisted.clearUnlock();
 
         
     } catch(err){
@@ -86,7 +79,14 @@ Events.on(SectorLaunchEvent, event => {
 try {
 Vars.ui.showInfoToast("planet: " + Vars.state.getPlanet(), 3);
     
-disableAll();
+const dedrone = Vars.content.getByName(ContentType.status,"gr-dedrone")
+dedrone.clearUnlock();
+
+const reinforced = Vars.content.getByName(ContentType.status,"gr-reinforced")
+reinforced.clearUnlock();
+
+const delisted = Vars.content.getByName(ContentType.status,"gr-delisted")
+delisted.clearUnlock();
     
 } catch(e){
 Timer.schedule(() => {  
