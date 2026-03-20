@@ -59,6 +59,20 @@ Events.on(ResearchEvent, e => {
     }
 });
 
+
+Events.on(SectorLaunchEvent, event => {
+try {
+Vars.ui.showInfoToast("planet: " + Vars.state.getPlanet(), 3);
+    
+Vars.content.getByName(ContentType.status,"gr-dedrone").clearUnlock();
+Vars.content.getByName(ContentType.status,"gr-reinforced").clearUnlock();
+
+} catch(e){
+Timer.schedule(() => {  
+Vars.ui.showText("e",e,Align.center);
+},1.5);
+}});
+
 /*
 Events.on(UnitCreateEvent, e => {
 try{
