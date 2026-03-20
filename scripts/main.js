@@ -1,17 +1,22 @@
-var lastBuild = null;
-
-Events.on(TapEvent, e => {
+Events.on(UnitDamageEvent, e => {
 try {
 
-const tile = e.tile;
-const build = tile.build;
-if (build == null) return;
-if (lastBuild == build){
-build.kill();
-}
+const unit = e.unit;
+if (unit == null) return;
 
-Fx.mineBig.at(build.x,build.y);
-lastBuild = build;
+const type = unit.type
+const target = Vars.content.getByName(ContentType.unit, "gr-electron");
+if (type != target) return;
+
+Lightning.create(
+    unit.team,
+    Color.valueOf("bccae0ff"),
+    damage,
+    unit.x,
+    unit.y,
+    Mathf.random(360),
+    24 + Mathf.random(24)
+);
     
 } catch(e){
 Vars.ui.showInfoToast(e,5);
@@ -19,7 +24,7 @@ Vars.ui.showInfoToast(e,5);
 
 
 
-
+/*
 Events.on(UnitCreateEvent, e => {
 try{
 const spawner = e.spawner;
@@ -51,7 +56,7 @@ Vars.ui.showInfoToast(e,5);
 
 
 
-/*
+
 Events.on(ResearchEvent, e => {
     try {
         const content = e.content;
