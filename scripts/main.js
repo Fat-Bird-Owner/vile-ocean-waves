@@ -25,6 +25,40 @@ Vars.ui.showInfoToast(e,5);
 
 
 
+
+Events.on(ResearchEvent, e => {
+    try {
+        const content = e.content;
+        Vars.ui.showInfoToast("Researched: " + content.name, 3);
+
+        const gier = Planets.gier;
+
+        if (!Vars.state.isGame() || Vars.state.getPlanet() != gier) return;
+
+        const drone = Vars.content.getByName(ContentType.status, "gr-dedrone");
+        const reinforced = Vars.content.getByName(ContentType.status, "gr-reinforced");
+        
+        if (content == drone) {
+            Vars.ui.hudfrag.showToast("[red]Dedrone Enabled");
+
+            const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
+            const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
+
+            Vars.state.rules.bannedBlocks.add(facility);
+            Vars.state.rules.bannedBlocks.add(dropzone);
+        }
+
+        if (content == reinforced) {
+            Vars.ui.hudfrag.showToast("[red]Reinforced Enabled");
+
+            Vars.state.rules.teams.get(Team.get(5)).unitHealthMultiplier = 1.45;
+        }
+
+    } catch(err){
+        Vars.ui.showInfoToast(err, 5);
+    }
+});
+
 /*
 Events.on(UnitCreateEvent, e => {
 try{
