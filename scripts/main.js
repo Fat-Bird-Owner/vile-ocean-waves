@@ -43,7 +43,7 @@ Events.on(ResearchEvent, e => {
             const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
 
             const icon = Core.atlas.find("gr-dedrone");
-            Vars.ui.hudfrag.showToast(icon, " [red]Dedrone Enabled");
+            Vars.ui.hudfrag.showToast(icon, 8 , "[red]Dedrone Enabled");
             
             Vars.state.rules.bannedBlocks.add(facility);
             Vars.state.rules.bannedBlocks.add(dropzone);
