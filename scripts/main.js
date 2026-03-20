@@ -42,15 +42,14 @@ Events.on(ResearchEvent, e => {
             const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
             const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
 
-            const icon = Core.atlas.find("gr-dedrone");
-            Vars.ui.hudfrag.showToast(icon, 8 , "[red]Dedrone Enabled");
+            Vars.ui.hudfrag.showToast("[tan]Dedrone[red] Enabled");
             
             Vars.state.rules.bannedBlocks.add(facility);
             Vars.state.rules.bannedBlocks.add(dropzone);
         }
 
         if (content == reinforced) {
-            Vars.ui.hudfrag.showToast("[red]Reinforced Enabled");
+            Vars.ui.hudfrag.showToast("[lightgrey]Reinforced[red] Enabled");
 
             Vars.state.rules.teams.get(Team.get(5)).unitHealthMultiplier = 1.45;
         }
