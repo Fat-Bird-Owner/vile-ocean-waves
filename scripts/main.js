@@ -27,13 +27,13 @@ Vars.ui.showInfoToast(e,5);
 function disableAll(){
 
 const dedrone = Vars.content.getByName(ContentType.status,"gr-dedrone")
-dedrone.clearUnlock();
+if (dedrone) dedrone.clearUnlock();
 
 const reinforced = Vars.content.getByName(ContentType.status,"gr-reinforced")
-reinforced.clearUnlock();
+if (reinforced) reinforced.clearUnlock();
 
 const delisted = Vars.content.getByName(ContentType.status,"gr-delisted")
-delisted.clearUnlock();
+if (delisted) delisted.clearUnlock();
     
 }
 
