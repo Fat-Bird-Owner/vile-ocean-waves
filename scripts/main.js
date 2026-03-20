@@ -8,7 +8,7 @@ const type = unit.type
 const target = Vars.content.getByName(ContentType.unit, "gr-electron");
 if (type != target) return;
 
-Sounds.shootArc.at(build.x,build.y);
+Sounds.shootArc.at(unit.x,unit.y);
 Lightning.create(
     unit.team,
     Color.valueOf("bccae0ff"),
