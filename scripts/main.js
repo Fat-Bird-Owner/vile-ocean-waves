@@ -11,7 +11,7 @@ if (type != target) return;
 Lightning.create(
     unit.team,
     Color.valueOf("bccae0ff"),
-    damage,
+    35,
     unit.x,
     unit.y,
     Mathf.random(360),
