@@ -24,7 +24,18 @@ Vars.ui.showInfoToast(e,5);
 }});
 
 
+function disableAll(){
 
+const dedrone = Vars.content.getByName(ContentType.status,"gr-dedrone")
+dedrone.clearUnlock();
+
+const reinforced = Vars.content.getByName(ContentType.status,"gr-reinforced")
+reinforced.clearUnlock();
+
+const delisted = Vars.content.getByName(ContentType.status,"gr-delisted")
+delisted.clearUnlock();
+    
+}
 
 Events.on(ResearchEvent, e => {
     try {
@@ -37,7 +48,8 @@ Events.on(ResearchEvent, e => {
 
         const drone = Vars.content.getByName(ContentType.status, "gr-dedrone");
         const reinforced = Vars.content.getByName(ContentType.status, "gr-reinforced");
-        
+        const delisted = Vars.content.getByName(ContentType.status, "gr-delisted");
+    
         if (content == drone) {
             const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
             const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
@@ -54,6 +66,16 @@ Events.on(ResearchEvent, e => {
             Vars.state.rules.teams.get(Team.get(5)).unitHealthMultiplier = 1.45;
         }
 
+        if (content == delisted) {
+            Vars.ui.hudfrag.showToast("[lightgrey]Delisted[red] Enabled");
+
+            const outpost = Vars.content.getByName(ContentType.block,"gr-outpost");
+            Vars.state.rules.bannedBlocks.add(outpost);
+        }
+
+        disableAll();
+
+        
     } catch(err){
         Vars.ui.showInfoToast(err, 5);
     }
@@ -64,12 +86,8 @@ Events.on(SectorLaunchEvent, event => {
 try {
 Vars.ui.showInfoToast("planet: " + Vars.state.getPlanet(), 3);
     
-const dedrone = Vars.content.getByName(ContentType.status,"gr-dedrone")
-dedrone.clearUnlock();
-
-const reinforced = Vars.content.getByName(ContentType.status,"gr-reinforced")
-reinforced.clearUnlock();
-
+disabledAll();
+    
 } catch(e){
 Timer.schedule(() => {  
 Vars.ui.showText("e",e,Align.center);
