@@ -66,11 +66,9 @@ Vars.ui.showInfoToast("planet: " + Vars.state.getPlanet(), 3);
     
 const dedrone = Vars.content.getByName(ContentType.status,"gr-dedrone")
 dedrone.clearUnlock();
-TechTree.all.find(u => u.content == dedrone).reset();
 
 const reinforced = Vars.content.getByName(ContentType.status,"gr-reinforced")
 reinforced.clearUnlock();
-TechTree.all.find(u => u.content == reinforced).reset();
 
 } catch(e){
 Timer.schedule(() => {  
