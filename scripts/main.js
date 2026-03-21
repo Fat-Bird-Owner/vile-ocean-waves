@@ -40,25 +40,28 @@ Events.on(ResearchEvent, e => {
             const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
             const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
 
-            Vars.ui.hudfrag.showToast("[tan]Dedrone[red] Enabled");
+            Vars.ui.hudfrag.showToast(Icon.rename, "[tan]Dedrone[red] Enabled");
             
             Vars.state.rules.bannedBlocks.add(facility);
             Vars.state.rules.bannedBlocks.add(dropzone);
         }
 
         if (content == reinforced) {
-            Vars.ui.hudfrag.showToast(Icon.settings, "[lightgrey]Reinforced[red] Enabled");
+            Vars.ui.hudfrag.showToast(Icon.rename, "[lightgrey]Reinforced[red] Enabled");
 
             Vars.state.rules.teams.get(Team.get(5)).unitHealthMultiplier = 1.45;
         }
 
         if (content == delisted) {
-            Vars.ui.hudfrag.showToast("[lightgrey]Delisted[red] Enabled");
+            Vars.ui.hudfrag.showToast(Icon.rename, "[lightgrey]Delisted[red] Enabled");
 
             const outpost = Vars.content.getByName(ContentType.block,"gr-outpost");
             Vars.state.rules.bannedBlocks.add(outpost);
         }
 
+        dedrone.clearUnlock();
+        reinforced.clearUnlock();
+        delisted.clearUnlock();   
         
     } catch(err){
         Vars.ui.showInfoToast(err, 5);
@@ -70,13 +73,13 @@ Events.on(SectorLaunchEvent, event => {
 try {
 Vars.ui.showInfoToast("planet: " + Vars.state.getPlanet(), 3);
     
-const dedrone = Vars.content.getByName(ContentType.status,"gr-dedrone")
+const dedrone = Vars.content.getByName(ContentType.status,"gr-dedrone");
 dedrone.clearUnlock();
 
-const reinforced = Vars.content.getByName(ContentType.status,"gr-reinforced")
+const reinforced = Vars.content.getByName(ContentType.status,"gr-reinforced");
 reinforced.clearUnlock();
 
-const delisted = Vars.content.getByName(ContentType.status,"gr-delisted")
+const delisted = Vars.content.getByName(ContentType.status,"gr-delisted");
 delisted.clearUnlock();
     
 } catch(e){
