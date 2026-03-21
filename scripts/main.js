@@ -1,3 +1,8 @@
+Events.on(ClientLoadEvent, e => { 
+try{
+
+Vars.ios = false;
+    
 Events.on(UnitDamageEvent, e => {
 try {
 
