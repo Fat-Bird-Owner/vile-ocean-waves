@@ -98,6 +98,7 @@ const build = tile.build;
 if (block == null || block != Blocks.scatter || build == null) return;
 
 build.shoot();
+Sounds.click.at(build.x,build.y);
     
 } catch(e) {
 Vars.ui.showInfoToast(e,4.5);
