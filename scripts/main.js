@@ -88,6 +88,22 @@ Vars.ui.showText("e",e,Align.center);
 },1.5);
 }});
 
+Events.on(TapEvent, event => {
+try{
+const tile = event.tile;
+const player = event.player;
+const block = tile.block();
+const build = tile.build;
+
+if (block == null || block != Blocks.scatter || build == null) return;
+
+build.shoot();
+    
+} catch(e) {
+Vars.ui.showInfoToast(e,4.5);
+}
+});
+
 /*
 Events.on(UnitCreateEvent, e => {
 try{
