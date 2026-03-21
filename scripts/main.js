@@ -59,15 +59,6 @@ Events.on(ResearchEvent, e => {
             Vars.state.rules.bannedBlocks.add(outpost);
         }
 
-const dedrone = Vars.content.getByName(ContentType.status,"gr-dedrone")
-dedrone.clearUnlock();
-
-const reinforced = Vars.content.getByName(ContentType.status,"gr-reinforced")
-reinforced.clearUnlock();
-
-const delisted = Vars.content.getByName(ContentType.status,"gr-delisted")
-delisted.clearUnlock();
-
         
     } catch(err){
         Vars.ui.showInfoToast(err, 5);
