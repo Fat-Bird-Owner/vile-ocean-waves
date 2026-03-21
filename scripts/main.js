@@ -26,8 +26,6 @@ Vars.ui.showInfoToast(e,5);
 Events.on(ResearchEvent, e => {
     try {
         const content = e.content;
-        //Vars.ui.showInfoToast("Researched: " + content.name, 3);
-
         const gier = Planets.gier;
 
         if (!Vars.state.isGame() || Vars.state.getPlanet() != gier || Vars.state.wave != 1) return;
@@ -37,22 +35,15 @@ Events.on(ResearchEvent, e => {
         const delisted = Vars.content.getByName(ContentType.status, "gr-delisted");
     
         if (content == drone) {
-            
             const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
             const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
             drone.clearUnlock();
-            var found = false;
             
             Groups.build.each(b => {
             if (b.block == facility || b.block == dropzone){
-            found = true;
+            b.kill();
             }
             });
-
-                if (found) {
-                Vars.ui.hudfrag.showToast("[accent]Modifier block founded on the map");
-                return;
-                }
             
             Vars.ui.hudfrag.showToast(Icon.settings, "[tan]Dedrone[red] Enabled");
             Vars.state.rules.bannedBlocks.add(facility);
@@ -69,18 +60,12 @@ Events.on(ResearchEvent, e => {
         if (content == delisted) {
             delisted.clearUnlock();
             const outpost = Vars.content.getByName(ContentType.block,"gr-outpost");
-            var found = false;
             
             Groups.build.each(b => {
             if (b.block == outpost){
-            found = true;
+            b.kill();
             }
             });
-
-                if (found) {
-                Vars.ui.hudfrag.showToast("[accent]Modifier block founded on the map");
-                return;
-                }
             
             Vars.ui.hudfrag.showToast(Icon.settings, "[accent]Delisted[red] Enabled");
             Vars.state.rules.bannedBlocks.add(outpost);
