@@ -39,12 +39,6 @@ Events.on(ResearchEvent, e => {
             const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
             const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
             
-            Groups.build.each(b => {
-            if (b.block == dropzone || b.block == facility){
-            b.kill();
-            }
-            });
-            
             Vars.ui.hudfrag.showToast(Icon.settings, "[tan]Dedrone[red] Enabled");
             Vars.state.rules.bannedBlocks.add(facility);
             Vars.state.rules.bannedBlocks.add(dropzone);
@@ -60,12 +54,6 @@ Events.on(ResearchEvent, e => {
         if (content == delisted) {
             delisted.clearUnlock();
             const outpost = Vars.content.getByName(ContentType.block,"gr-outpost");
-            
-            Groups.build.each(b => {
-            if (b.block == outpost){
-            b.kill();
-            }
-            });
             
             Vars.ui.hudfrag.showToast(Icon.settings, "[accent]Delisted[red] Enabled");
             Vars.state.rules.bannedBlocks.add(outpost);
