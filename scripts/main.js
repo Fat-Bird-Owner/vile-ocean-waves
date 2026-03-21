@@ -101,6 +101,10 @@ if (peekAmmo == null) return;
     
 build.control(LAccess.shoot, build.x, build.y, 1, 0);
 Sounds.click.at(build.x,build.y);
+
+Timer.schedule(() => {  
+build.control(LAccess.shoot, build.x, build.y, 0, 0);
+}, 0.1);
     
 } catch(e) {
 Vars.ui.showInfoToast(e,4.5);
