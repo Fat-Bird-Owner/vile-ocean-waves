@@ -99,7 +99,7 @@ if (block == null || block != Blocks.scatter || build == null) return;
 const peekAmmo = build.peekAmmo();
 if (peekAmmo == null) return;
     
-build.shoot(peekAmmo);
+build.control(LAccess.shoot, build.x, build.y, 0, 0);
 Sounds.click.at(build.x,build.y);
     
 } catch(e) {
