@@ -47,7 +47,7 @@ Events.on(ResearchEvent, e => {
         }
 
         if (content == reinforced) {
-            Vars.ui.hudfrag.showToast("[lightgrey]Reinforced[red] Enabled");
+            Vars.ui.hudfrag.showToast(Icon.settings, "[lightgrey]Reinforced[red] Enabled");
 
             Vars.state.rules.teams.get(Team.get(5)).unitHealthMultiplier = 1.45;
         }
