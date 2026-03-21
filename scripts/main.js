@@ -59,7 +59,7 @@ Events.on(ResearchEvent, e => {
             Vars.state.rules.bannedBlocks.add(outpost);
         }
 
-        dedrone.clearUnlock();
+        drone.clearUnlock();
         reinforced.clearUnlock();
         delisted.clearUnlock();   
         
