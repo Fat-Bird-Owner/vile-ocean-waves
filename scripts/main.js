@@ -1,13 +1,3 @@
-Events.on(ClientLoadEvent, e => { 
-try{
-
-Vars.ios = false;
-
-} catch(e) {
-Vars.ui.showText("Not work",e,Align.center);
-}})
-
-    
 Events.on(UnitDamageEvent, e => {
 try {
 
@@ -47,11 +37,24 @@ Events.on(ResearchEvent, e => {
         const delisted = Vars.content.getByName(ContentType.status, "gr-delisted");
     
         if (content == drone) {
+            
             const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
             const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
-
-            Vars.ui.hudfrag.showToast(Icon.settings, "[tan]Dedrone[red] Enabled");
+            drone.clearUnlock();
+            var found = false;
             
+            Groups.build.each(b => {
+            if (b.block === facility || b.block === dropzone){
+            found = true;
+            }
+            );
+
+                if (found) {
+                Vars.ui.hudfrag.showToast("[accent]Modifier block founded on the map");
+                return;
+                }
+            
+            Vars.ui.hudfrag.showToast(Icon.settings, "[tan]Dedrone[red] Enabled");
             Vars.state.rules.bannedBlocks.add(facility);
             Vars.state.rules.bannedBlocks.add(dropzone);
         }
@@ -60,12 +63,26 @@ Events.on(ResearchEvent, e => {
             Vars.ui.hudfrag.showToast(Icon.settings, "[lightgrey]Reinforced[red] Enabled");
 
             Vars.state.rules.teams.get(Team.get(5)).unitHealthMultiplier = 1.45;
+            reinforced.clearUnlock();
         }
 
         if (content == delisted) {
-            Vars.ui.hudfrag.showToast(Icon.settings, "[accent]Delisted[red] Enabled");
-
+            delisted.clearUnlock();
             const outpost = Vars.content.getByName(ContentType.block,"gr-outpost");
+            var found = false;
+            
+            Groups.build.each(b => {
+            if (b.block === outpost){
+            found = true;
+            }
+            );
+
+                if (found) {
+                Vars.ui.hudfrag.showToast("[accent]Modifier block founded on the map");
+                return;
+                }
+            
+            Vars.ui.hudfrag.showToast(Icon.settings, "[accent]Delisted[red] Enabled");
             Vars.state.rules.bannedBlocks.add(outpost);
         }
 
