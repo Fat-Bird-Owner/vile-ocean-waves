@@ -35,12 +35,12 @@ Events.on(ResearchEvent, e => {
         const delisted = Vars.content.getByName(ContentType.status, "gr-delisted");
     
         if (content == drone) {
+            drone.clearUnlock();
             const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
             const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
-            drone.clearUnlock();
             
             Groups.build.each(b => {
-            if (b.block == facility || b.block == dropzone){
+            if (b.block == dropzone || b.block == facility){
             b.kill();
             }
             });
