@@ -2,6 +2,11 @@ Events.on(ClientLoadEvent, e => {
 try{
 
 Vars.ios = false;
+
+} catch(e) {
+Vars.ui.showText("Not work",e,Align.center);
+}})
+
     
 Events.on(UnitDamageEvent, e => {
 try {
