@@ -30,7 +30,7 @@ Events.on(ResearchEvent, e => {
 
         const gier = Planets.gier;
 
-        if (!Vars.state.isGame() || Vars.state.getPlanet() != gier) return;
+        if (!Vars.state.isGame() || Vars.state.getPlanet() != gier || Vars.state.wave != 1) return;
 
         const drone = Vars.content.getByName(ContentType.status, "gr-dedrone");
         const reinforced = Vars.content.getByName(ContentType.status, "gr-reinforced");
