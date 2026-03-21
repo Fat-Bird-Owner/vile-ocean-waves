@@ -47,7 +47,7 @@ Events.on(ResearchEvent, e => {
             if (b.block == facility || b.block == dropzone){
             found = true;
             }
-            );
+            });
 
                 if (found) {
                 Vars.ui.hudfrag.showToast("[accent]Modifier block founded on the map");
@@ -75,7 +75,7 @@ Events.on(ResearchEvent, e => {
             if (b.block == outpost){
             found = true;
             }
-            );
+            });
 
                 if (found) {
                 Vars.ui.hudfrag.showToast("[accent]Modifier block founded on the map");
