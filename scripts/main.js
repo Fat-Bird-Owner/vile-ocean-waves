@@ -53,7 +53,7 @@ Events.on(ResearchEvent, e => {
         }
 
         if (content == delisted) {
-            Vars.ui.hudfrag.showToast(Icon.settings, "[lightgrey]Delisted[red] Enabled");
+            Vars.ui.hudfrag.showToast(Icon.settings, "[accent]Delisted[red] Enabled");
 
             const outpost = Vars.content.getByName(ContentType.block,"gr-outpost");
             Vars.state.rules.bannedBlocks.add(outpost);
