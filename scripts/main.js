@@ -96,8 +96,10 @@ const block = tile.block();
 const build = tile.build;
 
 if (block == null || block != Blocks.scatter || build == null) return;
-
-build.shoot();
+const peekAmmo = build.peekAmmo();
+if (peekAmmo == null) return;
+    
+build.shoot(peekAmmo);
 Sounds.click.at(build.x,build.y);
     
 } catch(e) {
