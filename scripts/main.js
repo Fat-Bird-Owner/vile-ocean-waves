@@ -44,7 +44,7 @@ Events.on(ResearchEvent, e => {
             var found = false;
             
             Groups.build.each(b => {
-            if (b.block === facility || b.block === dropzone){
+            if (b.block == facility || b.block == dropzone){
             found = true;
             }
             );
@@ -72,7 +72,7 @@ Events.on(ResearchEvent, e => {
             var found = false;
             
             Groups.build.each(b => {
-            if (b.block === outpost){
+            if (b.block == outpost){
             found = true;
             }
             );
