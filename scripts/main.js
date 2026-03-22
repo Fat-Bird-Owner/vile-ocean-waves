@@ -94,8 +94,9 @@ const tile = event.tile;
 const player = event.player;
 const block = tile.block();
 const build = tile.build;
-
-if (block == null || block != Blocks.scatter || build == null) return;
+const silo = Vars.content.getByName(ContentType.block, "gr-launchh-silo");
+    
+if (block == null || block != sili || build == null) return;
 const peekAmmo = build.peekAmmo();
 if (peekAmmo == null) return;
     
