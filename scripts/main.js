@@ -9,7 +9,7 @@ const type = spawner.block;
 const target =  Blocks.additiveReconstructor;
 
 if (type == target){
-unit.apply(StatusEffect.overdrive,9999);
+unit.apply(StatusEffects.overdrive,9999);
 }
     
 } catch(e){
