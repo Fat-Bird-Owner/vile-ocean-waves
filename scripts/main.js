@@ -105,7 +105,7 @@ Sounds.click.at(build.x,build.y);
 
 Timer.schedule(() => {  
 build.control(LAccess.shoot, build.x, build.y, 0, 0);
-}, 0.1);
+}, 0.0166665);
     
 } catch(e) {
 Vars.ui.showInfoToast(e,4.5);
