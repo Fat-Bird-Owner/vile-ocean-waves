@@ -96,7 +96,7 @@ const block = tile.block();
 const build = tile.build;
 const silo = Vars.content.getByName(ContentType.block, "gr-launchh-silo");
     
-if (block == null || block != sili || build == null) return;
+if (block == null || block != silo || build == null) return;
 const peekAmmo = build.peekAmmo();
 if (peekAmmo == null) return;
     
