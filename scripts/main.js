@@ -32,7 +32,9 @@ Events.on(ResearchEvent, e => {
             const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
             const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
 
-            const count = Groups.build.count(b => b.block === facility || b.block === dropzone);
+            const count = Groups.build.count(b => 
+            b != null && b.isValid() && (b.block === facility || b.block === dropzone)
+            );
             if (count != 0){
             Vars.ui.hudfrag.showToast(Icon.settings, "[red]Modifier building on the map");
             return;
