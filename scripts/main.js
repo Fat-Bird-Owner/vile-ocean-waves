@@ -31,6 +31,12 @@ Events.on(ResearchEvent, e => {
             drone.clearUnlock();
             const facility = Vars.content.getByName(ContentType.block,"gr-drone-facility");
             const dropzone = Vars.content.getByName(ContentType.block,"gr-facility-dropzone");
+
+            const count = Groups.build.count(b => b.block === facility || b.block === dropzone);
+            if (count != 0){
+            Vars.ui.hudfrag.showToast(Icon.settings, "[red]Modifier building on the map");
+            return;
+            }
             
             Vars.ui.hudfrag.showToast(Icon.settings, "[tan]Dedrone[red] Enabled");
             Vars.state.rules.bannedBlocks.add(facility);
@@ -47,7 +53,13 @@ Events.on(ResearchEvent, e => {
         if (content == delisted) {
             delisted.clearUnlock();
             const outpost = Vars.content.getByName(ContentType.block,"gr-outpost");
-            
+
+            const count = Groups.build.count(b => b.block === outpost);
+            if (count != 0){
+            Vars.ui.hudfrag.showToast(Icon.settings, "[red]Modifier building on the map");
+            return;
+            }
+        
             Vars.ui.hudfrag.showToast(Icon.settings, "[accent]Delisted[red] Enabled");
             Vars.state.rules.bannedBlocks.add(outpost);
         }
