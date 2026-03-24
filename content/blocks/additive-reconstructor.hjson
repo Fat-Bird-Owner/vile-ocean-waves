@@ -1,7 +1,11 @@
 liquidCapacity: 100
-optionalConsumers:{
-liquids:[
-cyanogen/0
-slag/0
-]
+consumes:{
+coolant:{
+amount: 0
 }
+}
+
+liquidFilter:[
+slag: true
+cyanogen: true
+]
