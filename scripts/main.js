@@ -1,5 +1,25 @@
 
 
+Events.on(ContentInitEvent, () => {
+    const b = Blocks.additiveReconstructor;
+
+    // mark block as having consumers
+    b.hasConsumers = true;
+
+    // cyanogen
+    const c1 = b.consumeLiquid(Liquids.cyanogen, 1);
+    c1.optional = true;
+    c1.booster = true;
+
+    // slag
+    const c2 = b.consumeLiquid(Liquids.slag, 1);
+    c2.optional = true;
+    c2.booster = true;
+
+    // rebuild filtered consumer arrays
+    b.updateConsumers = b.consumers.slice(); // force reassign
+});
+
 Events.on(ContentInitEvent, event => {
 try {
 
