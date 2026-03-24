@@ -1,2 +1,15 @@
 liquidCapacity: 100
-
+consumes:{
+liquids:[
+{
+liquid: cyanogen
+amount: 0
+optional: true
+}
+{
+liquid: slag
+amount: 0
+optional: true
+}
+]
+}
