@@ -1,4 +1,24 @@
 
+
+Events.on(ContentInitEvent, event => {
+try {
+
+const b = Blocks.additiveReconstructor;
+
+const c1 = b.consumeLiquid(Liquids.slag, 0);
+c1.optional = true;
+
+const c2 = b.consumeLiquid(Liquids.cyanogen, 0);
+c2.optional = true;
+  
+} catch(e){
+    Timer.schedule(() => {  
+Vars.ui.showText("e",e,Align.center);
+    },1.5);
+}});
+
+
+
 Events.on(UnitCreateEvent, e => {
 try {
 
