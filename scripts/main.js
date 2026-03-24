@@ -21,7 +21,7 @@ if (spawner == null) return;
 const type = spawner.block;
 const target =  Blocks.additiveReconstructor;
 
-if (type == target){
+if (type == target && spawner.liquids != null){
 
 if (spawner.liquids.get(Liquids.cyanogen) >= 10){
 unit.apply(StatusEffects.overdrive,9999);
