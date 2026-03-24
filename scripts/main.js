@@ -16,6 +16,12 @@ unit.apply(StatusEffects.overdrive,9999);
 spawner.liquids.remove(Liquids.cyanogen,10);
 }
 
+if (spawner.liquids.get(Liquids.slag) >= 10){
+unit.apply(StatusEffects.melting,9999);
+unit.apply(StatusEffects.fast,9999);
+spawner.liquids.remove(Liquids.slag,10);
+}
+
 }
     
 } catch(e){
