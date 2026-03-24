@@ -1,8 +1,11 @@
 Events.on(ContentInitEvent, event => {
 try {
 const target =  Blocks.additiveReconstructor;
-target.consumeLiquid(Liquids.cyanogen,0);
+target.liquidCapacity = 100;
     
+const cyan = target.consumeLiquid(Liquids.cyanogen,1/60);
+cyan.optional = true;
+
 } catch(e){
 Vars.ui.showInfoToast(e,3);
     
