@@ -1,3 +1,16 @@
+Events.on(ContentInitEvent, event => {
+try {
+const target =  Blocks.additiveReconstructor;
+target.consumeLiquid(Liquids.cyanogen,0);
+    
+} catch(e){
+Vars.ui.showInfoToast(e,3);
+    
+}
+  
+});
+
+
 Events.on(UnitCreateEvent, e => {
 try {
 
@@ -9,7 +22,12 @@ const type = spawner.block;
 const target =  Blocks.additiveReconstructor;
 
 if (type == target){
+
+if (spawner.liquids.get(Liquids.cyanogen) >= 10){
 unit.apply(StatusEffects.overdrive,9999);
+spawner.liquids.remove(Liquids.cyanogen,10);
+}
+
 }
     
 } catch(e){
