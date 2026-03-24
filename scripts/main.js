@@ -14,6 +14,10 @@ if (type == target && spawner.liquids != null){
 if (spawner.liquids.get(Liquids.cyanogen) >= 10){
 unit.apply(StatusEffects.overdrive,9999);
 spawner.liquids.remove(Liquids.cyanogen,10);
+
+const reconFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("89e8b699"));
+reconFx.at(spawner.x,spawner.y);
+    
 }
 
 if (spawner.liquids.get(Liquids.slag) >= 10){
