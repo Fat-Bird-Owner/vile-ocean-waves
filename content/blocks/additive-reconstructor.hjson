@@ -1,5 +1,5 @@
 liquidCapacity: 100
-optionalConsumer:{
+optionalConsumers:{
 liquids:[
 cyanogen/0
 slag/0
