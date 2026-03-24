@@ -3,8 +3,8 @@ consumes:{
 coolant:{
 amount: 0
 allowGas: true
-maxFlammability: -10
-maxTemp: -10
+maxFlammability: 0
+maxTemp: 0
 }
 }
 
