@@ -1,15 +1,7 @@
 liquidCapacity: 100
-consumes:{
+optionalConsumer:{
 liquids:[
-{
-liquid: cyanogen
-amount: 0
-optional: true
-}
-{
-liquid: slag
-amount: 0
-optional: true
-}
+cyanogen/0
+slag/0
 ]
 }
