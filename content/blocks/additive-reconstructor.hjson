@@ -1,4 +1,11 @@
-liquidCapacity: 100
+liquidCapacity: 50
+description: "Consumes a many types of liquids.
+Give units status effect based on the assigned liquid.
+
+- Cyanogen: Rapid fire
+- Water: Increased movement speed
+"
+
 consumes:{
 coolant:{
 amount: 0
