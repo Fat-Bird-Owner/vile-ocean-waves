@@ -32,10 +32,17 @@ spawner.liquids.remove(Liquids.cyanogen,10);
 cyanogenFx.at(spawner.x,spawner.y);    
 }
 
-if (spawner.liquids.get(Liquids.slag) >= 10){
-unit.apply(StatusEffects.melting,9999);
+if (spawner.liquids.get(Liquids.water) >= 10){
+unit.apply(StatusEffects.wet,9999);
 unit.apply(StatusEffects.fast,9999);
-spawner.liquids.remove(Liquids.slag,10);
+spawner.liquids.remove(Liquids.water,10);
+slagFx.at(spawner.x,spawner.y);
+}
+
+if (spawner.liquids.get(Liquids.cyrofluid) >= 10){
+unit.apply(StatusEffects.freezing,9999);
+unit.apply(StatusEffects.overclock,9999);
+spawner.liquids.remove(Liquids.cyrofluid,10);
 slagFx.at(spawner.x,spawner.y);
 }
 
