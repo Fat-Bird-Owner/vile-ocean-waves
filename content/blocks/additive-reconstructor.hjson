@@ -2,8 +2,8 @@ liquidCapacity: 100
 consumes:{
 coolant:{
 amount: 0
-maxTemp: 0
-maxFlammability: 0
+maxTemp: 10
+maxFlammability: 10
 allowGas: true
 }
 }
