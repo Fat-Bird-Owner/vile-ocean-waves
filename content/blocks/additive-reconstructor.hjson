@@ -5,5 +5,7 @@ amount: 0
 maxTemp: 10
 maxFlammability: 10
 allowGas: true
+optional: true
+booster: true
 }
 }
