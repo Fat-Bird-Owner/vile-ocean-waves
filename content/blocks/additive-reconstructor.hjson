@@ -7,8 +7,8 @@ Give units status effect based on the assigned liquid.
 "
 
 upgrades:[
-[gr-drive,gr-drive]
-[gr-ruthless,gr-ruthless]
+[gr-drive,gr-ash]
+[gr-ruthless,gr-spark]
 ]
 
 consumes:{
