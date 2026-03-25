@@ -1,12 +1,13 @@
 var cyanogenFx = null;
-var slagFx = null;
+var waterFx = null;
 
 Events.on(ContentInitEvent, e => {
 try {
 cyanogenFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("89e8b699"));
-slagFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("ffa166ff"));
+waterFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("596ab8ff"));
 
-
+Liquids.gallium.hidden = false;
+Liquids.gallium.coolant = true;
 } catch(e){
 Vars.ui.showInfoToast(e,5);
 }});
@@ -33,19 +34,22 @@ cyanogenFx.at(spawner.x,spawner.y);
 }
 
 if (spawner.liquids.get(Liquids.water) >= 10){
-unit.apply(StatusEffects.wet,9999);
 unit.apply(StatusEffects.fast,9999);
 spawner.liquids.remove(Liquids.water,10);
-slagFx.at(spawner.x,spawner.y);
+waterFx.at(spawner.x,spawner.y);
 }
 
 if (spawner.liquids.get(Liquids.cyrofluid) >= 10){
-unit.apply(StatusEffects.freezing,9999);
 unit.apply(StatusEffects.overclock,9999);
 spawner.liquids.remove(Liquids.cyrofluid,10);
 slagFx.at(spawner.x,spawner.y);
 }
 
+if (spawner.liquids.get(Liquids.gallium) >= 10){
+unit.apply(StatusEffects.shielded,9999);
+spawner.liquids.remove(Liquids.gallium,10);
+slagFx.at(spawner.x,spawner.y);
+}
 }
     
 } catch(e){
