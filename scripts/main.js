@@ -1,3 +1,19 @@
+var cyanogenFx = null;
+var slagFx = null;
+
+Events.on(ContentInitEvent, e => {
+try {
+cyanogenFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("89e8b699"));
+slagFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("ffa166ff"));
+
+
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+}});
+
+
+
+
 Events.on(UnitCreateEvent, e => {
 try {
 
@@ -13,16 +29,14 @@ if (type == target && spawner.liquids != null){
 if (spawner.liquids.get(Liquids.cyanogen) >= 10){
 unit.apply(StatusEffects.overdrive,9999);
 spawner.liquids.remove(Liquids.cyanogen,10);
-
-const reconFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("89e8b699"));
-reconFx.at(spawner.x,spawner.y);
-    
+cyanogenFx.at(spawner.x,spawner.y);    
 }
 
 if (spawner.liquids.get(Liquids.slag) >= 10){
 unit.apply(StatusEffects.melting,9999);
 unit.apply(StatusEffects.fast,9999);
 spawner.liquids.remove(Liquids.slag,10);
+slagFx.at(spawner.x,spawner.y);
 }
 
 }
