@@ -7,14 +7,8 @@ Give units status effect based on the assigned liquid.
 "
 
 upgrades:[
-{
-dagger
-dagger
-}
-{
-mono
-mono
-}
+[dagger,dagger]
+[mono,mono]
 ]
 
 consumes:{
