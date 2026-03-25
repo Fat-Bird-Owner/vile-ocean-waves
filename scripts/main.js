@@ -27,7 +27,7 @@ const spawner = e.spawner;
 if (spawner == null) return;
 
 const type = spawner.block;
-const target =  Blocks.additiveReconstructor;
+const target =  Vars.content.getByName(ContentType.block,"gr-imprinter");
 
 if (type == target && spawner.liquids != null){
 
