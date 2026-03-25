@@ -7,8 +7,8 @@ Give units status effect based on the assigned liquid.
 "
 
 upgrades:[
-[dagger,dagger]
-[mono,mono]
+[gr-drive,gr-drife]
+[gr-ruthless,gr-ruthless]
 ]
 
 consumes:{
