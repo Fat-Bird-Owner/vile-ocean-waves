@@ -1,10 +1,12 @@
 var cyanogenFx = null;
 var waterFx = null;
+var galliumFx = null;
 
 Events.on(ContentInitEvent, e => {
 try {
 cyanogenFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("89e8b699"));
 waterFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("596ab8ff"));
+galliumFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("9a9dbf"));
 
 Liquids.gallium.hidden = false;
 Liquids.gallium.coolant = true;
@@ -48,7 +50,7 @@ slagFx.at(spawner.x,spawner.y);
 if (spawner.liquids.get(Liquids.gallium) >= 10){
 unit.apply(StatusEffects.shielded,9999);
 spawner.liquids.remove(Liquids.gallium,10);
-slagFx.at(spawner.x,spawner.y);
+galliumFx.at(spawner.x,spawner.y);
 }
 }
     
