@@ -43,7 +43,7 @@ waterFx.at(spawner.x,spawner.y);
 
 if (spawner.liquids.get(Liquids.cyrofluid) >= 10){
 unit.apply(StatusEffects.overclock,9999);
-spawner.liquids.remove(Liquids.cyrofluid,10);
+spawner.liquids.remove(Liquids.cryofluid,10);
 slagFx.at(spawner.x,spawner.y);
 }
 
