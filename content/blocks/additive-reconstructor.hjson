@@ -6,6 +6,17 @@ Give units status effect based on the assigned liquid.
 - Water: Increased movement speed
 "
 
+upgrades:[
+{
+dagger
+dagger
+}
+{
+mono
+mono
+}
+]
+
 consumes:{
 coolant:{
 amount: 0
