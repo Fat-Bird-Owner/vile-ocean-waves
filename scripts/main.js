@@ -168,6 +168,28 @@ Vars.ui.showInfoToast(e,3);
   
 })
 
+Events.on(BlockDestroyEvent, e => {
+try{
+
+const tile = e.tile;
+const region = tile.block().region;
+const wreckEffect = new Effect(120, e => {
+    Draw.alpha(1 - e.fin());
+
+    Draw.rect(
+        region,
+        e.x,
+        e.y,
+        e.rotation
+    );
+});
+wreckEffect.layer = Layer.block - 1;
+wreckEffect.at(x, y, Mathf.random(360));
+    
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+}});
+
 /*
 Events.on(UnitCreateEvent, e => {
 try{
