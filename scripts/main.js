@@ -177,13 +177,12 @@ const target = Blocks.copperWall;
 const floorTarget = Blocks.grass;
 const floorTransit = Blocks.sporeMoss;
 
-tile.circle(5,t => {
-const floor = t.floor();
-if (floor == floorTarget){
-t.setFloor(floorTransit);
-Fx.smokeCloud.at(t.worldx(), t.worldy());
-}
-});
+tile.circle(5, cons(t => {
+    if (t.floor() == floorTarget){
+        t.setFloor(floorTransit);
+        Fx.smokeCloud.at(t.worldx(), t.worldy());
+    }
+}));
     
 } catch(e){
 Vars.ui.showInfoToast(e,5);
