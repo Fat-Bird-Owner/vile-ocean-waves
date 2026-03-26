@@ -171,18 +171,15 @@ Vars.ui.showInfoToast(e,3);
 Events.on(BlockDestroyEvent, e => {
 try{
 
-const tile = e.tile;
-const block = tile.block();
-const target = Blocks.copperWall;
-const floorTarget = Blocks.grass;
-const floorTransit = Blocks.sporeMoss;
+let count = 0;
 
-tile.circle(5, cons(t => {
-    if (t.floor() == floorTarget){
-        t.setFloor(floorTransit);
-        Fx.smokeCloud.at(t.worldx(), t.worldy());
+Groups.build.each(b => {
+    if(b.block === Blocks.router){ // change to your block
+        count++;
     }
-}));
+});
+
+Vars.ui.showInfoToast("Router count: " + count,5);;
     
 } catch(e){
 Vars.ui.showInfoToast(e,5);
