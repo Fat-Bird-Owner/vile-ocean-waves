@@ -178,12 +178,12 @@ const floorTarget = Blocks.grass;
 const floorTransit = Blocks.sporeMoss;
 
 tile.circle(5,t => {
-const floor = t.floor;
+const floor = t.floor();
 if (floor == floorTarget){
 t.setFloor(floorTransit);
-Fx.smokeCloud.at(tile.build.x,tile.build.y);
+Fx.smokeCloud.at(t.worldx(), t.worldy());
 }
-})
+});
     
 } catch(e){
 Vars.ui.showInfoToast(e,5);
