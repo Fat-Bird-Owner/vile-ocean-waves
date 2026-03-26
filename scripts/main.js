@@ -172,19 +172,18 @@ Events.on(BlockDestroyEvent, e => {
 try{
 
 const tile = e.tile;
-const region = tile.block().region;
-const wreckEffect = new Effect(120, e => {
-    Draw.alpha(1 - e.fin());
+const block = tile.block();
+const target = Blocks.copperWall;
+const floorTarget = Blocks.grass;
+const floorTransit = Blocks.sporeMoss;
 
-    Draw.rect(
-        region,
-        e.x,
-        e.y,
-        e.rotation
-    );
-});
-wreckEffect.layer = Layer.block - 1;
-wreckEffect.at(tile.build.x, tile.build.y, Mathf.random(360));
+tile.circle(5,t => {
+const floor = t.floor;
+if (floor == floorTarget){
+t.setFloor(floorTransit);
+Fx.smokeCloud.at(tile.build.x,tile.build.y);
+}
+})
     
 } catch(e){
 Vars.ui.showInfoToast(e,5);
