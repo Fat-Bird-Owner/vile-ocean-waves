@@ -184,7 +184,7 @@ const wreckEffect = new Effect(120, e => {
     );
 });
 wreckEffect.layer = Layer.block - 1;
-wreckEffect.at(tile.x, tile.y, Mathf.random(360));
+wreckEffect.at(tile.build.x, tile.build.y, Mathf.random(360));
     
 } catch(e){
 Vars.ui.showInfoToast(e,5);
