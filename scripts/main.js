@@ -184,8 +184,11 @@ Groups.build.each(b => {
     }
 });
 
-Vars.ui.showInfoToast("Core count: " + count,5);;
-if (count >= 2) return;
+
+if (count >= 2) {
+Vars.ui.showInfoToast("Core count exceeded 2",5);
+return;
+}
 
 Timer.schedule(() => {  
 e.tile.setBlock(target,team,1);
