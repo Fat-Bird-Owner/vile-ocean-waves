@@ -172,8 +172,8 @@ Events.on(BlockDestroyEvent, e => {
 try{
 
 let count = 0;
-let target = Vars.cotent.getByName(ContentType.block,"gr-core-gateway");
-let build = Vars.cotent.getByName(ContentType.block,"gr-core-gateway-build");
+let target = Vars.content.getByName(ContentType.block,"gr-core-gateway");
+let build = Vars.content.getByName(ContentType.block,"gr-core-gateway-build");
 
 if (tile.block() != build) return;
     
