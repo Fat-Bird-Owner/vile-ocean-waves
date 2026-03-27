@@ -187,7 +187,7 @@ Vars.ui.showInfoToast("Core count: " + count,5);;
 if (count >= 2) return;
 
 Timer.schedule(() => {  
-e.tile.setBlock(target,e.tile.build.team);
+e.tile.setBlock(target,e.tile.team(),1);
 }, 0.05);
     
 } catch(e){
