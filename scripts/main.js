@@ -168,6 +168,32 @@ Vars.ui.showInfoToast(e,3);
   
 })
 
+
+// CompactCore
+
+let lastBuild = null;
+
+Events.on(TapEvent, e => {
+try{
+
+const tile = e.tile;
+const block = tile.block();
+const target = Vars.content.getByName(ContentType.block,"gr-core-gateway");
+const player = e.player;
+    
+if (block == target){
+if (build == lastBuild){
+player.unit.x = tile.build.x;
+player.unit.y = tile.build.y;
+}
+lastBuild = tile.build;
+}
+  
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+}});
+
+    
 Events.on(BlockDestroyEvent, e => {
 try{
 
@@ -179,7 +205,7 @@ let team = e.tile.team();
 if (e.tile.block() != build) return;
     
 Groups.build.each(b => {
-    if(b.block === target && b.team === team){
+    if(b.block === target){
         count++;
     }
 });
