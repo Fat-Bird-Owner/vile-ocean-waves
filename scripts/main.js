@@ -174,6 +174,7 @@ Vars.ui.showInfoToast(e,3);
 Events.on(TileChangeEvent, e => {
 try{
 if (!Vars.state.isGame()) return;
+Vars.ui.showInfoToast("bruv",3);
     
 const tile = e.tile;
 const block = tile.block();
