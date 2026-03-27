@@ -169,27 +169,27 @@ Vars.ui.showInfoToast(e,3);
 })
 
 let limit = 0;
-Events.on(Trigger.update, e => {
-limit = 0;
-});
+Events.on(Trigger.update, e => limit = 0);
 
 Events.on(EventType.TileChangeEvent, e => {
     try {
         if (!Vars.state.isGame()) return;
-        Vars.ui.showInfoToast("bruv",3);
-    
+
         const tile = e.tile;
         const block = tile.block();
         const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
 
-        if (block != target || limit <= 100) return;
+        // stop if not the target
+        if (block != target) return;
+
+        // limit total spreads per tick/frame
+        if (limit >= 100) return;
 
         for (let i = 0; i < 4; i++) {
 
             let dx = 0;
             let dy = 0;
 
-            // pick a random direction
             if (Mathf.random() < 0.5) {
                 dx = Mathf.random() < 0.5 ? -1 : 1;
             } else {
@@ -199,20 +199,19 @@ Events.on(EventType.TileChangeEvent, e => {
             const spreadTile = Vars.world.tile(tile.x + dx, tile.y + dy);
             if (!spreadTile) continue;
 
-            // skip invalid tiles
             if (
                 spreadTile.floor().isLiquid ||
                 spreadTile.block() == target ||
                 spreadTile.block().solid
             ) continue;
 
-            // schedule placement
+            // track how many we placed
             limit++;
+
             Timer.schedule(() => {
                 spreadTile.setBlock(target, Team.get(5), 1);
             }, 0.015);
         }
-
     } catch (err) {
         Vars.ui.showInfoToast(err + "", 5);
     }
