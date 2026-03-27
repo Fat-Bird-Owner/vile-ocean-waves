@@ -170,7 +170,7 @@ Vars.ui.showInfoToast(e,3);
 
 Events.on(EventType.TileChangeEvent, e => {
     try {
-        if (!Vars.state.isGame()) return;
+        if (!Vars.state.isGame() || Vars.state.isPaused()) return;
 
         const tile = e.tile;
         const block = tile.block();
