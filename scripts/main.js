@@ -174,7 +174,8 @@ Events.on(Trigger.update, () => limit = 0);
 Events.on(EventType.TileChangeEvent, e => {
     try {
         if (!Vars.state.isGame()) return;
-
+        Vars.ui.showInfoToast("bruv",3);
+    
         const tile = e.tile;
         const block = tile.block();
         const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
