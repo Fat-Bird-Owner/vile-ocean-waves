@@ -143,8 +143,6 @@ Events.on(GeneratorPressureExplodeEvent, event => {
 
 try {
 // Find entity otherwise return if is then if the block type isnt the target's also return
-const gateway = Vars.content.getByName(ContentType.block, "core-gateway-build");
-gateway.researchCostMultiplier = 0.1; // example
 
 var target = Vars.content.getByName(ContentType.block, "neoplasia-reactor");
   
