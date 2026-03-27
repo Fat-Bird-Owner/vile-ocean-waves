@@ -185,9 +185,11 @@ if (sorted == null || build == null) return;
 if(sorted instanceof UnitType) {
 sorted.spawn(tile.team(),build.x,build.y, build.rotation * 90);
 build.kill();
+Fx.unitSpawn.at(build.x,build.y);
 
 } else if(sorted instanceof Block) {
 tile.setBlock(sorted,tile.team(),build.rotation);
+Fx.dooropenlarge.at(build.x,build.y);
 }
     
 } catch(e){
