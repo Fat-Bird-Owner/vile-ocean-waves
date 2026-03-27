@@ -9,7 +9,8 @@ cyanogenFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("89e8b699"));
 waterFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("596ab8ff"));
 galliumFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("9a9dbf"));
 cryoFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("6ecdecff"));
-
+Vars.content.getByName(ContentType.block, "core-gateway-build").unlock();
+    
 Liquids.gallium.hidden = false;
 Liquids.gallium.coolant = true;
 } catch(e){
