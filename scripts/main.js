@@ -184,6 +184,8 @@ const player = e.player;
 if (block == target){
 if (tile.build == lastBuild){
 player.unit().set(tile.build.x, tile.build.y);
+Fx.unitSpawn.at(tile.spawn.x,tile.spawn.y);
+lastBuild = null;
 }
 lastBuild = tile.build;
 Sounds.click.at(tile.build.x,tile.build.y);
