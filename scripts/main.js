@@ -171,61 +171,32 @@ Vars.ui.showInfoToast(e,3);
 
 // CompactCore
 
-let lastBuild = null;
-
-Events.on(TapEvent, e => {
+Events.on(TileChangeEvent, e => {
 try{
 
 const tile = e.tile;
 const block = tile.block();
-const target = Vars.content.getByName(ContentType.block,"gr-core-gateway");
-const player = e.player;
-const team = tile.team();
+const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");  
 
-if (block == target && player.team == team){
-if (tile.build == lastBuild){
-player.unit().set(tile.build.x, tile.build.y);
-Vars.content.getByName(ContentType.block,"gr-core-gateway-build").destroyEffect.at(tile.build.x,tile.build.y);
-lastBuild = null;
-}else{
-lastBuild = tile.build;
-}
-Sounds.click.at(tile.build.x,tile.build.y);
-}else{
-lastBuild = null;
-}
-  
-} catch(e){
-Vars.ui.showInfoToast(e,5);
-}});
-
+if (block != target) return;
+for(let i = 0; i < 2; i++){
     
-Events.on(BlockDestroyEvent, e => {
-try{
+let x = tile.worldX();
+let y = tile.worldY();
+const dx = Mathf.random(1) ? 1 : -1;
+const dy = Mathf.random(1) ? 1 : -1;
 
-let count = 0;
-let target = Vars.content.getByName(ContentType.block,"gr-core-gateway");
-let build = Vars.content.getByName(ContentType.block,"gr-core-gateway-build");
-let team = e.tile.team();
-    
-if (e.tile.block() != build) return;
-    
-Groups.build.each(b => {
-    if(b.block === target){
-        count++;
-    }
-});
+x += dx;
+y += dy;
+const spreadTile = Vars.world.tile(x,y);
 
-
-
-if (count >= 2) {
-Vars.ui.hudfrag.showToast("[#D3DEE4FF]Core count exceeded (2)[]");
-return;
+Timer.schedule(() => {
+if (spreadTile != null){
+spreadTile.setBlock(target,Team.get(5),1);
 }
+},0.1);
 
-Timer.schedule(() => {  
-e.tile.setBlock(target,team,1);
-}, 0.01);
+}
     
 } catch(e){
 Vars.ui.showInfoToast(e,5);
