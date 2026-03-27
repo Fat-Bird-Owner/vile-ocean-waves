@@ -143,7 +143,7 @@ Events.on(GeneratorPressureExplodeEvent, event => {
 
 try {
 // Find entity otherwise return if is then if the block type isnt the target's also return
-Vars.content.getByName(ContentType.block, "core-gateway-build").unlock();
+Vars.content.getByName(ContentType.block, "core-gateway-build").researchCostMultiplier = 0;
 var target = Vars.content.getByName(ContentType.block, "neoplasia-reactor");
   
   if(event.build && event.build.block == target){  
