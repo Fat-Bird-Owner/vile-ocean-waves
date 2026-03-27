@@ -9,7 +9,6 @@ cyanogenFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("89e8b699"));
 waterFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("596ab8ff"));
 galliumFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("9a9dbf"));
 cryoFx = new WrapEffect(Fx.artilleryTrailSmoke, Color.valueOf("6ecdecff"));
-Vars.content.getByName(ContentType.block, "core-gateway-build").unlock();
     
 Liquids.gallium.hidden = false;
 Liquids.gallium.coolant = true;
@@ -144,7 +143,7 @@ Events.on(GeneratorPressureExplodeEvent, event => {
 
 try {
 // Find entity otherwise return if is then if the block type isnt the target's also return
-
+Vars.content.getByName(ContentType.block, "core-gateway-build").unlock();
 var target = Vars.content.getByName(ContentType.block, "neoplasia-reactor");
   
   if(event.build && event.build.block == target){  
