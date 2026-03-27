@@ -173,6 +173,9 @@ try{
 
 let count = 0;
 let target = Vars.cotent.getByName(ContentType.block,"gr-core-gateway");
+let build = Vars.cotent.getByName(ContentType.block,"gr-core-gateway-build");
+
+if (tile.block() != build) return;
     
 Groups.build.each(b => {
     if(b.block === target){ // change to your block
