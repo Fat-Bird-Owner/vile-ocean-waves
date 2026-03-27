@@ -183,8 +183,8 @@ const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
 if (block != target) return;
 for(let i = 0; i < 2; i++){
     
-let x = tile.worldx();
-let y = tile.worldy();
+let x = tile.x;
+let y = tile.y;
 const dx = Mathf.random(1) ? 1 : -1;
 const dy = Mathf.random(1) ? 1 : -1;
 
