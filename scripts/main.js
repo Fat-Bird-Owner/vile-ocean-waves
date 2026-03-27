@@ -181,7 +181,7 @@ const block = tile.block();
 const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");  
 
 if (block != target) return;
-for(let i = 0; i < 2; i++){
+for(let i = 0; i < 4; i++){
     
 let x = tile.x;
 let y = tile.y;
