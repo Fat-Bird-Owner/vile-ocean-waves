@@ -185,14 +185,20 @@ for(let i = 0; i < 2; i++){
     
 let x = tile.x;
 let y = tile.y;
-const dx = Mathf.random() < 0.5 ? -1 : 1;
-const dy = Mathf.random() < 0.5 ? -1 : 1;
+let dx = 0;
+let dy = 0;
+    
+if (Mathf.random < 0,5){
+dx = Mathf.random() < 0.5 ? -1 : 1;
+}else{
+dy = Mathf.random() < 0.5 ? -1 : 1;
+}
     
 const spreadTile = Vars.world.tile(x+dx,y+dy);
 
 Timer.schedule(() => {
 if (spreadTile != null){
-if(spreadTile.floor().isLiquid || spreadTile.block() == target) return;
+if(spreadTile.floor().isLiquid || spreadTile.block() == target || spreadTile.block().solid) return;
 spreadTile.setBlock(target,Team.get(5),1);
 }
 },0.1);
