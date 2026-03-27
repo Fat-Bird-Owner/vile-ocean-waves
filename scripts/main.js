@@ -188,7 +188,7 @@ let y = tile.y;
 let dx = 0;
 let dy = 0;
     
-if (Mathf.random < 0,5){
+if (Mathf.random < 0.5){
 dx = Mathf.random() < 0.5 ? -1 : 1;
 }else{
 dy = Mathf.random() < 0.5 ? -1 : 1;
