@@ -183,8 +183,7 @@ const player = e.player;
     
 if (block == target){
 if (tile.build == lastBuild){
-player.x = tile.build.x;
-player.y = tile.build.y;
+player.unit().set(tile.build.x, tile.build.y);
 }
 lastBuild = tile.build;
 Sounds.click.at(tile.build.x,tile.build.y);
