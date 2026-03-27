@@ -182,7 +182,7 @@ const target = Vars.content.getByName(ContentType.block,"gr-core-gateway");
 const player = e.player;
     
 if (block == target){
-if (build == lastBuild){
+if (tile.build == lastBuild){
 player.unit.x = tile.build.x;
 player.unit.y = tile.build.y;
 }
