@@ -172,14 +172,18 @@ Events.on(BlockDestroyEvent, e => {
 try{
 
 let count = 0;
-
+let target = Vars.cotent.getByName(ContentType.block,"gr-core-gateway");
+    
 Groups.build.each(b => {
-    if(b.block === Blocks.router){ // change to your block
+    if(b.block === target){ // change to your block
         count++;
     }
 });
 
-Vars.ui.showInfoToast("Router count: " + count,5);;
+Vars.ui.showInfoToast("Core count: " + count,5);;
+if (count >= 2) return;
+tile.setBlock(target,tile.build.team);
+
     
 } catch(e){
 Vars.ui.showInfoToast(e,5);
