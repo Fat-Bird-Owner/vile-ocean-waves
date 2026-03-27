@@ -179,7 +179,7 @@ let team = e.tile.team();
 if (e.tile.block() != build) return;
     
 Groups.build.each(b => {
-    if(b.block === target){
+    if(b.block === target && b.team === team){
         count++;
     }
 });
