@@ -182,7 +182,7 @@ Events.on(EventType.TileChangeEvent, e => {
         const block = tile.block();
         const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
 
-        if (block != target || limit > 100) return;
+        if (block != target || limit <= 100) return;
 
         for (let i = 0; i < 4; i++) {
 
