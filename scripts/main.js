@@ -188,12 +188,11 @@ let y = tile.y;
 const dx = Mathf.random(1) ? 1 : -1;
 const dy = Mathf.random(1) ? 1 : -1;
 
-x += dx;
-y += dy;
-const spreadTile = Vars.world.tile(x,y);
+const spreadTile = Vars.world.tile(x+dx,y+dy);
 
 Timer.schedule(() => {
 if (spreadTile != null){
+if(spreadTile.floor().isLiquid || spreadTile.block() == target) return;
 spreadTile.setBlock(target,Team.get(5),1);
 }
 },0.1);
