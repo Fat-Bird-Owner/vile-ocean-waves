@@ -183,7 +183,7 @@ Sounds.click.at(build.x,build.y);
     
 if (sorted == null || build == null) return;
 if(sorted instanceof UnitType) {
-sorted.spawn(tile.team(),build.x,build.y, rotation * 90);
+sorted.spawn(tile.team(),build.x,build.y, build.rotation * 90);
 build.kill();
 
 } else if(sorted instanceof Block) {
