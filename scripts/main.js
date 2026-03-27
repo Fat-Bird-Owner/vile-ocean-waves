@@ -185,7 +185,7 @@ Groups.build.each(b => {
 
 Vars.ui.showInfoToast("Core count: " + count,5);;
 if (count >= 2) return;
-tile.setBlock(target,e.tile.build.team);
+e.tile.setBlock(target,e.tile.build.team);
 
     
 } catch(e){
