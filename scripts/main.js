@@ -186,7 +186,7 @@ Groups.build.each(b => {
 
 
 if (count >= 2) {
-Vars.ui.showInfoToast("Core count exceeded 2",5);
+Vars.ui.hudfrag.showToast("[#D3DEE4FF]Core count exceeded (2)[]");
 return;
 }
 
