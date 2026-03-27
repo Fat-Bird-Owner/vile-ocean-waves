@@ -173,7 +173,8 @@ Vars.ui.showInfoToast(e,3);
 
 Events.on(TileChangeEvent, e => {
 try{
-
+if (!Vars.state.isGame()) return;
+    
 const tile = e.tile;
 const block = tile.block();
 const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");  
@@ -181,8 +182,8 @@ const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
 if (block != target) return;
 for(let i = 0; i < 2; i++){
     
-let x = tile.worldX();
-let y = tile.worldY();
+let x = tile.worldx();
+let y = tile.worldy();
 const dx = Mathf.random(1) ? 1 : -1;
 const dy = Mathf.random(1) ? 1 : -1;
 
