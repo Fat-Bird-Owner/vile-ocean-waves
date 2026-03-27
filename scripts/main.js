@@ -185,9 +185,9 @@ for(let i = 0; i < 2; i++){
     
 let x = tile.x;
 let y = tile.y;
-const dx = Mathf.random(1) ? 1 : -1;
-const dy = Mathf.random(1) ? 1 : -1;
-
+const dx = Mathf.random() < 0.5 ? -1 : 1;
+const dy = Mathf.random() < 0.5 ? -1 : 1;
+    
 const spreadTile = Vars.world.tile(x+dx,y+dy);
 
 Timer.schedule(() => {
