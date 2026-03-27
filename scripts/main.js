@@ -198,7 +198,10 @@ const spreadTile = Vars.world.tile(x+dx,y+dy);
 
 Timer.schedule(() => {
 if (spreadTile != null){
-if(spreadTile.floor().isLiquid || spreadTile.block() == target || spreadTile.block().solid) return;
+if(spreadTile.floor().isLiquid || spreadTile.block() == target || spreadTile.block().solid) {
+i -= 1;
+return;
+}
 spreadTile.setBlock(target,Team.get(5),1);
 }
 },0.1);
