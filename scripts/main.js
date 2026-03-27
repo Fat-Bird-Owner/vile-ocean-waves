@@ -171,48 +171,48 @@ Vars.ui.showInfoToast(e,3);
 
 // CompactCore
 
-Events.on(TileChangeEvent, e => {
-try{
-if (!Vars.state.isGame()) return;
-Vars.ui.showInfoToast("bruv",3);
-    
-const tile = e.tile;
-const block = tile.block();
-const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");  
+Events.on(EventType.TileChangeEvent, e => {
+    try {
+        if (!Vars.state.isGame()) return;
 
-if (block != target) return;
-for(let i = 0; i < 4; i++){
-    
-let x = tile.x;
-let y = tile.y;
-let dx = 0;
-let dy = 0;
-let ignore = false;
-    
-if (Mathf.random < 0.5){
-dx = Mathf.random() < 0.5 ? -1 : 1;
-}else{
-dy = Mathf.random() < 0.5 ? -1 : 1;
-}
-    
-const spreadTile = Vars.world.tile(x + dx,y + dy);
-if(spreadTile.floor().isLiquid || spreadTile.block() == target || spreadTile.block().solid) {
-i -= 1;
-ignore = true;
-}
+        const tile = e.tile;
+        const block = tile.block();
+        const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
 
-if (ignore == true){
-Timer.schedule(() => {
-if (spreadTile != null){
-spreadTile.setBlock(target,Team.get(5),1);
-}
-},0.1)};
+        if (block != target) return;
 
-}
-    
-} catch(e){
-Vars.ui.showInfoToast(e,5);
-}});
+        for (let i = 0; i < 4; i++) {
+
+            let dx = 0;
+            let dy = 0;
+
+            // pick a random direction
+            if (Mathf.random() < 0.5) {
+                dx = Mathf.random() < 0.5 ? -1 : 1;
+            } else {
+                dy = Mathf.random() < 0.5 ? -1 : 1;
+            }
+
+            const spreadTile = Vars.world.tile(tile.x + dx, tile.y + dy);
+            if (!spreadTile) continue;
+
+            // skip invalid tiles
+            if (
+                spreadTile.floor().isLiquid ||
+                spreadTile.block() == target ||
+                spreadTile.block().solid
+            ) continue;
+
+            // schedule placement
+            Timer.schedule(() => {
+                spreadTile.setBlock(target, Team.get(5), 1);
+            }, 0.1);
+        }
+
+    } catch (err) {
+        Vars.ui.showInfoToast(err + "", 5);
+    }
+});
 
 /*
 Events.on(UnitCreateEvent, e => {
