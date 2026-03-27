@@ -168,18 +168,21 @@ Vars.ui.showInfoToast(e,3);
   
 })
 
-
-// CompactCore
+let limit = 0;
+Events.on(Trigger.update, e => {
+limit = 0;
+});
 
 Events.on(EventType.TileChangeEvent, e => {
     try {
         if (!Vars.state.isGame()) return;
-
+        Vars.ui.showInfoToast("bruv",3);
+    
         const tile = e.tile;
         const block = tile.block();
         const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
 
-        if (block != target) return;
+        if (block != target || limit > 100) return;
 
         for (let i = 0; i < 4; i++) {
 
@@ -204,9 +207,10 @@ Events.on(EventType.TileChangeEvent, e => {
             ) continue;
 
             // schedule placement
+            limit++;
             Timer.schedule(() => {
                 spreadTile.setBlock(target, Team.get(5), 1);
-            }, 0.1);
+            }, 0.015);
         }
 
     } catch (err) {
