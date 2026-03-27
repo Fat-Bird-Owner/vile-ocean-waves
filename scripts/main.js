@@ -182,7 +182,7 @@ const target = Vars.content.getByName(ContentType.block,"gr-core-gateway");
 const player = e.player;
 const team = tile.team();
 
-if (block == target && player.team() == team){
+if (block == target && player.team == team){
 if (tile.build == lastBuild){
 player.unit().set(tile.build.x, tile.build.y);
 Vars.content.getByName(ContentType.block,"gr-core-gateway-build").destroyEffect.at(tile.build.x,tile.build.y);
