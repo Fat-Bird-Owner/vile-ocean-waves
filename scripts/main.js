@@ -190,6 +190,8 @@ lastBuild = null;
 lastBuild = tile.build;
 }
 Sounds.click.at(tile.build.x,tile.build.y);
+}else{
+lastBuild = null;
 }
   
 } catch(e){
