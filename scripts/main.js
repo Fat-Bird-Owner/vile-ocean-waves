@@ -169,7 +169,7 @@ Vars.ui.showInfoToast(e,3);
 })
 
 let limit = 0;
-Events.on(Trigger.update, e => limit = 0);
+Events.on(Trigger.update, () => limit = 0);
 
 Events.on(EventType.TileChangeEvent, e => {
     try {
