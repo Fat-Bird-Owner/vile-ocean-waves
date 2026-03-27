@@ -186,8 +186,9 @@ if (tile.build == lastBuild){
 player.unit().set(tile.build.x, tile.build.y);
 Vars.content.getByName(ContentType.block,"gr-core-gateway-build").destroyEffect.at(tile.build.x,tile.build.y);
 lastBuild = null;
-}
+}else{
 lastBuild = tile.build;
+}
 Sounds.click.at(tile.build.x,tile.build.y);
 }
   
