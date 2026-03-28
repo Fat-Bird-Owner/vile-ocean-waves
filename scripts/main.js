@@ -168,33 +168,55 @@ Vars.ui.showInfoToast(e,3);
   
 })
 
+let timer = 0;
 
-Events.on(EventType.TapEvent, e => {
-try {
-const tile = e.tile;
-const block = tile.block();
-const target = Vars.content.getByName(ContentType.block, "gr-fabricator");
+Events.on(Trigger.update, () => {
+    if (!Vars.state.isGame()) return;
+    if (Vars.state.isPaused()) return; // IMPORTANT
 
-if (block != target || tile.build == null) return;
-const sorted = tile.build.sorted;
-const build = tile.build;
+    timer += Time.delta;
 
-Sounds.click.at(build.x,build.y);
-    
-if (sorted == null || build == null) return;
-if(sorted instanceof UnitType) {
-sorted.spawn(tile.team(),build.x,build.y, build.rotation * 90);
-Fx.spawn.at(build.x,build.y);
-build.kill();
+    // control speed (increase for slower spread)
+    if (timer < 6) return;
+    timer = 0;
 
-} else if(sorted instanceof Block) {
-tile.setBlock(sorted,tile.team(),build.rotation);
-Fx.dooropenlarge.at(build.x,build.y);
-}
-    
-} catch(e){
-Vars.ui.showInfoToast(e,5);
-}});
+    // loop a limited number per tick (performance!)
+    for (let i = 0; i < 20; i++) {
+
+        // pick random tile in world
+        let tile = Vars.world.tile(
+            Mathf.random(Vars.world.width() - 1),
+            Mathf.random(Vars.world.height() - 1)
+        );
+
+        if (!tile) continue;
+
+        const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
+
+        // only spread from your block
+        if (tile.block() != target) continue;
+
+        // pick random direction (4-way)
+        const dirs = [
+            [1,0], [-1,0], [0,1], [0,-1]
+        ];
+
+        const dir = dirs[Mathf.random(dirs.length - 1)];
+        const other = Vars.world.tile(tile.x + dir[0], tile.y + dir[1]);
+
+        if (!other) continue;
+
+        // checks
+        if (
+            other.floor().isLiquid ||
+            other.block() == target ||
+            other.block().solid
+        ) continue;
+
+        // spread
+        other.setBlock(target, Team.get(5), 1);
+    }
+});
 /*
 Events.on(EventType.TileChangeEvent, e => {
     try {
