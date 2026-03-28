@@ -195,6 +195,40 @@ build.changeTeam(Team.get(6));
 Vars.ui.showInfoToast(e,10);
 }});
 
+let routHealth = null;
+let routSpeed = null;
+let routArmor = null;
+let routWeapons = null;
+
+Events.on(ContentInitEvent, e => {
+try{
+const routerGod = Vars.ui.getByName(ContentType.unit,"gr-router-god");
+routHealth = routerGod.health;
+routSpeed = routerGod.speed;
+routArmor = routerGod.armor;
+routWeapons = routerGod.weapons;
+
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+}});
+
+Events.on(WorldLoadEvent, e => {
+try{
+const routerGod = Vars.ui.getByName(ContentType.unit,"gr-router-god");
+
+if (routerGod.health == routHealth && routerGod.speed == routSpeed && routerGod.armor == routArmor && routerGod.weapons == routWeapons) return;
+routerGod.health = routHealth;
+routerGod.speed = routSpeed;
+routerGod.armor = routArmor; 
+routerGod.weapons = routWeapons;
+
+Vars.ui.announce("[green]Your attempts are pathetic to change absolute power is pathetic.",10);
+
+} catch(e){
+Vars.ui.showInfoToast(e,7.5);
+}});
+
+
 /*
 Events.on(EventType.TileChangeEvent, e => {
     try {
