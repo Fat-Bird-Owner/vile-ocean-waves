@@ -168,48 +168,50 @@ Vars.ui.showInfoToast(e,3);
   
 })
 
+const spreadQueue = [];
+
 Events.on(EventType.TileChangeEvent, e => {
-    try {
-        if (!Vars.state.isGame() || Vars.state.isPaused()) return;
+    if (!Vars.state.isGame()) return;
 
-        const tile = e.tile;
-        const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
+    const tile = e.tile;
+    const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
 
-        if (tile.block() != target) return;
+    if (tile.block() != target) return;
 
-        const tx = tile.x;
-        const ty = tile.y;
-
-        Timer.schedule(() => {
-            for (let i = 0; i < 3; i++) {
-
-                let dx = 0, dy = 0;
-
-                if (Mathf.random() < 0.5) {
-                    dx = Mathf.random() < 0.5 ? -1 : 1;
-                } else {
-                    dy = Mathf.random() < 0.5 ? -1 : 1;
-                }
-
-                const spreadTile = Vars.world.tile(tx + dx, ty + dy);
-                if (!spreadTile) continue;
-
-                if (
-                    spreadTile.floor().isLiquid ||
-                    spreadTile.block() == target ||
-                    spreadTile.block().solid
-                ) continue;
-
-                spreadTile.setBlock(target, Team.get(5), 1);
-            }
-        }, 0.1);
-
-    } catch (err) {
-        Vars.ui.showInfoToast(err + "", 5);
-    }
+    // store only safe data
+    spreadQueue.push({x: tile.x, y: tile.y});
 });
 
+Events.run(EventType.Trigger.update, () => {
+    if (Vars.state.isPaused()) return;
 
+    const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
+
+    for (let n = 0; n < 5 && spreadQueue.length > 0; n++) {
+        const data = spreadQueue.shift();
+
+        for (let i = 0; i < 3; i++) {
+            let dx = 0, dy = 0;
+
+            if (Mathf.random() < 0.5) {
+                dx = Mathf.random() < 0.5 ? -1 : 1;
+            } else {
+                dy = Mathf.random() < 0.5 ? -1 : 1;
+            }
+
+            const tile = Vars.world.tile(data.x + dx, data.y + dy);
+            if (!tile) continue;
+
+            if (
+                tile.floor().isLiquid ||
+                tile.block() == target ||
+                tile.block().solid
+            ) continue;
+
+            tile.setBlock(target, Team.get(5), 1);
+        }
+    }
+});
 
 /*
 Events.on(EventType.TileChangeEvent, e => {
