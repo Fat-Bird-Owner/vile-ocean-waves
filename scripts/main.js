@@ -214,7 +214,7 @@ Vars.ui.showInfoToast(e,5);
 
 Events.on(WorldLoadEvent, e => {
 try{
-const routerGod = Vars.ui.getByName(ContentType.unit,"gr-router-god");
+const routerGod = Vars.content.getByName(ContentType.unit,"gr-router-god");
 
 if (routerGod.health == routHealth && routerGod.speed == routSpeed && routerGod.armor == routArmor && routerGod.weapons == routWeapons) return;
 routerGod.health = routHealth;
