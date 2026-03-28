@@ -190,40 +190,40 @@ Events.on(EventType.TileChangeEvent, e => {
     spreadQueue.push({x: tile.x, y: tile.y});
 });
 
-Events.run(EventType.Trigger.update, () => {
-    if (Vars.state.isPaused()) return;
+let lastBuild = null;
 
-    const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
+Events.run(TapEvent, e => {
+try{
+const tile = e.tile;
+const block = tile.block();
+const target = Vars.content.getByName(ContentType.block,"gr-dummy");
 
-    for (let n = 0; n < 5 && spreadQueue.length > 0; n++) {
-        const data = spreadQueue.shift();
+if (block != target || tile.build == null) return;
 
-        for (let i = 0; i < 3; i++) {
-            let dx = 0, dy = 0;
+const player = e.player;
+const team = player.team();
+const build = tile.build;
+const blockTeam = build.team;
 
-            if (Mathf.random() < 0.5) {
-                dx = Mathf.random() < 0.5 ? -1 : 1;
-            } else {
-                dy = Mathf.random() < 0.5 ? -1 : 1;
-            }
+if (lastBuild == build){
 
-            const tile = Vars.world.tile(data.x + dx, data.y + dy);
-            if (!tile) continue;
-
-            if (
-                tile.floor().isLiquid ||
-                tile.block() == target ||
-                tile.block().solid
-            ) continue;
-
-            // ✅ mark BEFORE placing
-            const key = tile.x + "," + tile.y;
-            spreading.add(key);
-
-            tile.setBlock(target, Team.get(5), 1);
+if (blockTeam != team){
+    
+        build.changeTeam(team);
+        } else {
+        build.changeTeam(Team.get(256));
         }
-    }
-});
+    Sounds.click.at(build.x,build.y);
+    lastBuild = null;
+    
+} else {
+lastBuild = build;
+}
+    
+} catch(e){
+Vars.ui.showInfoToast(e,10);
+}});
+
 /*
 Events.on(EventType.TileChangeEvent, e => {
     try {
