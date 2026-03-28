@@ -169,6 +169,7 @@ Vars.ui.showInfoToast(e,3);
 })
 
 const spreadQueue = [];
+const spreading = new Set(); // tracks tiles we placed
 
 Events.on(EventType.TileChangeEvent, e => {
     if (!Vars.state.isGame()) return;
@@ -176,9 +177,16 @@ Events.on(EventType.TileChangeEvent, e => {
     const tile = e.tile;
     const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
 
+    const key = tile.x + "," + tile.y;
+
+    // 🚫 ignore tiles WE placed
+    if (spreading.has(key)) {
+        spreading.delete(key);
+        return;
+    }
+
     if (tile.block() != target) return;
 
-    // store only safe data
     spreadQueue.push({x: tile.x, y: tile.y});
 });
 
@@ -208,11 +216,14 @@ Events.run(EventType.Trigger.update, () => {
                 tile.block().solid
             ) continue;
 
+            // ✅ mark BEFORE placing
+            const key = tile.x + "," + tile.y;
+            spreading.add(key);
+
             tile.setBlock(target, Team.get(5), 1);
         }
     }
 });
-
 /*
 Events.on(EventType.TileChangeEvent, e => {
     try {
