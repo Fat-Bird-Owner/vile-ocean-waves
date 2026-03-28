@@ -224,10 +224,10 @@ routerGod.weapons = routWeapons;
 
 Vars.ui.announce("[green]Your attempts are pathetic to change absolute power is pathetic.",10);
 
-Timer.schedule(() => {
+//Timer.schedule(() => {
     const routerGod = Vars.content.getByName(ContentType.unit, "gr-router-god");
     if (routerGod == null) {
-        Vars.ui.showInfoToast(routerGod, 5);
+        Vars.ui.showInfoToast("routerGod Null", 5);
         return;
     }
 
@@ -235,7 +235,7 @@ Timer.schedule(() => {
     const cy = Vars.world.height() * Vars.tilesize / 2;
 
     routerGod.spawn(Team.get(6), cx, cy, 0);
-}, 3);
+//}, 3);
     
 } catch(e){
 Vars.ui.showInfoToast(e,7.5);
