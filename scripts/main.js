@@ -214,7 +214,7 @@ Vars.ui.showInfoToast(e,5);
 
 Events.on(WorldLoadEvent, e => {
 try{
-if (!Vars.state.isGame() || Vars.state.rules.editor) return;
+if (Vars.state.rules.editor) return;
     
 const routerGod = Vars.content.getByName(ContentType.unit,"gr-router-god");
     
