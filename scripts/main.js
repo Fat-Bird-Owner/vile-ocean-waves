@@ -202,7 +202,7 @@ let routWeapons = null;
 
 Events.on(ContentInitEvent, e => {
 try{
-const routerGod = Vars.ui.getByName(ContentType.unit,"gr-router-god");
+const routerGod = Vars.content.getByName(ContentType.unit,"gr-router-god");
 routHealth = routerGod.health;
 routSpeed = routerGod.speed;
 routArmor = routerGod.armor;
