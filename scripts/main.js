@@ -227,7 +227,7 @@ Vars.ui.announce("[green]Your attempts are pathetic to change absolute power is 
 Timer.schedule(() => {
 const cx = Vars.world.width() / 2;
 const cy = Vars.world.height() / 2;
-routerGod.spawn(teams.get(6),cx,cy,0);
+routerGod.spawn(Team.get(6),cx,cy,0);
 }, 3);
     
 } catch(e){
