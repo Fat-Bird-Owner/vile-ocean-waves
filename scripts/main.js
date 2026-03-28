@@ -170,7 +170,7 @@ Vars.ui.showInfoToast(e,3);
 
 const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
 
-Events.on(TileChangeEvent, e => {
+Events.on(EventType.TileChangeEvent, e => {
 try{
 
 Vars.ui.showInfoToast("bruv",3);
@@ -182,26 +182,34 @@ const build = tile.build;
 if (build == null || block != target) return;
 
 var spread = 0;
-var x = build.x;
-var y = build.y;
+var x = tile.x;   // FIXED (was build.x)
+var y = tile.y;   // FIXED (was build.y)
 
 const dirs = [
-            [1,0], [-1,0], [0,1], [0,-1]
-        ];
+    [1,0], [-1,0], [0,1], [0,-1]
+];
     
-for (spread > 4){
+while (spread < 4){   // FIXED (was invalid for loop)
+
 if (!Vars.state.isPaused()){
+
 const dir = dirs[Mathf.random(dirs.length - 1)];
 const spreadTile = Vars.world.tile(x + dir[0], y + dir[1]);
 
-if (!spreadTile.isSolid()){
+if (spreadTile != null){   // FIXED (null check)
+
+if (!spreadTile.block().solid){   // FIXED (isSolid -> block().solid)
+
 if (spreadTile.block() != target){
-spreadTile.setBlock(target,Team.get(5),1);
+spreadTile.setBlock(target, Team.get(5), 1);
 }
+
 spread++;
 }
     
 }}
+
+}
 
 } catch(e){
 Vars.ui.showInfoToast(e + "[red]: Please report this bug",5)
