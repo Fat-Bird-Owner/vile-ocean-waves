@@ -170,48 +170,40 @@ Vars.ui.showInfoToast(e,3);
 
 Events.on(EventType.TileChangeEvent, e => {
     try {
-        if (!Vars.state.isGame()) return;
+        if (!Vars.state.isGame() || Vars.state.isPaused()) return;
 
         const tile = e.tile;
-        const block = tile.block();
         const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
 
-        if (block != target) return;
+        if (tile.block() != target) return;
 
-        let i = 0;
-        while (i < 3) {
-        if (!Vars.state.isPaused()){
-            let dx = 0;
-            let dy = 0;
+        const tx = tile.x;
+        const ty = tile.y;
 
-            // pick a random direction
-            if (Mathf.random() < 0.5) {
-                dx = Mathf.random() < 0.5 ? -1 : 1;
-            } else {
-                dy = Mathf.random() < 0.5 ? -1 : 1;
-            }
+        Timer.schedule(() => {
+            for (let i = 0; i < 3; i++) {
 
-            const spreadTile = Vars.world.tile(tile.x + dx, tile.y + dy);
-            if (!spreadTile) continue;
+                let dx = 0, dy = 0;
 
-            if (spreadTile.block() == target){
-            i++;
-            }
-            
-            // skip invalid tiles
-            if (
-                spreadTile.floor().isLiquid ||
-                spreadTile.block() == target ||
-                spreadTile.block().solid
-            ) continue;
+                if (Mathf.random() < 0.5) {
+                    dx = Mathf.random() < 0.5 ? -1 : 1;
+                } else {
+                    dy = Mathf.random() < 0.5 ? -1 : 1;
+                }
 
-            // schedule placement
-            Timer.schedule(() => {
+                const spreadTile = Vars.world.tile(tx + dx, ty + dy);
+                if (!spreadTile) continue;
+
+                if (
+                    spreadTile.floor().isLiquid ||
+                    spreadTile.block() == target ||
+                    spreadTile.block().solid
+                ) continue;
+
                 spreadTile.setBlock(target, Team.get(5), 1);
-                i++;
-            }, 0.1);
-        }}
-        
+            }
+        }, 0.1);
+
     } catch (err) {
         Vars.ui.showInfoToast(err + "", 5);
     }
