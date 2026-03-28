@@ -168,47 +168,44 @@ Vars.ui.showInfoToast(e,3);
   
 })
 
-let timer = 0;
 const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
 
-Events.on(Trigger.update, () => {
-    if (!Vars.state.isGame()) return;
-    if (Vars.state.isPaused()) return;
+Events.on(TileChangeEvent, e => {
+try{
 
-    timer += Time.delta;
-    if (timer < 6) return;
-    timer = 0;
+Vars.ui.showInfoToast("bruv",3);
 
-    let count = 0;
+const tile = e.tile;
+const block = tile.block();
+const build = tile.build;
 
-    Groups.build.each(b => {
-        if (b.block != target) return;
+if (build == null || block != target) return;
 
-        // limit how many spread per tick
-        if (count > 20) return;
+var spread = 0;
+var x = build.x;
+var y = build.y;
 
-        const dirs = [
+const dirs = [
             [1,0], [-1,0], [0,1], [0,-1]
         ];
+    
+for (spread > 4){
+if (!Vars.state.isPaused()){
+const dir = dirs[Mathf.random(dirs.length - 1)];
+const spreadTile = Vars.world.tile(x + dir[0], y + dir[1]);
 
-        const dir = dirs[Mathf.random(dirs.length - 1)];
-        const other = Vars.world.tile(b.tile.x + dir[0], b.tile.y + dir[1]);
+if (!spreadTile.isSolid()){
+if (spreadTile.block() != target){
+spreadTile.setBlock(target,Team.get(5),1);
+}
+spread++;
+}
+    
+}}
 
-        if (!other) return;
-
-        if (
-            other.floor().isLiquid ||
-            other.block() == target ||
-            other.block().solid
-        ) return;
-
-        // chance = smoother spread
-        if (Mathf.chance(0.4)) {
-            other.setBlock(target, b.team, 1);
-            count++;
-        }
-    });
-});
+} catch(e){
+Vars.ui.showInfoToast(e + "[red]: Please report this bug",5)
+}});
 /*
 Events.on(EventType.TileChangeEvent, e => {
     try {
