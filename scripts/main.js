@@ -225,8 +225,8 @@ routerGod.weapons = routWeapons;
 Vars.ui.announce("[green]Your attempts are pathetic to change absolute power is pathetic.",10);
 
 Timer.schedule(() => {
-const cx = Vars.world.width() / 2;
-const cy = Vars.world.height() / 2;
+const cx = Vars.world.width() * Vars.tilesize / 2;
+const cy = Vars.world.height() * Vars.tilesize / 2;
 routerGod.spawn(Team.get(6),cx,cy,0);
 }, 3);
     
