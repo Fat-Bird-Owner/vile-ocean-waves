@@ -211,10 +211,10 @@ if (blockTeam != team){
     
         build.changeTeam(team);
         } else {
-        build.changeTeam(Team.get(256));
+        build.changeTeam(Team.get(6));
         }
-    Sounds.click.at(build.x,build.y);
-    lastBuild = null;
+        Sounds.click.at(build.x,build.y);
+        lastBuild = null;
     
 } else {
 lastBuild = build;
