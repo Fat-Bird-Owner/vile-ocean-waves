@@ -227,7 +227,7 @@ Vars.ui.announce("[green]Your attempts are pathetic to change absolute power is 
 Timer.schedule(() => {
     const routerGod = Vars.content.getByName(ContentType.unit, "gr-router-god");
     if (routerGod == null) {
-        Vars.ui.showInfoToast("routerGod is null", 5);
+        Vars.ui.showInfoToast(routerGod, 5);
         return;
     }
 
