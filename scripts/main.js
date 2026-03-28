@@ -192,7 +192,7 @@ Events.on(EventType.TileChangeEvent, e => {
 
 let lastBuild = null;
 
-Events.run(TapEvent, e => {
+Events.on(TapEvent, e => {
 try{
 const tile = e.tile;
 const block = tile.block();
