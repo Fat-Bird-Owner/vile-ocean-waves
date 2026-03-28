@@ -168,28 +168,6 @@ Vars.ui.showInfoToast(e,3);
   
 })
 
-const spreadQueue = [];
-const spreading = new Set(); // tracks tiles we placed
-
-Events.on(EventType.TileChangeEvent, e => {
-    if (!Vars.state.isGame()) return;
-
-    const tile = e.tile;
-    const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
-
-    const key = tile.x + "," + tile.y;
-
-    // 🚫 ignore tiles WE placed
-    if (spreading.has(key)) {
-        spreading.delete(key);
-        return;
-    }
-
-    if (tile.block() != target) return;
-
-    spreadQueue.push({x: tile.x, y: tile.y});
-});
-
 let lastBuild = null;
 
 Events.on(TapEvent, e => {
