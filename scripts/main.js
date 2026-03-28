@@ -212,7 +212,7 @@ routWeapons = routerGod.weapons;
 Vars.ui.showInfoToast(e,5);
 }});
 
-Events.on(WorldLoadEvent, e => {
+Events.on(ContentPatchLoadEvent, e => {
 try{
 if (Vars.state.rules.editor) return;
     
