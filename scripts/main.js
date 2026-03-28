@@ -168,8 +168,6 @@ Vars.ui.showInfoToast(e,3);
   
 })
 
-let lastBuild = null;
-
 Events.on(TapEvent, e => {
 try{
 const tile = e.tile;
@@ -183,21 +181,16 @@ const team = player.team();
 const build = tile.build;
 const blockTeam = build.team;
 
-if (lastBuild == build){
-
+Sounds.click.at(build.x,build.y);
+Fx.select.at(build.x,build.y);
+    
 if (blockTeam != team){
-    
-        build.changeTeam(team);
-        } else {
-        build.changeTeam(Team.get(6));
-        }
-        Sounds.click.at(build.x,build.y);
-        lastBuild = null;
-    
+build.changeTeam(team);
 } else {
-lastBuild = build;
+build.changeTeam(Team.get(6));
 }
-    
+
+     
 } catch(e){
 Vars.ui.showInfoToast(e,10);
 }});
