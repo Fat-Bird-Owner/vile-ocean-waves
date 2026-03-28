@@ -168,52 +168,57 @@ Vars.ui.showInfoToast(e,3);
   
 })
 
-const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
-
 Events.on(EventType.TileChangeEvent, e => {
-try{
+    try {
+        if (!Vars.state.isGame()) return;
 
-Vars.ui.showInfoToast("bruv",3);
+        const tile = e.tile;
+        const block = tile.block();
+        const target = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");
 
-const tile = e.tile;
-const block = tile.block();
-const build = tile.build;
+        if (block != target) return;
 
-if (build == null || block != target) return;
+        let i = 0;
+        while (i < 3) {
+        if (!Vars.state.isPaused()){
+            let dx = 0;
+            let dy = 0;
 
-var spread = 0;
-var x = tile.x;   // FIXED (was build.x)
-var y = tile.y;   // FIXED (was build.y)
+            // pick a random direction
+            if (Mathf.random() < 0.5) {
+                dx = Mathf.random() < 0.5 ? -1 : 1;
+            } else {
+                dy = Mathf.random() < 0.5 ? -1 : 1;
+            }
 
-const dirs = [
-    [1,0], [-1,0], [0,1], [0,-1]
-];
-    
-while (spread < 4){   // FIXED (was invalid for loop)
+            const spreadTile = Vars.world.tile(tile.x + dx, tile.y + dy);
+            if (!spreadTile) continue;
 
-if (!Vars.state.isPaused()){
+            if (spreadTile.block() == target){
+            i++;
+            }
+            
+            // skip invalid tiles
+            if (
+                spreadTile.floor().isLiquid ||
+                spreadTile.block() == target ||
+                spreadTile.block().solid
+            ) continue;
 
-const dir = dirs[Mathf.random(dirs.length - 1)];
-const spreadTile = Vars.world.tile(x + dir[0], y + dir[1]);
+            // schedule placement
+            Timer.schedule(() => {
+                spreadTile.setBlock(target, Team.get(5), 1);
+                i++;
+            }, 0.1);
+        }}
+        
+    } catch (err) {
+        Vars.ui.showInfoToast(err + "", 5);
+    }
+});
 
-if (spreadTile != null){   // FIXED (null check)
 
-if (!spreadTile.block().solid){   // FIXED (isSolid -> block().solid)
 
-if (spreadTile.block() != target){
-spreadTile.setBlock(target, Team.get(5), 1);
-}
-
-spread++;
-}
-    
-}}
-
-}
-
-} catch(e){
-Vars.ui.showInfoToast(e + "[red]: Please report this bug",5)
-}});
 /*
 Events.on(EventType.TileChangeEvent, e => {
     try {
