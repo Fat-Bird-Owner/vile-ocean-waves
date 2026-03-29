@@ -221,7 +221,7 @@ Events.on(EventType.TapEvent, e => {
                     return;
                 }
 
-                unit.spawn(Team.get(6), build.x, build.y,90);
+                //unit.spawn(Team.get(6), build.x, build.y,90);
             },
 
             () => {
