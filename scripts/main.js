@@ -212,7 +212,7 @@ const block = e.block();
 const target = Vars.content.getByName(ContentType.block,"command-block");
 const build = tile.build;
 
-if (block != target || build == null || build.team != player.team()) return
+if (block != target || build == null || build.team != player.team()) return;
 const team = build.team;
 Sounds.click.at(build.x,build.y);
 
@@ -232,7 +232,7 @@ Vars.ui.showInfoToast("Cleared Entities");
     
 });
 } catch(e){
-Vars.uishowInfoToast(e,5);
+Vars.ui.showInfoToast(e,5);
 }});
 
 
