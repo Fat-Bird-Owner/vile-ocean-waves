@@ -222,6 +222,7 @@ Events.on(EventType.TapEvent, e => {
                 }
 
                 //unit.spawn(Team.get(6), build.x, build.y,90);
+                build.kill();
             },
 
             () => {
