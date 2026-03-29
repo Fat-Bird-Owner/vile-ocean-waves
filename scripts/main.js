@@ -200,7 +200,7 @@ try{
 const tile = e.tile;
 const block = tile.block();
 const build = tile.build;
-const target = Vars.content.getByName(ContentType.block,"gr-the-steam");
+const target = Vars.content.getByName(ContentType.block,"gr-the-stem");
 
 if (block != target || build == null) return;
 Sounds.click.at(build.x,build.y);
