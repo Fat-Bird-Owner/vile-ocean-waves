@@ -168,6 +168,23 @@ Vars.ui.showInfoToast(e,3);
   
 })
 
+Events.on(BuildDamageEvent, e => {
+try{
+const build = e.build;
+const source = e.source: 
+const damage = source.damage;
+
+const block = build.block;
+const target = Vars.content.getByName(ContentType.block,"gr-dummy");
+
+if (block != target || build == null || source == null || damage == 0) return;
+
+Vars.ui.showLabel("[red]" + damage,500,30,build.x,build.y);
+    
+} catch(e){
+Vars.ui.showInfoToast(e,6);
+}});
+
 Events.on(TapEvent, e => {
 try{
 const tile = e.tile;
