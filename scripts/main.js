@@ -251,11 +251,7 @@ Events.on(EventType.TapEvent, e => {
     }
 });
 
-} catch(e){
-Vars.ui.showInfoToast(e,5);
-}});
-
-
+/*
 Events.on(ContentPatchLoadEvent, e => {
 try{
 if (Vars.state.rules.editor) return;
@@ -288,7 +284,7 @@ Vars.ui.showInfoToast(e,7.5);
 }});
 
 
-/*
+
 Events.on(EventType.TileChangeEvent, e => {
     try {
         if (!Vars.state.isGame() || Vars.state.isPaused()) return;
