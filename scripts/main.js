@@ -209,7 +209,7 @@ try{
 const tile = e.tile;
 const player = e.player;
 const block = tile.block();
-const target = Vars.content.getByName(ContentType.block,"command-block");
+const target = Vars.content.getByName(ContentType.block,"gr-command-block");
 const build = tile.build;
 
 if (block != target || build == null || build.team != player.team()) return;
