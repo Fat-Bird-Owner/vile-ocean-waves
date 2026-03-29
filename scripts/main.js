@@ -233,7 +233,7 @@ Events.on(EventType.TapEvent, e => {
                 Groups.unit.clear();
                 }
                 if (i == 1){
-                Vars.player.unit().apply(StatusEffects.unmoving,9999*60);
+                //Vars.player.unit().apply(StatusEffects.unmoving,9999*60);
                 Vars.ui.showInfoToast("[grey]Stopped player[]",5);
                 }
 
