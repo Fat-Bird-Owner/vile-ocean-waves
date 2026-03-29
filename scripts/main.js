@@ -227,7 +227,7 @@ Vars.ui.showMenu(
 (i) => {
 if (i == -1) return;
 if (i == 0){
-Groups.unit.clear();
+//Groups.unit.clear();
 Vars.ui.showInfoToast("Cleared Entities", 2);
 } else if (i == 1){
 Vars.ui.showInfoToast("Test 1", 2);
