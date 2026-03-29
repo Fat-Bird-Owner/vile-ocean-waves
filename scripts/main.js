@@ -227,6 +227,10 @@ Vars.ui.showMenu(
 (i) => {
 if (i == 2) return;
 Vars.ui.showInfoToast("e",5);
+
+if (i == 0){
+Groups.unit.clear();
+}
 /*
 if (i == 0){
 //Groups.unit.clear();
