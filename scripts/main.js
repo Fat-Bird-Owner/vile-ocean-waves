@@ -220,15 +220,26 @@ Vars.ui.showMenu(
 "Commands List",
 "[lightgrey]Select one of your choosing", 
 [
-["Clear","Test"],
+["Clear"],
+["Test"],
 ["Close"]
 ], 
 
 (i) => {
-if (i == 2) return;
+if (i == -1) return;
 Vars.ui.showInfoToast("e",5);
 
-if (i == 0){
+switch(i){
+         case 0:
+    Vars.ui.showInfoToast("1",5);
+    break;
+         case 1:
+    Vars.ui.showInfoToast("2",5);
+    break;
+         case 2:
+    Vars.ui.showInfoToast("3",5);
+    return;
+}
 //Groups.unit.clear();
 }
 /*
