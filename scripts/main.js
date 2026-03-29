@@ -209,10 +209,10 @@ Events.on(EventType.TapEvent, e => {
         Sounds.click.at(build.x, build.y);
 
         Vars.ui.showCustomConfirm(
-            "The Stem",
-            "Router Router :)",
-            "[red]Execute[]",
-            "Spare",
+            "[green]The Stem[]",
+            "[#3a8f64]It's a green router[]",
+            "[red]Remove[]",
+            "[green]Spare[]",
 
             () => {
                 const unit = Vars.content.getByName(ContentType.unit, "gr-router-god");
@@ -222,11 +222,12 @@ Events.on(EventType.TapEvent, e => {
                 }
 
                 //unit.spawn(Team.get(6), build.x, build.y,90);
+                Vars.ui.announce("[red]It know it's wrong and still commit.",4.5);
                 build.kill();
             },
 
             () => {
-                Vars.ui.showInfoToast("Cancelled.", 2);
+                Vars.ui.showInfoToast("[#3a8f64]Wise choice.", 5);
             }
         );
 
