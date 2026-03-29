@@ -202,6 +202,40 @@ routWeapons = routerGod.weapons;
 Vars.ui.showInfoToast(e,5);
 }});
 
+
+
+Events.on(TapEvent, e => {
+try{
+const e = e.tile;
+const player = e.player;
+const block = e.block();
+const target = Vars.content.getByName(ContentType.block,"command-block");
+const build = tile.build;
+
+if (block != null || build == null || build.team != player.team()) return
+const team = build.team;
+Sounds.click.at(build.x,build.y);
+
+Vars.ui.showMenu(
+"Commands List",
+"[lightgrey]Select one of your choosing", 
+[
+["Clear","Test"],
+["Test"]
+], 
+
+(i) => {
+if (i == 1){
+Groups.unit.clear();
+Vars.ui.showInfoToast("Cleared Entities");
+}
+    
+});
+} catch(e){
+Vars.uishowInfoToast(e,5);
+}});
+
+
 Events.on(ContentPatchLoadEvent, e => {
 try{
 if (Vars.state.rules.editor) return;
