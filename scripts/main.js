@@ -220,8 +220,8 @@ Events.on(EventType.TapEvent, e => {
             "Commands List",
             "[lightgrey]Select one of your choosing", 
             [
-                ["Clear"],
-                ["Test"],
+                ["Clear Units"],
+                ["Stop Player"],
                 ["Close"]
             ], 
 
@@ -229,8 +229,11 @@ Events.on(EventType.TapEvent, e => {
                 Vars.ui.showInfoToast("e", 5);
 
                 if (i == 0){
-                Vars.ui.showInfoToast("0",5)
+                Vars.ui.showInfoToast("[green]All units cleared()",5)
                 Groups.unit.clear();
+                } else if (i == 1){
+                Vars.player.unit().apply(StatusEffects.unmoving,9999*60);
+                Vars.ui.showInfoToast("[grey]Stopped player[]",5);
                 }
 
             } // ← THIS was missing
