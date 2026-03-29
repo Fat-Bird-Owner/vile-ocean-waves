@@ -225,12 +225,18 @@ Vars.ui.showMenu(
 ], 
 
 (i) => {
-if (i == 1){
+if (i == -1) return;
+if (i == 0){
 Groups.unit.clear();
-Vars.ui.showInfoToast("Cleared Entities");
+Vars.ui.showInfoToast("Cleared Entities", 2);
 }
-    
-});
+else if (i == 1){
+Vars.ui.showInfoToast("Test 1", 2);
+}
+else if (i == 2){
+Vars.ui.showInfoToast("Test 2", 2);
+}}
+
 } catch(e){
 Vars.ui.showInfoToast(e,5);
 }});
