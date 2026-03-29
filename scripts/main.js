@@ -229,7 +229,7 @@ Events.on(EventType.TapEvent, e => {
                 Vars.ui.showInfoToast("e", 5);
 
                 if (i == 0){
-                Vars.ui.showInfoToast("[green]All units cleared()",5)
+                Vars.ui.showInfoToast("[green]All units cleared()",5);
                 Groups.unit.clear();
                 }
                 if (i == 1){
@@ -239,17 +239,6 @@ Events.on(EventType.TapEvent, e => {
 
             } // ← THIS was missing
         ); // ← and this closes showMenu properly
-
-        /*
-        if (i == 0){
-        //Groups.unit.clear();
-        //Vars.ui.showInfoToast("Cleared Entities", 2);
-        } else if (i == 1){
-        //Vars.ui.showInfoToast("Test 1", 2);
-        } else if (i == 2){
-        //Vars.ui.showInfoToast("Test 2", 2);
-        }
-        */
 
     } catch(e){
         Vars.ui.showInfoToast(e, 5);
