@@ -230,6 +230,7 @@ Events.on(EventType.TapEvent, e => {
 
                 if (i == 0){
                 Vars.ui.showInfoToast("0",5)
+                Groups.unit.clear();
                 }
 
             } // ← THIS was missing
