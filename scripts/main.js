@@ -208,7 +208,7 @@ Events.on(TapEvent, e => {
 try{
 const tile = e.tile;
 const player = e.player;
-const block = e.block();
+const block = tile.block();
 const target = Vars.content.getByName(ContentType.block,"command-block");
 const build = tile.build;
 
