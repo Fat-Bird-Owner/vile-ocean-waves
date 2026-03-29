@@ -225,7 +225,7 @@ Vars.ui.showMenu(
 ], 
 
 (i) => {
-if (i == 3) return;
+if (i == 2) return;
 Vars.ui.showInfoToast("e",5);
 /*
 if (i == 0){
