@@ -195,43 +195,45 @@ build.changeTeam(Team.get(6));
 Vars.ui.showInfoToast(e,10);
 }});
 
-Events.on(TapEvent, e => {
-try{
-const tile = e.tile;
-const block = tile.block();
-const build = tile.build;
-const target = Vars.content.getByName(ContentType.block,"gr-the-stem");
+Events.on(EventType.TapEvent, e => {
+    try{
+        const tile = e.tile;
+        if (!tile) return;
 
-if (block != target || build == null) return;
-Sounds.click.at(build.x,build.y);
-    
-Vars.ui.showCustomConfirm(
-    "The Stem",
-    "Router Router :)",
-    "[red]Execute[]",
-    "Spare",
+        const build = tile.build;
+        if (!build) return;
 
-    // confirmed
-    () => {
-        const unit = Vars.content.getByName(ContentType.unit, "gr-router-god");
-        if (unit == null) {
-        Vars.ui.showInfoToast("Bruv");
-        return;
-        }
+        const target = Vars.content.getByName(ContentType.block, "gr-the-stem");
+        if (tile.block() != target) return;
 
-        Units.spawn(unit, Team.get(6), build.x, build.y);
-        build.kill();
-    },
+        Sounds.click.at(build.x, build.y);
 
-    // denied
-    () => {
-        Vars.ui.showInfoToast("Cancelled.", 2);
+        Vars.ui.showCustomConfirm(
+            "The Stem",
+            "Router Router :)",
+            "[red]Execute[]",
+            "Spare",
+
+            () => {
+                const unit = Vars.content.getByName(ContentType.unit, "gr-router-god");
+                if (!unit){
+                    Vars.ui.showInfoToast("Unit null", 2);
+                    return;
+                }
+
+                Units.spawn(unit, Team.get(6), build.x, build.y);
+                build.kill();
+            },
+
+            () => {
+                Vars.ui.showInfoToast("Cancelled.", 2);
+            }
+        );
+
+    } catch(err){
+        Vars.ui.showInfoToast(err + "", 5);
     }
-);
-
-} catch(e){
-Vars.ui.showInfoToast(e,5);
-}});
+});
 
 let routHealth = null;
 let routSpeed = null;
