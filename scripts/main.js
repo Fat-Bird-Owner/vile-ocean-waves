@@ -171,45 +171,18 @@ Vars.ui.showInfoToast(e,3);
 Events.on(BuildDamageEvent, e => {
 try{
 const build = e.build;
-const source = e.source: 
+const source = e.source;
 const damage = source.damage;
 
 const block = build.block;
 const target = Vars.content.getByName(ContentType.block,"gr-dummy");
 
-if (block != target || build == null || source == null || damage == 0) return;
+if (block != target || build == null || source == null) return;
 
 Vars.ui.showLabel("[red]" + damage,500,30,build.x,build.y);
     
 } catch(e){
 Vars.ui.showInfoToast(e,6);
-}});
-
-Events.on(TapEvent, e => {
-try{
-const tile = e.tile;
-const block = tile.block();
-const target = Vars.content.getByName(ContentType.block,"gr-dummy");
-
-if (block != target || tile.build == null) return;
-
-const player = e.player;
-const team = player.team();
-const build = tile.build;
-const blockTeam = build.team;
-
-Sounds.click.at(build.x,build.y);
-Fx.select.at(build.x,build.y);
-    
-if (blockTeam != team){
-build.changeTeam(team);
-} else {
-build.changeTeam(Team.get(6));
-}
-
-     
-} catch(e){
-Vars.ui.showInfoToast(e,10);
 }});
 
 Events.on(EventType.TapEvent, e => {
