@@ -226,7 +226,7 @@ Vars.ui.showMenu(
 
 (i) => {
 if (i == 3) return;
-Vars.ui.showInfoToast(i,5);
+Vars.ui.showInfoToast("e",5);
 /*
 if (i == 0){
 //Groups.unit.clear();
