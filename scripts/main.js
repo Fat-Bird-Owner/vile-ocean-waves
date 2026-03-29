@@ -214,12 +214,12 @@ Vars.ui.showCustomConfirm(
     // confirmed
     () => {
         const unit = Vars.content.getByName(ContentType.unit, "gr-router-god");
-        if (!unit) return;
+        if (unit == null) {
+        Vars.ui.showInfoToast("Bruv");
+        return;
+        }
 
-        const x = Vars.player.x;
-        const y = Vars.player.y;
-
-        Units.spawn(unit, Team.get(6), x, y);
+        Units.spawn(unit, Team.get(6), build.x, build.y);
         build.kill();
     },
 
