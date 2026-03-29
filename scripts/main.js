@@ -226,7 +226,7 @@ Events.on(EventType.TapEvent, e => {
             ], 
 
             (i) => {
-                Vars.ui.showInfoToast(i, 5);
+                Vars.ui.showInfoToast("idk", 5);
 
                 if (i == 0){
                 Vars.ui.showInfoToast("[green]All units cleared()",5);
