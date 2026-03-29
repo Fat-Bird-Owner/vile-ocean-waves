@@ -229,18 +229,10 @@ Vars.ui.showMenu(
 if (i == -1) return;
 Vars.ui.showInfoToast("e",5);
 
-switch(i){
-         case 0:
-    Vars.ui.showInfoToast("1",5);
-    break;
-         case 1:
-    Vars.ui.showInfoToast("2",5);
-    break;
-         case 2:
-    Vars.ui.showInfoToast("3",5);
-    return;
+if (i == 1){
+
 }
-//Groups.unit.clear();
+
 }
 /*
 if (i == 0){
