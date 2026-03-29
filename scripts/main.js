@@ -179,7 +179,7 @@ const target = Vars.content.getByName(ContentType.block,"gr-dummy");
 
 if (block != target || build == null || source == null) return;
 
-Vars.ui.showLabel("[red]" + damage,500,30,build.x,build.y);
+Vars.ui.showLabel("[red]" + damage,500,0.5,build.x,build.y);
     
 } catch(e){
 Vars.ui.showInfoToast(e,6);
