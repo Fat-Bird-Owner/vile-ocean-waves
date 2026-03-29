@@ -235,7 +235,7 @@ Vars.ui.showInfoToast("Test 1", 2);
 }
 else if (i == 2){
 Vars.ui.showInfoToast("Test 2", 2);
-}}
+}});
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
