@@ -204,46 +204,51 @@ Vars.ui.showInfoToast(e,5);
 
 
 
-Events.on(TapEvent, e => {
-try{
-const tile = e.tile;
-const player = e.player;
-const block = tile.block();
-const target = Vars.content.getByName(ContentType.block,"gr-command-block");
-const build = tile.build;
+Events.on(EventType.TapEvent, e => {
+    try{
+        const tile = e.tile;
+        const player = e.player;
+        const block = tile.block();
+        const target = Vars.content.getByName(ContentType.block, "gr-command-block");
+        const build = tile.build;
 
-if (block != target || build == null || build.team != player.team()) return;
-const team = build.team;
-Sounds.click.at(build.x,build.y);
+        if (block != target || build == null || build.team != player.team()) return;
+        const team = build.team;
+        Sounds.click.at(build.x, build.y);
 
-Vars.ui.showMenu(
-"Commands List",
-"[lightgrey]Select one of your choosing", 
-[
-["Clear"],
-["Test"],
-["Close"]
-], 
+        Vars.ui.showMenu(
+            "Commands List",
+            "[lightgrey]Select one of your choosing", 
+            [
+                ["Clear"],
+                ["Test"],
+                ["Close"]
+            ], 
 
-(i) => {
-if (i == -1) return;
-Vars.ui.showInfoToast("e",5);
+            (i) => {
+                Vars.ui.showInfoToast("e", 5);
 
-if (i == 1){
+                if (i == 0){
+                Vars.ui.showInfoToast("0",5)
+                }
 
-}
+            } // ← THIS was missing
+        ); // ← and this closes showMenu properly
 
-}
-/*
-if (i == 0){
-//Groups.unit.clear();
-//Vars.ui.showInfoToast("Cleared Entities", 2);
-} else if (i == 1){
-//Vars.ui.showInfoToast("Test 1", 2);
-} else if (i == 2){
-//Vars.ui.showInfoToast("Test 2", 2);
-}
-*/
+        /*
+        if (i == 0){
+        //Groups.unit.clear();
+        //Vars.ui.showInfoToast("Cleared Entities", 2);
+        } else if (i == 1){
+        //Vars.ui.showInfoToast("Test 1", 2);
+        } else if (i == 2){
+        //Vars.ui.showInfoToast("Test 2", 2);
+        }
+        */
+
+    } catch(e){
+        Vars.ui.showInfoToast(e, 5);
+    }
 });
 
 } catch(e){
