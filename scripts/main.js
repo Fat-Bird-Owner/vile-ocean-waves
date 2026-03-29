@@ -221,11 +221,12 @@ Vars.ui.showMenu(
 "[lightgrey]Select one of your choosing", 
 [
 ["Clear","Test"],
-["Test"]
+["Close"]
 ], 
 
 (i) => {
-if (i == -1) return;
+if (i == 3) return;
+Vars.ui.showInfoToast(i,5);
 /*
 if (i == 0){
 //Groups.unit.clear();
