@@ -206,7 +206,7 @@ Vars.ui.showInfoToast(e,5);
 
 Events.on(TapEvent, e => {
 try{
-const e = e.tile;
+const tile = e.tile;
 const player = e.player;
 const block = e.block();
 const target = Vars.content.getByName(ContentType.block,"command-block");
