@@ -195,6 +195,44 @@ build.changeTeam(Team.get(6));
 Vars.ui.showInfoToast(e,10);
 }});
 
+Events.on(TapEvent, e => {
+try{
+const tile = e.tile;
+const block = tile.block();
+const build = tile.build;
+const target = Vars.content.getByName(ContentType.block,"gr-the-steam");
+
+if (block != target || build == null) return;
+Sounds.click.at(build.x,build.y);
+    
+Vars.ui.showCustomConfirm(
+    "The Stem",
+    "Router Router :)",
+    "[red]Execute[]",
+    "Spare",
+
+    // confirmed
+    () => {
+        const unit = Vars.content.getByName(ContentType.unit, "gr-router-god");
+        if (!unit) return;
+
+        const x = Vars.player.x;
+        const y = Vars.player.y;
+
+        Units.spawn(unit, Team.get(6), x, y);
+        build.kill();
+    },
+
+    // denied
+    () => {
+        Vars.ui.showInfoToast("Cancelled.", 2);
+    }
+);
+
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+}});
+
 let routHealth = null;
 let routSpeed = null;
 let routArmor = null;
