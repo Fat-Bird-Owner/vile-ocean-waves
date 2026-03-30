@@ -226,18 +226,10 @@ Events.on(EventType.TapEvent, e => {
             ], 
 
 (i) => {
-    if (i == null || i < 0) return;
-
-    Vars.ui.showInfoToast("idk", 5);
 
     if (i == 0){
         Vars.ui.showInfoToast("[green]All units cleared()",5);
         Groups.unit.clear();
-    }
-
-    if (i == 1){
-        Vars.ui.showInfoToast("[red]Stopped player",5);
-        player.unit().kill();
     }
 });
         
