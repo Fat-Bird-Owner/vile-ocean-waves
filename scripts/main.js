@@ -226,6 +226,7 @@ Events.on(EventType.TapEvent, e => {
             ], 
 
 (i) => {
+try{
     if (i == null || i < 0) return;
 
     Vars.ui.showInfoToast("idk", 5);
@@ -239,6 +240,7 @@ Events.on(EventType.TapEvent, e => {
         Vars.ui.showInfoToast("[red]Stopped player",5);
         player.unit().kill();
     }
+}
 });
         
     } catch(e){
