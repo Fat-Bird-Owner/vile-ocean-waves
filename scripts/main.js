@@ -225,17 +225,22 @@ Events.on(EventType.TapEvent, e => {
                 ["Close"]
             ], 
 
-            (i) => {
-                Vars.ui.showInfoToast("idk", 5);
+(i) => {
+    if (i == null || i < 0) return;
 
-                if (i == 0){
-                Vars.ui.showInfoToast("[green]All units cleared()",5);
-                Groups.unit.clear();
-                }
+    Vars.ui.showInfoToast("idk", 5);
 
-            } // ← THIS was missing
-        ); // ← and this closes showMenu properly
+    if (i == 0){
+        Vars.ui.showInfoToast("[green]All units cleared()",5);
+        Groups.unit.clear();
+    }
 
+    if (i == 1){
+        Vars.ui.showInfoToast("[red]Stopped player",5);
+        player.unit().kill();
+    }
+});
+        
     } catch(e){
         Vars.ui.showInfoToast(e, 5);
     }
