@@ -219,7 +219,7 @@ Events.on(EventType.TapEvent, e => {
         if (!build) return;
         const buildTeam = build.team;
 
-        const target = Vars.content.getByName(ContentType.block, "gr-command-block");
+        const target = Vars.content.getByName(ContentType.block, "copper-wall");
 
         if (block != target) return;
 
