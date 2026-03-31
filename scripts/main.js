@@ -227,19 +227,16 @@ Events.on(EventType.TapEvent, e => {
             "Commands List",
             "[lightgrey]Select one of your choosing",
             [
-                ["Clear Units"],
-                ["Stop Player"],
-                ["Change Team"],
-                ["Toggle canGameover"],
-                ["Toggle Editor"],
-                ["Toggle disableUnitCap"],
+                ["Clear Units", "Stop Player"],
+                ["Change Team", "Toggle canGameover"],
+                ["Toggle Editor", "Toggle disableUnitCap"],
                 ["Close"]
             ],
             i => {
 
                 if (i == 0) {
                     Groups.unit.clear();
-                    Vars.ui.showInfoToast("[green]All units cleared()", 5);
+                    Vars.ui.showInfoToast("[green]All units cleared", 5);
 
                 } else if (i == 1) {
                     try {
@@ -256,7 +253,7 @@ Events.on(EventType.TapEvent, e => {
                         }
 
                         unit.apply(StatusEffects.unmoving, 9999 * 60);
-                        Vars.ui.showInfoToast("[grey]Stopped player unit()", 5);
+                        Vars.ui.showInfoToast("[grey]Stopped player unit", 5);
 
                     } catch (err) {
                         Vars.ui.showInfoToast("err: " + err, 5);
@@ -284,7 +281,7 @@ Events.on(EventType.TapEvent, e => {
                     const gameOver = Vars.state.rules.canGameOver;
                     Vars.state.rules.canGameOver = !gameOver;
 
-                    Vars.ui.showInfoToast("[green]Toggled canGameOver: [accent]" + !gameOver, 5);
+                    Vars.ui.showInfoToast("[accent]Toggled canGameOver: [lightgrey]" + !gameOver, 5);
                         
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);    
@@ -294,7 +291,7 @@ Events.on(EventType.TapEvent, e => {
                     const editor = Vars.state.rules.editor;
                     Vars.state.rules.editor = !editor;
 
-                    Vars.ui.showInfoToast("[green]Toggled editor: [accent]" + !editor, 5);
+                    Vars.ui.showInfoToast("[accent]Toggled editor: [lightgrey]" + !editor, 5);
                              
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);  
@@ -304,7 +301,7 @@ Events.on(EventType.TapEvent, e => {
                     const disableUnitCap = Vars.state.rules.disableUnitCap;
                     Vars.state.rules.disableUnitCap = !disableUnitCap;
 
-                    Vars.ui.showInfoToast("[green]Toggled disableUnitCap: [accent]" + !disableUnitCap, 5);
+                    Vars.ui.showInfoToast("[accent]Toggled disableUnitCap: [lightgrey]" + !disableUnitCap, 5);
                             
                     } catch(e){
                     Vars.ui.showInfoToast(e,10);
