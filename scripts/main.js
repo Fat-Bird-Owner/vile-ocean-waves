@@ -245,7 +245,7 @@ Events.on(EventType.TapEvent, e => {
 
                     Sounds.uiButton.play();
                     Groups.unit.clear();
-                    Vars.ui.showInfoToast("[green]All units cleared", 5);
+                    Vars.ui.hudfrag.showToast(Icon.tree, "[green]All units cleared");
 
                 } else if (i == 1) {
                     try {
@@ -264,7 +264,7 @@ Events.on(EventType.TapEvent, e => {
                         }
 
                         unit.apply(StatusEffects.unmoving, 9999 * 60);
-                        Vars.ui.showInfoToast("[grey]Stopped player unit", 5);
+                        Vars.ui.hudfrag.showToast(Icon.tree, "[grey]Stopped player unit");
 
                     } catch (err) {
                         Vars.ui.showInfoToast("err: " + err, 5);
@@ -284,7 +284,7 @@ Events.on(EventType.TapEvent, e => {
                         const newTeam = (currentTeam == buildTeam ? Team.get(6) : buildTeam);
 
                         p.unit().setProp(LAccess.team, newTeam);
-                        Vars.ui.showInfoToast("[accent]Team changed", 5);
+                        Vars.ui.hudfrag.showToast(Icon.tree, "[accent]Team changed");
 
                     } catch (err) {
                         Vars.ui.showInfoToast(String(err), 15);
@@ -295,7 +295,7 @@ Events.on(EventType.TapEvent, e => {
                     const gameOver = Vars.state.rules.canGameOver;
                     Vars.state.rules.canGameOver = !gameOver;
 
-                    Vars.ui.showInfoToast("[accent]Toggled canGameOver: [lightgrey]" + !gameOver, 5);
+                    Vars.ui.hudfrag.showToast(Icon.tree, "[accent]Toggled canGameOver: [lightgrey]" + !gameOver);
                         
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);    
@@ -305,7 +305,7 @@ Events.on(EventType.TapEvent, e => {
                     const editor = Vars.state.rules.editor;
                     Vars.state.rules.editor = !editor;
 
-                    Vars.ui.showInfoToast("[accent]Toggled editor: [lightgrey]" + !editor, 5);
+                    Vars.ui.hudfrag.showToast(Icon.tree, "[accent]Toggled editor: [lightgrey]" + !editor);
                              
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);  
@@ -316,7 +316,7 @@ Events.on(EventType.TapEvent, e => {
                     const disableUnitCap = Vars.state.rules.disableUnitCap;
                     Vars.state.rules.disableUnitCap = !disableUnitCap;
 
-                    Vars.ui.showInfoToast("[accent]Toggled disableUnitCap: [lightgrey]" + !disableUnitCap, 5);
+                    Vars.ui.hudfrag.showToast(Icon.tree, "[accent]Toggled disableUnitCap: [lightgrey]" + !disableUnitCap);
                             
                     } catch(e){
                     Vars.ui.showInfoToast(e,10);
@@ -330,7 +330,7 @@ Events.on(EventType.TapEvent, e => {
                     const unit = Vars.content.getByName(ContentType.unit, text);
 
                     if (unit == null){
-                    Vars.ui.showInfoToast("[red]Unit Invalid[]",5);
+                    Vars.ui.hudfrag.showToast(Icon.search,"[red]Unit Invalid[]");
                     return;
                     }
                         
@@ -338,7 +338,7 @@ Events.on(EventType.TapEvent, e => {
                     Sounds.waveSpawn.at(build.x,build.y);
                     Fx.spawn.at(build.x,build.y);
                             
-                    Vars.ui.showInfoToast("[accent]Spawned in a[]" + text,6.5);
+                    Vars.ui.hudfrag.showToast(Icon.chat, "[accent]Spawned in a []" + unit.localizedName);
 
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);
@@ -356,6 +356,7 @@ Events.on(EventType.TapEvent, e => {
                     if (!unit) return;
                     const type = unit.type.name;
                     lastUnit = type;
+                    Vars.ui.hudfrag.showToast(Icon.eye,"[lightgrey]Copied to spawn unit");
                             
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);
