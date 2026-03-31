@@ -317,7 +317,16 @@ Events.on(EventType.TapEvent, e => {
                     Vars.ui.showTextInput("SpawnUnit", "Enter Unit's Name", 100, lastUnit, false, text => {
                     try{
                     lastUnit = text;
-                    Vars.ui.showInfoToast(String(text),6.5);
+                    const unit = Vars.content.getByName(ContentType.unit, text);
+
+                    if (unit != null){
+                    Vars.ui.showInfoToast("[red]Unit Invalid[]");
+                    return;
+                    }
+                        
+                    unit.spawn(buildTeam,build.x,build.y,90);
+                    Vars.ui.showInfoToast("[accent]Spawned in a[]" + String(text),6.5);
+
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);
                     }});
