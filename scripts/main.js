@@ -235,7 +235,7 @@ Events.on(EventType.TapEvent, e => {
                 ["Toggle canGameover"],
                 ["Toggle Editor"],
                 ["Toggle disableUnitCap"],
-                ["Spawn Unit"]
+                ["Spawn Unit"],
                 ["Close"]
             ],
             i => {
@@ -317,7 +317,7 @@ Events.on(EventType.TapEvent, e => {
                     showTextInput("SpawnUnit", "Enter Unit's Name", 100, lastUnit, true, text => {
                     lastUnit = text;
                     Vars.ui.showInfoToast(text,6.5);
-                    })
+                    });
 
                             
 
