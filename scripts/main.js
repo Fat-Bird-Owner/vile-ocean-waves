@@ -298,7 +298,7 @@ Events.on(EventType.TapEvent, e => {
                              
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);  
-                    }} else if (i = 5){
+                    }} else if (i == 5){
                         try{
 
                     const disableUnitCap = Vars.state.rules.disableUnitCap;
