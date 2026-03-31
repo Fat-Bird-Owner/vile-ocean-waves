@@ -203,7 +203,7 @@ Vars.ui.showInfoToast(e,5);
 }});
 
 
-function stopPlayer(){
+Function stopPlayer(){
 try{
         const p = Vars.player;
         if(!p){
