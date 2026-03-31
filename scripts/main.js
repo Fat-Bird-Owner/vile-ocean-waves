@@ -241,11 +241,15 @@ Events.on(EventType.TapEvent, e => {
             i => {
 
                 if (i == 0) {
+
+                    Sounds.uiButton.play();
                     Groups.unit.clear();
                     Vars.ui.showInfoToast("[green]All units cleared", 5);
 
                 } else if (i == 1) {
                     try {
+
+                        Sounds.uiButton.play();
                         const p = Vars.player;
                         if (!p) {
                             Vars.ui.showInfoToast("no player", 3);
@@ -267,6 +271,8 @@ Events.on(EventType.TapEvent, e => {
 
                 } else if (i == 2) {
                     try {
+
+                        Sounds.uiButton.play();
                         const p = Vars.player;
                         if (!p || !p.unit()) {
                             Vars.ui.showInfoToast("no unit to change team", 3);
@@ -283,7 +289,8 @@ Events.on(EventType.TapEvent, e => {
                         Vars.ui.showInfoToast(String(err), 15);
                     }} else if (i == 3){
                         try{
-                        
+
+                    Sounds.uiButton.play();
                     const gameOver = Vars.state.rules.canGameOver;
                     Vars.state.rules.canGameOver = !gameOver;
 
@@ -304,6 +311,7 @@ Events.on(EventType.TapEvent, e => {
                     }} else if (i == 5){
                         try{
 
+                    Sounds.uiButton.play();
                     const disableUnitCap = Vars.state.rules.disableUnitCap;
                     Vars.state.rules.disableUnitCap = !disableUnitCap;
 
@@ -314,12 +322,13 @@ Events.on(EventType.TapEvent, e => {
                     }} else if (i == 6){
                         try{
 
+                    Sounds.uiButton.play();
                     Vars.ui.showTextInput("SpawnUnit", "Enter Unit's Name", 100, lastUnit, false, text => {
-                    try{
+                        try{
                     lastUnit = text;
                     const unit = Vars.content.getByName(ContentType.unit, text);
 
-                    if (unit != null){
+                    if (unit == null){
                     Vars.ui.showInfoToast("[red]Unit Invalid[]",5);
                     return;
                     }
