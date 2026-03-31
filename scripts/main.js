@@ -236,6 +236,7 @@ Events.on(EventType.TapEvent, e => {
                 ["Toggle Editor"],
                 ["Toggle disableUnitCap"],
                 ["Spawn Unit"],
+                ["Get Current Unit"],
                 ["Close"]
             ],
             i => {
@@ -345,6 +346,16 @@ Events.on(EventType.TapEvent, e => {
 
                             
 
+                    } catch(e){
+                    Vars.ui.showInfoToast(e,5);
+                    }} else if (i == 7){
+                        try{
+
+                    const unit = Vars.player.unit();
+                    if (!unit) return;
+                    const type = unit.type.name;
+                    lastUnit = type;
+                            
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);
                     }}
