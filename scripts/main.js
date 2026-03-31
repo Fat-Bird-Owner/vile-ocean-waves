@@ -202,28 +202,6 @@ routWeapons = routerGod.weapons;
 Vars.ui.showInfoToast(e,5);
 }});
 
-
-Function stopPlayer(){
-try{
-        const p = Vars.player;
-        if(!p){
-            Vars.ui.showInfoToast("no player", 3);
-            return;
-        }
-        const unit = p.unit();
-
-        if(!unit){
-            Vars.ui.showInfoToast("no unit", 3);
-            return;
-        }
-
-        unit.apply(StatusEffects.unmoving, 9999 * 60);
-        Vars.ui.showInfoToast("[grey]Stopped player unit()",5);
-
-}catch(err){
-Vars.ui.showInfoToast("err: " + err, 5);
-}}
-
 Events.on(EventType.TapEvent, e => {
     try{
         if(!e || !e.tile || !e.player) return;
@@ -260,8 +238,25 @@ Events.on(EventType.TapEvent, e => {
         Vars.ui.showInfoToast("[green]All units cleared()",5);
 
         } else if (i == 1){
-        stopPlayer();
+        try{
+        const p = Vars.player;
+        if(!p){
+            Vars.ui.showInfoToast("no player", 3);
+            return;
         }
+        const unit = p.unit();
+
+        if(!unit){
+            Vars.ui.showInfoToast("no unit", 3);
+            return;
+        }
+
+        unit.apply(StatusEffects.unmoving, 9999 * 60);
+        Vars.ui.showInfoToast("[grey]Stopped player unit()",5);
+
+        }catch(err){
+        Vars.ui.showInfoToast("err: " + err, 5);
+        }}
                 
         });
 
