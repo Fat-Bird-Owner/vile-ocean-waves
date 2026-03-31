@@ -203,77 +203,84 @@ Vars.ui.showInfoToast(e,5);
 }});
 
 Events.on(EventType.TapEvent, e => {
-    try{
-        if(!e || !e.tile || !e.player) return;
+    try {
+        if (!e || !e.tile || !e.player) return;
 
         const tile = e.tile;
         const player = e.player;
 
-        if(!tile.block()) return;
+        if (!tile.block()) return;
 
         const block = tile.block();
         const build = tile.build;
-        
-        if(!build) return;
+
+        if (!build) return;
         const buildTeam = build.team;
-        
+
         const target = Vars.content.getByName(ContentType.block, "gr-command-block");
 
-        if(block != target || build.team != player.team()) return;
+        if (block != target || build.team != player.team()) return;
 
         Sounds.click.at(build.x, build.y);
 
         Vars.ui.showMenu(
             "Commands List",
-            "[lightgrey]Select one of your choosing", 
+            "[lightgrey]Select one of your choosing",
             [
                 ["Clear Units"],
                 ["Stop Player"],
                 ["Change Team"],
                 ["Close"]
-            ], 
-            (i) => {
+            ],
+            i => {
 
-        if (i == 0){
-        Groups.unit.clear();
-        Vars.ui.showInfoToast("[green]All units cleared()",5);
+                if (i == 0) {
+                    Groups.unit.clear();
+                    Vars.ui.showInfoToast("[green]All units cleared()", 5);
 
-        } else if (i == 1){
-        try{
-        const p = Vars.player;
-        if(!p){
-            Vars.ui.showInfoToast("no player", 3);
-            return;
-        }
-        const unit = p.unit();
+                } else if (i == 1) {
+                    try {
+                        const p = Vars.player;
+                        if (!p) {
+                            Vars.ui.showInfoToast("no player", 3);
+                            return;
+                        }
+                        const unit = p.unit();
 
-        if(!unit){
-            Vars.ui.showInfoToast("no unit", 3);
-            return;
-        }
+                        if (!unit) {
+                            Vars.ui.showInfoToast("no unit", 3);
+                            return;
+                        }
 
-        unit.apply(StatusEffects.unmoving, 9999 * 60);
-        Vars.ui.showInfoToast("[grey]Stopped player unit()",5);
+                        unit.apply(StatusEffects.unmoving, 9999 * 60);
+                        Vars.ui.showInfoToast("[grey]Stopped player unit()", 5);
 
-        }catch(err){
-        Vars.ui.showInfoToast("err: " + err, 5);
-        }} else if (i == 2){
-        try{
-        const team = Vars.player.team();
+                    } catch (err) {
+                        Vars.ui.showInfoToast("err: " + err, 5);
+                    }
 
-        if (team == buildTeam){
-        Vars.player.unit().changeTeam(Team.get(6);
-        } else {
-        Vars.player.unit.changeTeam(buildTeam);
-        }
-            
-        } catch(err){
-        Vars.ui.showInfoToast(err,15);
-        }}
-                
-        });
+                } else if (i == 2) {
+                    try {
+                        const p = Vars.player;
+                        if (!p || !p.unit()) {
+                            Vars.ui.showInfoToast("no unit to change team", 3);
+                            return;
+                        }
 
-    } catch(err){
+                        const currentTeam = p.team();
+                        const newTeam = (currentTeam == buildTeam ? Team.get(6) : buildTeam);
+
+                        p.unit().changeTeam(newTeam);
+                        Vars.ui.showInfoToast("[yellow]Team changed", 5);
+
+                    } catch (err) {
+                        Vars.ui.showInfoToast(String(err), 15);
+                    }
+                }
+            }
+        );
+
+    } catch (err) {
         Vars.ui.showInfoToast(String(err), 5);
     }
 });
