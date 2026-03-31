@@ -270,8 +270,8 @@ Events.on(EventType.TapEvent, e => {
                         const currentTeam = p.team();
                         const newTeam = (currentTeam == buildTeam ? Team.get(6) : buildTeam);
 
-                        p.unit().changeTeam(newTeam);
-                        Vars.ui.showInfoToast("[yellow]Team changed", 5);
+                        p.unit().setProp(LAccess.team, newTeam);
+                        Vars.ui.showInfoToast("[accent]Team changed", 5);
 
                     } catch (err) {
                         Vars.ui.showInfoToast(String(err), 15);
