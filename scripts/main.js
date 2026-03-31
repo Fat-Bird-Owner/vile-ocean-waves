@@ -230,7 +230,6 @@ Events.on(EventType.TapEvent, e => {
                 ["Clear Units"],
                 ["Stop Player"],
                 ["Change Team"],
-                ["Toggle Gameover"],
                 ["Toggle canGameover"],
                 ["Toggle Editor"],
                 ["Toggle disableUnitCap"],
