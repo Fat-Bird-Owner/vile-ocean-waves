@@ -256,6 +256,19 @@ Events.on(EventType.TapEvent, e => {
 
         }catch(err){
         Vars.ui.showInfoToast("err: " + err, 5);
+        }} else if (i == 2){
+            
+        try {
+        Vars.ui.showTextInput("Change Team", "[grey]Team Number", 3 , "...", true, input => {
+        const team = Team.get(input);
+        if (!input) return;
+        Vars.player.unit().changeTeam(team);
+        Vars.ui.showInfoToast("[red]Changed player team");
+        });
+
+            
+        } catch(err){
+        Vars.ui.showInfoToast(err,15);
         }}
                 
         });
