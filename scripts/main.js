@@ -219,7 +219,7 @@ Events.on(EventType.TapEvent, e => {
 
         const target = Vars.content.getByName(ContentType.block, "gr-command-block");
 
-        if (block != target || build.team != player.team()) return;
+        if (block != target) return;
 
         Sounds.click.at(build.x, build.y);
 
