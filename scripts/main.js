@@ -320,7 +320,7 @@ Events.on(EventType.TapEvent, e => {
                     const unit = Vars.content.getByName(ContentType.unit, text);
 
                     if (unit != null){
-                    Vars.ui.showInfoToast("[red]Unit Invalid[]");
+                    Vars.ui.showInfoToast("[red]Unit Invalid[]",5);
                     return;
                     }
                         
