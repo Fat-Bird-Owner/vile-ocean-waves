@@ -230,8 +230,9 @@ Events.on(EventType.TapEvent, e => {
                 ["Clear Units"],
                 ["Stop Player"],
                 ["Change Team"],
-                ["Toggle Gameover"],
+                ["Toggle canGameover"],
                 ["Toggle Editor"],
+                ["Toggle disableUnitCap"],
                 ["Close"]
             ],
             i => {
@@ -283,7 +284,7 @@ Events.on(EventType.TapEvent, e => {
                     const gameOver = Vars.state.rules.canGameOver;
                     Vars.state.rules.canGameOver = !gameOver;
 
-                    Vars.ui.showInfoToast("[green]Set canGameOver to []" + !gameOver, 5);
+                    Vars.ui.showInfoToast("[green]Toggled canGameOver: [accent]" + !gameOver, 5);
                         
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);    
@@ -293,10 +294,20 @@ Events.on(EventType.TapEvent, e => {
                     const editor = Vars.state.rules.editor;
                     Vars.state.rules.editor = !editor;
 
-                    Vars.ui.showInfoToast("[green]Set editor to []" + !editor, 5);
+                    Vars.ui.showInfoToast("[green]Toggled editor: [accent]" + !editor, 5);
                              
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);  
+                    }} else if (i = 5){
+                        try{
+
+                    const disableUnitCap = Vars.state.rules.disableUnitCap;
+                    Vars.state.rules.disableUnitCap = !disableUnitCap;
+
+                    Vars.ui.showInfoToast("[green]Toggled disableUnitCap: [accent]" + !disableUnitCap, 5);
+                            
+                    } catch(e){
+                    Vars.ui.showInfoToast(e,10);
                     }}
             }
         );
