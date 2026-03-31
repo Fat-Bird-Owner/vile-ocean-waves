@@ -325,7 +325,7 @@ Events.on(EventType.TapEvent, e => {
                     }
                         
                     unit.spawn(buildTeam,build.x,build.y,90);
-                    Vars.ui.showInfoToast("[accent]Spawned in a[]" + String(text),6.5);
+                    Vars.ui.showInfoToast("[accent]Spawned in a[]" + text,6.5);
 
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);
