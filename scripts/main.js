@@ -203,17 +203,24 @@ Vars.ui.showInfoToast(e,5);
 }});
 
 
-
 Events.on(EventType.TapEvent, e => {
     try{
+        if(!e || !e.tile || !e.player) return;
+
         const tile = e.tile;
         const player = e.player;
+
+        if(!tile.block()) return;
+
         const block = tile.block();
-        const target = Vars.content.getByName(ContentType.block, "gr-command-block");
         const build = tile.build;
 
-        if (block != target || build == null || build.team != player.team()) return;
-        const team = build.team;
+        if(!build) return;
+
+        const target = Vars.content.getByName(ContentType.block, "gr-command-block");
+
+        if(block != target || build.team != player.team()) return;
+
         Sounds.click.at(build.x, build.y);
 
         Vars.ui.showMenu(
@@ -224,20 +231,22 @@ Events.on(EventType.TapEvent, e => {
                 ["Stop Player"],
                 ["Close"]
             ], 
+            (i) => {
 
-(i) => {
+                if (i == 0){
+                    Groups.unit.clear();
+                    Vars.ui.showInfoToast("[green]All units cleared()",5);
+                } else if (i == 1){
+                    if(Vars.player && Vars.player.unit()){
+                        Vars.player.unit().apply(StatusEffects.unmoving, 9999 * 60);
+                        Vars.ui.showInfoToast("[grey]Stopped player unit()",5);
+                    }
+                }
+            }
+        );
 
-    if (i == 0){
-        Vars.ui.showInfoToast("[green]All units cleared()",5);
-        Groups.unit.clear();
-    } else if (i == 1){
-        Vars.ui.showInfoToast("[grey]Stopped player unit()",5);
-        Vars.player.unit().apply(StatusEffects.unmoving, 9999 * 60);
-    }
-});
-        
-    } catch(e){
-        Vars.ui.showInfoToast(e, 5);
+    } catch(err){
+        Vars.ui.showInfoToast(String(err), 5);
     }
 });
 
