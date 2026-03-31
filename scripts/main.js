@@ -338,7 +338,7 @@ Events.on(EventType.TapEvent, e => {
                     Sounds.waveSpawn.at(build.x,build.y);
                     Fx.spawn.at(build.x,build.y);
                             
-                    Vars.ui.hudfrag.showToast(Icon.chat, "[accent]Spawned in a []" + unit.localizedName);
+                    Vars.ui.hudfrag.showToast(Icon.chat, "[accent]Spawned in a(n) []" + unit.localizedName);
 
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);
