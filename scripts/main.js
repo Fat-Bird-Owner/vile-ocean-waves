@@ -334,6 +334,9 @@ Events.on(EventType.TapEvent, e => {
                     }
                         
                     unit.spawn(buildTeam,build.x,build.y,90);
+                    Sounds.waveSpawn.at(build.x,build.y);
+                    Fx.unitSpawn.at(build.x,build.y);
+                            
                     Vars.ui.showInfoToast("[accent]Spawned in a[]" + text,6.5);
 
                     } catch(e){
