@@ -257,19 +257,47 @@ Events.on(EventType.TapEvent, e => {
         }catch(err){
         Vars.ui.showInfoToast("err: " + err, 5);
         }} else if (i == 2){
-            
         try {
-        Vars.ui.showTextInput("Change Team", "[grey]Team Number", 3 , "...", true, input => {
-        const team = Team.get(input);
-        if (!input) return;
-        Vars.player.unit().changeTeam(team);
-        Vars.ui.showInfoToast("[red]Changed player team");
-        });
+        Vars.ui.showTextInput(
+            "Change Team",
+            "[grey]Team Number",
+            3,
+            "...",
+            true,
+            input => {
 
-            
-        } catch(err){
-        Vars.ui.showInfoToast(err,15);
-        }}
+                if(!input) return;
+
+                const num = parseInt(input);
+
+                if(isNaN(num)){
+                    Vars.ui.showInfoToast("invalid number", 3);
+                    return;
+                }
+
+                const team = Team.get(num);
+
+                if(!team){
+                    Vars.ui.showInfoToast("invalid team", 3);
+                    return;
+                }
+
+                Time.run(1, () => {
+                    const p = Vars.player;
+                    if(p && p.unit()){
+                        p.unit().changeTeam(team);
+                        Vars.ui.showInfoToast("[red]Changed player team", 3);
+                    } else {
+                        Vars.ui.showInfoToast("no unit", 3);
+                    }
+                });
+
+            });
+
+    } catch(err){
+        Vars.ui.showInfoToast(String(err),15);
+    }
+}
                 
         });
 
