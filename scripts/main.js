@@ -321,7 +321,7 @@ Events.on(EventType.TapEvent, e => {
 
                             
 
-                    } catch(e)
+                    } catch(e){
                     Vars.ui.showInfoToast(e,5);
                     }}
             }
