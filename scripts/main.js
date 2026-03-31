@@ -314,7 +314,7 @@ Events.on(EventType.TapEvent, e => {
                     }} else if (i == 6){
                         try{
 
-                    showTextInput("SpawnUnit", "Enter Unit's Name", 100, lastUnit, true, text => {
+                    Vars.ui.showTextInput("SpawnUnit", "Enter Unit's Name", 100, lastUnit, true, text => {
                     lastUnit = text;
                     Vars.ui.showInfoToast(text,6.5);
                     });
