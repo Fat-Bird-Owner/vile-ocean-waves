@@ -230,6 +230,9 @@ Events.on(EventType.TapEvent, e => {
     if (i == 0){
         Vars.ui.showInfoToast("[green]All units cleared()",5);
         Groups.unit.clear();
+    } else if (i == 1){
+        Vars.ui.showInfoToast("[grey]Stopped player unit()",5);
+        Vars.player.unit().apply(StatusEffects.unmoving, 9999 * 60);
     }
 });
         
