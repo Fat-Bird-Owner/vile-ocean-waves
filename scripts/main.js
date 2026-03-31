@@ -351,6 +351,7 @@ Events.on(EventType.TapEvent, e => {
                     }} else if (i == 7){
                         try{
 
+                    Sounds.uiButton.play();
                     const unit = Vars.player.unit();
                     if (!unit) return;
                     const type = unit.type.name;
