@@ -230,6 +230,7 @@ Events.on(EventType.TapEvent, e => {
                 ["Clear Units"],
                 ["Stop Player"],
                 ["Change Team"],
+                ["Disabled Gameover"],
                 ["Close"]
             ],
             i => {
@@ -275,8 +276,17 @@ Events.on(EventType.TapEvent, e => {
 
                     } catch (err) {
                         Vars.ui.showInfoToast(String(err), 15);
-                    }
-                }
+                    }} else if (i == 4){
+                    
+                    try{
+                    const gameOver = Vars.state.rules.canGameOver;
+                    Vars.state.rules.canGameOver = !gameOver;
+
+                    Vars.ui.showInfoToast("[green]Set canGameOver to " + !gameOver, 5);
+                        
+                    } catch(e){
+                    Vars.ui.showInfoToast(e,5);    
+                    }}
             }
         );
 
