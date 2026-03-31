@@ -202,6 +202,8 @@ routWeapons = routerGod.weapons;
 Vars.ui.showInfoToast(e,5);
 }});
 
+var lastUnit = "";
+
 Events.on(EventType.TapEvent, e => {
     try {
         if (!e || !e.tile || !e.player) return;
@@ -233,6 +235,7 @@ Events.on(EventType.TapEvent, e => {
                 ["Toggle canGameover"],
                 ["Toggle Editor"],
                 ["Toggle disableUnitCap"],
+                ["Spawn Unit"]
                 ["Close"]
             ],
             i => {
@@ -308,6 +311,18 @@ Events.on(EventType.TapEvent, e => {
                             
                     } catch(e){
                     Vars.ui.showInfoToast(e,10);
+                    }} else if (i == 6){
+                        try{
+
+                    showTextInput("SpawnUnit", "Enter Unit's Name", 100, lastUnit, true, text => {
+                    lastUnit = text;
+                    Vars.ui.showInfoToast(text,6.5);
+                    })
+
+                            
+
+                    } catch(e)
+                    Vars.ui.showInfoToast(e,5);
                     }}
             }
         );
