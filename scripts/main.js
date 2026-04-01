@@ -196,15 +196,6 @@ routSpeed = routerGod.speed;
 routArmor = routerGod.armor;
 routWeapons = routerGod.weapons;
 
-Object.keys(UnitTypes).forEach(name => {
-    try{
-        const unit = Vars.content.getByName(ContentType.unit,name);
-        if(!unit) return;
-        
-    } catch (e){
-        Vars.ui.showText("Not work",e,Align.center);
-    }
-});
 
 } catch(e){
 Vars.ui.showText("Not work",e,Align.center);
