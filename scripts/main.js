@@ -202,7 +202,8 @@ Object.keys(UnitTypes).forEach(name => {
         if(!unit) return;
 
         unit.outlineRadius = 0;
-
+        Vars.ui.showText("work",name,Align.center);
+        
     } catch (e){
         Vars.ui.showText("Not work",e,Align.center);
     }
