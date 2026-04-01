@@ -196,13 +196,17 @@ routSpeed = routerGod.speed;
 routArmor = routerGod.armor;
 routWeapons = routerGod.weapons;
 
-Object.keys(UnitTypes).forEach(unit => {
-try{
-if (unit == null) return;
-unit.outlineRadius = 0;
-} catch (e){
-Vars.ui.showInfoToast(e,5);
-}});
+Object.keys(UnitTypes).forEach(name => {
+    try{
+        const unit = UnitTypes[name];
+        if(!unit) return;
+
+        unit.outlineRadius = 0;
+
+    } catch (e){
+        Vars.ui.showInfoToast(String(e),5);
+    }
+});
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
