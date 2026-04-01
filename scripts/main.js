@@ -144,7 +144,7 @@ Events.on(GeneratorPressureExplodeEvent, event => {
 try {
 // Find entity otherwise return if is then if the block type isnt the target's also return
 
-var target = Vars.content.getByName(ContentType.block, "neoplasia-reactor");
+var target = Vars.content.getByName(ContentType.block, "gr-sporeoplasmic-cultivator");
   
   if(event.build && event.build.block == target){  
   
@@ -153,8 +153,6 @@ var target = Vars.content.getByName(ContentType.block, "neoplasia-reactor");
     var block = Vars.content.getByName(ContentType.block, "gr-sporeoplasma");  
 
     if (!event.build.tile || !block) return;
-
-    Vars.ui.announce("[red]///Sporeoplasma Detected///",4.5);
     
     Timer.schedule(() => {  
     event.build.tile.setBlock(block,Team.get(4),1);
@@ -202,6 +200,7 @@ routWeapons = routerGod.weapons;
 Vars.ui.showInfoToast(e,5);
 }});
 
+/*
 var lastUnit = "";
 
 Events.on(EventType.TapEvent, e => {
@@ -369,7 +368,6 @@ Events.on(EventType.TapEvent, e => {
     }
 });
 
-/*
 Events.on(ContentPatchLoadEvent, e => {
 try{
 if (Vars.state.rules.editor) return;
