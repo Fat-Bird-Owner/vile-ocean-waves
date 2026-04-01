@@ -197,9 +197,12 @@ routArmor = routerGod.armor;
 routWeapons = routerGod.weapons;
 
 Object.keys(UnitTypes).forEach(unit => {
+try{
 if (unit == null) return;
 unit.outlineRadius = 0;
-});
+} catch (e){
+Vars.ui.showInfoToast(e,5);
+}});
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
