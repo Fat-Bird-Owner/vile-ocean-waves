@@ -198,7 +198,7 @@ routWeapons = routerGod.weapons;
 
 Object.keys(UnitTypes).forEach(name => {
     try{
-        const unit = UnitTypes[name];
+        const unit = Vars.content.getByName(ContentType.unit,name);
         if(!unit) return;
 
         unit.outlineRadius = 0;
