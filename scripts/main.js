@@ -204,12 +204,12 @@ Object.keys(UnitTypes).forEach(name => {
         unit.outlineRadius = 0;
 
     } catch (e){
-        Vars.ui.showInfoToast(String(e),5);
+        Vars.ui.showText("Not work",e,Align.center);
     }
 });
 
 } catch(e){
-Vars.ui.showInfoToast(e,5);
+Vars.ui.showText("Not work",e,Align.center);
 }});
 
 /*
