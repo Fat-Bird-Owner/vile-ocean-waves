@@ -20,8 +20,6 @@ Vars.content.block("graphite-press"),
 Vars.content.block("kiln")
 ];
 
-Vars.ui.showInfoToast(crafters,10);
-    
 if (block == crafters[0] || block == crafters[1] || block == crafters[2]){
 Sounds.click.at(tile.worldx(),tile.worldy());
 }
