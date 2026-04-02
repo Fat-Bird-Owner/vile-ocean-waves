@@ -33,7 +33,7 @@ Events.on(EventType.TapEvent, e => {
                 ["Toggle disableUnitCap"],
                 ["Spawn Unit"],
                 ["Get Current Unit"],
-                ["Unit Library"],
+                ["Unit Library [grey]<Vanilla Only>[]"],
                 ["Close"]
             ],
             i => {
@@ -162,10 +162,10 @@ Events.on(EventType.TapEvent, e => {
 
                     var units = [];
                         
-                    Vars.content.units().each(unit => {
+                   Object.keys(UnitTypes).forEach(unit => {
                     try{
                     if (unit != null){
-                    units.push(unit.name);
+                    units.push(unit);
                     }} catch(e){
                     Vars.ui.showInfoToast(e,10);
                     }});
