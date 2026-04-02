@@ -15,7 +15,7 @@ Vars.content.block("kiln")
 ];
 
 if (block == crafters[0] || block == crafters[1] || block == crafters[2]){
-Sounds.click.at(build.x,build.y);
+Sounds.click.at(tile.worldx(),tile.worldy());
 }
 
 const build = tile.build;
