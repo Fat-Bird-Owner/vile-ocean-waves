@@ -127,7 +127,7 @@ Events.on(EventType.TapEvent, e => {
                     const unit = Vars.content.getByName(ContentType.unit, text);
 
                     if (unit == null){
-                    Vars.ui.hudfrag.showToast(Icon.search,"[red]Unit Invalid[]");
+                    Vars.ui.hudfrag.showToast(Icon.chat,"[red]Unit Invalid[]");
                     return;
                     }
                         
@@ -170,7 +170,7 @@ Events.on(EventType.TapEvent, e => {
                     Vars.ui.showInfoToast(e,10);
                     }});
 
-                    Vars.ui.showStartupInfo(units.join(" [grey]|[] "));
+                    Vars.ui.showStartupInfo(units.join(" "));
                     
                     } catch(e){
                     Vars.ui.showInfoToast(e,10);
