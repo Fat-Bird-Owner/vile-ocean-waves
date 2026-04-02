@@ -4,6 +4,7 @@ Events.on(TapEvent, e => {
 try{
 const tile = e.tile;
 const block = tile.block();
+if (!tile || !tile.build) return;
 
 const build = tile.build;
 if (build != lastBuild){
@@ -21,7 +22,7 @@ Vars.content.block("kiln")
 
 if (block == crafters[0]){
 tile.setBlock(crafters[1], buildTeam);
-} else if (block == crafters[1] {
+} else if (block == crafters[1]) {
 tile.setBlock(crafters[2], buildTeam);
 } else if (block == crafters[2]){
 tile.setBlock(crafters[0], buildTeam);
