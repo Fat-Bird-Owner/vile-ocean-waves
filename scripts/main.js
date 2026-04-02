@@ -4,7 +4,19 @@ Events.on(TapEvent, e => {
 try{
 const tile = e.tile;
 const block = tile.block();
-if (!tile || !tile.build) return;
+const player = e.player;
+
+if (player.team() != tile.team() || player.selectedBlock != null) return;
+
+const crafters = [
+Vars.content.block("silicon-smelter"),
+Vars.content.block("graphite-press"),
+Vars.content.block("kiln")
+];
+
+if (block == crafters[0] || block == crafters[1] || block == crafters[2]){
+Sounds.click.at(build.x,build.y);
+}
 
 const build = tile.build;
 if (build != lastBuild){
@@ -13,12 +25,7 @@ return;
 }
 
 const buildTeam = build.team;
-    
-const crafters = [
-Vars.content.block("silicon-smelter"),
-Vars.content.block("graphite-press"),
-Vars.content.block("kiln")
-];
+
 
 const blockTile = build.tile;
 if (block == crafters[0]){
@@ -30,7 +37,6 @@ blockTile.setBlock(crafters[0], buildTeam);
 } else {
 return;
 }
-Sounds.click.at(build.x,build.y);
     
 } catch(e){
 Vars.ui.showInfoToast(e,5);
