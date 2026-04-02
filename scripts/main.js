@@ -20,16 +20,16 @@ Vars.content.block("graphite-press"),
 Vars.content.block("kiln")
 ];
 
+const blockTile = build.tile;
 if (block == crafters[0]){
-tile.setBlock(crafters[1], buildTeam);
+blockTile.setBlock(crafters[1], buildTeam);
 } else if (block == crafters[1]) {
-tile.setBlock(crafters[2], buildTeam);
+blockTile.setBlock(crafters[2], buildTeam);
 } else if (block == crafters[2]){
-tile.setBlock(crafters[0], buildTeam);
+blockTile.setBlock(crafters[0], buildTeam);
 } else {
 return;
 }
-
 Sounds.click.at(build.x,build.y);
     
 } catch(e){
