@@ -1,3 +1,43 @@
+var lastBuild = null;
+
+Events.on(TapEvent, e => {
+try{
+const tile = e.tile;
+const block = tile.block();
+
+const build = tile.build;
+if (build != lastBuild){
+lastBuild = build;
+return;
+}
+
+const buildTeam = build.team;
+    
+const crafters = [
+Vars.content.block("silicon-smelter"),
+Vars.content.block("graphite-press"),
+Vars.content.block("kiln")
+];
+
+if (block == crafters[0]){
+tile.setBlock(crafters[1], buildTeam);
+} else if (block == crafters[1] {
+tile.setBlock(crafters[2], buildTeam);
+} else if (block == crafters[2]){
+tile.setBlock(crafters[0], buildTeam);
+} else {
+return;
+}
+
+Sounds.click.at(build.x,build.y);
+    
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+}});
+
+
+
+
 var cyanogenFx = null;
 var waterFx = null;
 var galliumFx = null;
