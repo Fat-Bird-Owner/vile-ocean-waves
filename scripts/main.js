@@ -165,10 +165,10 @@ Events.on(EventType.TapEvent, e => {
                     Object.keys(UnitTypes).forEach(unit => {
                     try{
                     if (unit != null){
-                    units.push(unit.name);
+                    units.push(unit);
                     }} catch(e){
                     Vars.ui.showInfoToast(e,10);
-                    }})
+                    }});
 
                     Vars.ui.showText("[accent]Unit Entry[]",units,Align.center);
                     
