@@ -5,7 +5,13 @@ try{
 const tile = e.tile;
 const block = tile.block();
 const player = e.player;
+const build = tile.build;
 
+if (build != lastBuild){
+lastBuild = build;
+return;
+}
+    
 if (player.team() != tile.team() || player.selectedBlock != null) return;
 
 const crafters = [
@@ -16,12 +22,6 @@ Vars.content.block("kiln")
 
 if (block == crafters[0] || block == crafters[1] || block == crafters[2]){
 Sounds.click.at(tile.worldx(),tile.worldy());
-}
-
-const build = tile.build;
-if (build != lastBuild){
-lastBuild = build;
-return;
 }
 
 const buildTeam = build.team;
