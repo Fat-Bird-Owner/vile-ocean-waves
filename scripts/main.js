@@ -162,15 +162,15 @@ Events.on(EventType.TapEvent, e => {
 
                     var units = [];
                         
-                    Object.keys(UnitTypes).forEach(unit => {
+                    Vars.content.units().each(unit => {
                     try{
                     if (unit != null){
-                    units.push(unit);
+                    units.push(unit.name);
                     }} catch(e){
                     Vars.ui.showInfoToast(e,10);
                     }});
 
-                    Vars.ui.showText("[accent]Unit Entry[]",units.join(" "),Align.center);
+                    Vars.ui.showText("[accent]Unit Entry[]",units.join(" [grey]|[lightgrey] "),Align.center);
                     
                     } catch(e){
                     Vars.ui.showInfoToast(e,10);
