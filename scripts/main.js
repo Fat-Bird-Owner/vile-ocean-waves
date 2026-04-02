@@ -170,7 +170,7 @@ Events.on(EventType.TapEvent, e => {
                     Vars.ui.showInfoToast(e,10);
                     }});
 
-                    Vars.ui.showText("[accent]Unit Entry[]",units,Align.center);
+                    Vars.ui.showText("[accent]Unit Entry[]",units.join(" "),Align.center);
                     
                     } catch(e){
                     Vars.ui.showInfoToast(e,10);
