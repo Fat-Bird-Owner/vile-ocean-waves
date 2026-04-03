@@ -70,6 +70,9 @@ Events.on(EventType.TapEvent, e => {
                 } else if (i == 2) {
                     try {
 
+                        Vars.ui.showTextInput("Change Team", "Enter team id", 100, lastUnit, true, text => {
+                        try{
+
                         Sounds.uiButton.play();
                         const p = Vars.player;
                         if (!p) {
@@ -78,10 +81,14 @@ Events.on(EventType.TapEvent, e => {
                         }
 
                         const currentTeam = p.team();
-                        const newTeam = (currentTeam == buildTeam ? Team.get(6) : buildTeam);
+                        const newTeam = Team.get(text);
 
                         p.team(newTeam);
                         Vars.ui.hudfrag.showToast(Icon.tree, "[accent]Team changed");
+
+                        } catch(e){
+                        Vars.ui.showInfoToast(e,10);
+                        }
 
                     } catch (err) {
                         Vars.ui.showInfoToast(String(err), 15);
