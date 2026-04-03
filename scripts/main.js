@@ -34,6 +34,7 @@ Events.on(EventType.TapEvent, e => {
                 ["Spawn Unit"],
                 ["Get Current Unit"],
                 ["Unit Library [grey]<Vanilla Only>[]"],
+                ["Fill Core"],
                 ["Close"]
             ],
             i => {
@@ -181,7 +182,19 @@ Events.on(EventType.TapEvent, e => {
                     
                     } catch(e){
                     Vars.ui.showInfoToast(e,10);
-                    }}
+                    }} else if(i == 9){
+
+                    let core = Vars.player.core();
+
+                    Vars.content.items().each(item => {
+                    try{
+                        
+                    core.items.set(item, core.storageCapacity);
+                    } catch(e){
+                    Vars.ui.showInfoToast(e,15);
+                    }});
+                    
+                    }
             }
         );
 
