@@ -7,7 +7,7 @@ Events.on(EventType.TapEvent, e => {
         const tile = e.tile;
         const player = e.player;
 
-        if (!tile.block()) return;
+        if (!tile.block() || player.selectedBlock != null) return;
 
         const block = tile.block();
         const build = tile.build;
