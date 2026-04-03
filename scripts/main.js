@@ -22,7 +22,7 @@ Events.on(EventType.TapEvent, e => {
         Sounds.click.at(build.x, build.y);
 
         Vars.ui.showMenu(
-            "Commands List",
+            "<Commands List>",
             "[lightgrey]Select one of your choosing",
             [
                 ["Clear Units"],
@@ -50,13 +50,13 @@ Events.on(EventType.TapEvent, e => {
                         Sounds.uiButton.play();
                         const p = Vars.player;
                         if (!p) {
-                            Vars.ui.showInfoToast("no player", 3);
+                            Vars.ui.hudfrag.showToast(Icon.tree, "[grey]Player does not exist.");
                             return;
                         }
                         const unit = p.unit();
 
                         if (!unit) {
-                            Vars.ui.showInfoToast("no unit", 3);
+                            Vars.ui.hudfrag.showToast(Icon.tree, "[grey]No unit found");
                             return;
                         }
 
