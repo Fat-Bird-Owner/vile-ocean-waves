@@ -88,7 +88,7 @@ Events.on(EventType.TapEvent, e => {
 
                         } catch(e){
                         Vars.ui.showInfoToast(e,10);
-                        }
+                        }});
 
                     } catch (err) {
                         Vars.ui.showInfoToast(String(err), 15);
