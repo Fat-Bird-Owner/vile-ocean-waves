@@ -185,14 +185,18 @@ Events.on(EventType.TapEvent, e => {
                     }} else if(i == 9){
 
                     let core = Vars.player.core();
-
+                    let amount = 0;
+                    
                     Vars.content.items().each(item => {
                     try{
                         
                     core.items.set(item, core.storageCapacity);
+                    amount++;
                     } catch(e){
                     Vars.ui.showInfoToast(e,15);
                     }});
+
+                    Vars.ui.hudfrag.showToast(Icon.effect,"[accent]Filled core with []" + amount + "[accent] different items");
                     
                     }
             }
