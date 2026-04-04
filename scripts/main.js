@@ -2,15 +2,19 @@ Events.on(ContentInitEvent, e => {
 try{
 const melter = Vars.content.block("gr-melting-port");
 const leadMelter = new GenericCrafter("lead-melting-port");
+const turret = new Turret("test");
 
-Object.assign(leadMelter, {
-health: melter.health,
-localizedName: melter.localizedName,
-drawer: melter.drawer,
-requirements: melter.requirements,
-buildVisibility: BuildVisibility.debugOnly,
-region: melter.region
-});
+leadMelter.health = melter.health;
+leadMelter.size = melter.size;
+leadMelter.craftTime = melter.craftTime;
+leadMelter.requirements = melter.requirements.slice();
+leadMelter.category = melter.category;
+leadMelter.consumePower(melter.consumes.getPower().usage);
+leadMelter.consumeItems(melter.consumes.getItems().items);
+leadMelter.outputLiquid = new LiquidStack(Liquids.slag, 0.5);
+leadMelter.buildVisibility = BuildVisibility.debugOnly;
+
+  
     
 } catch(e){
 Vars.ui.showText("idk",e);
