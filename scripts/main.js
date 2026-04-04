@@ -9,7 +9,7 @@ leadMelter.size = melter.size;
 leadMelter.craftTime = melter.craftTime;
 leadMelter.requirements = melter.requirements.slice();
 leadMelter.category = melter.category;
-leadMelter.consumeItems(melter.consumes.getItems().items);
+leadMelter.consumeItems(new ItemStack(Items.lead,1));
 leadMelter.outputLiquid = new LiquidStack(Liquids.slag, 0.5);
 leadMelter.buildVisibility = BuildVisibility.debugOnly;
 
