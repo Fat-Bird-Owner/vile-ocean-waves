@@ -12,7 +12,8 @@ if (!cont) return;
 
 cont.row();
 cont.add("[accent]Receipe[]").center().row();
-cont.image().color(Pal.accent).height(3).width(120).row();
+cont.add().height(3).row();
+cont.image().color(Pal.accent).height(3).width(500).row();
 
 cont.add().height(6).row();
 cont.add("Lead -> Liquid Lead").center().row();
