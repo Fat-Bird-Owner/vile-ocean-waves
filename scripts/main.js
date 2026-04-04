@@ -8,11 +8,18 @@ if (!cont) return;
 cont.row();
 cont.add("[accent]Conversions[]").left().row();
 
+cont.table(t => {
+t.left();
+t.add("[accent]Conversions[]").left().row();
+            // Copper -> Liquid Copper
 t.image(Items.copper.uiIcon).size(16);
 t.add(" → ");
-t.image(Vars.content.liquid("gr-liquid-copper")).uiIcon.size(16).row();
+t.image(Vars.content.liquid("gr-liquid-copper").uiIcon).size(16).row();
+            // Lead -> Liquid Lead (text fallback)
+t.add("[lightgray]Lead[] → [cyan]Liquid Lead[]").left().row();
+}).left().padTop(6).row();
 
-cont.add("Lead -> Liquid Lead").left().row();
+//cont.add("Lead -> Liquid Lead").left().row();
 
     
 } catch(e){
