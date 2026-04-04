@@ -1,27 +1,3 @@
-Events.on(ContentInitEvent, e => {
-try{
-const melter = Vars.content.block("gr-melting-port");
-const leadMelter = new GenericCrafter("lead-melting-port");
-const turret = new Turret("test");
-
-  /*
-leadMelter.health = melter.health;
-leadMelter.size = melter.size;
-leadMelter.craftTime = melter.craftTime;
-leadMelter.requirements = melter.requirements.slice();
-leadMelter.category = melter.category;
-leadMelter.consumeItems(new ItemStack(Items.lead,1));
-leadMelter.outputLiquid = new LiquidStack(Liquids.slag, 0.5);
-leadMelter.buildVisibility = BuildVisibility.debugOnly;
-*/
-  
-Vars.ui.showText("work",turret.name);
-} catch(e){
-Vars.ui.showText("idk",e);
-}});
-
-
-
 var lastUnit = "";
 
 Events.on(EventType.TapEvent, e => {
@@ -232,7 +208,16 @@ Events.on(EventType.TapEvent, e => {
 });
 
 
+
 var lastBuild = null;
+
+Events.on(ContentInitEvent, () => {
+try{
+Vars.content.block("gr-lead-melting-port").region = Vars.content.block("gr-melting-port").region;
+} catch(e){
+Vars.ui.showText("bruv",e);
+}});
+
 
 Events.on(TapEvent, e => {
 try{
@@ -249,9 +234,8 @@ return;
 if (player.team() != tile.team() || player.selectedBlock != null) return;
 
 const crafters = [
-Vars.content.block("silicon-smelter"),
-Vars.content.block("graphite-press"),
-Vars.content.block("kiln")
+Vars.content.block("gr-melting-port"),
+Vars.content.block("gr-lead-melting-port")
 ];
 
 if (block == crafters[0] || block == crafters[1] || block == crafters[2]){
@@ -266,12 +250,14 @@ if (block == crafters[0]){
 blockTile.setBlock(crafters[1], buildTeam);
 } else if (block == crafters[1]) {
 blockTile.setBlock(crafters[2], buildTeam);
-} else if (block == crafters[2]){
-blockTile.setBlock(crafters[0], buildTeam);
 } else {
 return;
 }
-    
+
+if (blockTile.block() != block){
+Fx.select.at(blockTile.worldx(),blockTile.worldy());
+}
+  
 } catch(e){
 Vars.ui.showInfoToast(e,5);
 }});
