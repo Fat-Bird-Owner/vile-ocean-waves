@@ -2,12 +2,14 @@ Events.on(BlockInfoEvent, e => {
 try{
 Vars.ui.showInfoToast("open",10);
 
-const dialog = Vars.ui.content; // current dialog
+const cont = Vars.ui.content.cont;
+if (!cont) return;
 
-if (!dialog) return;
+cont.row();
+cont.add("[accent]Conversions[]").left().row();
 
-// add custom stuff to the dialog
-dialog.cont.add("My Custom Info").row();
+cont.add("Copper -> Liquid Copper").left().row();
+cont.add("Lead -> Liquid Lead").left().row();
 
     
 } catch(e){
