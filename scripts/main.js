@@ -10,7 +10,7 @@ cont.add("[accent]Conversions[]").left().row();
 
 t.image(Items.copper.uiIcon).size(16);
 t.add(" → ");
-t.image(Vars.content.liquid("gr-liquid-copper").uiIcon.size(16).row();
+t.image(Vars.content.liquid("gr-liquid-copper")).uiIcon.size(16).row();
 
 cont.add("Lead -> Liquid Lead").left().row();
 
