@@ -211,14 +211,6 @@ Events.on(EventType.TapEvent, e => {
 
 var lastBuild = null;
 
-Events.on(ContentInitEvent, () => {
-try{
-Vars.content.block("gr-lead-melting-port").region = Vars.content.block("gr-melting-port").region;
-} catch(e){
-Vars.ui.showText("bruv",e);
-}});
-
-
 Events.on(TapEvent, e => {
 try{
 const tile = e.tile;
@@ -249,7 +241,7 @@ const blockTile = build.tile;
 if (block == crafters[0]){
 blockTile.setBlock(crafters[1], buildTeam);
 } else if (block == crafters[1]) {
-blockTile.setBlock(crafters[2], buildTeam);
+blockTile.setBlock(crafters[0], buildTeam);
 } else {
 return;
 }
