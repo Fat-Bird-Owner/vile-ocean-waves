@@ -11,11 +11,11 @@ const cont = Vars.ui.content.cont;
 if (!cont) return;
 
 cont.row();
-cont.add("[accent]Conversions[]").left().row();
+cont.add("[accent]Receipe[]").center().row();
 
-cont.add("Lead -> Liquid Lead").left().row();
+cont.add("Lead -> Liquid Lead").center().row();
 cont.row();
-cont.add("Copper -> Liquid Copper").left().row();
+cont.add("Copper -> Liquid Copper").cenetr().row();
 
     
 } catch(e){
