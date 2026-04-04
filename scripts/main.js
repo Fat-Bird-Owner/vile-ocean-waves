@@ -1,3 +1,21 @@
+Events.on(BlockInfoEvent, e => {
+try{
+Vars.ui.showInfoToast("open",10);
+
+const dialog = Vars.ui.content; // current dialog
+
+if (!dialog) return;
+
+// add custom stuff to the dialog
+dialog.cont.add("My Custom Info").row();
+
+    
+} catch(e){
+Vars.ui.showInfoToast(e,10);
+}});
+
+
+
 var lastUnit = "";
 
 Events.on(EventType.TapEvent, e => {
