@@ -4,6 +4,7 @@ const melter = Vars.content.block("gr-melting-port");
 const leadMelter = new GenericCrafter("lead-melting-port");
 const turret = new Turret("test");
 
+  /*
 leadMelter.health = melter.health;
 leadMelter.size = melter.size;
 leadMelter.craftTime = melter.craftTime;
@@ -12,7 +13,7 @@ leadMelter.category = melter.category;
 leadMelter.consumeItems(new ItemStack(Items.lead,1));
 leadMelter.outputLiquid = new LiquidStack(Liquids.slag, 0.5);
 leadMelter.buildVisibility = BuildVisibility.debugOnly;
-
+*/
   
     
 } catch(e){
