@@ -5,7 +5,7 @@ const leadMelter = new GenericCrafter("lead-melting-port");
 
 Object.assign(leadMelter, {
 health: melter.health,
-localizedName: melter.localizedName;
+localizedName: melter.localizedName,
 drawer: melter.drawer,
 requirements: melter.requirements,
 buildVisibility: BuildVisibility.debugOnly,
