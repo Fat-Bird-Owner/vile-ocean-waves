@@ -8,7 +8,10 @@ if (!cont) return;
 cont.row();
 cont.add("[accent]Conversions[]").left().row();
 
-cont.add("Copper -> Liquid Copper").left().row();
+t.image(Items.copper.uiIcon).size(16);
+t.add(" → ");
+t.image(Vars.content.liquid("gr-liquid-copper").uiIcon.size(16).row();
+
 cont.add("Lead -> Liquid Lead").left().row();
 
     
