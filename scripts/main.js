@@ -15,7 +15,7 @@ leadMelter.outputLiquid = new LiquidStack(Liquids.slag, 0.5);
 leadMelter.buildVisibility = BuildVisibility.debugOnly;
 */
   
-Vars.ui.showText("work",e);
+Vars.ui.showText("work",turret);
 } catch(e){
 Vars.ui.showText("idk",e);
 }});
