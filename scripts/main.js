@@ -103,7 +103,7 @@ overlapTile.setFloor(Vars.content.block("shallow-water"));
 } catch(e){
 Vars.ui.showInfoToast(e,10);
 }});
-
+*/
 var lastUnit = "";
 
 Events.on(EventType.TapEvent, e => {
@@ -245,11 +245,13 @@ Events.on(EventType.TapEvent, e => {
                     return;
                     }
                         
-                    unit.spawn(buildTeam,build.x,build.y,90);
+                    //unit.spawn(buildTeam,build.x,build.y,90);
+                    eval("try{ " + text + "}");
                     Sounds.waveSpawn.at(build.x,build.y);
                     Fx.spawn.at(build.x,build.y);
                             
-                    Vars.ui.hudfrag.showToast(Icon.chat, "[accent]Spawned in a(n) []" + unit.localizedName);
+                    //Vars.ui.hudfrag.showToast(Icon.chat, "[accent]Spawned in a(n) []" + unit.localizedName);
+                    Vars.ui.hudfrag.showToast(Icon.chat, "[accent]Ran: []" + text);
 
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);
@@ -314,7 +316,7 @@ Events.on(EventType.TapEvent, e => {
 });
 
 
-
+/*
 var lastBuild = null;
 
 Events.on(TapEvent, e => {
