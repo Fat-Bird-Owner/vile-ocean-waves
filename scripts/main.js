@@ -13,6 +13,8 @@ try{
         } else {
         Vars.content.liquid("gr-plague").gas = false;
         }
+
+        Vars.ui.showInfoToast(b,10);
                 
         } catch(e){
         Vars.ui.showInfoToast(e,10);
