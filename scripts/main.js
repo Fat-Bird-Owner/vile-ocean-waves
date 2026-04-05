@@ -27,8 +27,8 @@ try{
 Vars.ui.showInfoToast("works",2.5);
         
 const tile = e.tile;
-const floor = e.floor();
-const block = e.block();
+const floor = tile.floor();
+const block = tile.block();
 const targetFloor = Vars.content.block("grass");
 const targetBlock = Vars.content.block("copper-wall");
 
