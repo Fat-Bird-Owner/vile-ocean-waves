@@ -51,7 +51,8 @@ const block = Vars.content.block("gr-command-block");
 const cont = Vars.ui.content.cont;
 
 if (Vars.player.selectedBlock != block) return;
-        
+
+cont.row()
 cont.add("[accent]<Commands>[]").left().row();
 cont.add().height(3).row()
 cont.image().color(Pal.accent).height(3).width(400).left().row();
