@@ -44,25 +44,28 @@ Vars.ui.showText("bruv",e);
 }});
 
 
-Events.on(ContentInitEvent, () => {
+Events.on(BlockInfoEvent, () => {
 try{
 
-const recipe = new Stat("Recipe", StatCat.optional);
-const block = Vars.content.block("gr-melting-port");
+const block = Vars.content.block("gr-command-block");
+const cont = Vars.ui.content.cont;
 
-block.stats = new Stats();
+cont.add("[accent]<Commands>[]").left().row();
+cont.add().height(3).row()
+cont.image().color(Pal.accent).height(3).width(400).left().row();
 
-        block.stats.replace(Stat.output, StatValues.liquid(
-            Vars.content.liquid("gr-liquid-copper"),
-            1,
-            true
-        ));
 
-const unit = Vars.content.unit("gr-barracade");
-const iframe = new Stat("IFrame", StatCat.function);
-unit.stats.remove(Stat.crushDamage);
-unit.stats.add(iframe,unit.crushDamage/60, StatUnit.seconds);
-    
+cont.add("- Clear all units").left().row();
+cont.add("- Stop player unit").left().row();
+cont.add("- Change team").left().row();
+cont.add("- Toggle canGameOver").left().row();
+cont.add("- Toggle editor [gray](saving while enabled crashes)[]").left().row();
+cont.add("- Toggle disableUnitCap").left().row();
+cont.add("- Spawn unit").left().row();
+cont.add("- Get current unit [gray](saves to spawn unit)[]").left().row();
+cont.add("- Unit library [gray](Only accesses vanilla units)[]").left().row();
+cont.add("- Fill core").left().row();
+        
 } catch(e){
 Vars.ui.showText("vruh",e);    
 }});
