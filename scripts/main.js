@@ -312,7 +312,7 @@ Events.on(EventType.TapEvent, e => {
                     try{
 
                     Sounds.uiButton.play();
-                    Vars.ui.showTextInput("[accent]<Run Javascript>[]", "Maybe break the game depending on the script", 100, lastCommand, false, text => {
+                    Vars.ui.showTextInput("<Run Javascript>", "May break the game depending on the script", 100, lastCommand, false, text => {
                     try{      
 
                    const error = "[red]Error Found";
