@@ -315,7 +315,8 @@ Events.on(EventType.TapEvent, e => {
                     Vars.ui.showTextInput("[accent]<Run Javascript>[]", "Maybe break the game depending on the script", 100, lastCommand, false, text => {
                     try{      
 
-                    eval("try{ " + text + "} catch(e) { Vars.ui.showText("[red]Error Found",e)}");
+                   const error = "[red]Error Found";
+                    eval("try{ " + text + "} catch(e) { Vars.ui.showText(error,e)}");
                     
                     Sounds.waveSpawn.play();
                     lastCommand = text;
