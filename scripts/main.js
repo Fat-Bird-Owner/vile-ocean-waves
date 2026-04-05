@@ -9,12 +9,12 @@ try{
         try{
 
         if (b == true){
-        Vars.content.liquid("gr-plague").gas = true;
+        Vars.content.liquid("gr-plague").viscosity = 0;
         } else {
-        Vars.content.liquid("gr-plague").gas = false;
+        Vars.content.liquid("gr-plague").viscosity = 5;
         }
 
-        Vars.ui.showInfoToast(b,10);
+        Vars.ui.showInfoToast(b + " / " + Vars.content.liquid("gr-plague").viscosity ,10);
                 
         } catch(e){
         Vars.ui.showInfoToast(e,10);
