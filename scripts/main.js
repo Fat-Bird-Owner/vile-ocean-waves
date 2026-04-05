@@ -9,7 +9,7 @@ try{
         });
 
         // slider
-        t.sliderPref("my-slider", 0, 100, 1, 50, i => {
+        t.sliderPref("my-slider", 0, 100, 1, 200, i => {
             return i + "%";
         });
 
