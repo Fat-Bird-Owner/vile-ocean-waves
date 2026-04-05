@@ -16,10 +16,10 @@ try{
 Vars.ui.showText("bruh",e);
 }});
 
-Events.on(CotentInitEvent, () =>{
+Events.on(ClientLoadEvent, () =>{
 try{
 
-if (Core.settings.getBool("my-toggle")) return;
+if (Core.settings.getBool("my-toggle") == true) return;
         
 Vars.ui.showText("Works","kinda sad honestly");
 
