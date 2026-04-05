@@ -1,11 +1,12 @@
 Events.on(ContentInitEvent, () => {
 try{
 
+const recipe = new Stat("Recipe");
 
 Vars.content.each(c => {
 try{
 if(c instanceof UnlockableContent){
-    c.stats.add(Stat.input, Vars.content.liquid("gr-liquid-copper"), 1, true);
+    c.stats.add(recipe, Vars.content.liquid("gr-liquid-copper"), 1, true);
 }
 } catch(e){
 Vars.ui.showInfoToast(e,10); 
