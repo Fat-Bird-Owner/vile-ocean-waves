@@ -106,7 +106,6 @@ overlapTile.setFloor(Vars.content.block("shallow-water"));
 } catch(e){
 Vars.ui.showInfoToast(e,10);
 }});
-*/
 
 var lastUnit = "";
 
