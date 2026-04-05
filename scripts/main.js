@@ -4,7 +4,7 @@ try{
     Vars.ui.settings.addCategory("My Mod", Icon.settings, t => {
 
         // toggle
-        t.checkPref("my-toggle", false, b => {});
+        t.checkPref("startup", false, b => {});
 
         // text input
 /*        t.textPref("my-text", "default", s => {
@@ -19,7 +19,7 @@ Vars.ui.showText("bruh",e);
 Events.on(ClientLoadEvent, () =>{
 try{
 
-if (Core.settings.getBool("my-toggle") == true) return;
+if (Core.settings.getBool("startup") == true) return;
         
 Vars.ui.showText("Works","kinda sad honestly");
 
