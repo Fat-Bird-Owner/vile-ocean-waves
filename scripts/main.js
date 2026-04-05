@@ -237,7 +237,7 @@ Events.on(EventType.TapEvent, e => {
                         try{
 
                     Sounds.uiButton.play();
-                    Vars.ui.showTextInput("SpawnUnit", "Enter Unit's Name", 100, lastUnit, false, text => {
+                    Vars.ui.showTextInput("SpawnUnit", "Enter unit's internal name (modName-fileName)", 100, lastUnit, false, text => {
                         try{
                     lastUnit = text;
                     const unit = Vars.content.getByName(ContentType.unit, text);
