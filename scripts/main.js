@@ -32,9 +32,13 @@ Vars.ui.showText("bruh",e);
 Events.on(ClientLoadEvent, () =>{
 try{
 
-if (Core.settings.getBool("startup") == true) return;
+if (Core.settings.getBool("disable-plague") == true){        
+Vars.content.liquid("gr-plague").viscosity = 0;
+}
         
+if (Core.settings.getBool("startup") != true){        
 Vars.ui.showText("Works","kinda sad honestly");
+}
 
 } catch(e){
 Vars.ui.showText("bruv",e);
