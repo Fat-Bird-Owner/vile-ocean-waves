@@ -1,7 +1,7 @@
 Events.on(ClientLoadEvent, () => {
 try{
         
-    Vars.ui.settings.addCategory("[sky]Gier: Revitalized[]", Icon.planet, t => {
+    Vars.ui.settings.addCategory("[sky]Gier: Revitalized[]", Icon.menu, t => {
 
         // toggle
         t.checkPref("startup", false, b => {});
