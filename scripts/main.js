@@ -10,9 +10,9 @@ try{
         const block = Vars.content.block("gr-command-block");
                 
         if (b == true){
-        block.region = Core.atlas.find("mod-command-block");
+        block.region = Core.atlas.find("gr-command-block");
         } else {
-        block.region = Core.atlas.find("mod-command-block-modern");
+        block.region = Core.atlas.find("gr-command-block-modern");
         }
                 
         } catch(e){
@@ -32,7 +32,7 @@ Events.on(ClientLoadEvent, () =>{
 try{
 
 if (Core.settings.getBool("command-block-texture") != true){        
-Vars.content.block("gr-command-block").region = Core.atlas.find("mod-command-block-modern");
+Vars.content.block("gr-command-block").region = Core.atlas.find("gr-command-block-modern");
 }
 
 } catch(e){
