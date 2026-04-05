@@ -1,3 +1,21 @@
+Events.on(ContentInitEvent, () => {
+try{
+
+
+Vars.content.each(c => {
+try{
+if(c instanceof UnlockableContent){
+    c.stats.add(Stat.abilities, "uwu");
+}
+} catch(e){
+Vars.ui.showInfoToast(e,10); 
+}});
+
+
+} catch(e){
+Vars.ui.showText("vruh",e);    
+}});
+
 var lastUnit = "";
 
 Events.on(EventType.TapEvent, e => {
