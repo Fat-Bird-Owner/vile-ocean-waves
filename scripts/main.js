@@ -8,6 +8,11 @@ block.stats.remove(Stat.input);
 block.stats.remove(Stat.output);
 block.stats.add(recipe, Vars.content.liquid("gr-liquid-copper"), 1, true);
 
+const unit = Vars.content.unit("gr-barracade");
+const iframe = new Stat("IFrame", StatCat.function);
+unit.stats.remove(Stat.crushDamage);
+unit.stats.add(iframe,unit.crushDamage/60, StatUnit.seconds);
+    
 } catch(e){
 Vars.ui.showText("vruh",e);    
 }});
