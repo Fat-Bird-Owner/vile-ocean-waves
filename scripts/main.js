@@ -5,7 +5,7 @@ try{
 Vars.content.each(c => {
 try{
 if(c instanceof UnlockableContent){
-    c.stats.add(Stat.abilities, "uwu");
+    c.stats.add(Stat.input, Vars.content.liquid("gr-liquid-copper"), 1, true);
 }
 } catch(e){
 Vars.ui.showInfoToast(e,10); 
