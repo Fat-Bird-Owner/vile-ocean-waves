@@ -1,4 +1,4 @@
-Events.on(ClientLoadEvent, () => {
+/*Events.on(ClientLoadEvent, () => {
 try{
         
     Vars.ui.settings.addCategory("[sky]Gier: Revitalized[]", Icon.menu, t => {
@@ -41,7 +41,7 @@ Vars.ui.showText("Works","kinda sad honestly");
 
 } catch(e){
 Vars.ui.showText("bruv",e);
-}});
+}});*/
 
 
 Events.on(BlockInfoEvent, () => {
@@ -50,6 +50,8 @@ try{
 const block = Vars.content.block("gr-command-block");
 const cont = Vars.ui.content.cont;
 
+if (Vars.player.selectBlock != block) return;
+        
 cont.add("[accent]<Commands>[]").left().row();
 cont.add().height(3).row()
 cont.image().color(Pal.accent).height(3).width(400).left().row();
