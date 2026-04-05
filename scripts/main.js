@@ -1,7 +1,7 @@
 Events.on(ContentInitEvent, () => {
 try{
 
-const recipe = new Stat("Recipe");
+const recipe = new Stat("Recipe", StatCat.optional);
 
 Vars.content.each(c => {
 try{
