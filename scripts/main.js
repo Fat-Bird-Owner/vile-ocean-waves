@@ -1,27 +1,27 @@
-/*Events.on(ClientLoadEvent, () => {
+Events.on(ClientLoadEvent, () => {
 try{
         
     Vars.ui.settings.addCategory("[sky]Gier: Revitalized[]", Icon.menu, t => {
 
         // toggle
-        t.checkPref("command-block", false, b => {
+        t.checkPref("command-block-texture", false, b => {
         try{
 
         const block = Vars.content.block("gr-command-block");
                 
         if (b == true){
-        block.buildVisibility = BuildVisibility.shown;
+        block.region = Core.atlas.find("mod-command-block");
         } else {
-        block.buildVisibility = BuildVisibility.worldProcessorOnly;
+        block.region = Core.atlas.find("mod-command-block-modern");
         }
                 
         } catch(e){
         Vars.ui.showInfoToast(e,10);
         }});
-        // text input
-/*        t.textPref("my-text", "default", s => {
+/*        // text input
+              t.textPref("my-text", "default", s => {
             print("Text: " + s);
-        });
+        });*/
 
     });
 } catch(e){
@@ -31,17 +31,13 @@ Vars.ui.showText("bruh",e);
 Events.on(ClientLoadEvent, () =>{
 try{
 
-if (Core.settings.getBool("disable-plague") == true){        
-Vars.content.liquid("gr-plague").viscosity = 0;
-}
-        
-if (Core.settings.getBool("startup") != true){        
-Vars.ui.showText("Works","kinda sad honestly");
+if (Core.settings.getBool("command-block-texture") != true){        
+Vars.content.block("gr-command-block").region = Core.atlas.find("mod-command-block-modern");
 }
 
 } catch(e){
 Vars.ui.showText("bruv",e);
-}});*/
+}});
 
 
 Events.on(BlockInfoEvent, () => {
