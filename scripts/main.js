@@ -4,9 +4,7 @@ try{
     Vars.ui.settings.addCategory("My Mod", Icon.settings, t => {
 
         // toggle
-        t.checkPref("my-toggle", false, b => {
-        try{}
-        });
+        t.checkPref("my-toggle", false, b => {});
 
         // text input
 /*        t.textPref("my-text", "default", s => {
@@ -21,13 +19,14 @@ Vars.ui.showText("bruh",e);
 Events.on(CotentInitEvent, () =>{
 try{
 
-if (Core.setting.getBool("my-toggle")) return;
+if (Core.settings.getBool("my-toggle")) return;
         
 Vars.ui.showText("Works","kinda sad honestly");
 
 } catch(e){
 Vars.ui.showText("bruv",e);
 }});
+
 
 Events.on(ContentInitEvent, () => {
 try{
