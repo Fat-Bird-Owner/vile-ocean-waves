@@ -21,6 +21,41 @@ unit.stats.add(iframe,unit.crushDamage/60, StatUnit.seconds);
 Vars.ui.showText("vruh",e);    
 }});
 
+Events.on(TileChangeEvent, e => {
+try{
+
+Vars.ui.showInfoToast("works",2.5);
+        
+const tile = e.tile;
+const floor = e.floor();
+const block = e.block();
+const targetFloor = Vars.content.block("grass");
+const targetBlock = Vars.content.block("copper-wall");
+
+if (block != targetBlock || floor != targetFloor) return;
+
+var x = tile.x;
+var y = tile.y;
+
+if (Math.random() < 0.5){
+    x += Math.random() < 0.5 ? 1 : -1;
+} else {
+    y += Math.random() < 0.5 ? 1 : -1;
+}
+
+const overlapTile = Vars.world.tile(x,y);
+
+if (overlapTile.floor() == targetFloor){
+Timer.schedule(() => {
+overlapTile.setFloor(Vars.content.block("shallow-water"));
+}, 0.1);
+}
+        
+} catch(e){
+Vars.ui.showInfoToast(e,10);
+}});
+
+
 var lastUnit = "";
 
 Events.on(EventType.TapEvent, e => {
