@@ -6,7 +6,11 @@ const block = Vars.content.block("gr-melting-port");
 
 block.stats = new Stats();
 
-block.stats.add(recipe, Vars.content.liquid("gr-liquid-copper"), 1, true);
+        block.stats.replace(Stat.output, StatValues.liquid(
+            Vars.content.liquid("gr-liquid-copper"),
+            1,
+            true
+        ));
 
 const unit = Vars.content.unit("gr-barracade");
 const iframe = new Stat("IFrame", StatCat.function);
