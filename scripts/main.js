@@ -50,7 +50,7 @@ try{
 const block = Vars.content.block("gr-command-block");
 const cont = Vars.ui.content.cont;
 
-if (Vars.player.selectBlock != block) return;
+if (Vars.player.selectedBlock != block) return;
         
 cont.add("[accent]<Commands>[]").left().row();
 cont.add().height(3).row()
