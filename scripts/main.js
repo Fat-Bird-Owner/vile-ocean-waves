@@ -4,17 +4,16 @@ try{
     Vars.ui.settings.addCategory("[sky]Gier: Revitalized[]", Icon.menu, t => {
 
         // toggle
-        t.checkPref("startup", false, b => {});
-        t.checkPref("disable-plague", false, b => {
+        t.checkPref("command-block", false, b => {
         try{
 
+        const block = Vars.content.block("gr-command-block");
+                
         if (b == true){
-        Vars.content.liquid("gr-plague").viscosity = 0;
+        block.buildVisibility = BuildVisibility.shown;
         } else {
-        Vars.content.liquid("gr-plague").viscosity = 5;
+        block.buildVisibility = BuildVisibility.worldProcessorOnly;
         }
-
-        Vars.ui.showInfoToast(b + " / " + Vars.content.liquid("gr-plague").viscosity ,10);
                 
         } catch(e){
         Vars.ui.showInfoToast(e,10);
