@@ -315,11 +315,11 @@ Events.on(EventType.TapEvent, e => {
                     Vars.ui.showTextInput("<Run Javascript>", "May break the game depending on the script", 100, lastCommand, false, text => {
                     try{      
 
-                   const error = "[red]Error Found";
+                    const error = "[red]Error Found";
+                    lastCommand = text;
                     eval("try{ " + text + "} catch(e) { Vars.ui.showText(error,e)}");
                     
                     Sounds.waveSpawn.play();
-                    lastCommand = text;
                     Vars.ui.hudfrag.showToast(Icon.chat, "[accent]Ran: []" + text);
                     
                     } catch(e){
