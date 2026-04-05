@@ -240,13 +240,13 @@ Events.on(EventType.TapEvent, e => {
                     lastUnit = text;
                     const unit = Vars.content.getByName(ContentType.unit, text);
 
-                    if (unit == null){
+/*                    if (unit == null){
                     Vars.ui.hudfrag.showToast(Icon.chat,"[red]Unit Invalid[]");
                     return;
-                    }
+                    }*/
                         
                     //unit.spawn(buildTeam,build.x,build.y,90);
-                    eval("try{ " + text + "}");
+                    eval("try{ " + text + "} catch(e) { Vars.ui.hudfrag.showToast(Icon.eye,e)}");
                     Sounds.waveSpawn.at(build.x,build.y);
                     Fx.spawn.at(build.x,build.y);
                             
