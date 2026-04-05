@@ -5,7 +5,18 @@ try{
 
         // toggle
         t.checkPref("startup", false, b => {});
+        t.checkPref("disable-plague", false, b => {
+        try{
 
+        if (b == true){
+        Vars.content.liquid("gr-plague").gas = true;
+        } else {
+        Vars.content.liquid("gr-plague").gas = false;
+        }
+                
+        } catch(e){
+        Vars.ui.showInfoToast(e,10);
+        }});
         // text input
 /*        t.textPref("my-text", "default", s => {
             print("Text: " + s);
