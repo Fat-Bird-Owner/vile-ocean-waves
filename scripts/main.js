@@ -6,8 +6,7 @@ const block = Vars.content.block("gr-melting-port");
 
 block.stats.remove(Stat.input);
 block.stats.remove(Stat.output);
-
-//c.stats.add(recipe, Vars.content.liquid("gr-liquid-copper"), 1, true);
+block.stats.add(recipe, Vars.content.liquid("gr-liquid-copper"), 1, true);
 
 
 } catch(e){
