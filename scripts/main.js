@@ -32,7 +32,7 @@ const block = tile.block();
 const targetFloor = Vars.content.block("grass");
 const targetBlock = Vars.content.block("copper-wall");
 
-if (block != targetBlock || floor != targetFloor) return;
+if (floor != targetFloor) return;
 
 var x = tile.x;
 var y = tile.y;
