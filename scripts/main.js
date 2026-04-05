@@ -1,3 +1,28 @@
+Events.on(ClientLoadEvent, () => {
+try{
+        
+    Vars.ui.settings.addCategory("My Mod", Icon.settings, t => {
+
+        // toggle
+        t.checkPref("my-toggle", false, b => {
+            print("Toggle: " + b);
+        });
+
+        // slider
+        t.sliderPref("my-slider", 0, 100, 1, 50, i => {
+            return i + "%";
+        });
+
+        // text input
+        t.textPref("my-text", "default", s => {
+            print("Text: " + s);
+        });
+
+    });
+} catch(e){
+Vars.ui.showText("bruh",e);
+}});
+
 Events.on(ContentInitEvent, () => {
 try{
 
