@@ -21,7 +21,7 @@ try{
         // text input
 /*        t.textPref("my-text", "default", s => {
             print("Text: " + s);
-        });*/
+        });
 
     });
 } catch(e){
