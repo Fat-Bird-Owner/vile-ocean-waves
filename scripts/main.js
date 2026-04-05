@@ -8,6 +8,13 @@ block.stats.remove(Stat.input);
 block.stats.remove(Stat.output);
 block.stats.add(recipe, Vars.content.liquid("gr-liquid-copper"), 1, true);
 
+block.addBar("Braincell", (build) -> 
+    new Bar(
+        () -> "Braincell",
+        () -> Pal.lancerLaser,
+        () -> build.liquids.get(Liquids.water) / build.block.liquidCapacity
+    )
+);
 
 } catch(e){
 Vars.ui.showText("vruh",e);    
