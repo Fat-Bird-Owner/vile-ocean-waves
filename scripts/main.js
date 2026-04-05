@@ -2,15 +2,12 @@ Events.on(ContentInitEvent, () => {
 try{
 
 const recipe = new Stat("Recipe", StatCat.optional);
+const block = Vars.content.block("gr-melting-port");
 
-Vars.content.each(c => {
-try{
-if(c instanceof UnlockableContent){
-    c.stats.add(recipe, Vars.content.liquid("gr-liquid-copper"), 1, true);
-}
-} catch(e){
-Vars.ui.showInfoToast(e,10); 
-}});
+block.stats.remove(Stat.input);
+block.stats.remove(Stat.output);
+
+//c.stats.add(recipe, Vars.content.liquid("gr-liquid-copper"), 1, true);
 
 
 } catch(e){
