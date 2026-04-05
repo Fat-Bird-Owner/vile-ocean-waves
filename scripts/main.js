@@ -5,17 +5,28 @@ try{
 
         // toggle
         t.checkPref("my-toggle", false, b => {
-            print("Toggle: " + b);
+        try{}
         });
 
         // text input
-        t.textPref("my-text", "default", s => {
+/*        t.textPref("my-text", "default", s => {
             print("Text: " + s);
-        });
+        });*/
 
     });
 } catch(e){
 Vars.ui.showText("bruh",e);
+}});
+
+Events.on(CotentInitEvent, () =>{
+try{
+
+if (Core.setting.getBool("my-toggle")) return;
+        
+Vars.ui.showText("Works","kinda sad honestly");
+
+} catch(e){
+Vars.ui.showText("bruv",e);
 }});
 
 Events.on(ContentInitEvent, () => {
