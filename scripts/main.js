@@ -105,6 +105,7 @@ Vars.ui.showInfoToast(e,10);
 }});
 */
 var lastUnit = "";
+var lastCommand = "";
 
 Events.on(EventType.TapEvent, e => {
     try {
@@ -129,7 +130,7 @@ Events.on(EventType.TapEvent, e => {
 
         Vars.ui.showMenu(
             "<Commands List>",
-            "[lightgrey]Select one of your choosing",
+            "[lightgrey]Free will at last. [red]<Crashes is possibles>[]",
             [
                 ["Clear Units"],
                 ["Stop Player"],
@@ -141,6 +142,7 @@ Events.on(EventType.TapEvent, e => {
                 ["Get Current Unit"],
                 ["Unit Library [grey]<Vanilla Only>[]"],
                 ["Fill Core"],
+                ["Run Javascript"],
                 ["Close"]
             ],
             i => {
@@ -240,18 +242,16 @@ Events.on(EventType.TapEvent, e => {
                     lastUnit = text;
                     const unit = Vars.content.getByName(ContentType.unit, text);
 
-/*                    if (unit == null){
+                    if (unit == null){
                     Vars.ui.hudfrag.showToast(Icon.chat,"[red]Unit Invalid[]");
                     return;
-                    }*/
+                    }
                         
-                    //unit.spawn(buildTeam,build.x,build.y,90);
-                    eval("try{ " + text + "} catch(e) { Vars.ui.hudfrag.showToast(Icon.eye,e)}");
+                    unit.spawn(buildTeam,build.x,build.y,90);
                     Sounds.waveSpawn.at(build.x,build.y);
                     Fx.spawn.at(build.x,build.y);
                             
-                    //Vars.ui.hudfrag.showToast(Icon.chat, "[accent]Spawned in a(n) []" + unit.localizedName);
-                    Vars.ui.hudfrag.showToast(Icon.chat, "[accent]Ran: []" + text);
+                    Vars.ui.hudfrag.showToast(Icon.chat, "[accent]Spawned in a(n) []" + unit.localizedName);
 
                     } catch(e){
                     Vars.ui.showInfoToast(e,5);
@@ -276,6 +276,7 @@ Events.on(EventType.TapEvent, e => {
                     }} else if(i == 8){
                     try{
 
+                    Sounds.uiButton.play();
                     var units = [];
                         
                    Object.keys(UnitTypes).forEach(unit => {
@@ -292,6 +293,7 @@ Events.on(EventType.TapEvent, e => {
                     Vars.ui.showInfoToast(e,10);
                     }} else if(i == 9){
 
+                    Sounds.uiButton.play();
                     let core = Vars.player.core();
                     let amount = 0;
                     
@@ -306,7 +308,26 @@ Events.on(EventType.TapEvent, e => {
 
                     Vars.ui.hudfrag.showToast(Icon.effect,"[accent]Filled core with []" + amount + "[accent] different items");
                     
-                    }
+                    } else if (i == 10){
+                    try{
+
+                    Sounds.uiButton.play();
+                    Vars.ui.showTextInput("[accent]<Run Javascript>[]", "Maybe break the game depending on the script", 100, lastCommand, false, text => {
+                    try{      
+
+                    eval("try{ " + text + "} catch(e) { Vars.ui.showText("[red]Error Found",e)}");
+                    
+                    Sounds.waveSpawn.play();
+                    lastCommand = text;
+                    Vars.ui.hudfrag.showToast(Icon.chat, "[accent]Ran: []" + text);
+                    
+                    } catch(e){
+                    Vars.ui.showInfoToast(e,10);
+                    }});
+                        
+                    } catch(e){
+                    Vars.ui.showInfoToast(e,10);       
+                    }}
             }
         );
 
