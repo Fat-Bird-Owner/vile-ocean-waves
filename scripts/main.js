@@ -8,11 +8,6 @@ try{
             print("Toggle: " + b);
         });
 
-        // slider
-        t.sliderPref("my-slider", 0, 100, 1, 200, i => {
-            return i + "%";
-        });
-
         // text input
         t.textPref("my-text", "default", s => {
             print("Text: " + s);
