@@ -1,3 +1,48 @@
+Events.on(EventType.WorldLoadEvent, e => {
+    try{
+
+        // only run in campaign sectors
+        if(!Vars.state.isCampaign()) return;
+
+        const sector = Vars.state.getSector();
+        if(!sector) return;
+
+        const tiles = Vars.world.tiles;
+
+        const team = Team.crux; // enemy team
+
+        const cores = new Seq();
+        const spawns = new Seq();
+
+        // collect enemy cores + spawn points
+        Vars.world.tiles.each(tile => {
+            if(tile.build){
+                if(tile.build.team == team && tile.block() instanceof CoreBlock){
+                    cores.add(tile.build);
+                }
+            }
+
+            if(tile.overlay() == Blocks.spawn){
+                spawns.add(tile);
+            }
+        });
+
+        // difficulty (0–1 usually)
+        const difficulty = sector.threat;
+
+        const gen = new BaseGenerator();
+
+        // ⚠️ this is the important call
+        gen.generate(tiles, cores, spawns, team, sector, difficulty);
+
+        print("Generated enemy base");
+
+    }catch(err){
+        Vars.ui.showInfoToast(err, 10);
+    }
+});
+
+
 Events.on(ClientLoadEvent, () => {
 try{
         
