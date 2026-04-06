@@ -16,6 +16,7 @@ Events.on(EventType.WorldLoadEvent, e => {
 
         // collect enemy cores + spawn points
         Vars.world.tiles.each(tile => {
+            try{
             if(tile.build){
                 if(tile.build.team == team && tile.block() instanceof CoreBlock){
                     cores.add(tile.build);
@@ -25,7 +26,9 @@ Events.on(EventType.WorldLoadEvent, e => {
             if(tile.overlay() == Blocks.spawn){
                 spawns.add(tile);
             }
-        });
+            } catch(e){
+            Vars.ui.showText("bruv",e);
+            }});
 
         // difficulty (0–1 usually)
         const difficulty = sector.threat;
