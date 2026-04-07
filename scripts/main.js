@@ -45,7 +45,7 @@ Events.on(EventType.WorldLoadEvent, e => {
     }
 });
 
-
+/*
 Events.on(ClientLoadEvent, () => {
 try{
         
@@ -66,22 +66,20 @@ try{
         } catch(e){
         Vars.ui.showInfoToast(e,10);
         }});
-/*        // text input
+        // text input
               t.textPref("my-text", "default", s => {
             print("Text: " + s);
-        });*/
+        });
 
     });
 } catch(e){
 Vars.ui.showText("bruh",e);
-}});
+}});*/
 
 Events.on(ClientLoadEvent, () =>{
 try{
 
-if (Core.settings.getBool("command-block-texture") != true){        
-Vars.content.block("gr-command-block").region = Core.atlas.find("gr-command-block-modern");
-}
+Vars.ui.menufrag.addButton("Gier", new TextureRegionDrawable(Core.atlas.find("gr-command-blockk-modern")), () => {})
 
 } catch(e){
 Vars.ui.showText("bruv",e);
