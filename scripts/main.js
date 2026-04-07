@@ -1,4 +1,4 @@
-Events.on(EventType.WorldLoadEvent, e => {
+/*Events.on(EventType.WorldLoadEvent, e => {
     try{
 
         // only run in campaign sectors
@@ -45,7 +45,7 @@ Events.on(EventType.WorldLoadEvent, e => {
     }
 });
 
-/*
+
 Events.on(ClientLoadEvent, () => {
 try{
         
