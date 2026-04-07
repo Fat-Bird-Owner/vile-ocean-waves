@@ -79,7 +79,14 @@ Vars.ui.showText("bruh",e);
 Events.on(ClientLoadEvent, () =>{
 try{
 
-Vars.ui.menufrag.addButton("Gier", new TextureRegionDrawable(Core.atlas.find("gr-command-block-modern")), () => {})
+Vars.ui.menufrag.addButton("Gier", new TextureRegionDrawable(Core.atlas.find("gr-command-block-modern")), () => {
+try{
+
+Vars.control.playSector(Planets.gier.sectors.get(0));
+    
+} catch(e){
+Vars.ui.showText("bruv",e);
+}})
 
 } catch(e){
 Vars.ui.showText("bruv",e);
