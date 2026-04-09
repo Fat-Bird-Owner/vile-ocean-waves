@@ -1,3 +1,37 @@
+Events.on(BlockBuildEndEvent, e => {
+try{
+const breaking = e.breaking;
+const tile = e.tile;
+const building = tile.build;
+
+var x = tile.x;
+var y = tile.y;
+
+if {e.tile.block() != Vars.content.block("gr-fissure-amalgam")} return;
+
+if (rotation == 0){
+x++;
+} else if (rotation == 1){
+y++;
+} else if (rotation == 2){
+x--;
+} else {
+y--;
+}
+
+const attribute = Vars.world.tile(x,y).block().attributes.get("beryllium");
+building.potentialEfficiency = attribute;
+building.efficiency = attribute;
+
+if (attribute <= 0){
+building.enabled = false;
+}
+    
+} catch(e){
+Vars.ui.showText("bruv",e);
+}});
+
+
 /*Events.on(EventType.WorldLoadEvent, e => {
     try{
 
