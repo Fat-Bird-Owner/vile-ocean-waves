@@ -123,13 +123,21 @@ Vars.ui.showText("bruh",e);
 
 Events.on(ClientLoadEvent, () =>{
 try{
+
+function give(content){
+Vars.content.block("gr-fissure-amalgam").stats.add(Stat.tiles, StatValues.content(Vars.comtent.block(content) ));
+}
+    
 Attribute.add("beryllium");
 Blocks.beryllicStoneWall.attributes.set(Attribute.get("beryllium"), 1);
 Blocks.stoneWall.attributes.set(Attribute.get("beryllium"), 0.5);
 
-Vars.content.block("gr-fissure-amalgam").stats.add(Stat.tiles, StatValues.blocks(Attribute.get("beryllium"), false, 1, true, false));
+//Vars.content.block("gr-fissure-amalgam").stats.add(Stat.tiles, StatValues.blocks(Attribute.get("beryllium"), false, 1, true, false));
 Vars.content.block("gr-fissure-amalgam").stats.add(Stat.output, StatValues.content(Blocks.berylliumWall));
 Vars.content.block("gr-fissure-amalgam").addBar("ef", e => new Bar("Efficency", Pal.lightOrange, () => e && e.efficiency > 0 ? e.efficiency : 0));
+
+give("beryllium-wall");
+give("stone-wall");
 
 Vars.ui.menufrag.addButton("Gier", new TextureRegionDrawable(Core.atlas.find("gr-command-block-modern")), () => {
 try{
