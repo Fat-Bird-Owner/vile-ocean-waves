@@ -3,38 +3,8 @@ try{
 const tile = e.tile;
 const building = tile.build;
 
-var x = tile.x;
-var y = tile.y;
-
-if (e.tile.block() != Vars.content.block("gr-fissure-amalgam")) return;
-    
-const rotation = building.rotation;
-if (rotation == 0){
-x--;
-} else if (rotation == 1){
-y--;
-} else if (rotation == 2){
-x++;
-} else {
-y++;
-}
-
-const worldTile = Vars.world.tile(x,y).block();
-const tileWorld = Vars.world.tile(x,y)
-if (!worldTile) return;
-    
-const attribute = worldTile.attributes.get(Attribute.get("beryllium"));
-building.optionalEfficiency = building.potentialEfficiency = building.efficiency = attribute;
-building.updateEfficiencyMultiplier();
-
-if (attribute <= 0){
-building.enabled = false;
-
-Fx.attackCommand.at(tileWorld.worldx(),tileWorld.worldy(),45)
-//Fx.unitEnvKill.at(tileWorld.worldx(),tileWorld.worldy());
-
-} else {
-Fx.upgradeCoreBloom.at(tileWorld.worldx(),tileWorld.worldy(),1);
+if (tile.block() instanceof StorageBlock){
+building.linkedCore = Vars.player.core();
 }
     
 } catch(e){
