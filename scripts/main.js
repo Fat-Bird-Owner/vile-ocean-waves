@@ -11,19 +11,19 @@ if (e.tile.block() != Vars.content.block("gr-fissure-amalgam")) return;
 
 const rotation = building.rotation;
 if (rotation == 0){
-x++;
-} else if (rotation == 1){
-y++;
-} else if (rotation == 2){
 x--;
+} else if (rotation == 1){
+y--:
+} else if (rotation == 2){
+x++:
 } else {
-y--;
+y++;
 }
 
 const worldTile = Vars.world.tile(x,y).block();
 if (!worldTile) return;
     
-const attribute = worldTile.attributes.get(Attribute.get("beryllium"));
+const attribute = worldTile.attributes.get(Attribute.beryllium);
 building.potentialEfficiency = attribute;
 building.efficiency = attribute;
 
