@@ -29,7 +29,7 @@ const attribute = worldTile.attributes.get(Attribute.get("beryllium"));
 if (attribute <= 0){
 building.enabled = false;
 
-Fx.breakBlock.at(tileWorld.worldx(),tileWorld.worldy())
+Fx.breakBlock.at(tileWorld.worldx(),tileWorld.worldy(),1)
 Fx.unitEnvKill.at(tileWorld.worldx(),tileWorld.worldy());
 
 } else {
