@@ -24,10 +24,12 @@ const worldTile = Vars.world.tile(x,y).block();
 if (!worldTile) return;
     
 const attribute = worldTile.attributes.get(Attribute.get("beryllium"));
-building.potentialEfficiency = building.efficiency = building.optionalEfficiency = attribute;
 
 if (attribute <= 0){
 building.enabled = false;
+Fx.unitEnvKill.at(building.x,building.y);
+} else {
+Fx.upgradeCoreBloom.at(building.x,building.y,1);
 }
     
 } catch(e){
