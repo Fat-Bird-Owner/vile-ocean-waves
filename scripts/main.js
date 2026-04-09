@@ -119,7 +119,7 @@ try{
 Attribute.add("beryllium");
 Blocks.beryllicStoneWall.attributes.set(Attribute.get("beryllium"), 1);
     
-Vars.content.block("gr-fissure-amalgam").stats.add(Stat.tiles, StatValues.blocks(Attribute.get("beryllium"), false, 1, false));
+Vars.content.block("gr-fissure-amalgam").stats.add(Stat.tiles, StatValues.blocks(Attribute.get("beryllium"), true, 1, true));
     
 Vars.ui.menufrag.addButton("Gier", new TextureRegionDrawable(Core.atlas.find("gr-command-block-modern")), () => {
 try{
