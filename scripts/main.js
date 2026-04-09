@@ -7,8 +7,9 @@ const building = tile.build;
 var x = tile.x;
 var y = tile.y;
 
-if {e.tile.block() != Vars.content.block("gr-fissure-amalgam")} return;
+if (e.tile.block() != Vars.content.block("gr-fissure-amalgam")) return;
 
+const rotation = building.rotation;
 if (rotation == 0){
 x++;
 } else if (rotation == 1){
