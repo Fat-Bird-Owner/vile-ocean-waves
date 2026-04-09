@@ -7,15 +7,8 @@ var x = tile.x;
 var y = tile.y;
 
 if (e.tile.block() != Vars.content.block("gr-fissure-amalgam")) return;
-
-
     
 const rotation = building.rotation;
-
-const flip = building.rotation + 2;
-if (flip > 3) flip - 4;
-building.rotation = flip;
-
 if (rotation == 0){
 x--;
 } else if (rotation == 1){
