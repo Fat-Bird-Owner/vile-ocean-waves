@@ -26,6 +26,7 @@ if (!worldTile) return;
     
 const attribute = worldTile.attributes.get(Attribute.get("beryllium"));
 building.optionalEfficiency = building.potentialEfficiency = building.efficiency = attribute;
+building.updateEfficiencyMultiplier();
 
 if (attribute <= 0){
 building.enabled = false;
