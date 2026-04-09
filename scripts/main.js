@@ -21,15 +21,16 @@ y++;
 }
 
 const worldTile = Vars.world.tile(x,y).block();
+const tileWorld = Vars.world.tile(x,y)
 if (!worldTile) return;
     
 const attribute = worldTile.attributes.get(Attribute.get("beryllium"));
 
 if (attribute <= 0){
 building.enabled = false;
-Fx.unitEnvKill.at(worldTile.x,worldTile.y);
+Fx.unitEnvKill.at(tileWorld.worldx(),tileWorld.worldy());
 } else {
-Fx.upgradeCoreBloom.at(worldTile.x,worldTile.y,1);
+Fx.upgradeCoreBloom.at(worldTile.worldx(),worldTile.worldy(),1);
 }
     
 } catch(e){
