@@ -30,7 +30,7 @@ if (attribute <= 0){
 building.enabled = false;
 Fx.unitEnvKill.at(tileWorld.worldx(),tileWorld.worldy());
 } else {
-Fx.upgradeCoreBloom.at(worldTile.worldx(),worldTile.worldy(),1);
+Fx.upgradeCoreBloom.at(tileWorld.worldx(),tileWorld.worldy(),1);
 }
     
 } catch(e){
