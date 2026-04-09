@@ -23,7 +23,7 @@ y++;
 const worldTile = Vars.world.tile(x,y).block();
 if (!worldTile) return;
     
-const attribute = worldTile.attributes.get(Attribute.beryllium);
+const attribute = worldTile.attributes.get(Attribute.get("beryllium"));
 building.potentialEfficiency = attribute;
 building.efficiency = attribute;
 
@@ -116,7 +116,7 @@ Vars.ui.showText("bruh",e);
 
 Events.on(ClientLoadEvent, () =>{
 try{
-
+Attribute.add("beryllium");
 Vars.ui.menufrag.addButton("Gier", new TextureRegionDrawable(Core.atlas.find("gr-command-block-modern")), () => {
 try{
 
