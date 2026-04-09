@@ -13,9 +13,9 @@ const rotation = building.rotation;
 if (rotation == 0){
 x--;
 } else if (rotation == 1){
-y--:
+y--;
 } else if (rotation == 2){
-x++:
+x++;
 } else {
 y++;
 }
