@@ -118,11 +118,12 @@ Events.on(ClientLoadEvent, () =>{
 try{
 Attribute.add("beryllium");
 Blocks.beryllicStoneWall.attributes.set(Attribute.get("beryllium"), 1);
-Blocks.beryllicStone.attributes.set(Attribute.get("beryllium"), 1);
+Blocks.stoneWall.attributes.set(Attribute.get("beryllium"), 0.5);
 
 Vars.content.block("gr-fissure-amalgam").stats.add(Stat.tiles, StatValues.blocks(Attribute.get("beryllium"), false, 1, true, false));
 Vars.content.block("gr-fissure-amalgam").stats.add(Stat.output, StatValues.content(Blocks.berylliumWall));
-    
+Vars.content.block("gr-fissure-amalgam").addBar("ef", e => new Bar("Efficency", Pal.lightOrange, () => e && e.efficiency > 0 ? e.efficiency * 100 : 0));
+
 Vars.ui.menufrag.addButton("Gier", new TextureRegionDrawable(Core.atlas.find("gr-command-block-modern")), () => {
 try{
 
