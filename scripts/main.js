@@ -27,9 +27,9 @@ const attribute = worldTile.attributes.get(Attribute.get("beryllium"));
 
 if (attribute <= 0){
 building.enabled = false;
-Fx.unitEnvKill.at(building.x,building.y);
+Fx.unitEnvKill.at(worldTile.x,worldTile.y);
 } else {
-Fx.upgradeCoreBloom.at(building.x,building.y,1);
+Fx.upgradeCoreBloom.at(worldTile.x,worldTile.y,1);
 }
     
 } catch(e){
