@@ -125,7 +125,7 @@ Events.on(ClientLoadEvent, () =>{
 try{
 
 function give(content){
-Vars.content.block("gr-fissure-amalgam").stats.add(Stat.tiles, StatValues.content(Vars.comtent.block(content) ));
+Vars.content.block("gr-fissure-amalgam").stats.add(Stat.tiles, StatValues.content(Vars.content.block(content) ));
 }
     
 Attribute.add("beryllium");
