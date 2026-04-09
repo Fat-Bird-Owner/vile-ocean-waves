@@ -20,7 +20,10 @@ x--;
 y--;
 }
 
-const attribute = Vars.world.tile(x,y).block().attributes.get("beryllium");
+const worldTile = Vars.world.tile(x,y).block();
+if (!worldTile) return;
+    
+const attribute = worldTile.attributes.get("beryllium");
 building.potentialEfficiency = attribute;
 building.efficiency = attribute;
 
