@@ -1,6 +1,5 @@
-Events.on(BlockBuildEndEvent, e => {
+Events.on(TileChangeEvent, e => {
 try{
-const breaking = e.breaking;
 const tile = e.tile;
 const building = tile.build;
 
