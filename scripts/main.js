@@ -12,6 +12,33 @@ Vars.ui.showText("bruv",e);
 }});
 
 
+var myTrackedBuildings = [];
+
+Events.on(EventType.TileChangeEvent, e => {
+    var b = e.tile.build;
+    if(b && b.block == myBlock){
+        myTrackedBuildings.push(b);
+    }
+});
+
+Events.on(EventType.BlockDestroyEvent, e => {
+    var b = e.tile.build;
+    myTrackedBuildings = myTrackedBuildings.filter(x => x != b);
+});
+
+Events.on(EventType.Trigger.draw, () => {
+    for(var b of myTrackedBuildings){
+        Draw.z(Layer.overlayUI);
+        Draw.rect(
+            Core.atlas.find("your-region-name"),
+            b.x, b.y,
+            b.block.size * 8, b.block.size * 8
+        );
+        Draw.reset();
+    }
+});
+
+
 /*Events.on(EventType.WorldLoadEvent, e => {
     try{
 
