@@ -16,7 +16,7 @@ var myTrackedBuildings = [];
 
 Events.on(EventType.TileChangeEvent, e => {
     var b = e.tile.build;
-    if(b && b.block == myBlock){
+    if(b && b.block == Blocks.copperWall){
         myTrackedBuildings.push(b);
     }
 });
