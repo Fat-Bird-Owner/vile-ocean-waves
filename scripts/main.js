@@ -11,42 +11,6 @@ building.linkedCore = Vars.player.core();
 Vars.ui.showText("bruv",e);
 }});
 
-var myTrackedBuildings = [];
-
-Events.on(EventType.TileChangeEvent, e => {
-    var b = e.tile.build;
-    if(b && b.block === Blocks.copperWall){
-        if(!myTrackedBuildings.includes(b)){
-            myTrackedBuildings.push(b);
-        }
-    }
-});
-
-Events.on(EventType.BlockDestroyEvent, e => {
-    var b = e.tile.build;
-    if(!b) return;
-
-    myTrackedBuildings = myTrackedBuildings.filter(x => x !== b);
-});
-
-Events.on(EventType.Trigger.draw, () => {
-    for (var i = 0; i < myTrackedBuildings.length; i++){
-        var b = myTrackedBuildings[i];
-
-        Draw.z(Layer.overlayUI);
-
-        const region = Core.atlas.find("your-region-name");
-        if(region.found()){
-            Draw.rect(
-                region,
-                b.x, b.y,
-                b.block.size * 8, b.block.size * 8
-            );
-        }
-
-        Draw.reset();
-    }
-});
 
 
 /*Events.on(EventType.WorldLoadEvent, e => {
