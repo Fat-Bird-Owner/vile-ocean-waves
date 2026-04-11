@@ -20,8 +20,8 @@ try{
 if (reload == true) return;
 const map = Vars.state.map;
 const rules = Vars.state.rules;
-Vars.controls.playMap(map,rules);
-reload=true;
+Vars.control.playMap(map,rules);
+reload = true;
     
 } catch(e){
 Vars.ui.showInfoToast(e,5);
