@@ -66,16 +66,11 @@ lastBuild = null;
 const block = blockTile.build;
     
 Timer.schedule(() => {
+if (!block) return;
 block.health = health;
 block.units = units;
 block.rotation = rotation;    
-/*
-block.progress = progress;
-block.warmup = warmup;
-block.droneWarmup = droneWarmup;
-block.powerWarmup = powerWarmup;
-block.sameTypeWarmup = sameTypeWarmup;*/
-}, 0.1);
+}, 0.016667);
     
 }
   
