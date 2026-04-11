@@ -15,12 +15,15 @@ Vars.ui.showText("bruv",e);
 
 // Multicrafter logic  
 Events.on(ClientLoadEvent, () => {
+try{
     Core.app.post(() => {
         if (Vars.state.isMenu()) {
             Vars.world.loadMap(Vars.maps.random(Vars.maps.customMaps()));
         }
     });
-});
+} catch(e){
+Vars.ui.showInfoToast(e,15);
+}});
 
 /*Events.on(EventType.WorldLoadEvent, e => {
     try{
