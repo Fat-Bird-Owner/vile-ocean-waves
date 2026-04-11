@@ -63,9 +63,9 @@ return;
 if (blockTile.block() != block){
 Fx.select.at(blockTile.worldx(),blockTile.worldy());
 lastBuild = null;
-
-Timer.schedule(() => {
 const block = blockTile.build;
+    
+Timer.schedule(() => {
 block.health = health;
 block.units = units;
 block.rotation = rotation;    
