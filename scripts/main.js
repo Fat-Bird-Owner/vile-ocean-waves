@@ -47,6 +47,7 @@ const warmup = build.warmup;
 const droneWarmup = build.droneWarmup;
 const powerWarmup = build.powerWarmup;
 const sameTypeWarmup = build.sameTypeWarmup;
+const rotation = build.rotation;
 
 const blockTile = build.tile;
 if (block == crafters[0]){
@@ -67,11 +68,13 @@ Timer.schedule(() => {
 const block = blockTile.build;
 block.health = health;
 block.units = units;
+block.rotation = rotation;    
+/*
 block.progress = progress;
 block.warmup = warmup;
 block.droneWarmup = droneWarmup;
 block.powerWarmup = powerWarmup;
-block.sameTypeWarmup = sameTypeWarmup;
+block.sameTypeWarmup = sameTypeWarmup;*/
 }, 0.1);
     
 }
