@@ -14,18 +14,13 @@ Vars.ui.showText("bruv",e);
 
 
 // Multicrafter logic  
-var reload = false;
-Events.on(WorldLoadEvent, e => {
-try{
-if (reload == true) return;
-const map = Vars.state.map;
-const rules = Vars.state.rules;
-Vars.control.playMap(map,rules);
-reload = true;
-    
-} catch(e){
-Vars.ui.showInfoToast(e,5);
-}});
+Events.on(ClientLoadEvent, () => {
+    Core.app.post(() => {
+        if (Vars.state.isMenu()) {
+            Vars.world.loadMap(Vars.maps.random(Vars.maps.customMaps()));
+        }
+    });
+});
 
 /*Events.on(EventType.WorldLoadEvent, e => {
     try{
