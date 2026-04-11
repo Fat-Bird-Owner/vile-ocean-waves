@@ -13,6 +13,60 @@ Vars.ui.showText("bruv",e);
 
 
 
+// Multicrafter logic  
+if (player.team() != tile.team() || player.selectedBlock != null) return;
+
+const crafters = [
+Vars.content.block("tank-assembler"),
+Vars.content.block("ship-assembler"),
+Vars.content.block("mech-assembler")
+];
+
+if (block == crafters[0] || block == crafters[1] || block == crafters[2]){
+Sounds.click.at(tile.worldx(),tile.worldy());
+}
+
+const buildTeam = build.team;
+const health = build.health;
+const units = build.units;
+const progress = build.progress;
+const warmup = build.warmup;
+const droneWarmup = build.droneWarmup;
+const powerWarmup = build.powerWarmup;
+const sameTypeWarmup = build.sameTypeWarmup;
+
+const blockTile = build.tile;
+if (block == crafters[0]){
+blockTile.setBlock(crafters[1], buildTeam);
+} else if (block == crafters[1]) {
+blockTile.setBlock(crafters[2], buildTeam);
+} else if (block == crafters[2]){
+blockTile.setBlock(crafters[0], buildTeam);
+} else {
+return;
+}
+
+if (blockTile.block() != block){
+Fx.select.at(blockTile.worldx(),blockTile.worldy());
+lastBuild = null;
+
+Timer.schedule(() => {
+const block = blockTile.build;
+block.health = health;
+block.units = units;
+block.progress = progress;
+block.warmup = warmup;
+block.droneWarmup = droneWarmup;
+block.powerWarmup = powerWarmup;
+block.sameTypeWarmup = sameTypeWarmup;
+}, 0.1);
+    
+}
+  
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+}});
+
 /*Events.on(EventType.WorldLoadEvent, e => {
     try{
 
