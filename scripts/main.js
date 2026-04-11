@@ -14,6 +14,8 @@ Vars.ui.showText("bruv",e);
 
 
 // Multicrafter logic  
+var lastBuild = null;
+
 Events.on(TapEvent, e => {
 try{
 const tile = e.tile;
