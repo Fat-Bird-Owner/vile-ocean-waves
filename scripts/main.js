@@ -14,6 +14,17 @@ Vars.ui.showText("bruv",e);
 
 
 // Multicrafter logic  
+Events.on(TapEvent, e => {
+try{
+const tile = e.tile;
+const block = tile.block();
+const player = e.player;
+const build = tile.build;
+
+if (build != lastBuild){
+lastBuild = build;
+return;
+}
 if (player.team() != tile.team() || player.selectedBlock != null) return;
 
 const crafters = [
