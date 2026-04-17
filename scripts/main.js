@@ -16,11 +16,39 @@ Vars.ui.showText("bruv",e);
 // Multicrafter logic  
 Events.on(ClientLoadEvent, () => {
 try{
-    Core.app.post(() => {
-        if (Vars.state.isMenu()) {
-            Vars.world.loadMap(Vars.maps.random(Vars.maps.customMaps()));
-        }
-    });
+
+let overlaymarkerTable = Vars.ui.hudGroup.find("statustable");
+overlaymarkerTable.row();
+
+let tab = new Table();
+overlaymarkerTable.add(tab).bottom().left();
+
+tab.table(Tex.pane, t => {
+
+const silder = new Slider(0, 10, 0.01, false);
+const label = new Label
+    
+slider.changed(() => {
+label.setText(slider.getValue().toFixed(2) + 1);
+    
+Time.setDeltaProvider(() => {
+try{ 
+return Core.graphics.getDeltaTime() * 60 * slider.getValue().toFixed(2) + 1;
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+return 1;
+}});
+});
+
+t.add(slider).width(150);
+t.add(label);
+
+t.visibility = () => {
+return (Vars.ui.hudfrag.shown && !Vars.net.client() ? true : false)
+});
+    
+});
+    
 } catch(e){
 Vars.ui.showInfoToast(e,15);
 }});
