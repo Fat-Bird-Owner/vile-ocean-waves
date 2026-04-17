@@ -33,7 +33,7 @@ Events.on(ClientLoadEvent, () => {
             const button = new Button();
             const label = new Label("1");
 
-            button.add(new Image(Core.atlas.find("router")).size(40));
+            button.add(new Image(Core.atlas.find("router")));
 
             slider.changed(() => {
                 speed = slider.getValue() + 1;
