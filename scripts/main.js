@@ -47,6 +47,7 @@ Events.on(ClientLoadEvent, () => {
             button.clicked(() => {
                 speed = 1;   
                 slider.setValue(0);
+                label.setText(speed.toFixed(2));
             });
 
             t.add(slider).width(150);
