@@ -57,7 +57,7 @@ Events.on(ClientLoadEvent, () => {
         });
 
     } catch(e){
-        Vars.ui.showInfoToast(e,15);
+        Vars.ui.showText("bruv",e);
     }
 });
 
