@@ -18,8 +18,12 @@ Events.on(ClientLoadEvent, () => {
     try{
 
         let tab = new Table();
+        
         tab.bottom().left();
+        let overlaymarkerTable = Vars.ui.hudGroup.find("statustable");   
+        overlaymarkerTable.row();
 
+        overlaymarkerTable.add(tab).bottom().left();
         let speed = 1;
 
         Time.setDeltaProvider(() => {
