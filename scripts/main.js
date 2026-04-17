@@ -17,13 +17,9 @@ Vars.ui.showText("bruv",e);
 Events.on(ClientLoadEvent, () => {
     try{
 
-        let overlaymarkerTable = Vars.ui.hudGroup.find("statustable");
-        if(!overlaymarkerTable) return;
-
-        overlaymarkerTable.row();
-
         let tab = new Table();
-        overlaymarkerTable.add(tab).bottom().left();
+        tab.bottom().left();
+        Vars.ui.hudGroup.addChild(tab);
 
         let speed = 1;
 
@@ -38,7 +34,7 @@ Events.on(ClientLoadEvent, () => {
             const label = new Label("1");
 
             button.add(new Image(Core.atlas.find("router")).size(40));
-            
+
             slider.changed(() => {
                 speed = slider.getValue() + 1;
                 label.setText(speed.toFixed(2));
