@@ -15,43 +15,45 @@ Vars.ui.showText("bruv",e);
 
 // Multicrafter logic  
 Events.on(ClientLoadEvent, () => {
-try{
+    try{
 
-let overlaymarkerTable = Vars.ui.hudGroup.find("statustable");
-overlaymarkerTable.row();
+        let overlaymarkerTable = Vars.ui.hudGroup.find("statustable");
+        if(!overlaymarkerTable) return;
 
-let tab = new Table();
-overlaymarkerTable.add(tab).bottom().left();
+        overlaymarkerTable.row();
 
-tab.table(Tex.pane, t => {
+        let tab = new Table();
+        overlaymarkerTable.add(tab).bottom().left();
 
-const silder = new Slider(0, 10, 0.01, false);
-const label = new Label("1");
-    
-slider.changed(() => {
-label.setText(slider.getValue().toFixed(2) + 1);
-    
-Time.setDeltaProvider(() => {
-try{ 
-return Core.graphics.getDeltaTime() * 60 * slider.getValue().toFixed(2) + 1;
-} catch(e){
-Vars.ui.showInfoToast(e,5);
-return 1;
-}});
+        let speed = 1;
+
+        Time.setDeltaProvider(() => {
+            return Core.graphics.getDeltaTime() * 60 * speed;
+        });
+
+        tab.table(Tex.pane, t => {
+
+            const slider = new Slider(0, 10, 0.01, false);
+            const label = new Label("1");
+
+            slider.changed(() => {
+                speed = slider.getValue() + 1;
+                label.setText(speed.toFixed(2));
+            });
+
+            t.add(slider).width(150);
+            t.add(label);
+
+            t.visibility = () => {
+                return Vars.ui.hudfrag.shown && !Vars.net.client();
+            };
+
+        });
+
+    } catch(e){
+        Vars.ui.showInfoToast(e,15);
+    }
 });
-
-t.add(slider).width(150);
-t.add(label);
-
-t.visibility = () => {
-return (Vars.ui.hudfrag.shown && !Vars.net.client() ? true : false)
-});
-    
-});
-    
-} catch(e){
-Vars.ui.showInfoToast(e,15);
-}});
 
 /*Events.on(EventType.WorldLoadEvent, e => {
     try{
