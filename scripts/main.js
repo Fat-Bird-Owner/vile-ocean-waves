@@ -26,7 +26,7 @@ overlaymarkerTable.add(tab).bottom().left();
 tab.table(Tex.pane, t => {
 
 const silder = new Slider(0, 10, 0.01, false);
-const label = new Label
+const label = new Label("1");
     
 slider.changed(() => {
 label.setText(slider.getValue().toFixed(2) + 1);
