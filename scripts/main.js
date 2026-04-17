@@ -34,11 +34,19 @@ Events.on(ClientLoadEvent, () => {
         tab.table(Tex.pane, t => {
 
             const slider = new Slider(0, 10, 0.01, false);
+            const button = new Button();
             const label = new Label("1");
 
+            button.add(new Image(Core.atlas.find("router")).setSize(40);
+            
             slider.changed(() => {
                 speed = slider.getValue() + 1;
                 label.setText(speed.toFixed(2));
+            });
+
+            button.clicked(() => {
+                speed = 1;   
+                slider.setValue(0);
             });
 
             t.add(slider).width(150);
