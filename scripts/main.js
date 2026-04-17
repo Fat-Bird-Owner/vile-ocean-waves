@@ -51,6 +51,7 @@ Events.on(ClientLoadEvent, () => {
 
             t.add(slider).width(150);
             t.add(label);
+            t.add(button);
 
             t.visibility = () => {
                 return Vars.ui.hudfrag.shown && !Vars.net.client();
