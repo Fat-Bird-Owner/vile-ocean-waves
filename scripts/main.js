@@ -50,7 +50,9 @@ Events.on(ClientLoadEvent, () => {
             });
 
             t.add(slider).width(150);
+            t.add().width(15);
             t.add(label);
+            t.add().width(5);
             t.add(button);
 
             t.visibility = () => {
