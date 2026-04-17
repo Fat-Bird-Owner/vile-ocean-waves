@@ -18,8 +18,7 @@ Events.on(ClientLoadEvent, () => {
     try{
 
         let tab = new Table();
-        tab.top().left();
-        Vars.ui.hudGroup.addChild(tab);
+        tab.bottom().left();
 
         let speed = 1;
 
