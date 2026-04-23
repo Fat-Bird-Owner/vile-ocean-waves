@@ -7,17 +7,17 @@ const block = Vars.content.block("gr-boiler");
   
 Groups.build.each(p => {
 const next = Vars.indexer.findTile(
-build.team,
-build.x,
-build.y, 
-6 * Vars.tileSize,
+p.team,
+p.x,
+p.y, 
+6 * Vars.tilesize,
 o => o.block == block
 );
 
-if (!next && build.block != block) {
-p.enabled = 0;
+if (!next && p.block != block) {
+p.enabled = false;
 } else {
-p.enabled = 1;
+p.enabled = true;
 }
   
 });
