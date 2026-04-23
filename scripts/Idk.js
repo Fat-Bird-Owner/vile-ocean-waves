@@ -8,7 +8,7 @@ const block = Vars.content.block("gr-boiler");
   
 Groups.build.each(p => {
 
-if (p.block instanceof StackConveyor || p.block instanceof Conveyor || p.block instanceof duct) continue;
+if (p.block instanceof StackConveyor || p.block instanceof Conveyor || p.block instanceof duct) return;
   
 const next = Vars.indexer.findTile(
 p.team,
