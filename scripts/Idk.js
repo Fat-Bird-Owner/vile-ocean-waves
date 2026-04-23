@@ -15,7 +15,7 @@ const next = Vars.indexer.findTile(
 p.team,
 p.x,
 p.y, 
-6 * Vars.tilesize,
+10 * Vars.tilesize,
 o => o.block == block
 );
 
