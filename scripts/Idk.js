@@ -1,7 +1,8 @@
 Events.run(Trigger.update, () => {
 try {
 if (!Weathers.snow.isActive()) return; 
-
+if (Time.time % 20 > 1) return;
+  
 var builds = [];
 const block = Vars.content.block("gr-boiler");
   
