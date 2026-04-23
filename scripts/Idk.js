@@ -6,7 +6,7 @@ var builds = [];
 const block = Vars.content.block("gr-boiler");
   
 Groups.build.each(p => {
-const next = BlockIndexer.findTile(
+const next = Vars.indexer.findTile(
 build.team,
 build.x,
 build.y, 
@@ -14,7 +14,7 @@ build.y,
 o => o.block == block
 );
 
-if (!next) {
+if (!next && build.block != block) {
 p.enabled = 0;
 } else {
 p.enabled = 1;
