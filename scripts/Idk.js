@@ -14,13 +14,12 @@ if (!p || !p.isValid()) return;
 if (p.block instanceof StackConveyor || p.block instanceof Conveyor || p.block instanceof Duct) return;
 if (p.block instanceof Conduit || p.block instanceof ItemBridge || p.block instanceof Router) return;
   
-const next = Vars.indexer.eachBlock(
+const next = Vars.indexer.findTile(
 p.team,
 p.x,
 p.y, 
 10 * Vars.tilesize,
 b => b == block && !b.isHealSuppressed(),
-{}
 );
   
 if (!next && p.block != block) {
