@@ -21,7 +21,7 @@ o => o.block == block
 
 if (!next && p.block != block) {
 p.enabled = true;
-plapplySlowdown(0.5 , 60)
+p.applySlowdown(0.5 , 60)
 } else {
 p.enabled = true;
 
