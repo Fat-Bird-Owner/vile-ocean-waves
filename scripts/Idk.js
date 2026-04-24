@@ -9,7 +9,8 @@ var builds = [];
 const block = Vars.content.block("gr-boiler");
   
 Groups.build.each(p => {
-
+try {
+  
 if (p.block instanceof StackConveyor || p.block instanceof Conveyor || p.block instanceof Duct) return;
 if (p.block instanceof Conduit || p.block instanceof ItemBridge || p.block instanceof Router) return;
   
@@ -30,8 +31,10 @@ fx.at(p.x, p.y);
 p.enabled = true;
 
 }
-  
-});
+
+} catch(e){
+Vars.ui.showInfoToast(e,5);
+}});
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
