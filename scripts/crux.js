@@ -17,7 +17,7 @@ colorTo: Color.valueOf("00000000")
   
 particle.region = String(block.uiIcon);
 particle.sizeFrom = particle.sizeTo = block.size * 4;
-particle.lifetime = Mathf.random(300,3000)
+particle.lifetime = Mathf.random(300,3000);
 particle.at(build.x, build.y);
 particle.offset = Mathf.random(-15,15) + (build.rotation * 90);
   
