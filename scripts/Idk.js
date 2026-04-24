@@ -19,7 +19,8 @@ p.team,
 p.x,
 p.y, 
 10 * Vars.tilesize,
-b => b == block && !b.isHealSuppressed()
+b => b == block && !b.isHealSuppressed(),
+{}
 );
   
 if (!next && p.block != block) {
