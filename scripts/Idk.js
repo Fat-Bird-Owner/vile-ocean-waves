@@ -1,3 +1,18 @@
+function check(build, block){
+try {
+
+if (build.block == block && build.status() == BlockStatus.active){
+return true;
+} else {
+return false;
+}
+  
+} catch(e){
+return false;
+Vars.ui.showInfoToast(e,5);
+}}
+  
+
 const fx = Fx.mineSmall.wrap(Color.valueOf("D3DEE466"));
 
 Events.run(Trigger.update, () => {
@@ -6,7 +21,7 @@ if (Time.time % 60 > 1) return;
 if (!Weathers.snow.isActive()) return; 
   
 const block = Vars.content.block("gr-boiler");
-  
+
 Groups.build.each(p => {
 try {
   
@@ -18,9 +33,7 @@ p.team,
 p.x,
 p.y, 
 10 * Vars.tilesize,
-o => {
-    return o.block == block && o.status() == BlockStatus.active;
-}
+o => check(o, block)
 );
 
 if (!next && p.block != block) {
