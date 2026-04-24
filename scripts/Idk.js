@@ -34,9 +34,9 @@ fx.at(p.x, p.y);
 }
 
 } catch(e){
-Vars.ui.showInfoToast(e,5);
+Vars.ui.showInfoToast(e + "[red] - inner",5);
 }});
 
 } catch(e){
-Vars.ui.showInfoToast(e,5);
+Vars.ui.showInfoToast(e + " - Outer" ,5);
 }});
