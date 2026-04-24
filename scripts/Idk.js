@@ -19,6 +19,7 @@ p.x,
 p.y, 
 10 * Vars.tilesize,
 o => {
+    if (o == null || !o.isValid()) return false;
     if(o.block != block) return false;
     if(!o.enabled) return false;
     if(o.efficiency <= 0) return false;
