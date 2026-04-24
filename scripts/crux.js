@@ -13,14 +13,14 @@ layer: 22,
 length: 0.1,
 lifetime: 600,
 colorTo: Color.valueOf("00000000"),
-colorFrom: Color.valueOf("7f7f7fff")
+colorFrom: Color.valueOf("9f9f9fff")
 });
   
 particle.region = String(block.uiIcon);
 particle.sizeFrom = particle.sizeTo = block.size * 4;
-particle.lifetime = Mathf.random(900,3000);
+particle.lifetime = Mathf.random(300,3000);
 particle.at(build.x, build.y);
-particle.baseLength = Mathf.random(-4,4);
+particle.baseLength = Mathf.random(-2, 2);
 particle.offset = Mathf.random(-15,15) + (build.rotation * 90);
   
 } catch(e){
