@@ -19,7 +19,7 @@ p.team,
 p.x,
 p.y, 
 10 * Vars.tilesize,
-b => b.block == block && b.status == BlockStatus.active
+b => b && b.isValid() && b.block == block && b.status() == BlockStatus.active
 );
   
 if (!next && p.block != block) {
