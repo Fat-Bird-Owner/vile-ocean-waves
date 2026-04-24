@@ -19,8 +19,7 @@ p.team,
 p.x,
 p.y, 
 10 * Vars.tilesize,
-o => o && o.block == block)
-  
+o => o && o.block == block  
 );
 
 if (!next && p.block != block) {
