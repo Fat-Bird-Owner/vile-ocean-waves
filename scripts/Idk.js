@@ -5,7 +5,6 @@ try {
 if (Time.time % 60 > 1) return;
 if (!Weathers.snow.isActive()) return; 
   
-var builds = [];
 const block = Vars.content.block("gr-boiler");
   
 Groups.build.each(p => {
