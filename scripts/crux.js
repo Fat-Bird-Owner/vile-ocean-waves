@@ -13,7 +13,7 @@ layer: 22,
 length: 0.1,
 lifetime: 600,
 colorTo: Color.valueOf("00000000"),
-colorTo: Color.valueOf("7f7f7fff")
+colorFrom: Color.valueOf("7f7f7fff")
 });
   
 particle.region = String(block.uiIcon);
