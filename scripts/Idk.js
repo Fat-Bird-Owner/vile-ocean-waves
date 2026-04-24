@@ -1,18 +1,3 @@
-function check(build, block){
-try {
-
-if (build.block == block && build.status() == BlockStatus.active){
-return true;
-} else {
-return false;
-}
-  
-} catch(e){
-return false;
-Vars.ui.showInfoToast(e,5);
-}}
-  
-
 const fx = Fx.mineSmall.wrap(Color.valueOf("D3DEE466"));
 
 Events.run(Trigger.update, () => {
@@ -33,9 +18,14 @@ p.team,
 p.x,
 p.y, 
 10 * Vars.tilesize,
-o => check(o, block)
+o => {
+    if(o.block != block) return false;
+    if(!o.enabled) return false;
+    if(o.efficiency <= 0) return false;
+    return true;
+}
 );
-
+  
 if (!next && p.block != block) {
 p.enabled = true;
 p.applySlowdown(0.5 , 60);
