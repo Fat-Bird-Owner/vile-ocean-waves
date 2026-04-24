@@ -1,4 +1,4 @@
-const fx = Fx.mineSmall.wrapEffect(Color.valueof("D3DEE466"));
+const fx = Fx.mineSmall.wrap(Color.valueOf("D3DEE466"));
 
 Events.run(Trigger.update, () => {
 try {
