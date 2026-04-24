@@ -20,9 +20,11 @@ o => o.block == block
 );
 
 if (!next && p.block != block) {
-p.enabled = false;
+p.enabled = true;
+applySlowdown(0.5 , 60)
 } else {
 p.enabled = true;
+
 }
   
 });
