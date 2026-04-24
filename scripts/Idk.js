@@ -1,3 +1,5 @@
+const fx = Fx.mineSmall.wrapEffect(Color.valueof("D3DEE466"));
+
 Events.run(Trigger.update, () => {
 try {
 if (Time.time % 60 > 1) return;
@@ -23,6 +25,7 @@ if (!next && p.block != block) {
 p.enabled = true;
 p.applySlowdown(0.5 , 60);
 p.damage(p.maxHealth / 20);
+fx.at(p.x, p.y);
 } else {
 p.enabled = true;
 
