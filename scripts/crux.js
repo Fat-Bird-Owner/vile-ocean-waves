@@ -1,32 +1,31 @@
 Events.on(BlockDestroyEvent, e => {
 try{ 
-/*if (!Core.settings.getBool("wreckEnabled")) return;*/
+if (!Core.settings.getBool("wreckEnabled")) return;
   
 const tile = e.tile;
-const block = tile.block();
-const build = tile.build;
-
+const unit = e.unit;
+const type = unit.type;
+  
 const particle = new ParticleEffect();
 Object.assign(particle, {
-particles: 8,
-cone: 15,
+particles: 1,
+cone: 40,
 cap: false,
-layer: 22,
+layer: 18,
 length: 0.1,
 lifetime: 600,
 colorTo: Color.valueOf("00000000"),
-colorFrom: Color.valueOf("2b2b2bff"),
-interp: Interp.pow3In
+colorFrom: Color.valueOf("7b7b7bff"),
+interp: Interp.sineIn,
+clip: 1000
 });
   
-particle.region = String(block.uiIcon);
-particle.sizeFrom = particle.sizeTo = block.size * 3.95;
+particle.region = String(type.uiIcon);
+particle.sizeFrom = particle.sizeTo = unit.size * 3.85;
 particle.lifetime = Mathf.random(300,3000);
-particle.at(build.x, build.y);
-particle.baseLength = Mathf.random(-5,5);
-particle.length = Mathf.random(0.1,8);
-particle.spin = Mathf.random(-5, 5) / 10;
-particle.offset = Mathf.random(-15,15) + (build.rotation * 90);
+particle.at(unit.x, unit.y);
+particle.baseLength = Mathf.random(-8,8);
+particle.offset = Mathf.random(-15,15) + (unit.rotation);
   
 } catch(e){
 Vars.ui.showInfoToast(e,5); 
