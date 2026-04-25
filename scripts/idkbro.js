@@ -1,7 +1,7 @@
 const blocks = [
 "gr-sealent-capsule",
-"gr-sealent-capsule-team",
-"gr-sealant-capsule-steam"
+"gr-sealent-capsule-steam",
+"gr-sealant-capsule-oil"
 ];
 
 const items = [
