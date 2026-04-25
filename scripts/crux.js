@@ -1,4 +1,4 @@
-Events.on(BlockDestroyEvent, e => {
+Events.on(UnitDestroyEvent, e => {
 try{ 
 if (!Core.settings.getBool("wreckEnabled")) return;
   
