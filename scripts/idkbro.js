@@ -24,7 +24,7 @@ Events.on(TapEvent, e => {
 try {
 const tile = e.tile;
 const block = tile.block();
-const player = e.player
+const player = e.player;
 if (!tile || !block || !tile.build || tile.build.team != player.team()) return;
 var valid = false;
 
@@ -49,6 +49,8 @@ count = 0;
 count++;
 }  
 }
+
+dialog.show();
   
 } catch(e){
 Vars.ui.showInfoToast(e,5);
