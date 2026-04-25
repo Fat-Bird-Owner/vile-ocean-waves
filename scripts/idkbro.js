@@ -27,7 +27,7 @@ const block = tile.block();
 const player = e.player;
 if (!tile || !block || !tile.build || tile.build.team != player.team()) return;
 var valid = false;
-const build = tile.build;
+const building = tile.build;
 
 for (let i = 0; i < blocks.length; i++){
 if (block == Vars.content.block(blocks[i])) valid = true;
@@ -46,8 +46,8 @@ let num = i;
 
 button.clicked(() => {
 try {
-const health = build.health;
-build.tile.setBlock(Vars.content.block(blocks[num]));
+const health = building.health;
+building.tile.setBlock(Vars.content.block(blocks[num]));
 tile.build.health = health;
 
 dialog.hide();
