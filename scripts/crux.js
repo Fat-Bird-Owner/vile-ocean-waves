@@ -19,8 +19,9 @@ interp: Interp.sineIn,
 clip: 1000
 });
   
+const region = type.uiIcon;
 particle.region = String(type.uiIcon);
-particle.sizeFrom = particle.sizeTo = unit.hitSize * 0.75;
+particle.sizeFrom = particle.sizeTo = Math.max(region.width, region.height);
 particle.lifetime = Mathf.random(300,3000);
 particle.at(unit.x, unit.y);
 particle.baseLength = Mathf.random(-8,8);
