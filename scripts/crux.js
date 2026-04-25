@@ -21,7 +21,7 @@ clip: 1000
 });
   
 particle.region = String(type.uiIcon);
-particle.sizeFrom = particle.sizeTo = unit.size * 3.85;
+particle.sizeFrom = particle.sizeTo = unit.hitSize * 0.95;
 particle.lifetime = Mathf.random(300,3000);
 particle.at(unit.x, unit.y);
 particle.baseLength = Mathf.random(-8,8);
