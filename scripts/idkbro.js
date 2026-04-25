@@ -47,7 +47,7 @@ let num = i;
 button.clicked(() => {
 try {
 const health = building.health;
-building.tile.setBlock(Vars.content.block(blocks[num])), building.team);
+building.tile.setBlock(Vars.content.block(blocks[num]), building.team);
 tile.build.health = health;
 
 dialog.hide();
