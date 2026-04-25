@@ -27,6 +27,7 @@ const block = tile.block();
 const player = e.player;
 if (!tile || !block || !tile.build || tile.build.team != player.team()) return;
 var valid = false;
+const build = tile.build;
 
 for (let i = 0; i < blocks.length; i++){
 if (block == Vars.content.block(blocks[i])) valid = true;
@@ -41,7 +42,19 @@ dialog.addCloseButton();
 for (let i = 0; i < items.length; i++){
 const button = build(Vars.content.item(items[i]));
 dialog.cont.add(button).size(100);
+let num = i;
 
+button.clicked(() => {
+try {
+const health = build.health;
+build.tile.setBlock(Vars.content.block(blocks[num]));
+tile.build.health = health;
+
+dialog.hide();
+} catch(e) {
+Vars.ui.showInfoToast(e,5);
+}});
+  
 if (count > 3){
 dialog.cont.row();
 count = 0;
