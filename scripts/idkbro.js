@@ -13,7 +13,7 @@ const items = [
 function build(item){
 try {
 const button = new Button();
-button.image(item.uiIcon).size(60);
+button.image(item.uiIcon).size(160);
 
 return button;
 } catch(e) {
@@ -41,7 +41,7 @@ dialog.addCloseButton();
   
 for (let i = 0; i < items.length; i++){
 const button = build(Vars.content.item(items[i]));
-dialog.cont.add(button).size(100);
+dialog.cont.add(button).size(250);
 let num = i;
 
 button.clicked(() => {
