@@ -21,11 +21,11 @@ clip: 1000
   
 const region = type.region;
 particle.region = region;
-particle.sizeFrom = particle.sizeTo = ((region.width + region.height) / 2) / 8;
+particle.sizeFrom = particle.sizeTo = ((region.width + region.height) / 2.5) / 8;
 particle.lifetime = Mathf.random(300,3000);
 particle.at(unit.x, unit.y);
 particle.baseLength = Mathf.random(-8,8);
-particle.offset = Mathf.random(-5,5);
+particle.offset = Mathf.random(-5,5) + unit.rotation;
   
 } catch(e){
 Vars.ui.showInfoToast(e,5); 
