@@ -25,7 +25,7 @@ particle.sizeFrom = particle.sizeTo = ((region.width + region.height) / 2) / 8;
 particle.lifetime = Mathf.random(300,3000);
 particle.at(unit.x, unit.y);
 particle.baseLength = Mathf.random(-8,8);
-particle.offset = Mathf.random(-5,5) + (unit.rotation);
+particle.offset = Mathf.random(-5,5);
   
 } catch(e){
 Vars.ui.showInfoToast(e,5); 
