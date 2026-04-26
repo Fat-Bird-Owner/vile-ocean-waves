@@ -14,7 +14,7 @@ layer: 18,
 length: 0.1,
 lifetime: 600,
 colorTo: Color.valueOf("00000000"),
-colorFrom: Color.valueOf("7b7b7bff"),
+colorFrom: Color.valueOf("2b2b2bff"),
 interp: Interp.sineIn,
 clip: 1000
 });
