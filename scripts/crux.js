@@ -8,7 +8,7 @@ const type = unit.type;
 const particle = new ParticleEffect();
 Object.assign(particle, {
 particles: 1,
-cone: 40,
+cone: 0,
 cap: false,
 layer: 18,
 length: 0.1,
@@ -25,7 +25,7 @@ particle.sizeFrom = particle.sizeTo = ((region.width + region.height) / 2.5) / 8
 particle.lifetime = Mathf.random(300,3000);
 particle.at(unit.x, unit.y);
 particle.baseLength = Mathf.random(-8,8);
-particle.offset = Mathf.random(-15,15) + (unit.rotation);
+particle.offset = Mathf.random(-5,5) + (unit.rotation);
   
 } catch(e){
 Vars.ui.showInfoToast(e,5); 
