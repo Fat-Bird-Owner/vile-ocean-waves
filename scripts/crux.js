@@ -8,7 +8,7 @@ const type = unit.type;
 const particle = new ParticleEffect();
 Object.assign(particle, {
 particles: 1,
-cone: 0,
+cone: 5,
 cap: false,
 layer: 18,
 length: 0.1,
