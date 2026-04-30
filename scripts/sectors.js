@@ -1,7 +1,5 @@
 Planets.serpulo.sectors.each(s => {
-try {
-s.loadInfo();
-  
+try { 
 const info = s.info;
 var highest = 0;
 var highestItem = Items.copper;
@@ -9,18 +7,26 @@ var highestItem = Items.copper;
 info.export.each(item => {
 try{ 
 const exportNum = info.getExport(item);
-if (exportNum > highestItem){
+  
+if (exportNum > highest){
 highest = exportNum;
 highestItem = item;
-output(String(item) + "/" + exportNum);
 } 
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
 }});
 
-if (info.export.size != 0) info.contentIcon = highestItem;
-else info.contentIcon = null;
+if (info.export.size != 0) {
+info.contentIcon = highestItem;
+if (s.preset = null){
+s.setName(highestItem.localizedName + " Production Site [grey](" + s.id + ")"
+} else {
+s.setName(s.name)
+}
+
+} else info.contentIcon = null;
+
   
 } catch(e){
 Vars.ui.showInfoToast(e,5); 
