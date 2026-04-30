@@ -9,6 +9,7 @@ Vars.world.tiles.each(tile => {
 if(tile && tile.build && tile.block() == block){
 const build = tile.build;
 cores.push(tile.build);
+Vars.ui.showInfoToast(tile.build, 5);
 }
 });
   
