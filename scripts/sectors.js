@@ -12,14 +12,16 @@ const exportNum = info.getExport(item);
 if (exportNum > highestItem){
 highest = exportNum;
 highestItem = item;
+output(String(item) + "/" + exportNum);
 } 
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
 }});
 
-if (info.export != null) info.contentIcon = highestItem;
-
+if (info.export.size != 0) info.contentIcon = highestItem;
+else info.contentIcon = null;
+  
 } catch(e){
 Vars.ui.showInfoToast(e,5); 
 }});
