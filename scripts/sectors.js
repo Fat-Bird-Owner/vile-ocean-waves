@@ -27,7 +27,6 @@ s.setName(s.name());
   
 } else {
 info.contentIcon = null;
-s.setName(s.name());
 }
   
 } catch(e){
