@@ -21,10 +21,13 @@ if (info.export.size != 0) {
 info.contentIcon = highestItem;
 if (s.preset == null){
 s.setName(highestItem.localizedName + " Production Site [grey](" + s.id + ")");
+} else {
+s.setName(s.name());
 }
+  
 } else {
 info.contentIcon = null;
-s.setName(s.info.name);
+s.setName(s.name());
 }
   
 } catch(e){
