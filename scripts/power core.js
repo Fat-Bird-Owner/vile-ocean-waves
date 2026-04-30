@@ -23,7 +23,7 @@ for (let i = 0; i < cores.length; i++){
 if(!cores[i] || !cores[i].power || !cores[i].power.graph) continue;
 
 const graph = cores[i].power.graph;
-graph.distributePower(graph.getPowerNeeded(), graph.getPowerProduced(), true);
+graph.transferPower(25/60);
 }
   
 } catch(e){
