@@ -22,7 +22,7 @@ info.contentIcon = highestItem;
 if (s.preset == null){
 s.setName(highestItem.localizedName + " Production Site [grey](" + s.id + ")");
 } else {
-s.setName(s.name());
+s.setName(s.preset.localizedName);
 }
   
 } else {
