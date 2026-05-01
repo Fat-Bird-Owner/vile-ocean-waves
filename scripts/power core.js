@@ -1,5 +1,8 @@
 var cores = [];
 const block = Vars.content.block("core-shard");
+block.hasPower = true;
+block.consumesPowerBuffered(1250);
+block.outputsPower = true;
 
 Events.on(WorldLoadEvent,() => {
 try {
@@ -12,6 +15,8 @@ cores.push(tile.build);
 Vars.ui.showInfoToast(tile.build, 5);
 }
 });
+
+output(String(cores))
   
 } catch(e){
 Vars.ui.showInfoToast(e + "[red] - CoreBlock",5);
