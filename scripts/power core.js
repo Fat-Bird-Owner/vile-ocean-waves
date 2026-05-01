@@ -9,7 +9,7 @@ try {
 cores = [];  
 Vars.world.tiles.each(tile => {
 
-if(tile != null && tile.build && tile.block() == block){
+if(tile.build.block == block){
 const build = tile.build;
 cores.push(build);
 Vars.ui.showInfoToast(build, 5);
