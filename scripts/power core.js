@@ -1,7 +1,7 @@
 var cores = [];
 const block = Vars.content.block("core-shard");
 block.hasPower = true;
-block.consumesPowerBuffered(1250);
+block.consumePowerBuffered(1250);
 block.outputsPower = true;
 
 Events.on(WorldLoadEvent,() => {
