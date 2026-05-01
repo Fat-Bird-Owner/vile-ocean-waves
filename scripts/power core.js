@@ -4,29 +4,36 @@ block.hasPower = true;
 block.consumePowerBuffered(1250);
 block.outputsPower = true;
 
-Events.on(WorldLoadEvent,() => {
-try {
-cores = [];  
-Vars.world.tiles.each(tile => {
+Events.on(WorldLoadEvent, () => {
+    Timer.schedule(() => {
+        try {
 
-if(tile.build.block == block){
-const build = tile.build;
-cores.push(build);
-Vars.ui.showInfoToast(build, 5);
+            cores = [];
 
-if(tile.build){
-tile.build.power = new PowerModule();
-tile.build.power.graph.add(tile.build);
-}
-  
-}
+            Vars.world.tiles.each(tile => {
+
+                if(!tile || !tile.build) return;
+
+                if(tile.build.block == block){
+
+                    const build = tile.build;
+
+                    build.power = new PowerModule();
+                    build.power.graph = new PowerGraph();
+                    build.power.graph.add(build);
+
+                    cores.push(build);
+                }
+
+            });
+
+            Vars.ui.showInfoToast("Found: " + cores.length, 5);
+
+        } catch(e){
+            Vars.ui.showInfoToast(e + "", 5);
+        }
+    }, 0.5);
 });
-
-Vars.ui.showInfoToast(String(cores), 5);
-  
-} catch(e){
-Vars.ui.showInfoToast(e + "[red] - CoreBlock",5);
-}});
 
 Events.run(Trigger.update, () => {
 try {
