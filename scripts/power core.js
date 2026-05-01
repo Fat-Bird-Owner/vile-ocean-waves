@@ -16,7 +16,7 @@ Vars.ui.showInfoToast(tile.build, 5);
 }
 });
 
-output(String(cores))
+Vars.ui.showInfoToast(String(cores), 5);
   
 } catch(e){
 Vars.ui.showInfoToast(e + "[red] - CoreBlock",5);
@@ -29,7 +29,9 @@ for (let i = 0; i < cores.length; i++){
 if(!cores[i] || !cores[i].power || !cores[i].power.graph) continue;
 
 const graph = cores[i].power.graph;
-graph.transferPower(25/60);
+cores[i].power.status = 1;
+cores[i].power.graph.batteryStored += 25/60;
+  
 }
   
 } catch(e){
