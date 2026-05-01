@@ -13,6 +13,11 @@ if(tile != null && tile.build && tile.block() == block){
 const build = tile.build;
 cores.push(tile.build);
 Vars.ui.showInfoToast(tile.build, 5);
+
+if(tile.build){
+tile.build.power = new PowerModule();
+}
+  
 }
 });
 
