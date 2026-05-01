@@ -1,5 +1,5 @@
 var cores = [];
-const block = Vars.content.block("core-shard");
+const block = Vars.content.block("battery");
 block.hasPower = true;
 block.consumePowerBuffered(1250);
 block.outputsPower = true;
