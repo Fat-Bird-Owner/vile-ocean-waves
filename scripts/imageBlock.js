@@ -21,7 +21,7 @@ sentence = slice.slice(1).join(" ");
 const contImage = atlas.find(image);
 const dialog = new BaseDialog("Info");
   
-if(image && image.found()){
+if(contImage && contImage.found()){
 dialog.cont.add(new Image(contImage)).size(image.width * 1.25, image.height * 1.25);
 } else {
 dialog.cont.add(contImage); 
