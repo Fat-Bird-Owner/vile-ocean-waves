@@ -27,10 +27,9 @@ try {
     const dialog = new BaseDialog("Info");
 
     if(contImage && contImage.found()){
-        dialog.cont.image(contImage)
-            .size(contImage.width * 1.25, contImage.height * 1.25);
+        dialog.cont.image(contImage).size(contImage.width * 1.25, contImage.height * 1.25).center();
     }else{
-        dialog.cont.add(imageName);
+        dialog.cont.add(imageName).center();
     }
 
     if(sentence.length > 0){
