@@ -34,7 +34,7 @@ try {
 
     if(sentence.length > 0){
         dialog.cont.row();
-        dialog.cont.add(sentence).width(400).wrap().get().setAlignment(Align.center)
+        dialog.cont.add(sentence).width(800).wrap().get().setAlignment(Align.center)
     }
 
     dialog.addCloseButton();
