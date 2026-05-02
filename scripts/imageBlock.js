@@ -24,7 +24,7 @@ const dialog = new BaseDialog("Info");
 if(contImage && contImage.found()){
 dialog.cont.add(new Image(contImage)).size(image.width * 1.25, image.height * 1.25);
 } else {
-dialog.cont.add(contImage); 
+dialog.cont.add(image); 
 }
 
 if (slice.length >= 1){
