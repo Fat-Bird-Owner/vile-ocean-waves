@@ -29,7 +29,7 @@ dialog.cont.add(image);
 
 if (slice.length >= 1){
 dialog.cont.row();
-dialog.add(sentence);
+dialog.cont.add(sentence);
 }
 
 dialog.addCloseButton();
