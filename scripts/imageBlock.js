@@ -13,7 +13,7 @@ const image = atlas.find(tile.build.message.toString());
 const dialog = new BaseDialog("Info");
 
 if(image && image.found()){
-dialog.cont.add(new Image(image)).grow();
+dialog.cont.add(new Image(image)).size(image.width, image.height);
 } else {
 dialog.cont.add(tile.build.message.toString()); 
 }
