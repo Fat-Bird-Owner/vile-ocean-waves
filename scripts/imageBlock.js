@@ -34,7 +34,7 @@ try {
 
     if(sentence.length > 0){
         dialog.cont.row();
-        dialog.cont.add(sentence).wrap().center()
+        dialog.cont.add(sentence).growX().wrap().center();
     }
 
     dialog.addCloseButton();
