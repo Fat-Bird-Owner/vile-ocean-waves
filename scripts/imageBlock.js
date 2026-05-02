@@ -12,8 +12,8 @@ if (!tile || !tile.build || !player || !player.team() || player.team() != tile.t
 const image = atlas.find(tile.build.message.toString());
 const dialog = new BaseDialog("Info");
 
-if (image){
-dialog.cont.add(image).grow();
+if(image && image.found()){
+dialog.cont.add(new Image(image)).grow();
 } else {
 dialog.cont.add(tile.build.message.toString()); 
 }
