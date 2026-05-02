@@ -12,9 +12,10 @@ if (!tile || !tile.build || !player || !player.team() || player.team() != tile.t
 const message = tile.build.message.toString();
 const slice = message.split(" ");
 const image = slice[0];
+let sentence;
 
 if (slice.length >= 1){
-const sentence = slice.slice(1).join(" ");
+sentence = slice.slice(1).join(" ");
 }
   
 const contImage = atlas.find(tile.build.message.toString());
@@ -28,7 +29,7 @@ dialog.cont.add(tile.build.message.toString());
 
 if (slice.length >= 1){
 dialog.cont.row();
-dialog.add(sentance);
+dialog.add(sentence);
 }
 
 dialog.addCloseButton();
