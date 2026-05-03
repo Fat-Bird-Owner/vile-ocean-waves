@@ -6,7 +6,10 @@ const block3 = Vars.content.block("meld-floor-nectar");
 const liquid = Vars.content.liquid("meld-valid");
 
 const seq = new Seq();
-seq.addAll([block2, block3]);
+seq.addAll([
+block2,
+block3
+]);
 
 block.stats.replace(Stat.tiles, StatValues.content(seq));
 block.stats.remove(Stat.input);
@@ -16,10 +19,10 @@ try {
 const {tile} = e;
 const {build} = tile;
 
-if (!tile || !build || build.block != block || !build.liquid) return;
+if (!tile || !build || build.block != block || !build.liquids) return;
 build.liquid.set(liquid, build.block.liquidCapacity);
 
 } catch(e){
-Vaes.ui.showInfoToast(e,5); 
+Vars.ui.showInfoToast(e,5); 
 }
 });
