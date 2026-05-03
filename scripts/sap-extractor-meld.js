@@ -21,4 +21,5 @@ build.liquid.set(liquid, build.block.liquidCapacity);
 
 } catch(e){
 Vaes.ui.showInfoToast(e,5); 
-}});
+}
+});
