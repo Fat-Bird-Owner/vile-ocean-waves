@@ -16,7 +16,7 @@ build.y,
 8 * Vars.tileSize 
 b => b.block() != block,
 b => {
-delay += Mathf.random(0.05, 0.1);
+delay += Mathf.random(0.35, 0.5);
 Time.runTask(delay, {
 b.kill();
 });
