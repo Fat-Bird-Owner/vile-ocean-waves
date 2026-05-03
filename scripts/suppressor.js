@@ -18,6 +18,11 @@ if (tile.block() == Vars.content.block(blocks[i])) found = true;
 
 if (!found) return;
 let dur = 0.25
+let range = 8;
+
+if (tile.block().name == blocks[2]){
+range += 4;
+}
   
 tile.circle(range, t => {
 try {
