@@ -38,11 +38,11 @@ t.setFloor(finalFloor);
 Fx.vapor.at(t.worldx(), t.worldy(), Color.valueOf(Vars.content.item("meld-meld").color));
 });
 });
-}));
-
 } catch(e){
 Vars.ui.showInfoToast(e,5);
-}});
+}
+}));
+
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
