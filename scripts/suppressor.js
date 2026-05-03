@@ -26,23 +26,40 @@ range += 4;
   
 tile.circle(range, (x, y) => {
 try {
-const t = Vars.world.tile(x, y);
-if (!t || !t.floor() || t.floor() != targetFloor) return;
 
-dur += Mathf.random(0.15, 0.35);
-Time.runTask(dur, () => {
-t.setFloor(transitFloor);
-Fx.vapor.at(t.worldx(), t.worldy(), Color.valueOf(Vars.content.item("meld-meld").color));
+    const t = Vars.world.tile(x, y);
+    if (!t || !t.floor() || t.floor() != targetFloor) return;
 
-Time.runTask(1.22, () => {
-t.setFloor(finalFloor);
-Fx.vapor.at(t.worldx(), t.worldy(), Color.valueOf(Vars.content.item("meld-meld").color));
-});
-});
+    dur += Mathf.random(0.15, 0.35);
+
+    Time.runTask(dur, () => {
+
+        t.setFloor(transitFloor);
+
+        Fx.vapor.at(
+            t.worldx(),
+            t.worldy(),
+            Color.valueOf(Vars.content.item("meld-meld").color)
+        );
+
+        Time.runTask(1.22, () => {
+
+            t.setFloor(finalFloor);
+
+            Fx.vapor.at(
+                t.worldx(),
+                t.worldy(),
+                Color.valueOf(Vars.content.item("meld-meld").color)
+            );
+
+        });
+
+    });
+
 } catch(e){
-Vars.ui.showInfoToast(e,5);
+    Vars.ui.showInfoToast(e,5);
 }
-}));
+});
 
 
 } catch(e){
