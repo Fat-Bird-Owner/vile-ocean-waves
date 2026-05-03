@@ -13,7 +13,7 @@ const transitFloor = Vars.content.block("meld-meld-melting-floor");
 const finalFloor = Vars.content.block("meld-meld-swampland");
   
 for (let i = 0; i < blocks.length; i++){
-if (tile.block() == Vars.content.block(blocks[i]) found = true;
+if (tile.block() == Vars.content.block(blocks[i])) found = true;
 }
 
 if (!found) return;
