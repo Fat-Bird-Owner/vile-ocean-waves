@@ -24,8 +24,9 @@ if (tile.block().name == blocks[1]){
 range += 4;
 }
   
-tile.circle(range, Cons.of(t => {
+tile.circle(range, (x, y) => {
 try {
+const t = Vars.world.tile(x, y);
 if (!t || !t.floor() || t.floor() != targetFloor) return;
 
 dur += Mathf.random(0.15, 0.35);
