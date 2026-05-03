@@ -1,0 +1,25 @@
+const blocks = [
+"gr-reinforced-structure"
+];
+
+Events.on(BuildDamageEvent, event => {
+try {
+const {build, source} = event;
+const {lightBlock} = Fx;
+const {targets} = build;
+const {damage} = source;
+
+if (!build || !source || !lightBlock || !targets) return;
+
+targets.each(b => {
+try {
+b.heal(damage * 0.4);
+lightBlock.at(build.x, build.y, build.size);
+
+} catch(e){
+Vars.ui.showInfoToast(e + "[red] - StructureBlock Inner", 5);
+}});
+  
+} catch(e){
+Vars.ui.showInfoToast(e + "[red] - StructureBlock", 5);
+}});
