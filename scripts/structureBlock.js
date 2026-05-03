@@ -19,7 +19,7 @@ if (!found || !build || !source || !lightBlock || !targets) return;
 
 targets.each(b => {
 try {
-if (!b.isDamaged()) return;
+if (!b.damaged()) return;
   
 b.heal(damage * 0.4);
 lightBlock.at(b.x, b.y, b.block.size, Color.valueOf(build.block.baseColor));
