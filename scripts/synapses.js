@@ -3,28 +3,38 @@ const block = Vars.content.block("meld-meld-synapse");
 
 Events.on(BlockDestroyEvent, event => {
 try {
-const {tile} = event;
-const blockTile = tile.block();
-if (blockTile != block) return;
-const {build} = tile;
-let delay = 0;
 
-indexer.eachBlock(
-build.team, 
-build.x, 
-build.y, 
-12 * Vars.tileSize 
-b => b.block() != block,
-b => {
-delay += Mathf.random(0.35, 0.5);
-Time.runTask(delay, {
-b.kill();
-});
+    const {tile} = event;
+    if(!tile) return;
 
-}  
-);
+    const blockTile = tile.block();
+    if(blockTile != block) return;
 
-  
+    const build = tile.build;
+    if(!build) return;
+
+    let delay = 0;
+
+    indexer.eachBlock(
+        build.team,
+        build.x,
+        build.y,
+        8 * Vars.tilesize,
+        b => b.block != block,
+        b => {
+
+            delay += Mathf.random(0.25, 0.5);
+
+            Time.run(delay, () => {
+                if(b && !b.dead){
+                    b.kill();
+                }
+            });
+
+        }
+    );
+
 } catch(e){
-Vars.ui.showInfoToast(e,5);
-}});
+    Vars.ui.showInfoToast(e + "", 5);
+}
+});
