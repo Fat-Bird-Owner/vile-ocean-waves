@@ -16,8 +16,8 @@ try {
 const {tile} = e;
 const {build} = tile;
 
-if (!tile || !build || tile.block() != block) return;
-build.liquid.set(liquid, tile.block.liquidCapacity);
+if (!tile || !build || build.block != block || !build.liquid) return;
+build.liquid.set(liquid, build.block.liquidCapacity);
 
 } catch(e){
 Vaes.ui.showInfoToast(e,5); 
