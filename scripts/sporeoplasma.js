@@ -15,8 +15,9 @@ const spreadTile = tile.nearby(ro);
   
 if(!spreadTile) continue;
 if (!spreadTile.solid() && spreadTile.block() != block){
-  
 spreadTile.setBlock(block, tile.team());
+}
+  
 });
 
 } catch(e){
