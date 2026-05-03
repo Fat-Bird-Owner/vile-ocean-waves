@@ -4,7 +4,7 @@ const {tile} = event;
 const block = Vars.content.block("gr-sporeoplasma");
 const tileBlock = tile.block();
 
-if (!block || !tile) return;
+if (!block || !tile || tileBlock != block) return;
 for (let i = 0; i < 2; i++){
 const ro = Mathf.round(Mathf.random(0,3));
 const spreadTile = tile.nearby(ro);
