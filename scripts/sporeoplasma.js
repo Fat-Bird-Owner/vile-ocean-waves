@@ -18,7 +18,6 @@ if (!spreadTile.solid() && spreadTile.block() != block){
 spreadTile.setBlock(block, tile.team());
 }
   
-}
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
