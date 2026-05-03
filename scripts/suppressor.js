@@ -24,11 +24,10 @@ if (tile.block().name == blocks[1]){
 range += 4;
 }
   
-tile.circle(range, Intc2.of((x, y) => {
+tile.circle(range, t => {
     try {
 
-        const t = Vars.world.tile(x, y);
-        if (!t || !t.floor() || t.floor() != targetFloor) return;
+        if(!t || !t.floor() || t.floor() != targetFloor) return;
 
         dur += Mathf.random(0.15, 0.35);
 
@@ -39,7 +38,7 @@ tile.circle(range, Intc2.of((x, y) => {
             Fx.vapor.at(
                 t.worldx(),
                 t.worldy(),
-                Color.valueOf(Vars.content.item("meld-meld").color)
+                Vars.content.item("meld-meld").color
             );
 
             Time.runTask(1.22, () => {
@@ -49,7 +48,7 @@ tile.circle(range, Intc2.of((x, y) => {
                 Fx.vapor.at(
                     t.worldx(),
                     t.worldy(),
-                    Color.valueOf(Vars.content.item("meld-meld").color)
+                    Vars.content.item("meld-meld").color
                 );
 
             });
@@ -59,8 +58,7 @@ tile.circle(range, Intc2.of((x, y) => {
     } catch(e){
         Vars.ui.showInfoToast(e, 5);
     }
-}));
-
+});
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
