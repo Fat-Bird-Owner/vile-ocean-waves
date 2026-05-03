@@ -28,8 +28,8 @@ tile.circle(range, t => {
 try {
 if (!t || !t.floor() || t.floor() != targetFloor) return;
 
-Time.runTask(dur, () => {
 dur += Mathf.random(0.15, 0.35);
+Time.runTask(dur, () => {
 t.setFloor(transitFloor);
 Fx.vapor.at(t.worldx(), t.worldy(), Color.valueOf(Vars.content.item("meld-meld").color));
 
