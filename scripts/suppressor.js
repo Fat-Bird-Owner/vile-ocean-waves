@@ -20,7 +20,7 @@ if (!found) return;
 let dur = 0.25
 let range = 8;
 
-if (tile.block().name == blocks[2]){
+if (tile.block().name == blocks[1]){
 range += 4;
 }
   
