@@ -24,7 +24,7 @@ if (tile.block().name == blocks[1]){
 range += 4;
 }
   
-tile.circle(range, t => {
+tile.circle(range, Cons.of(t => {
 try {
 if (!t || !t.floor() || t.floor() != targetFloor) return;
 
@@ -38,7 +38,7 @@ t.setFloor(finalFloor);
 Fx.vapor.at(t.worldx(), t.worldy(), Color.valueOf(Vars.content.item("meld-meld").color));
 });
   
-});
+}));
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
