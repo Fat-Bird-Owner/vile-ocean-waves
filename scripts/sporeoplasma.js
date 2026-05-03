@@ -8,6 +8,7 @@ if (!block || !tile || tileBlock != block) return;
 
 Time.runTask(0.45,() => {
 try{
+  
 for (let i = 0; i < 1; i++){
   
 const ro = Mathf.round(Mathf.random(0,3));
@@ -17,13 +18,12 @@ if(!spreadTile) continue;
 if (!spreadTile.solid() && spreadTile.block() != block){
 spreadTile.setBlock(block, tile.team());
 }
-  
+}  
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
-}});
-  
 }
+});
 
 
 } catch(e){
