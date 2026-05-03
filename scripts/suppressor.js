@@ -37,7 +37,7 @@ Time.runTask(1.22, () => {
 t.setFloor(finalFloor);
 Fx.vapor.at(t.worldx(), t.worldy(), Color.valueOf(Vars.content.item("meld-meld").color));
 });
-  
+});
 }));
 
 } catch(e){
