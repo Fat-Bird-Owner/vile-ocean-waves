@@ -28,7 +28,7 @@ else if (build.rotation == 1) by++;
 else if (build.rotation == 2) bx--;
 else by--;
 
-const blockWall = Vars.world.worldTile(bx, by).block();
+const blockWall = Vars.world.tile(bx, by).block();
 
 if (blockWall == block2){
 build.liquids.set(liquid, build.block.liquidCapacity);
