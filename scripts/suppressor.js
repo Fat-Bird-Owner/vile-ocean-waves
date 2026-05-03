@@ -24,27 +24,17 @@ if (tile.block().name == blocks[1]){
 range += 4;
 }
   
-tile.circle(range, (x, y) => {
-try {
+tile.circle(range, Intc2.of((x, y) => {
+    try {
 
-    const t = Vars.world.tile(x, y);
-    if (!t || !t.floor() || t.floor() != targetFloor) return;
+        const t = Vars.world.tile(x, y);
+        if (!t || !t.floor() || t.floor() != targetFloor) return;
 
-    dur += Mathf.random(0.15, 0.35);
+        dur += Mathf.random(0.15, 0.35);
 
-    Time.runTask(dur, () => {
+        Time.runTask(dur, () => {
 
-        t.setFloor(transitFloor);
-
-        Fx.vapor.at(
-            t.worldx(),
-            t.worldy(),
-            Color.valueOf(Vars.content.item("meld-meld").color)
-        );
-
-        Time.runTask(1.22, () => {
-
-            t.setFloor(finalFloor);
+            t.setFloor(transitFloor);
 
             Fx.vapor.at(
                 t.worldx(),
@@ -52,14 +42,24 @@ try {
                 Color.valueOf(Vars.content.item("meld-meld").color)
             );
 
+            Time.runTask(1.22, () => {
+
+                t.setFloor(finalFloor);
+
+                Fx.vapor.at(
+                    t.worldx(),
+                    t.worldy(),
+                    Color.valueOf(Vars.content.item("meld-meld").color)
+                );
+
+            });
+
         });
 
-    });
-
-} catch(e){
-    Vars.ui.showInfoToast(e,5);
-}
-});
+    } catch(e){
+        Vars.ui.showInfoToast(e, 5);
+    }
+}));
 
 
 } catch(e){
