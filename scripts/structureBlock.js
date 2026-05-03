@@ -1,3 +1,4 @@
+const {content} = Vars;
 const blocks = [
 "gr-reinforced-structure"
 ];
@@ -8,8 +9,13 @@ const {build, source} = event;
 const {lightBlock} = Fx;
 const {targets} = build;
 const {damage} = source;
+const found = false;
 
-if (!build || !source || !lightBlock || !targets) return;
+for (let i = 0; i < blocks.length; i++){
+if (build.block == content.block(blocks[i])) found = true;
+}
+  
+if (!found || !build || !source || !lightBlock || !targets) return;
 
 targets.each(b => {
 try {
