@@ -20,8 +20,11 @@ const {tile} = e;
 const {build} = tile;
 
 if (!tile || !build || build.block != block || !build.liquids) return;
-build.liquid.set(liquid, build.block.liquidCapacity);
 
+if (build.front().block == block2){
+build.liquids.set(liquid, build.block.liquidCapacity);
+}
+  
 } catch(e){
 Vars.ui.showInfoToast(e,5); 
 }
