@@ -21,7 +21,7 @@ const lightBlockWrap = lightBlock.wrap(Color.valueOf(build.block.baseColor));
 targets.each(b => {
 try {
 b.heal(damage * 0.4);
-lightBlockWrap.at(b.x, b.y, b.block.size,);
+lightBlockWrap.at(b.x, b.y, b.block.size);
 
 } catch(e){
 Vars.ui.showInfoToast(e + "[red] - StructureBlock Inner", 5);
