@@ -14,10 +14,17 @@ if (tile.block() == Vars.content.block(blocks[i]) found = true;
 }
 
 if (!found) return;
+let dur = 0.25
+  
 tile.circle(range, t => {
 try {
 if (!t || !t.floor() || t.floor() != targetFloor) return;
 
+Time.runTask(dur, () => {
+dur += Mathf.random(0.15, 0.35);
+t.setFloor(Vars.content.block("meld-meld-melting-floor");
+Fx.vapor.at(t.worldx(), t.worldy(), Color.valueOf(Vars.content.item("meld-meld").color));
+});
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
