@@ -16,11 +16,12 @@ if (build.block == content.block(blocks[i])) found = true;
 }
   
 if (!found || !build || !source || !lightBlock || !targets) return;
+const lightBlockWrap = lightBlock.wrap(Color.valueOf(build.block.baseColor));
 
 targets.each(b => {
 try {
 b.heal(damage * 0.4);
-lightBlock.at(build.x, build.y, build.block.size);
+lightBlockWrap.at(b.x, b.y, b.block.size,);
 
 } catch(e){
 Vars.ui.showInfoToast(e + "[red] - StructureBlock Inner", 5);
