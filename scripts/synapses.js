@@ -13,7 +13,7 @@ indexer.eachBlock(
 build.team, 
 build.x, 
 build.y, 
-8 * Vars.tileSize 
+12 * Vars.tileSize 
 b => b.block() != block,
 b => {
 delay += Mathf.random(0.35, 0.5);
