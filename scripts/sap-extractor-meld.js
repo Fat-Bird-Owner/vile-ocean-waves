@@ -21,14 +21,14 @@ const {build} = tile;
 
 if (!tile || !build || build.block != block || !build.liquids) return;
 
-let bx = build.x;
-let by = build.y;
+let bx = tile.x;
+let by = tile.y;
 if (build.rotation == 0) bx++;
 else if (build.rotation == 1) by++;
 else if (build.rotation == 2) bx--;
 else by--;
 
-const blockWall = Vars.world.tileWorld(bx, by).block();
+const blockWall = Vars.world.worldTile(bx, by).block();
 
 if (blockWall == block2){
 build.liquids.set(liquid, build.block.liquidCapacity);
