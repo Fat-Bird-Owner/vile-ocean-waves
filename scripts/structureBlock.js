@@ -20,7 +20,7 @@ if (!found || !build || !source || !lightBlock || !targets) return;
 targets.each(b => {
 try {
 b.heal(damage * 0.4);
-lightBlock.at(build.x, build.y, build.size);
+lightBlock.at(build.x, build.y, build.block.size);
 
 } catch(e){
 Vars.ui.showInfoToast(e + "[red] - StructureBlock Inner", 5);
