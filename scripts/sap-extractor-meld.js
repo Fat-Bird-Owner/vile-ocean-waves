@@ -34,7 +34,6 @@ if (blockWall == block2){
 build.liquids.set(liquid, build.block.liquidCapacity);
 }
 
-}
   
 } catch(e){
 Vars.ui.showInfoToast(e,5); 
