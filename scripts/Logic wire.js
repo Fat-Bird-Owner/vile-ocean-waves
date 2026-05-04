@@ -14,7 +14,7 @@ Events.on(TapEvent, event => {
         const frontBuild = build.nearbyBuild(build.build.rotation);
         if (!frontBuild || !build || frontBuild.block != wireBlock) return;
             
-        Fx.dooropen.at(frontBuild.x, frontBuild.y, 1* Vars.tileSize);
+        Fx.dooropen.at(frontBuild.x, frontBuild.y, frontBuild.block.size);
         for (let i = 0; i < heating.length; i++){
         if (heating[i] == frontBuild) {
         frontBuild.damage(frontBuild.block.health / 4);
