@@ -1,3 +1,5 @@
+let heating = [];
+
 Events.on(TapEvent, event => {
     try{
         const tile = event.tile;
@@ -13,6 +15,13 @@ Events.on(TapEvent, event => {
         if (!frontBuild || !build) return;
             
         Fx.generate.at(frontBuild.x, frontBuild.y);
+        for (let i = 0; i < heating.length; i++){
+        if (heating[i] == frontBuild) frontBuild.damage(3);
+        }
+        
+        heating.push(frontBuild);
+        heating.splice(10, 1)
+            
         Time.run(0.05 * 60, () => nearby(frontBuild.tile));
             
         } catch(e){
