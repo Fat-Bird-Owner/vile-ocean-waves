@@ -13,7 +13,7 @@ Events.on(TapEvent, event => {
         if (!frontBuild || !build) return;
             
         Fx.generate.at(frontBuild.x, frontBuild.y);
-        Time.run(0.05, () => nearby(frontBuild.tile));
+        Time.run(0.05 * 60, () => nearby(frontBuild.tile));
             
         } catch(e){
         Vars.ui.showInfoToast(e + " - Inner", 5);   
