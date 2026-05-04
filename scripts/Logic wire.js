@@ -29,7 +29,7 @@ Events.on(TapEvent, event => {
             
         Time.run(0.05 * 60, () => {
         try {
-        if (!frontBuild || !frontBuild.isValid() || Vars.state.isPaused() || Vars.state.isPlaying()) return;
+        if (!frontBuild || !frontBuild.isValid() || Vars.state.isPaused() || !Vars.state.isPlaying()) return;
         if (!frontBuild.tile || !heating) return;
 
         nearby(frontBuild.tile);
