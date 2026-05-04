@@ -15,15 +15,11 @@ Events.on(TapEvent, event => {
             const nextTile = tile.nearbyBuild(build.rotation);
             if(nextTile == null) return null;
 
-            return nextTile;
+            Fx.generate.at(build.x, build.y);
+            nearby(nextTile);
         }
-
-        let currentBlock = tile.build;
-
-        while(currentBlock != null){
-            Fx.generate.at(currentBlock.x, currentBlock.y);
-            currentBlock = nearby(currentBlock);
-        }
+            
+        currentBlock = nearby(currentBlock)
 
     }catch(e){
         Vars.ui.showInfoToast(String(e), 5);
