@@ -3,10 +3,10 @@
 Events.on(TapEvent, event => {
     try{
         const tile = event.tile;
-        let heating = [];
         if(tile == null) return;
 
         const targetBlock = Vars.content.block("surge-router");
+        let heating = [];
         if(!tile.build || tile.block() != targetBlock) return;
 
         function nearby(build){
@@ -25,7 +25,7 @@ Events.on(TapEvent, event => {
         }
         
         heating.push(frontBuild);
-        heating.splice(10, 1);
+        if (heating.length > 10) heating.shift();
             
         Time.run(0.05 * 60, () => nearby(frontBuild.tile));
             
