@@ -8,7 +8,7 @@ Events.on(TapEvent, event => {
 
         function nearby(build){
         try {
-        if (!build.build || !build.build.rotation || build.block.size > 1) return;
+        if (!build.build || build.block().rotate == false || build.block.size > 1) return;
         const frontBuild = build.nearbyBuild(build.build.rotation);
         if (!frontBuild || !build) return;
             
