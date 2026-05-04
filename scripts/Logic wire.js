@@ -19,7 +19,8 @@ Events.on(TapEvent, event => {
         }}
 
         Fx.generate.at(tile.worldx(), tile.worldy());
-        nearby(tile);
+        
+        Time.run(0.15, () => nearby(tile));
 
     }catch(e){
         Vars.ui.showInfoToast(String(e), 5);
