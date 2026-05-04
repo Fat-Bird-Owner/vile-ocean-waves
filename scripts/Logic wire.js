@@ -27,7 +27,7 @@ Events.on(TapEvent, event => {
         heating.push(frontBuild);
         if (heating.length > 10) heating.shift();
             
-        Time.run(0.05 * 60, () => if (frontBuild && frontBuild.isValid() && frontBuild.tile) nearby(frontBuild.tile));
+        Time.run(0.05 * 60, () => if (frontBuild && frontBuild.isValid() && frontBuild.tile) {nearby(frontBuild.tile)});
             
         } catch(e){
         Vars.ui.showInfoToast(e + " - Inner", 5);   
