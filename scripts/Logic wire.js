@@ -4,18 +4,19 @@ Events.on(TapEvent, event => {
         if(tile == null) return;
 
         const targetBlock = Vars.content.block("surge-router");
-        if(tile.block() != targetBlock) return;
+        if(!tile.build || tile.block() != targetBlock) return;
 
         function nearby(build){
-            const tile = build.tile;
-            Fx.generate.at(build.x, build.y);
+            const newTile = build.tile;
+            Fx.generate.at(newTile.build.x, newTile.build.y);
             
-            const nextTile = tile.nearbyBuild(build.rotation);
+            const nextTile = newTile.nearby(build.rotation);
             if(nextTile == null) return;
             
-            nearby(nextTile);
+            nearby(nextTile.build);
         }
-            
+
+        Fx.generate.at(tile.build.x, tile.build.y);
         nearby(tile.build);
 
     }catch(e){
