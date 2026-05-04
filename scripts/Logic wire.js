@@ -8,7 +8,7 @@ Events.on(TapEvent, event => {
 
         function nearby(build){
         try {
-        const buildTile = tile;
+        const buildTile = build;
         const frontBuild = tile.nearbyBuild(buildTile.build.rotation);
         if (!frontBuild) return;
             
