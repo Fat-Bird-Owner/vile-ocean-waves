@@ -1,20 +1,10 @@
-const block = Vars.content.block("gr-circuit-wire");
-const rate = block.attributes.get(Attribute.get("circuitRate"));
-
-const circuitUnit = new StatUnit(
-    "circuit-rate",
-    "[teal]" + String.fromCharCode(Iconc.link) + "[]"
-);
-
-block.stats.remove(Stat.speed);
-block.stats.add(Stat.speed, rate, circuitUnit);
-
 Events.on(TapEvent, event => {
     try{
         const tile = event.tile;
         if(tile == null) return;
 
-        const targetBlock = Vars.content.block("surge-router");
+        const targetBlock = Vars.content.block("gr-signal");
+        const wireBlock = Vars.content.block("gr-circuit-wire");
         let heating = [];
         if(!tile.build || tile.block() != targetBlock) return;
 
@@ -22,9 +12,9 @@ Events.on(TapEvent, event => {
         try {
         if (!build.build || build.block().rotate == false || build.block.size > 1 || Vars.state.isPaused() || !Vars.state.isPlaying()) return;
         const frontBuild = build.nearbyBuild(build.build.rotation);
-        if (!frontBuild || !build) return;
+        if (!frontBuild || !build || frontBuild.block != wireBlock) return;
             
-        Fx.generate.at(frontBuild.x, frontBuild.y);
+        Fx.dooropen.at(frontBuild.x, frontBuild.y, 1* Vars.tileSize);
         for (let i = 0; i < heating.length; i++){
         if (heating[i] == frontBuild) {
         frontBuild.damage(frontBuild.block.health / 4);
