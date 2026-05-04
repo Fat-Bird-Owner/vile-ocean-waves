@@ -30,7 +30,7 @@ Events.on(TapEvent, event => {
         Time.run(0.05 * 60, () => {
         try {
         if (!frontBuild || !frontBuild.isValid()) return;
-        if (!frontBuild.tile) return;
+        if (!frontBuild.tile || !heating) return;
 
         nearby(frontBuild.tile);
         } catch(e){
