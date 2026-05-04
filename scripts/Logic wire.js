@@ -28,13 +28,14 @@ Events.on(TapEvent, event => {
         if (heating.length > 10) heating.shift();
             
         Time.run(0.05 * 60, () => {
+        try {
         if (!frontBuild || !frontBuild.isValid()) return;
         if (!frontBuild.tile) return;
 
-        if (Time.timeScale < 0.01) return;
-
         nearby(frontBuild.tile);
-        });
+        } catch(e)){
+        Vars.ui.showInfoToast(e + "inner", 5); 
+        }});
             
         } catch(e){
         Vars.ui.showInfoToast(e + " - Inner", 5);   
