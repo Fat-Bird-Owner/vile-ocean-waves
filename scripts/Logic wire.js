@@ -7,11 +7,7 @@ Events.on(TapEvent, event => {
         if(tile.block() != targetBlock) return;
 
         function nearby(build){
-            if(build == null) return null;
-
             const tile = build.tile;
-            if(tile == null) return null;
-
             const nextTile = tile.nearbyBuild(build.rotation);
             if(nextTile == null) return null;
 
