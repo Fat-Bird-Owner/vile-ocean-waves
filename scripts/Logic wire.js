@@ -28,9 +28,12 @@ Events.on(TapEvent, event => {
         if (heating.length > 10) heating.shift();
             
         Time.run(0.05 * 60, () => {
-        if (frontBuild && frontBuild.isValid() && frontBuild.tile){
+        if (!frontBuild || !frontBuild.isValid()) return;
+        if (!frontBuild.tile) return;
+
+        if (Time.timeScale < 0.01) return;
+
         nearby(frontBuild.tile);
-        }
         });
             
         } catch(e){
