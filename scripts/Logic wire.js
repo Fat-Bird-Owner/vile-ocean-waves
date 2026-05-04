@@ -15,14 +15,14 @@ Events.on(TapEvent, event => {
             
         Fx.generate.at(frontBuild.x, frontBuild.y);
         nearby(frontBuild.tile);
+        });
+            
         } catch(e){
         Vars.ui.showInfoToast(e + " - Inner", 5);   
         }}
 
         Fx.generate.at(tile.worldx(), tile.worldy());
-        
         nearby(tile);
-        });
 
     }catch(e){
         Vars.ui.showInfoToast(String(e), 5);
