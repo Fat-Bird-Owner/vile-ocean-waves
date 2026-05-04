@@ -7,16 +7,16 @@ Events.on(TapEvent, event => {
         if(!tile.build || tile.block() != targetBlock) return;
 
         function nearby(build){
-        const buildTile = build.tile;
-        const frontBuild = tile.nearbyBuild(buildTile.rotation);
+        const buildTile = tile;
+        const frontBuild = tile.nearbyBuild(buildTile.build.rotation);
         if (!frontBuild) return;
             
         Fx.generate.at(frontBuild.x, frontBuild.y);
         nearby(frontBuild);
         }
 
-        Fx.generate.at(tile.build.x, tile.build.y);
-        nearby(tile.build);
+        Fx.generate.at(tile.worldx(), tile.worldy());
+        nearby(tile);
 
     }catch(e){
         Vars.ui.showInfoToast(String(e), 5);
