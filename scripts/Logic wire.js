@@ -15,7 +15,7 @@ Events.on(TapEvent, event => {
             const nextTile = tile.nearbyBuild(build.rotation);
             if(nextTile == null) return null;
 
-            return nextTile.build;
+            return nextTile;
         }
 
         let currentBlock = tile.build;
