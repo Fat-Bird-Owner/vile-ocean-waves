@@ -25,7 +25,7 @@ Events.on(TapEvent, event => {
         }
         
         heating.push(frontBuild);
-        if (heating.length > 10) heating.shift();
+        if (heating.length > 100) heating.shift();
             
         Time.run(0.05 * 60, () => {
         try {
