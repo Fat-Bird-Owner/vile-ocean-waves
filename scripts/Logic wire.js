@@ -15,7 +15,7 @@ Events.on(TapEvent, event => {
             nearby(nextTile);
         }
             
-        nearby(build);
+        nearby(tile.build);
 
     }catch(e){
         Vars.ui.showInfoToast(String(e), 5);
