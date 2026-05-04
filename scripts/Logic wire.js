@@ -18,7 +18,7 @@ Events.on(TapEvent, event => {
         Fx.generate.at(frontBuild.x, frontBuild.y);
         for (let i = 0; i < heating.length; i++){
         if (heating[i] == frontBuild) {
-        frontBuild.damage(frontBuild.block.health / 10);
+        frontBuild.damage(frontBuild.block.health / 4);
         heating.splice(i, 1);
         Fx.turbinegenerate.at(frontBuild.x, frontBuild.y);
         return;
