@@ -7,6 +7,12 @@ Events.on(TapEvent, event => {
         if(!tile.build || tile.block() != targetBlock) return;
 
         function nearby(build){
+        const buildTile = build.tile;
+        const frontBuild = tile.nearbyBuild(buildTile.rotation);
+        if (!frontBuild) return;
+            
+        Fx.generate.at(frontBuild.x, frontBuild.y);
+        nearby(frontBuild);
         }
 
         Fx.generate.at(tile.build.x, tile.build.y);
