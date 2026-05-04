@@ -8,7 +8,7 @@ Events.on(TapEvent, event => {
 
         function nearby(build){
         try {
-        Time.run(0.15 * 60, () => 
+        Time.run(0.15 * 60, () => {
         if (!build.build || build.block().rotate == false || build.block.size > 1) return;
         const frontBuild = build.nearbyBuild(build.build.rotation);
         if (!frontBuild || !build) return;
@@ -21,8 +21,8 @@ Events.on(TapEvent, event => {
 
         Fx.generate.at(tile.worldx(), tile.worldy());
         
-        nearby(tile)
-        );
+        nearby(tile);
+        });
 
     }catch(e){
         Vars.ui.showInfoToast(String(e), 5);
