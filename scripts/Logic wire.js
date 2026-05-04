@@ -20,6 +20,7 @@ Events.on(TapEvent, event => {
         if (heating[i] == frontBuild) {
         frontBuild.damage(3);
         heating.splice(i, 1);
+        Fx.turbinegenerate.at(frontBuild.x, frontBuild.y);
         }
         }
         
