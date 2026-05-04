@@ -1,25 +1,31 @@
 Events.on(TapEvent, event => {
-try {
-const {tile} = event;
-const block = tile.block();
-const targetBlock = Vars.content.block("surge-router");
-if (block != targetBlock) return;
+    try{
+        const tile = event.tile;
+        if(tile == null) return;
 
-function nearby(build){
-const {tile} = build;
-const nextTile = tile.nearby(build.rotation);
-}
+        const targetBlock = Vars.content.block("surge-router");
+        if(tile.block() != targetBlock) return;
 
-let currentBlock = tile.build;
-function loop(){
-    let limit = 1000;
+        function nearby(build){
+            if(build == null) return null;
 
-    while(currentBlock != null && limit-- > 0){
-        currentBlock = nearby(currentBlock);
-        Fx.generate.at(currentBlock.x, currentBlock.y);
+            const tile = build.tile;
+            if(tile == null) return null;
+
+            const nextTile = tile.nearbyBuild(build.rotation);
+            if(nextTile == null) return null;
+
+            return nextTile.build;
+        }
+
+        let currentBlock = tile.build;
+
+        while(currentBlock != null){
+            Fx.generate.at(currentBlock.x, currentBlock.y);
+            currentBlock = nearby(currentBlock);
+        }
+
+    }catch(e){
+        Vars.ui.showInfoToast(String(e), 5);
     }
-}
-  
-} catch(e){
-Vars.ui.showInfoToast(e,5); 
-}});
+});
