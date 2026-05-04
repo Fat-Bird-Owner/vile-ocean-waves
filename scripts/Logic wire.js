@@ -13,11 +13,14 @@ Events.on(TapEvent, event => {
         if (!build.build || build.block().rotate == false || build.block.size > 1 || Vars.state.isPaused() || !Vars.state.isPlaying()) return;
         const frontBuild = build.nearbyBuild(build.build.rotation);
         if (!frontBuild || !build || frontBuild.block != wireBlock) return;
+        const {block} = frontBuild;
+        const circuitRate = block.attributes.get(Attributes.get("circuitRate"));
+        const circuitHeatingDamage = block.attributes.get(Attributes.get("circuitHeatingDamage"));
             
         Fx.dooropen.at(frontBuild.x, frontBuild.y, frontBuild.block.size);
         for (let i = 0; i < heating.length; i++){
         if (heating[i] == frontBuild) {
-        frontBuild.damage(frontBuild.block.health / 4);
+        frontBuild.damage(circuitHeatingDamage);
         heating.splice(i, 1);
         Fx.turbinegenerate.at(frontBuild.x, frontBuild.y);
         return;
@@ -27,7 +30,7 @@ Events.on(TapEvent, event => {
         heating.push(frontBuild);
         if (heating.length > 100) heating.shift();
             
-        Time.run(0.05 * 60, () => {
+        Time.run((1/circuitRate) * 60, () => {
         try {
         if (!frontBuild || !frontBuild.isValid() || Vars.state.isPaused() || !Vars.state.isPlaying()) return;
         if (!frontBuild.tile || !heating) return;
