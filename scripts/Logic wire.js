@@ -1,7 +1,13 @@
 const block = Vars.content.block("gr-circuit-wire");
 const rate = block.attributes.get(Attribute.get("circuitRate"));
-const circuitUnit = new StatUnit("CR", "[salmon]" + Iconc.diagonal + "[]");
-block.stats.replace(Stat.speed, rate, circuitUnit);
+
+const circuitUnit = new StatUnit(
+    "circuit-rate",
+    "[salmon]" + String.fromCharCode(Iconc.diagonal)
+);
+
+block.stats.remove(Stat.speed);
+block.stats.add(Stat.speed, rate, circuitUnit);
 
 Events.on(TapEvent, event => {
     try{
