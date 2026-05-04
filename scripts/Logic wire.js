@@ -14,8 +14,8 @@ Events.on(TapEvent, event => {
         const frontBuild = build.nearbyBuild(build.build.rotation);
         if (!frontBuild || !build || frontBuild.block != wireBlock) return;
         const {block} = frontBuild;
-        const circuitRate = block.attributes.get(Attributes.get("circuitRate"));
-        const circuitHeatingDamage = block.attributes.get(Attributes.get("circuitHeatingDamage"));
+        const circuitRate = block.attributes.get(Attribute.get("circuitRate"));
+        const circuitHeatingDamage = block.attributes.get(Attribute.get("circuitHeatingDamage"));
             
         Fx.dooropen.at(frontBuild.x, frontBuild.y, frontBuild.block.size);
         for (let i = 0; i < heating.length; i++){
