@@ -1,8 +1,9 @@
-let heating = [];
+
 
 Events.on(TapEvent, event => {
     try{
         const tile = event.tile;
+        let heating = [];
         if(tile == null) return;
 
         const targetBlock = Vars.content.block("surge-router");
@@ -16,11 +17,14 @@ Events.on(TapEvent, event => {
             
         Fx.generate.at(frontBuild.x, frontBuild.y);
         for (let i = 0; i < heating.length; i++){
-        if (heating[i] == frontBuild) frontBuild.damage(3);
+        if (heating[i] == frontBuild) {
+        frontBuild.damage(3);
+        heating.splice(i, 1);
+        }
         }
         
         heating.push(frontBuild);
-        heating.splice(10, 1)
+        heating.splice(10, 1);
             
         Time.run(0.05 * 60, () => nearby(frontBuild.tile));
             
