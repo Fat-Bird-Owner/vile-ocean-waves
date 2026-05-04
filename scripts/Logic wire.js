@@ -33,7 +33,7 @@ Events.on(TapEvent, event => {
         if (!frontBuild.tile) return;
 
         nearby(frontBuild.tile);
-        } catch(e)){
+        } catch(e){
         Vars.ui.showInfoToast(e + "inner", 5); 
         }});
             
