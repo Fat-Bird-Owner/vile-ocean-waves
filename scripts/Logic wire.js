@@ -3,7 +3,7 @@ const rate = block.attributes.get(Attribute.get("circuitRate"));
 
 const circuitUnit = new StatUnit(
     "circuit-rate",
-    "[navy]" + String.fromCharCode(Iconc.link) + "[]"
+    "[teal]" + String.fromCharCode(Iconc.link) + "[]"
 );
 
 block.stats.remove(Stat.speed);
