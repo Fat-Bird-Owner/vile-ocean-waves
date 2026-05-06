@@ -27,6 +27,7 @@ try {
 
             Time.run(delay, () => {
                 if(b && !b.dead){
+                    Fx.flakExplosionBig.at(b.x, b.y);
                     b.kill();
                 }
             });
