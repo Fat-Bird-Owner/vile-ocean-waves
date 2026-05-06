@@ -6,7 +6,7 @@ const tileBlock = tile.block();
 
 if (!block || !tile || tileBlock != block) return;
 
-Time.run(0.45 * 60 ,() => {
+Time.run(0.5 * 60 ,() => {
 try{
   
 for (let i = 0; i < 2; i++){
