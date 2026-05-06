@@ -9,7 +9,7 @@ if (!block || !tile || tileBlock != block) return;
 
 Time.run(0.5 * 60 , () => {
 try{
-if (Vars.state.paused() || !Vars.state.isPlaying()) return;
+if (Vars.state.isPaused() || !Vars.state.isPlaying()) return;
 
 for (let i = 0; i < 3; i++){
   
