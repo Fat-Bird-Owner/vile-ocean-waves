@@ -16,7 +16,7 @@ for (let i = 0; i < 3; i++){
 const ro = Mathf.round(Mathf.random(0,3));
 const spreadTile = tile.nearby(ro);
   
-if(!spreadTile || state.stats.placedBlockCount.get(block, 0) >= limit) continue;
+if(!spreadTile || Vars.state.stats.placedBlockCount.get(block, 0) >= limit) continue;
 if (!spreadTile.solid() && spreadTile.block() != block){
 spreadTile.setBlock(block, tile.team());
 }
