@@ -10,7 +10,7 @@ if (!block || !tile || tileBlock != block) return;
 Time.run(0.5 * 60 , () => {
 try{
 if (Vars.state.isPaused() || !Vars.state.isPlaying()) return;
-
+  
 let size = 0;
 Groups.build.each(b => {
 if (b.block == block) size++;
@@ -20,8 +20,9 @@ for (let i = 0; i < 3; i++){
   
 const ro = Mathf.round(Mathf.random(0,3));
 const spreadTile = tile.nearby(ro);
-  
-if(!spreadTile || size >= (limit * limit)) continue;
+
+if (size >= (limit * limit)) return;
+if(!spreadTile) continue;
 if (!spreadTile.solid() && spreadTile.block() != block){
 spreadTile.setBlock(block, tile.team());
 size++;
