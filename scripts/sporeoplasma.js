@@ -5,7 +5,7 @@ const block = Vars.content.block("gr-sporeoplasma");
 const tileBlock = tile.block();
 const limit = 45;
 let active = 0;
-const activeLimit = 45;
+const activeLimit = 15;
   
 if (!block || !tile || tileBlock != block) return;
 
