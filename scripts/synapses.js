@@ -23,9 +23,9 @@ try {
         b => b.block != block,
         b => {
 
-            delay += Mathf.random(0.1, 0.2) * 60;
+            delay += Mathf.random(0.025, 0.05);
 
-            Time.run(delay, () => {
+            Time.run(delay * 60, () => {
                 if(b && !b.dead){
                     Fx.flakExplosionBig.at(b.x, b.y);
                     b.kill();
