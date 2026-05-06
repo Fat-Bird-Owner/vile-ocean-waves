@@ -1,47 +1,61 @@
-Events.on(TileChangeEvent, event => {
-try {
-const {tile} = event;
 const block = Vars.content.block("gr-sporeoplasma");
-const tileBlock = tile.block();
-const limit = 45;
-let active = 0;
+
 const activeLimit = 15;
-  
-if (!block || !tile || tileBlock != block) return;
+const maxTotal = 45;
 
-Time.run(0.5 * 60 , () => {
+/* global cached count (important) */
+let total = 0;
+let active = 0;
+
+/* cache update every few seconds instead of every event */
+Time.runTask(60, () => {
+total = 0;
+
+Groups.build.each(b => {
+if(b.block == block){
+total++;
+}
+});
+});
+
+Events.on(TileChangeEvent, event => {
 try{
-if (Vars.state.isPaused() || !Vars.state.isPlaying()) return;
+const tile = event.tile;
+if(!tile || tile.block() != block) return;
 
-if (active > activeLimit) return;
+/* hard cap check */
+if(total >= maxTotal) return;
+
+/* throttle active processing */
+if(active >= activeLimit) return;
 active++;
 
-let size = 0;
-Groups.build.each(b => {
-if (b.block == block) size++;
-});
-  
-for (let i = 0; i < 3; i++){
-  
-const ro = Mathf.round(Mathf.random(0,3));
-const spreadTile = tile.nearby(ro);
+Time.run(0.5 * 60, () => {
+try{
+if(!tile || !tile.isValid()) return;
 
-if (size >= (limit * limit)) return;
+/* spread logic */
+for(let i = 0; i < 3; i++){
+
+const dir = Mathf.random(0, 3);
+const spreadTile = tile.nearby(dir);
+
 if(!spreadTile) continue;
-if (!spreadTile.solid() && spreadTile.block() != block){
+
+if(!spreadTile.solid() && spreadTile.block() != block){
 spreadTile.setBlock(block, tile.team());
-size++;
+total++;
 }
-}  
+}
 
-if (active >= activeLimit) active = 0;
+active--;
 
-} catch(e){
-Vars.ui.showInfoToast(e,5);
+}catch(e){
+Vars.ui.showInfoToast(e, 5);
 }
 });
 
-
-} catch(e){
-Vars.ui.showInfoToast(e,5);
-}});
+}catch(e){
+Vars.ui.showInfoToast(e, 5);
+}
+});
