@@ -1,5 +1,5 @@
 const {indexer} = Vars;
-const block = Vars.content.block("meld-meld-synapse");
+const block = Vars.content.block("gr-embankment-seal");
 
 Events.on(BlockDestroyEvent, event => {
 try {
