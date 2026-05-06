@@ -4,13 +4,18 @@ const {tile} = event;
 const block = Vars.content.block("gr-sporeoplasma");
 const tileBlock = tile.block();
 const limit = 45;
+let active = 0;
+const activeLimit = 45;
   
 if (!block || !tile || tileBlock != block) return;
 
 Time.run(0.5 * 60 , () => {
 try{
 if (Vars.state.isPaused() || !Vars.state.isPlaying()) return;
-  
+
+if (active > activeLimit) return;
+active++;
+
 let size = 0;
 Groups.build.each(b => {
 if (b.block == block) size++;
@@ -28,6 +33,8 @@ spreadTile.setBlock(block, tile.team());
 size++;
 }
 }  
+
+if (active >= activeLimit) active = 0;
 
 } catch(e){
 Vars.ui.showInfoToast(e,5);
