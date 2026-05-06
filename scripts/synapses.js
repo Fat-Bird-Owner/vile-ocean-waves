@@ -23,7 +23,7 @@ try {
         b => b.block != block,
         b => {
 
-            delay += Mathf.random(0.25 * 60, 0.5);
+            delay += Mathf.random(0.1, 0.2) * 60;
 
             Time.run(delay, () => {
                 if(b && !b.dead){
