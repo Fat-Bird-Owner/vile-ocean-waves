@@ -6,10 +6,10 @@ const tileBlock = tile.block();
 
 if (!block || !tile || tileBlock != block) return;
 
-Time.runTask(0.45,() => {
+Time.run(0.45 * 60 ,() => {
 try{
   
-for (let i = 0; i < 1; i++){
+for (let i = 0; i < 2; i++){
   
 const ro = Mathf.round(Mathf.random(0,3));
 const spreadTile = tile.nearby(ro);
