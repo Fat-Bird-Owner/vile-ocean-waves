@@ -67,8 +67,6 @@ if (active >= 25) return;
 }
 }
 
-active--;
-
 }catch(e){
 Vars.ui.showInfoToast(e, 5);
 }
