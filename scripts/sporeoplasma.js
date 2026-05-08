@@ -9,7 +9,7 @@ let active = 0;
 
 /* cache update every few seconds instead of every event */
 
-Events.run(Trigger.run, () => {
+Events.run(Trigger.update, () => {
 try {
 
 active = 0;
@@ -31,6 +31,8 @@ total++;
 reload();
 });
 }
+
+reload();
 
 Events.on(TileChangeEvent, event => {
 try{
@@ -59,7 +61,7 @@ if(!spreadTile) continue;
 if(!spreadTile.solid() && spreadTile.block() != block){
 spreadTile.setBlock(block, tile.team());
 total++;
-active++
+active++;
 
 if (active >= 25) return;
 }
