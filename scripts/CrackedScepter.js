@@ -21,4 +21,6 @@ for (let i = 2; i < unit.weapons.size; i++){
 const smol = unit.weapons.get(i);
 smol.shoot = shoot;
 smol.inaccuracy = 25;
+smol.bullet = UnitTypes.mace.weapons.get(0).bullet;
+smol.bullet.speed = 3
 }
