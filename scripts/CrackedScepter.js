@@ -22,6 +22,7 @@ const smol = unit.weapons.get(i);
 smol.shoot = shoot;
 smol.inaccuracy = 25;
 smol.bullet = UnitTypes.mace.weapons.get(0).bullet;
+unit.range = smol.bullet.speed * smol.bullet.lifetime;
 smol.bullet.speed = 3;
 smol.reload = 4;
 }
