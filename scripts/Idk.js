@@ -5,7 +5,7 @@ let time = 0;
 Events.run(Trigger.update, () => {
 try {
 
-if (!Weathers.snow.isActive()) return;
+if (!Weathers.snow.isActive() || !Vars.state.isPlaying()) return;
 
 const block = Vars.content.block("gr-boiler");
 
@@ -40,7 +40,7 @@ p.y,
 b => b.block == block
 );
 
-if (!next && p.block != block && p.status() == BlockStatus.active) {
+if (!next && (p.block != block || p.status() != BlockStatus.active)) {
 p.enabled = true;
 p.applySlowdown(0.5, 60);
 p.damage(p.maxHealth / 20);
