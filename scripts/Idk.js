@@ -5,7 +5,11 @@ let time = 0;
 Events.run(Trigger.update, () => {
 try {
 
-if (!Weathers.snow.isActive() || !Vars.state.isPlaying()) return;
+if (
+!Weathers.snow.isActive() ||
+!Vars.state.isPlaying() ||
+Vars.state.isPaused()
+) return;
 
 const block = Vars.content.block("gr-boiler");
 
