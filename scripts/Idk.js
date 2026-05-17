@@ -41,11 +41,7 @@ p.team,
 p.x,
 p.y,
 10 * Vars.tilesize,
-b => {
-if (!b || !b.isValid()) return false;
-if (b.block != block) return false;
-return true;
-}
+b => b.block != block
 );
 
 if (next && next.efficiency <= 0) {
