@@ -44,7 +44,7 @@ p.y,
 b => {
 if (!b || !b.isValid()) return false;
 if (b.block != block) return false;
-return b.status && b.status() == BlockStatus.active;
+return b.efficiency > 0;
 }
 );
 
