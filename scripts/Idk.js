@@ -44,7 +44,8 @@ p.y,
 b => {
 if (!b || !b.isValid()) return false;
 if (b.block != block) return false;
-return b.efficiency > 0;
+if (b.efficiency <= 0) return false;
+return true;
 }
 );
 
