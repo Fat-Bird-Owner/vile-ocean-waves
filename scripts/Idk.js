@@ -17,7 +17,7 @@ time += Time.delta;
 
 if (time < 60) return;
 
-builds = Groups.build.copy();
+builds = Groups.build;
 time = 0;
 
 if (builds == null) return;
