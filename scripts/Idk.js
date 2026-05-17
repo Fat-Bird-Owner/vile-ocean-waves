@@ -18,7 +18,7 @@ time = 0;
 builds.each(p => {
 try {
 
-if (!p || !p.isValid()) return;
+if (!p || !p.isValid() || !p.block.update) return;
 if (p.block instanceof StackConveyor || p.block instanceof Conveyor || p.block instanceof Duct) return;
 if (p.block instanceof Conduit || p.block instanceof ItemBridge || p.block instanceof Router) return;
   
@@ -27,7 +27,7 @@ p.team,
 p.x,
 p.y, 
 10 * Vars.tilesize,
-b => b && b.isValid() && b.block == block && b.status() == BlockStatus.active
+b => b.block == block
 );
   
 if (!next && p.block != block) {
