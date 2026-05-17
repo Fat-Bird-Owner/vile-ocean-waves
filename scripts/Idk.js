@@ -42,10 +42,12 @@ p.x,
 p.y,
 10 * Vars.tilesize,
 b => {
+try {
 if (!b || !b.isValid()) return false;
 if (b.block != block) return false;
 if (!b.efficiency || b.efficiency <= 0) return false;
 return true;
+} catch(e){}
 }
 );
 
