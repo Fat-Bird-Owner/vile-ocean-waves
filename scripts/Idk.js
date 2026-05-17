@@ -10,7 +10,7 @@ if (!Weathers.snow.isActive()) return;
 const block = Vars.content.block("gr-boiler");
 
 time += Time.delta;
-if (time >= 60){
+if (build == null || time >= 60){
 builds = Groups.build;
 time = 0;
 }
