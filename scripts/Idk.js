@@ -1,4 +1,6 @@
 const fx = Fx.mineSmall.wrap(Color.valueOf("D3DEE466"));
+let builds = null;
+let time = 0;
 
 Events.run(Trigger.update, () => {
 try {
@@ -7,7 +9,13 @@ if (!Weathers.snow.isActive()) return;
   
 const block = Vars.content.block("gr-boiler");
 
-Groups.build.each(p => {
+time += Time.delta;
+if (time >= 60){
+builds = Groups.build;
+time = 0;
+}
+  
+builds.each(p => {
 try {
 
 if (!p || !p.isValid()) return;
