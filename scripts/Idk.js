@@ -2,8 +2,6 @@ const fx = Fx.mineSmall.wrap(Color.valueOf("D3DEE466"));
 let builds = null;
 let time = 0;
 
-// birb
-
 Events.run(Trigger.update, () => {
 try {
 
@@ -16,13 +14,38 @@ Vars.state.isPaused()
 const block = Vars.content.block("gr-boiler");
 
 time += Time.delta;
-
 if (time < 60) return;
-
-builds = Groups.build;
 time = 0;
 
+builds = Groups.build;
 if (builds == null) return;
+
+const protectedTiles = {};
+
+builds.each(b => {
+try{
+if (
+b &&
+b.isValid() &&
+b.block == block &&
+b.enabled &&
+b.efficiency > 0
+){
+const radius = 10;
+
+for(let dx = -radius; dx <= radius; dx++){
+for(let dy = -radius; dy <= radius; dy++){
+
+const tx = Math.floor(b.tile.x + dx);
+const ty = Math.floor(b.tile.y + dy);
+
+protectedTiles[tx + "," + ty] = true;
+
+}
+}
+}
+}catch(e){}
+});
 
 builds.each(p => {
 try {
@@ -38,36 +61,18 @@ p.block instanceof ItemBridge ||
 p.block instanceof Router
 ) return;
 
-const next = Vars.indexer.findTile(
-p.team,
-p.x,
-p.y,
-10 * Vars.tilesize,
-b => {
-try{
-if (!b || !b.isValid()) return false;
-if (b.block != block) return false;
-if (!b.enabled) return false;
-if (b.efficiency <= 0) return false;
-return true;
-}catch(e){
-return false;
-}
-}
-);
+if (p.block == block) return;
 
-if (!next && p.block != block) {
+if (!protectedTiles[p.tile.x + "," + p.tile.y]) {
 p.applySlowdown(0.5, 60);
 p.damage(p.maxHealth / 20);
 fx.at(p.x, p.y);
 }
 
-} catch(e){
-Vars.ui.showInfoToast(String(e) + "[red] - inner", 5);
-}
+} catch(e){}
 });
 
 } catch(e){
-Vars.ui.showInfoToast(String(e) + " - Outer", 5);
+Vars.ui.showInfoToast(String(e), 5);
 }
 });
