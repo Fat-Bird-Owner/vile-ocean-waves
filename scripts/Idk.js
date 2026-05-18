@@ -65,7 +65,7 @@ if (p.block == block) return;
 
 if (!protectedTiles[p.tile.x + "," + p.tile.y]) {
 p.applySlowdown(0.5, 60);
-p.damage(p.maxHealth / 20);
+/*p.damage(p.maxHealth / 20);*/
 fx.at(p.x, p.y);
 }
 
