@@ -48,10 +48,6 @@ return b.status && b.status() == BlockStatus.active;
 }
 );
 
-if (next && next.efficiency <= 0) {
-return false;
-}
-
 if (!next && p.block != block) {
 p.applySlowdown(0.5, 60);
 p.damage(p.maxHealth / 20);
