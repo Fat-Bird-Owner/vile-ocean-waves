@@ -42,9 +42,13 @@ p.x,
 p.y,
 10 * Vars.tilesize,
 b => {
+try{
 if (!b || !b.isValid()) return false;
 if (b.block != block) return false;
-return b.status && b.status() == BlockStatus.active;
+return b.status() == BlockStatus.active;
+}catch(e){
+return false;
+}
 }
 );
 
