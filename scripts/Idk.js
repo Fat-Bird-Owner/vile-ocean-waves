@@ -45,7 +45,9 @@ b => {
 try{
 if (!b || !b.isValid()) return false;
 if (b.block != block) return false;
-return b.status() == BlockStatus.active;
+if (!b.enabled) return false;
+if (b.efficiency <= 0) return false;
+return true;
 }catch(e){
 return false;
 }
