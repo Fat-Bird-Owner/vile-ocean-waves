@@ -2,6 +2,8 @@ const fx = Fx.mineSmall.wrap(Color.valueOf("D3DEE466"));
 let builds = null;
 let time = 0;
 
+// birb
+
 Events.run(Trigger.update, () => {
 try {
 
