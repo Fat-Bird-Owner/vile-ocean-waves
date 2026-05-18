@@ -41,15 +41,18 @@ p.team,
 p.x,
 p.y,
 10 * Vars.tilesize,
-b => b.block != block
+b => {
+if (!b || !b.isValid()) return false;
+if (b.block != block) return false;
+return b.status && b.status() == BlockStatus.active;
+}
 );
 
 if (next && next.efficiency <= 0) {
 return false;
 }
 
-if (!next && (p.block != block || p.status() != BlockStatus.active)) {
-p.enabled = true;
+if (!next && p.block != block) {
 p.applySlowdown(0.5, 60);
 p.damage(p.maxHealth / 20);
 fx.at(p.x, p.y);
