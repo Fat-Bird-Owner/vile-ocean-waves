@@ -3,31 +3,34 @@ name: Update version from commit count
 on:
   push:
 
+permissions:
+  contents: write
+
 jobs:
-  update-version:
+  update:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Get commit count
-        id: count
-        run: |
-          COUNT=$(git rev-list --count HEAD)
-          echo "count=$COUNT" >> $GITHUB_OUTPUT
+        id: c
+        run: echo "count=$(git rev-list --count HEAD)" >> $GITHUB_OUTPUT
 
-      - name: Update mod.hjson version
+      - name: Update version
         run: |
-          COUNT=${{ steps.count.outputs.count }}
-          sed -i "s/version: \".*\"/version: \"$COUNT\"/" mod.hjson
+          sed -i "s/version: \".*\"/version: \"${{ steps.c.outputs.count }}\"/" mod.hjson
 
-      - name: Commit updated version
+      - name: Commit changes
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git add mod.hjson
-          git commit -m "Auto version update to ${{ steps.count.outputs.count }}" || exit 0
+          git commit -m "auto version update" || exit 0
+
+      - name: Push changes
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git push
