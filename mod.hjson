@@ -10,7 +10,7 @@ description: ""
 # uhh
 
 iosCompatible: true
-version: "v1"
+version: "1922"
 minGameVersion: "154.3"
 dependencies: []
 hidden: false
