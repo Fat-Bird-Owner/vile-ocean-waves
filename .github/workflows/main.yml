@@ -1,10 +1,10 @@
-name: Commit Counter
+name: Update version from commit count
 
 on:
   push:
 
 jobs:
-  count-commits:
+  update-version:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,5 +19,15 @@ jobs:
           COUNT=$(git rev-list --count HEAD)
           echo "count=$COUNT" >> $GITHUB_OUTPUT
 
-      - name: Print result
-        run: echo "Commit count is ${{ steps.count.outputs.count }}"
+      - name: Update mod.hjson version
+        run: |
+          COUNT=${{ steps.count.outputs.count }}
+          sed -i "s/version: \".*\"/version: \"$COUNT\"/" mod.hjson
+
+      - name: Commit updated version
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add mod.hjson
+          git commit -m "Auto version update to ${{ steps.count.outputs.count }}" || exit 0
+          git push
