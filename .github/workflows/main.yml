@@ -1,0 +1,24 @@
+name: Update Version
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set version from commit count
+        run: |
+          COUNT=$(git rev-list --count HEAD)
+          sed -i "s/version: \".*\"/version: \"$COUNT\"/" mod.hjson
+
+      - name: Commit changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add mod.hjson
+          git commit -m "auto version update" || exit 0
+          git push
