@@ -1,6 +1,7 @@
 generateEffectRange: 0.1
 effectChance: 0.225
-generateEffect:{
+generateEffect:{ 
+# bad idea
 type: RadialEffect
 lengthOffset: 11.5
 rotationOffset: 45
