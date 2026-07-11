@@ -1,0 +1,25 @@
+name: Update Bundles
+
+on:
+  push:
+    paths:
+      - "content/**"
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - run: npm install hjson fast-glob
+
+      - run: node tools/update-bundle.js
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: "Update bundle entries"
