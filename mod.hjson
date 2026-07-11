@@ -10,7 +10,7 @@ description: ""
 # freaky
 
 iosCompatible: true
-version: "1928"
+version: "1930"
 minGameVersion: "154.3"
 dependencies: []
 hidden: false
