@@ -1,3 +1,10 @@
+- name: Debug auth
+  env:
+    GH_TOKEN: ${{ secrets.YOUR_PAT }}
+  run: |
+    echo "Token length: ${#GH_TOKEN}"
+    gh auth status
+
 name: Upload ZIP
 
 on:
