@@ -1,0 +1,30 @@
+name: Upload ZIP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Create ZIP
+        run: |
+          zip -r mod.zip . -x ".git/*"
+
+      - name: Create Release
+        env:
+          GH_TOKEN: ${{ secrets.YOUR_PAT }}
+        run: |
+          TAG="commit-${GITHUB_SHA::7}"
+
+          gh release create "$TAG" \
+            --repo Fat-Bird-Owner/mod-builds \
+            --title "$TAG" \
+            --notes "Automatic build from ${GITHUB_REPOSITORY}" \
+            mod.zip
