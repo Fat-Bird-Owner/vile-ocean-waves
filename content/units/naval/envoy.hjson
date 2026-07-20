@@ -15,7 +15,7 @@ outlineColor: 3d3e40
 immunities:[light]
 
 research: journey
-researchCostMultiplier: 0.65
+researchCostMultiplier: 0.5
 
 weapons:[
 {
