@@ -1,0 +1,38 @@
+name: Build Wiki
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  wiki:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install HJSON
+        run: pip install hjson
+
+      - name: Generate pages
+        run: |
+          cd scripts
+          python generate-wiki.py
+
+      - name: Install MkDocs
+        run: pip install mkdocs
+
+      - name: Build
+        run: mkdocs build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
